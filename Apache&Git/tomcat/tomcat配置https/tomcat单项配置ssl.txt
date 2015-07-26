@@ -1,0 +1,21 @@
+
+1:生成keystore文件
+keytool -v -genkey -alias tomcat -keyalg RSA -keystore d:/tomcat.keystore
+注意：
+      cn=localhost
+
+2:从keystore中导出server.cer的文件
+   keytool -export -trustcacerts -alias tomcat -file d:/server.cer -keystore d:/tomcat.keystore -storepass 123456
+
+
+3:将server.cer文件导入到jdk中的储存证书的库中
+keytool -import -trustcacerts -alias tomcat -file d:/server.cer -keystore D:\Java\jdk1.6.0_19/jre/lib/security/cacerts -storepass changeit
+
+
+4:配置tomcat的conf文件下的sever.xml文件
+<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+               maxThreads="150" scheme="https" secure="true"
+               clientAuth="false" keystoreFile="D:\tomcat.keystore" keystorePass="123456" sslProtocol="TLS" />
+
+5安装server.cer证书
+  将server.cer安装到受信任的根目录下
