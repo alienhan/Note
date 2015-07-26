@@ -1,0 +1,6 @@
+
+F:\Users\pc\workspace\paper
+
+svnserve -d -r d:/svn/svndata
+
+D:\svn\backupsys\svn\bin

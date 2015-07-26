@@ -1,0 +1,4 @@
+opemcms寻址在class中默认的文件夹中
+不能自己加文件夹
+
+  <explorertype name="myarticle1" key="fileicon.myarticle1type" icon="article.gif" reference="xmlcontent">

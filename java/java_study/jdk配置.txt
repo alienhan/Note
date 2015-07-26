@@ -1,0 +1,20 @@
+classpath
+C:\Program Files(x86)\Java\jdk1.6.0_19\lib\rt.jar;
+C:\Program Files (x86)\Java\jdk1.6.0_19\lib\tools.jar;
+D:\tomcat\apache-tomcat-7.0.32;D:\tomcat\apache-tomcat-6.0.35
+
+java_home
+C:\Program Files (x86)\Java\jdk1.6.0_19
+
+
+path
+%M2%;%JAVA_HOME%\bin;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;
+c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;
+C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;
+C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;
+C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;
+C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;
+C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;D:\mysqlserver32\mysql-5.1.66-winx64\bin

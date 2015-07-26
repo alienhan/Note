@@ -1,0 +1,118 @@
+                                               opencms发布新闻 xsd                                     
+
+1.
+在opencms.modules.xml的cn.edu.cust.kyinfo站点下配置
+   <parameters/>下面添加
+                        <resourcetypes>
+				<type class="org.opencms.file.types.CmsResourceTypeXmlContent" name="myarticle1" id="7002">
+				<param name="schema">/system/modules/cn.edu.cust.kyinfo/schemas/Article.xsd</param>
+				</type>
+			</resourcetypes>
+
+			<explorertypes>
+				<explorertype name="myarticle1" key="fileicon.myarticle1type" icon="article.gif"  reference="xmlcontent">
+					<newresource page="structurecontent"  uri="newresource_xmlcontent.jsp?newresourcetype=myarticle1" 
+							 order="7002"  autosetnavigation="false"  autosettitle="false"/>
+				   <accesscontrol>
+				   <accessentry principal="GROUP.Administrators" permissions="+r+v+w+c"/>
+				   <accessentry principal="GROUP.Projectmanagers" permissions="+r+v+w+c"/>
+				   <accessentry principal="GROUP.Users" permissions="+r+v+w+c"/>
+					</accesscontrol>
+				</explorertype>
+			</explorertypes>
+
+注意name必须一样 
+id和其他module要区分
+
+2.
+编写xsd
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	
+     <xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>	
+
+      <xsd:element name="ArticleTypes1" type="OpenCmsArticleTypes1"/>
+	
+     <xsd:complexType name="OpenCmsArticleTypes1">
+	  <xsd:sequence>
+	    <xsd:element name="ArticleType1" type="OpenCmsArticleType1" minOccurs="0" maxOccurs="unbounded"/>
+	  </xsd:sequence>
+     </xsd:complexType>
+
+    <xsd:complexType name="OpenCmsArticleType1">
+	  <xsd:sequence>
+	        <xsd:element name="Title" type="OpenCmsString" />
+		<xsd:element name="Keywords" type="OpenCmsString" maxOccurs="2"/>
+		<xsd:element name="Text" type="OpenCmsHtml" />
+	  </xsd:sequence>
+	  <xsd:attribute name="language" type="OpenCmsLocale" use="required"/>
+    </xsd:complexType>
+
+</xsd:schema>
+
+xml的样式为
+<ArticleTypes1>
+  <ArticleType1>
+    <Title></Title>
+    <Keywords> </Keywords>
+    <Text></Text>     
+  </ArticleType1>
+<ArticleTypes1>
+
+
+
+3.
+编写workplace.properties
+
+fileicon.myarticle1type=我的文章类型 
+title.newmyarticle1=创建一篇文章 
+label.ArticleType1.Title=标题 
+label.ArticleType1.Keywords=关键词
+label.ArticleType1.Text=正文
+
+fileicon.myarticle为module寻找properties的标志
+
+
+4.
+
+编写xml文件，外表是html文件
+advantage中配置
+display的 template 中填写 自己的模板文件
+template-elements 中填写 引用的实现dispalynews.jsp文件
+
+5.
+
+编写displaynews.jsp
+
+xml附属到display.jsp上
+
+    <%@ taglib prefix="cms" uri="http://www.opencms.org/taglib/cms" %>
+
+    <cms:include property="template" element="head1"/>
+
+    <cms:contentload collector="singleFile" param="%(opencms.uri)" editable="true">
+       <h1><cms:contentshow element="Title" /></h1>
+
+       <cms:contentloop element="Keywords">
+           <i><cms:contentshow/></i>
+       </cms:contentloop>
+
+       <p> <cms:contentshow element="Text" /> </p>
+   </cms:contentload>
+
+   <cms:include property="template" element="foot1" />
+
+
+6xsd 乱码问题
+
+
+   以上是发布新闻的基本步骤
+
+   发布很多的新闻模板文件
+
+   建立一个包含新闻模板文件的文件夹newspackage
+   配置文件夹的advances
+
+
+
+

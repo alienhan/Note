@@ -1,0 +1,45 @@
+1.
+在kyinfo下
+两个文件分别在
+/sites/kyinfo/text/
+
+/sites/kyinfo/notice_publish/
+
+当输入
+全路径时
+即/sites/kyinfo/notice_publish/
+报错
+
+当输入
+notice_publish/notice_show.jsp
+时
+运行正确
+
+
+当在同一文件夹时
+  只输入文件的名时报错
+
+  当/mysite/xxx/文件名
+    输入上一文件名+文件名时
+    文件运行
+  当/mysite/xxx/xxx/文件名
+    输入xxx/xxx/文件名
+
+2.
+不在同一个顶级目录下使用绝对路径引用
+
+3.
+在mysite下使用绝对路径运行正确
+使用相对路径报错
+
+
+4.
+初步认定
+可能是kyinfo建立了站点，
+mysite没有建立站点
+
+
+5template
+
+当引用的是index.jsp时，最后加jsp
+

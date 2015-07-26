@@ -1,0 +1,17 @@
+jdk密钥生成工具
+
+Keytool是一个Java数据证书的管理工具。
+
+keystore 
+Keytool将密钥（key）和证书（certificates）存在一个称为keystore的文件中 
+在keystore里，包含两种数据： 
+密钥实体（Key entity）——密钥（secret key）又或者是私钥和配对公钥（采用非对称加密） 
+可信任的证书实体（trusted certificate entries）——只包含公钥 
+
+Alias（别名） 
+每个keystore都关联这一个独一无二的alias，这个alias通常不区分大小写 
+
+cacerts证书文件(The cacerts Certificates File) 
+改证书文件存在于java.home\lib\security目录下，是Java系统的CA证书仓库 
+
+%Java_home%\bin\keytool -genkey -alias tomcat -keyalg RSA

@@ -1,0 +1,168 @@
+1.hibernate
+
+Caused by: java.lang.ClassNotFoundException:
+javax.persistence.EntityListene
+
+我用的是Hibernate3.6.0.final,
+出现这个问题的可能原因是没有导入
+D:\JAVA\javee\javaEE学习hibernate-distribution-3.6.0.Final\lib
+\jpa\hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
+
+2.eclipse
+
+.报不知名的错误
+  Servlet.service() for servlet [jsp] in context with path
+  [/dew] threw exception [javax.servlet.Servl
+  解决：project ->clean ->清空当前服务器中的项目缓存。从起tomcat
+
+
+
+3.java.lang.NumberFormatException: For input string: ""
+当你强制转换一个String为Integer时,而这个String为""时的异常,即你的String不能转为Integer的异常
+
+          String commodityvalue = item.getString();
+          if(commodityvalue.equals("")){
+			commodityvalue = "0";
+					}
+			int cn = 0;
+			cn = Integer.parseInt(commodityvalue);
+			c.setCoprise(cn);
+
+4.
+url传值到Action的乱码解决方法
+jsp页面 URL传中文参数到Action里面出现乱码，用过滤器和控制器都解决不了，用了我两个多小时解决这个小问题！
+解决方法有以下几种：
+第一种：在Action中用 new String(str.getBytes("ISO8859_1"), "UTF8")，进行转码，因为传递的时候，中文默人的是ISO8859_1
+第二种：可通过配置TOMCAT来解决此问题，具体解决方法如下：在tomcat的server.xml里，找到<Connector port="8080" 
+              maxThreads="150" minSpareThreads="25" maxSpareThreads="75" 
+              enableLookups="false" redirectPort="8443" acceptCount="100" 
+              debug="0" connectionTimeout="20000" 
+              disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk">
+其中是修改 disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk" 其方法是防止在url中出现乱码
+然后在每个Jsp页面添加如下代码
+<%@ page pageEncoding=”gb2312″%>
+<%@ page contentType=”text/html;charset=gb2312″%>
+<%request.setCharacterEncoding(”gb2312″);%>
+第三种：直接在ACTION中利用以下方法解决：request.setCharacterEncoding("gb2312");
+        response.setCharacterEncoding("gb2312");
+
+
+5
+ctrl + c ??tomcat
+
+6.required="true"
+  stuts 标签。谨慎使用
+
+7.
+ <A href="javascript:void(0)">点击</a>点击链接后不会回到网页顶部
+
+
+8.
+No row with the given identifier exists
+有两张表,table1和table2.
+产生此问题的原因就是table1
+里做了关联<one-to-one>或者<many-to-one unique="true">
+(特殊的多对一映射,实际就是一对一)
+来关联table2.当hibernate查找的时候,
+table2里的数据没有与table1相匹配的,
+这样就会报No row with the given identifier exists这个错.
+(一句话,就是数据的问题!)
+
+9.
+SQL Server 2005“备份集中的数据库备份与现有的数据库不同”解决方法
+http://www.jb51.net/article/19233.htm
+
+10.
+java.lang.NumberFormatException: For input string: ""
+类型转换的问题
+
+11. xgb 缓存
+ClientAbortException: java.net.SocketException:
+Connection reset by peer: socket write error
+网上搜了一下，大致出现问题的原因如下：
+1、这个问题一般是客户端在连接还没有完全建立的时候就取消连接，
+比如用户按了浏览器上面的“停止”按钮，一般来说没有什么问题。
+但是如果频繁出现，就表示很多客户端连接到Apache服务器的响应时间太长了，
+可能是网络的问题或者服务器性能问题 可能你的网络连接存在一些问题，
+你的数据传输的时候，可能由于时间等待的太久，
+但是server段设置的连接检验时间限制一定，
+那么就可能出现这种情况的！ 
+
+12、xgb 缓存
+ClientAbortException: java.net.SocketException:
+Connection reset by peer: socket write error
+的原因是由于处理http连接时，正在输出内容时，
+用户关闭了IE，会出现一个"ClientAbortException"，
+属于I/O处理中出现的一个异常，应用服务器应该会捕捉。
+3、应该是线程被占用的太多了 无法控制了 
+我想可能会是：.数据库库连接达到极限
+，.应用服务器 最大线程并发数 达到极限，.内存耗尽
+
+13 xgb java
+奖惩查询时错误
+   string强制转换int 时，null," " 不能被转换
+
+
+14.xgb 缓存
+socket write error
+这个异常的原因是，你的页面有一些动态生成的东西，而且相对较大。
+你的服务器向客户端发送数据，结果刚发一半，客户端关闭了链接，就造成了这个错误，
+
+一般是类似验证码这样的地方。 总之这个异常是合理的，至于是否引起tomcat挂掉，我不认为是这个原因。
+
+除非你的这部分程序有错误！
+
+15.xgb 缓存
+Java heap space
+tomcat缓存不足
+
+16.xgb java serlet
+String filePath = request.getSession().getServletContext().getRealPath("/");
+request.getSession().getServletContext() 获取的是Servlet容器对象，
+相当于tomcat容器了。getRealPath("/") 获取实际路径，“/”指代项目根目录
+，所以代码返回的是项目在容器中的实际发布运行的根路径如
+：I:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\
+wtpwebapps\UMPWeb_20131230\
+
+17.eclipse
+eclipse 设置默认编码为Utf-8
+需要设置的几处地方为：
+
+ Window->Preferences->General ->Content Type->Text->JSP 最下面设置为UTF-8
+
+ Window->Preferences->General->Workspace 面板Text file encoding 选择UTF-8
+ Window->Preferences->Web->JSP Files面板选择 ISO 10646/Unicode(UTF-8)
+
+18.hibernate
+项目旁有!
+    以前引用的包，因为路径的等问题
+    找不到了
+    buildpath就可以
+
+19.hibernate 学习
+   Alt + shift + j 注释类
+20
+Eclipse如何卸载插件
+
+eclipse
+Help ---> About Eclipse -->Installation details--->]
+选中你的插件-->Uninstall..
+
+21 xgb
+Tomcat报错：Document base ……does not exist or is not a readable directory
+删除eclipse中的tomcat就好了
+
+22
+sqlserver在第二次安装时端口改成1434
+
+
+23
+log4j:ERROR LogMananger.repositorySelector was null likely due to error in class reloading, usin (2011-05-10 19:54:32)转载▼
+标签： 杂谈	分类： javascript_SSH
+Today I got this error message from Tomcat 6.0.24:
+log4j:ERROR LogMananger.repositorySelector was null likely due to error
+in class reloading, using NOPLoggerRepository.
+
+The reason for the error is a new listener in Tomcat 6.0.24. You can fix this error by adding this line:
+org.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
+to the "conf/catalina.properties" file in your tomcat directory.
