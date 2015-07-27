@@ -1,0 +1,9 @@
+1.
+hibernate
+Caused by: java.lang.ClassNotFoundException:
+javax.persistence.EntityListene
+
+我用的是Hibernate3.6.0.final,
+出现这个问题的可能原因是没有导入
+D:\JAVA\javee\javaEE学习hibernate-distribution-3.6.0.Final\lib
+\jpa\hibernate-jpa-2.0-api-1.0.0.Final.jar这个包

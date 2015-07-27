@@ -1,0 +1,20 @@
+1.引入核心（core）包
+	struts-2.3.4.1
+		asm-3.3.jar
+		asm-commons-3.3.jar
+		asm-tree-3.3.jar
+		commons-fileupload-1.2.2.jar
+		commons-io-2.0.1.jar
+		commons-lang3-3.1.jar
+		freemarker-2.3.19.jar
+		javassist-3.11.0.GA.jar
+		ognl-3.0.5.jar
+		struts2-core-2.3.4.1.jar
+		xwork-core-2.3.4.1.jar
+
+
+2.引入所有包
+	struts-2.3.15.2
+		错误：Unload....   struts2-gxp-plugin-2.3.15.2.jar 
+		
+		
