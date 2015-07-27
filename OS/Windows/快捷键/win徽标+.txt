@@ -1,0 +1,6 @@
+win + r 切换用户
+win + x windows移动中心
+win + e 资源管理器
+win + d 显示桌面
+win + 
+资源管理器 shift + 右键 打开资源管理器
