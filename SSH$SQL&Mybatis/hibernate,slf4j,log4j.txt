@@ -1,0 +1,113 @@
+1.hibernate基础配置 
+2.annocation
+3. 配置slf4j,配置log4j.properties
+4. error
+
+......................................................................
+1.hibernate基础配置  
+     例子：hibernnate_0100 // hibernate_0100_HelloWorld
+     引入必须jar包
+         hibernate3.jar
+         hibernate-testing.jar
+	 antlr-2.7.6.jar
+	 commons-collections-3.1.jar
+	 javassist-3.9.0.jar
+	 jta-1.1.jar
+	 slf4j-api-1.5.8.jar
+	 slf4j-log4j12-1.5.8.jar
+	 log4j-1.2.17.jar
+
+	 sqljdbc.jar
+
+
+     配置hibernate.cfg.xml文件 
+     
+     Hibernate.cfg.xml路径
+     Hibernate.cfg.xml路径默认的是在src下 
+     修改默认路径
+     代码：
+     sessionFactory = new Configuration().
+     configure("WEB-INF/hibernate.cfg.xml").buildSessionFactory(); 
+     
+     hibernate-mapping配置：
+     1)建立数据库连接时注意connection.url
+       默认的使用jdbc连接 
+     2)连接池：先主要是建立连接
+       然后当需要连接时
+       直接从连接池取就行
+       缺点：消耗内存
+       优点:不用每次都建立连接     
+     3)xxx.hbm.xml作用主要是将class与table映射起来
+     4)先建表，后建类
+     5)配置报错： 没有dbcp时不要用
+        <property name="connection.url">
+		jdbc:jtds:sqlserver://localhost:1433;DatabaseName=kyc2
+	</property>
+
+...............................................................................
+2. annocation
+  例：hibernate_0101_annotation 
+  hibernate3以后开始支持annocation
+  
+  annocation的jar包已经被包含在hibernate中，不用再次引用
+  hibernate-annocation.jar的包已经被包含在hibernate3.jar中
+  所以找不到
+
+
+
+
+
+................................................................................
+3. 配置slf4j,配置log4j.properties
+配置slf4j
+      例：hibernate_0102_slf4j  013
+      
+      配置slf4j
+      删除slf4j-nop.jar
+      添加slf4j-log4j12.jar
+      添加log4j-1.2.8.jar
+
+      在D:hibernate文件下找到log4j的示例文件
+      log4j.properties
+
+      2.0 hibernate_0200_save_update_delete_createquery   
+      hibernate的dao操作，增删改查
+
+配置log4j.properties
+引入包：
+      slf4j-api-1.5.8.jar
+      slf4j-log4j12-1.5.8.jar
+      log4j-1.2.17.jar
+        
+① 配置根Logger
+
+   配置显示日志记录的优先级
+   log4j.rootLogger=warn, stdout
+
+② 配置日志信息输出目的地Appender
+
+   log4j.appender.appenderName.option = valueN 
+
+   valueN的值
+   org.apache.log4j.ConsoleAppender（控制台）， 
+　 org.apache.log4j.FileAppender（文件）， 
+　 org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），
+　 org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）， 
+　 org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方） 
+   
+3. 输出debug语句
+   log4j.logger.org.hibernate=debug
+
+..................................................................................
+4. error
+
+Caused by: java.lang.ClassNotFoundException:javax.persistence.EntityListene
+使用Hibernate3.6.0.final出现问题
+原因是没有导入
+hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
+
+  
+
+  
+
+

@@ -84,7 +84,10 @@ JPQL语句是在EJB实体空间中面向对象,属性进行操作
 JPQL必须由JPA的JPQL解析器解析为SQL才能执行，必须先获取Query对象
 .................................................................
 5. java泛型
+泛型（Generic type 或者 generics）是对 
+Java 语言的类型系统的一种扩展，以支持创建可以按类型进行参数化的类。
 
+example:
 public void write(Integer i, Integer[] ia);
 public void write(Double  d, Double[] da);
 的范型版本为

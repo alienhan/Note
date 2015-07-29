@@ -1,0 +1,125 @@
+maven
+
+maven简介：
+
+作用：
+用来帮助实现项目的构建、测试、打包和部署
+
+原理：
+Maven是基于项目对象模型(POM)，
+可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具。
+可以多个项目中共享JAR
+生命周期:
+当你运行 mvn install 的时候被调用。
+这条命令告诉 Maven 执行一系列的有序的步骤，
+直到到达你指定的生命周期。遍历生命周期旅途中的一个影响就是，
+Maven 运行了许多默认的插件目标，这些目标完成了像编译和创建一个 JAR 文件这样的工作。
+此外，Maven能够很方便的帮你管理项目报告，生成站点，管理JAR文件，等等。
+
+优点：
+在Java项目中,每个项目都有很多依赖的Jar包,
+我们一般都放在自己项目的lib目录中,
+这样就会导致同样的Jar包在各个不同的项目中重复出现，
+时间长了将会浪费很大的硬盘空间。使用Maven对项目进行管理就可以解决以上问题。
+
+Maven执行原理：
+依赖和项目构建的输出都可以由 Maven 的坐标进行唯一的区分，
+基于这种机制，Maven 将所有项目的构件文件放置在一个统一的位置，
+也就是 Maven 仓库。
+所有 Maven 项目可以从同一个 Maven 仓库中获取自己所需要的依赖 JAR，
+这节省了磁盘资源。实际的 Maven 项目中不需要存储依赖的文件，
+只需要在 POM 文件中生成依赖关系，在构建的时候 Maven 就会自动去仓库中下载。
+
+依靠包查询：
+我们项目中依赖的 Jar 包可以通过依赖的方式引入
+maven是单独管理一个项目。的jar包位置，组织形式的。
+在安装了 Maven 的机器上，会生成一个 ~\.m2\repository 目录，
+这个目录被称为本地仓库，当 Maven 查找需要的依赖时，首先会在本地查找，
+如果本地仓库中存在，则直接使用，否则 Maven 回去远程仓库查找，
+查找到后下载到本地进行使用。远程中央仓库的地址为 http://repo1.maven.org/。
+...............................................................................
+mvn属性说明，配置：
+
+配置文件作用域：
+conf/settings > .m2/settings > pom.xml 
+
+settings.xml对于maven来说相当于全局性的配置，用于所有的项目
+加载的方向正好相反，下级影响上级
+
+pom.xml节点的说明：
+<project>　　　　　　pom文件的顶级节点
+　　　　<modelVersion>　　　object model版本，对Maven2和Maven3来说，只能是4.0.0　
+　　　　<groupId>　　　　　　项目创建组织的标识符，一般是域名的倒写
+　　　　<artifactId>　　　　定义了项目在所属组织的标识符下的唯一标识，一个组织下可以有多个项目
+　　　　<packaging>　　　　  打包的方式，有jar、war、ear等
+　　　　<version>　　　　　  当前项目的版本，SNAPSHOT，表示是快照版本，在开发中
+  　　　<name>　　　　　　　 项目的名称
+　　　　<url>　　　　　　　　项目的地址
+　　　　<dependencies>　　 构建项目依赖的jar
+　　　　<description>　　　　项目的描述
+
+修改maven本地仓库的位置：
+conf/settings.xml下
+apache-maven-3.1.2/conf/setting.xml
+<localRepository>d:maven2</localRepository>
+............................................................................... 
+demo
+
+mvn dependency search查询位置
+mvnrepositoty.com
+http://mvnrepository.com/ 也是mvn官方仓库
+
+1.mvn archetype:generate -DarchetypeCatalog=internal
+
+2.mvn eclipse:eclipse 在eclipse工作目录下运行
+
+3.src/main/java
+
+3.mvn tomcat:run
+
+4.指定eclipse中的maven的本地仓库地址,运行命令: 
+mvn   -Declipse.workspace= <eclipse   workspace路径>   eclipse:add-maven-repo 
+
+创建依赖
+<dependency>
+   <groupId>javax.servlet</groupId>
+   <artifactId>servlet-api</artifactId>
+   <version>2.5</version>
+</dependency>
+            
+http://www.jarvana.com/jarvana/ 
+
+................................................................
+mvnerror
+
+1.出现创建不了mvn project 
+错误：can mot resolve archetype
+windows - preference - maven -archetype
+add remote catalog
+http://repo1.maven.org/maven2/archetype-catalog.xml
+
+2.
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+报错：
+Description	Resource	Path	Location	Type 
+Could not calculate build plan: Failure to transfer org.apache.maven.plugins:maven-war-plugin:pom:2.1.1 from 
+http://repo1.maven.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval
+of central has elapsed or updates are forced. Original error: Could not transfer artifact org.apache.maven.plugins:maven-war-plugin:pom:2.1.1 
+from/to central (http://repo1.maven.org/maven2): ConnectException	first-maven Unknown	Maven Problem
+解决：
+应该是连不上http://repo1.maven.org/maven2这个仓库，在你的pom.xml文件加一下下面的配置 
+<repositories>  
+    <repository>  
+      <snapshots>  
+        <enabled>false</enabled>  
+      </snapshots>  
+      <id>central</id>  
+      <name>Maven Repository Switchboard</name>  
+      <url>http://repo2.maven.org/maven2</url>  
+    </repository>  
+  </repositories> 
+分析：
+./m2/settings 影响默认conf/settiongs的配置
+
+创建maven项目

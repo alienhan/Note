@@ -1,0 +1,68 @@
+1. 默认访问
+2. tomcat单项配置ssl
+3. tomcat下配置https环境
+
+
+
+.................................................................
+1. 默认访问
+tomcat默认访问ROOT 应用程序
+
+.................................................................
+2. tomcat单项配置ssl
+
+
+1):生成keystore文件
+keytool -v -genkey -alias tomcat -keyalg RSA -keystore d:/tomcat.keystore
+注意：
+      cn=localhost
+
+2):从keystore中导出server.cer的文件
+   keytool -export -trustcacerts -alias tomcat -file d:/server.cer -keystore d:/tomcat.keystore -storepass 123456
+
+
+3):将server.cer文件导入到jdk中的储存证书的库中
+keytool -import -trustcacerts -alias tomcat -file d:/server.cer -keystore D:\Java\jdk1.6.0_19/jre/lib/security/cacerts -storepass changeit
+
+
+4):配置tomcat的conf文件下的sever.xml文件
+<Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
+               maxThreads="150" scheme="https" secure="true"
+               clientAuth="false" keystoreFile="D:\tomcat.keystore" keystorePass="123456" sslProtocol="TLS" />
+
+5)安装server.cer证书
+  将server.cer安装到受信任的根目录下
+..............................................................................
+3. tomcat下配置https环境
+
+example:
+http://blog.csdn.net/supersky07/article/details/7407523
+
+
+[tomcat下配置https环境后证书错误（双向认证）]
+tomcat 配置证书的命令
+keytool -import -alias rootca.cer -keystore your_keystore 
+ -storepass your_pass -trustcacerts -file c:\rootca.cer
+导入根证书时，别名不要和服务器证书alias别名相同。
+
+导入服务器证书时，请注意自己的alias。
+
+如果是单向SSL，
+只需要在服务端部署SSL证书即可实际https://加密访问，
+如果双向认证（服务端SSL+客户端证书认证），
+也只需要Web Server上配置即可，完全不需要写代码。
+
+jdk自带的keytool与openssl
+
+1)、keytool 与 openssl都是工具。
+区别就是根据应用服务器或者web server不同，
+而使用对应的工具.tomcat需要使用keytool工具。
+2)、cer与crt都是证书格式，看你webserver 
+或者应用服务器支持哪种就将证书改成哪个，很简单。
+JKS是一种格式。一般使用openssl的都是jks格式或者key格式，
+使用keytool的都是keystore格式。
+3)、至于导入根证书问题，一般都要导入根证书。
+客户端证书你所说的导入，我没明白。我觉得客户端不需要再导入了吧，
+在服务器上做双向认证，也不需要导入，只需要从服务器上配置一下即可。
+tomcat的证书导入，是需要导入根证书（如果有中级根证书，也是需要导入的）
+........................................................................
