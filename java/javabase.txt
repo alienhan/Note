@@ -1,0 +1,93 @@
+1.jdk配置
+2. keytools
+3. list
+4. jpql
+5. java泛型
+
+
+
+................................................................
+1.jdk配置：
+classpath
+C:\Program Files(x86)\Java\jdk1.6.0_19\lib\rt.jar;
+C:\Program Files (x86)\Java\jdk1.6.0_19\lib\tools.jar;
+D:\tomcat\apache-tomcat-7.0.32;D:\tomcat\apache-tomcat-6.0.35
+
+java_home
+C:\Program Files (x86)\Java\jdk1.6.0_19
+
+
+path
+%M2%;%JAVA_HOME%\bin;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;
+c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;
+C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;
+C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;
+C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;
+C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;
+C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;D:\mysqlserver32\mysql-5.1.66-winx64\bin
+
+...............................................................
+2. keytools
+jdk密钥生成工具
+
+Keytool是一个Java数据证书的管理工具。
+
+keystore 
+Keytool将密钥（key）和证书（certificates）
+存在一个称为keystore的文件中 
+在keystore里，包含两种数据： 
+密钥实体（Key entity）——密钥（secret key）
+又或者是私钥和配对公钥（采用非对称加密） 
+可信任的证书实体（trusted certificate entries）——只包含公钥 
+
+Alias（别名） 
+每个keystore都关联这一个独一无二的alias，这个alias通常不区分大小写 
+
+cacerts证书文件(The cacerts Certificates File) 
+改证书文件存在于java.home\lib\security目录下，是Java系统的CA证书仓库 
+
+%Java_home%\bin\keytool -genkey -alias tomcat -keyalg RSA
+
+................................................................
+3. list
+list使用
+
+example:/applicationtest/src/test/cust/project/UserList.java
+
+list<class>
+List接口的常用实现类有ArrayList和LinkedList，
+在使用List集合时，通常情况下声明为List类型，
+实例化时根据实际情况的需要，实例化为ArrayList或LinkedList，
+例如：
+List<String> l = new ArrayList<String>();
+// 利用ArrayList类实例化List集合
+List<String> l2 = new LinkedList<String>();
+// 利用LinkedList类实例化List集合
+..................................................................
+4. jpql
+JPQL全称Java Persistence Query Language Java持久化查询语言
+
+特点：
+其特征与原生SQL语句类似，并且完全面向对象，通过类名和属性访问，
+而不是表名和表的属性。
+
+
+select name ,age from user; //原生SQL语句
+select u.name,u.age from User u;  //JPQL语句
+select u from User u;  //JPQL语句
+
+SQL语句是在数据库空间中对字段，列，行进行操作
+JPQL语句是在EJB实体空间中面向对象,属性进行操作
+JPQL必须由JPA的JPQL解析器解析为SQL才能执行，必须先获取Query对象
+.................................................................
+5. java泛型
+
+public void write(Integer i, Integer[] ia);
+public void write(Double  d, Double[] da);
+的范型版本为
+public <T> void write(T t, T[] ta);
+
+.................................................................
