@@ -1,0 +1,4 @@
+JAVA_HOME	x:\Java\jdk1.7.0_25
+M2_HOME		x:\Java\apache-maven-3.2.1
+M2		%M2_HOME%\bin
+PATH		×·¼Ó;D:\JAVA\JDK1.7.0_25\BIN\;D:\JAVA\GIT\BIN;%M2%;

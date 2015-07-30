@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.gyyx.kf.mybatis">
+	<resultMap type="cn.gyyx.kf.mybatis.model.User" id="User">
+		<id property="code" column="code"/>
+		<result property="userName" column="user_name" />
+		<result property="password" column="password"/>
+		<result property="isOpen" column="is_open"/>
+	</resultMap>
+	<select id="queryByCode" resultMap="User">
+		select * from us_user_tb where code=#{code};
+	</select>
+</mapper>

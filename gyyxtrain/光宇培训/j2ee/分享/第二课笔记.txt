@@ -1,0 +1,60 @@
+1.STS 里的 Windows->R->General->Text file encoding 改为UTF-8
+2.使用Maven install 创建包上传到库里
+3.使用POM文件的配置引用JAVA包
+	<dependency>
+  		<groupId>cn.gyyx.core</groupId>
+  		<artifactId>utility</artifactId>
+  		<version>0.1</version>  
+	</dependency>
+4.增加对SQL SERVER的支持
+	<dependency>
+  		<groupId>com.microsoft.sqlserver</groupId>
+  		<artifactId>jdbc</artifactId>
+  		<version>4.0.2206.100</version>
+	</dependency>
+5.在UI的src/main/ressources里建立Mybatis的config.xml文件
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+ 	"http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<configuration>
+	<typeAliases>
+		<typeAlias alias="UserInfo" type="cn.gyyx.test.sunweisheng.beans.UserInfo" />
+	</typeAliases>
+	<environments default="JavaTestDB">
+		<environment id="JavaTestDB">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+				<property name="url" value="jdbc:sqlserver://192.168.6.14:1433;databaseName=JavaTestDB;" />
+				<property name="username" value="admin" />
+				<property name="password" value="pass" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="SqlMapper/User.xml"/>
+	</mappers>
+</configuration>
+
+6.创建Mapper文件
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="cn.gyyx.test.sunweisheng.dao.IUser">
+
+  	<select id="GetUserInfoBycode" parameterType="int" resultType="UserInfo">
+  		select * from [user] where code=#{code}
+  	</select>
+  </mapper>
+7.创建DAO BEANS等类
+
+8.
+Git init
+git add .
+git commit
+git config --global user.email "sunweisheng@gyyx.cn"
+git config --global user.name "sunweisheng"
+git commit
+VI(I :)
+git remote add origin http://dev-tfs13-ser:8080/tfs/GYYX-JAVAWEB/_git/cn.gyyx.test.sunweisheng
+git push -u origin --all

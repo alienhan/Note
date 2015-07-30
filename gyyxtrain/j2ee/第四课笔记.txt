@@ -1,0 +1,105 @@
+在POM文件内增加Velocity节点
+<!-- velocity -->
+		<dependency>
+  			<groupId>org.apache.velocity</groupId>
+  			<artifactId>velocity</artifactId>
+  			<version>1.7</version>
+		</dependency>
+		 
+		 <!-- velocity-tools -->
+		 <dependency>
+  			<groupId>org.apache.velocity</groupId>
+  			<artifactId>velocity-tools</artifactId>
+  			<version>2.0</version>
+		</dependency>
+
+修改servlet-context.xml配置文件
+注释掉
+<!--  <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	-->
+添加velocityConfig`与`velocityViewResolver`节点
+<beans:bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">  
+			  <beans:property name="resourceLoaderPath" value="/WEB-INF/views" />  
+			  <beans:property name="configLocation" value="classpath:common/velocity.properties" />  
+	</beans:bean>  
+			  
+	<beans:bean id="velocityViewResolver"  class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">  
+		<beans:property name="suffix" value=".vm" />  
+		<beans:property name="contentType" value="text/html;charset=UTF-8" />
+	</beans:bean>  	
+
+在velocityConfig节点下（<beans:property name="configLocation" value="classpath:velocity.properties" /> 【资源文件根目录下】）的配置文件中添加（下列配置中前后空格都要删除）
+#encoding
+input.encoding=UTF-8
+output.encoding=UTF-8
+contentType=text/html;charset=UTF-8
+		  
+#autoreload when vm changed
+file.resource.loader.cache=false
+file.resource.loader.modificationCheckInterval=1
+velocimacro.library.autoreload=false
+
+在View文件夹里创建home.vm文件  
+* 让eclipse支持velocity语法高亮，`Help->Install New Software...`在URL内直接添加veloeclipse插件本地镜像 `http://192.168.6.195/veloeclipse/` 回车 安装veloeclipse插件即可。
+在src目录下的views目录下创建home.vm文件并实验以下脚步：
+<html>
+<head>
+	<title>Home</title>
+</head>
+<body>
+<h1>
+	#{set}(${aaa} = "person")
+	Hello world!  VM $!{aaa}
+</h1>
+#set($index = 1)
+</br>
+#foreach (${item} in ${allUser})
+#if($index>10 && $index%2==0)
+	<font color="red">
+#elseif($index>10 && $index%2!=0)
+	<font color="blue">
+#else
+	<font color="black">
+#end
+code=${item.code}	account = ${item.account}   password=${item.password}</br>
+</font>
+#set($index =$index+1)
+#end
+</body>
+</html>
+创建API项目 new->spring project
+添加控制器
+@Controller
+@RequestMapping("/api")
+public class APIController {
+
+	@RequestMapping(method=RequestMethod.GET)
+	@ResponseBody
+	@ResponseStatus(HttpStatus.OK)
+	public UserInfo getUser(){
+		UserInfo user = new UserInfo();
+		user.setCode(500);
+		user.setAccount("sunweisheng");
+		user.setPassword("pwd");
+		
+		return user;
+	}
+}
+
+修改UserInfo类
+public class UserInfo  implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+GIT提交
+cd XXXX
+git add .
+git commit
+IV(I : wq)
+git push
+
+git add --all .(这样可以提交删除的变更)
+git commit --amend（这样可以修改上次的变更集）
+git push -f（强制提交）

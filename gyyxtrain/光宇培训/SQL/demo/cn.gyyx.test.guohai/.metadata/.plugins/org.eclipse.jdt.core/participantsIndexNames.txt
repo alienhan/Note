@@ -1,0 +1,9 @@
+INDEX VERSION 1.127
+E:\TFSCode13\GYYX-JAVAWEB\cn.gyyx.test.guohai\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1914070056.index
+\springmvc\src\main\java
+E:\TFSCode13\GYYX-JAVAWEB\cn.gyyx.test.guohai\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3490526498.index
+\springmvc\src\main\resources
+E:\TFSCode13\GYYX-JAVAWEB\cn.gyyx.test.guohai\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\378909357.index
+\springmvc\src\main\java
+E:\TFSCode13\GYYX-JAVAWEB\cn.gyyx.test.guohai\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2462975795.index
+\ui\src\main\java

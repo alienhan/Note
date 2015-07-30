@@ -1,0 +1,11 @@
+springerror
+1. 不能把控制器的注释名 + 方法的注释名与包含前台页面的的相同
+
+2.
+不要用
+@RequestMapping("user/login56")
+这种形式，
+因为再次转地址时候会
+会在user这个下面搜寻RequestMappering
+会报错，没有这个文件
+

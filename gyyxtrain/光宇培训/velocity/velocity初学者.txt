@@ -1,0 +1,15 @@
+
+
+1.velocity文本高亮插件
+http://192.168.6.195/veloeclipse/
+
+2.maven添加velocity依赖
+
+3.配置Spring/appServlet/servlet-context.xml
+去除jsp模板
+添加velocity模板
+
+4. src/main/resource/velocity.properties
+
+
+
