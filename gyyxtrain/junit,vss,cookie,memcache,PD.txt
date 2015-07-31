@@ -1,0 +1,226 @@
+
+1. 环境配置，eclipse环境配置
+2. Memcache
+3. velocity
+4. junit
+5. 修改本地域名,IIS
+6. PowerDesigner
+7. 自动注释
+8. javadoc
+9. VSS
+10. MD5
+
+......................................................
+1. 环境配置，eclipse环境配置
+配置基础环境：
+environmentfind
+
+配置jdk
+ 配置在d:java 目录下
+ JAVA_HOME
+ D:\Java\jdk1.7.0_60
+ 
+ Path 
+ %JAVA_HOME%\bin;
+ 
+配置mvn
+  安装在d:java目录下
+  M2_HOME 
+  D:\Java\apache-maven-3.2.1
+
+  M2
+  %M2_HOME%\bin
+
+  Path 
+  %M2%;
+
+配置git
+  直接解压在d:java目录下 
+  
+  Path
+  D:\Java\Git\bin;
+
+Path添加（总的添加）
+  %JAVA_HOME%\bin;%M2%;D:\Java\Git\bin;
+
+解压spring-tool-suite-3.5.1.RELEASE-e4.3.2-win32-x86_64 为sts-bundle
+  中间的目录sts-3.5.1.RELEASE 为eclipse目录
+
+解压tomcat
+  解压到：D:\Java\apache-tomcat-7.0.54
+
+使用添加spring插件的eclipse 名字：STS
+windows 改变编辑鼠标样式：insert
+
+elicpse 不显示关闭项目：
+1 点击package explorer视图中向下的箭头
+2 进入Filters选项卡
+3 选择Closed Projects，这样被关闭的项目就不会显示在packege explorer中了。 
+Filters中也有很多其他的过来条件，可以根据需要选择。
+
+......................................................................
+2. Memcache
+
+....................................................................
+3. velocity
+
+1).velocity文本高亮插件
+http://192.168.6.195/veloeclipse/
+
+2).maven添加velocity依赖
+
+3).配置Spring/appServlet/servlet-context.xml
+去除jsp模板
+添加velocity模板
+
+4). src/main/resource/velocity.properties
+
+..............................................................
+4. junit
+
+引用包：
+junit 
+hamcrest
+
+添加junit测试：
+->右击需要测试的类
+->new->新建junit test case
+->选择包，选择测试的方法
+
+同时测试多个类：
+package ->run as -> run configurations
+->run all test
+
+
+静态引入:
+static org.junit.Assert.*;
+这是一个类的引用，不是包的引用
+调用时
+直接可以调用静态方法，不用在前面添加类名。   
+
+..................................................................................
+5. 修改本地域名,IIS
+C:\Windows\System32\drivers\etc\hosts
+IIS
+控制面板——》管理工具
+
+...................................................................................
+6. PowerDesigner
+
+新建表：
+file ->new model-> Physical Diagram
+->拖拽表就可以了
+
+设置自增：
+当设置自增时，不能手动增加id
+—>identity
+
+导出表到sqlserver
+Database=>Generate Database
+PowerDesigner怎么导出建表sql脚本
+
+.................................................................
+7. 自动注释
+windows ->preferences ->
+java ->code style
+->code comments
+
+types
+/** 
+* @ClassName: ${type_name} 
+* @Description: ${todo} 
+* @author jh 
+* @date ${date} ${time} 
+* 
+* ${tags} 
+*/
+
+methods
+/** 
+* @Title: ${enclosing_method} 
+* @Author: jianghan
+* @Description: ${todo} 
+* ${tags}
+*    
+*/
+
+->code 
+new java files
+/*------------------------------------------------------------------------- 
+* 版权所有：
+* 作者：姜晗
+* 联系方式：jianghan@gyyx.cn 
+* 创建时间：${date} ${time} 
+* 版本号：v1.0 
+* 本类主要用途描述： 
+* 
+-------------------------------------------------------------------------*/
+
+..........................................................................
+8. javadoc
+
+资料：
+http://blog.csdn.net/zklxuankai/article/details/8235640
+
+..........................................................................
+9. VSS
+项目规范与指导
+VSS 的全称为 Visual Source Safe 。
+作为 Microsoft Visual Studio 的一名成员，它主要任务就是负责项目文件的管理，
+几乎可以适用任何软件项目。管理软件开发中各个不同版本的源代码和文档，占用空间小并且方便各个版本代码和文档的获取,
+对开发小组中对源代码的访问进行有效的协调。
+
+VSS微软的产品。简单好用，局域网中用VSS。适用于Team级还可以，企业级不好，仅支持Windows 操作系统。
+?Visual SourceSafe 是一个源代码控制系统，可以保存文件的不同版本，可以比较文件的差别，
+可以控制不同的人对同一文件的修改。 ?Windows平台下使用VSS开发的典型环境是基于C/S架构的 。 
+?并非仅仅使用VSS管理源代码，用VSS管理所有受控的文件，包括组织级文件、项目文档、会议记录、评审报告等等，总之一句话，
+所有重要的东西和他们的历史都可以在VSS中获得
+..................................................................
+10. MD5
+
+数据库加密
+加密可以分为两大类，对称(Symmetric)加密和非对称(Asymmetric)加密
+
+对称加密是那些加密和解密使用同一个密钥的加密算法，就是加密密钥=解密密钥。
+对称加密通常来说会比较羸弱，因为使用数据时不仅仅需要传输数据本身，
+还是要通过某种方式传输密钥，这很有可能使得密钥在传输的过程中被窃取。
+非对称加密是那些加密和解密使用不同密钥的加密算法，就是加密密钥!=解密密钥。
+用于加密的密钥称之为公钥，用于解密的密钥称之为私钥。
+因此安全性相比对称加密来说会大大提高。当然有一长必有一短，
+因此，一种折中的办法是使用对称密钥来加密数据，
+而使用非对称密钥来加密对称密钥。这样既可以利用对称密钥的高性能，
+还可以利用非对称密钥的可靠性。
+非对称加密的方式通常算法会相比对称密钥来说复杂许多，
+因此会带来性能上的损失。
+
+....................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
