@@ -1,7 +1,7 @@
 1.eclipse JavaEE版本 如何发布WEB应用到tomcat中
 2. eclipse 快捷键
 3. eclipse error
-
+4. Eclipse如何卸载插件
 
 .................................................................
 
@@ -25,3 +25,12 @@
 Servlet.service() for servlet [jsp] 
 in context with path [/dew] threw exception [javax.servlet.Servl
 解决：project ->clean ->清空当前服务器中的项目缓存。从起tomcat
+
+.................................................................
+4. Eclipse如何卸载插件
+
+eclipse
+Help ---> About Eclipse -->Installation details--->]
+选中你的插件-->Uninstall..
+
+..................................................................

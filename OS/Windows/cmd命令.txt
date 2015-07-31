@@ -1,2 +1,0 @@
-..代表当前路径
-net start mssqlserver

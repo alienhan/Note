@@ -1,5 +1,0 @@
-执行lusrmgr.msc命令
-打开 本地用户管理界面
-
-mstsc 远程连接
-regedit 注册表管理器

@@ -1,36 +1,31 @@
-1.hibernate
+error
 
+................................................................
+1.hibernate
 Caused by: java.lang.ClassNotFoundException:
 javax.persistence.EntityListene
-
 ÎÒÓÃµÄÊÇHibernate3.6.0.final,
 ³öÏÖÕâ¸öÎÊÌâµÄ¿ÉÄÜÔ­ÒòÊÇÃ»ÓĞµ¼Èë
-D:\JAVA\javee\javaEEÑ§Ï°hibernate-distribution-3.6.0.Final\lib
-\jpa\hibernate-jpa-2.0-api-1.0.0.Final.jarÕâ¸ö°ü
+hibernate-jpa-2.0-api-1.0.0.Final.jarÕâ¸ö°ü
 
+.................................................................
 2.eclipse
-
 .±¨²»ÖªÃûµÄ´íÎó
-  Servlet.service() for servlet [jsp] in context with path
-  [/dew] threw exception [javax.servlet.Servl
-  ½â¾ö£ºproject ->clean ->Çå¿Õµ±Ç°·şÎñÆ÷ÖĞµÄÏîÄ¿»º´æ¡£´ÓÆğtomcat
+Servlet.service() for servlet [jsp] in context with path
+[/dew] threw exception [javax.servlet.Servl
+½â¾ö£ºproject ->clean ->Çå¿Õµ±Ç°·şÎñÆ÷ÖĞµÄÏîÄ¿»º´æ¡£´ÓÆğtomcat
 
+..................................................................
+3. java API
+java.lang.NumberFormatException: For input string: ""
+µ±ÄãÇ¿ÖÆ×ª»»Ò»¸öStringÎªIntegerÊ±,
+¶øÕâ¸öStringÎª""Ê±µÄÒì³£,¼´ÄãµÄString²»ÄÜ×ªÎªIntegerµÄÒì³£
 
-
-3.java.lang.NumberFormatException: For input string: ""
-µ±ÄãÇ¿ÖÆ×ª»»Ò»¸öStringÎªIntegerÊ±,¶øÕâ¸öStringÎª""Ê±µÄÒì³£,¼´ÄãµÄString²»ÄÜ×ªÎªIntegerµÄÒì³£
-
-          String commodityvalue = item.getString();
-          if(commodityvalue.equals("")){
-			commodityvalue = "0";
-					}
-			int cn = 0;
-			cn = Integer.parseInt(commodityvalue);
-			c.setCoprise(cn);
-
-4.
+...........................................................................
+4. struts
 url´«Öµµ½ActionµÄÂÒÂë½â¾ö·½·¨
-jspÒ³Ãæ URL´«ÖĞÎÄ²ÎÊıµ½ActionÀïÃæ³öÏÖÂÒÂë£¬ÓÃ¹ıÂËÆ÷ºÍ¿ØÖÆÆ÷¶¼½â¾ö²»ÁË£¬ÓÃÁËÎÒÁ½¸ö¶àĞ¡Ê±½â¾öÕâ¸öĞ¡ÎÊÌâ£¡
+jspÒ³Ãæ URL´«ÖĞÎÄ²ÎÊıµ½ActionÀïÃæ³öÏÖÂÒÂë£¬
+ÓÃ¹ıÂËÆ÷ºÍ¿ØÖÆÆ÷¶¼½â¾ö²»ÁË£¬ÓÃÁËÎÒÁ½¸ö¶àĞ¡Ê±½â¾öÕâ¸öĞ¡ÎÊÌâ£¡
 ½â¾ö·½·¨ÓĞÒÔÏÂ¼¸ÖÖ£º
 µÚÒ»ÖÖ£ºÔÚActionÖĞÓÃ new String(str.getBytes("ISO8859_1"), "UTF8")£¬½øĞĞ×ªÂë£¬ÒòÎª´«µİµÄÊ±ºò£¬ÖĞÎÄÄ¬ÈËµÄÊÇISO8859_1
 µÚ¶şÖÖ£º¿ÉÍ¨¹ıÅäÖÃTOMCATÀ´½â¾ö´ËÎÊÌâ£¬¾ßÌå½â¾ö·½·¨ÈçÏÂ£ºÔÚtomcatµÄserver.xmlÀï£¬ÕÒµ½<Connector port="8080" 
@@ -45,19 +40,19 @@ jspÒ³Ãæ URL´«ÖĞÎÄ²ÎÊıµ½ActionÀïÃæ³öÏÖÂÒÂë£¬ÓÃ¹ıÂËÆ÷ºÍ¿ØÖÆÆ÷¶¼½â¾ö²»ÁË£¬ÓÃÁËÎÒÁ½¸
 <%request.setCharacterEncoding(¡±gb2312¡å);%>
 µÚÈıÖÖ£ºÖ±½ÓÔÚACTIONÖĞÀûÓÃÒÔÏÂ·½·¨½â¾ö£ºrequest.setCharacterEncoding("gb2312");
         response.setCharacterEncoding("gb2312");
+.......................................................................................
+5 ctrl + c ??tomcat
 
-
-5
-ctrl + c ??tomcat
-
+......................................................................
 6.required="true"
   stuts ±êÇ©¡£½÷É÷Ê¹ÓÃ
 
-7.
- <A href="javascript:void(0)">µã»÷</a>µã»÷Á´½Óºó²»»á»Øµ½ÍøÒ³¶¥²¿
+..................................................................................
 
+7.<A href="javascript:void(0)">µã»÷</a>µã»÷Á´½Óºó²»»á»Øµ½ÍøÒ³¶¥²¿
 
-8.
+.................................................................................
+8. hibernate
 No row with the given identifier exists
 ÓĞÁ½ÕÅ±í,table1ºÍtable2.
 ²úÉú´ËÎÊÌâµÄÔ­Òò¾ÍÊÇtable1
@@ -68,18 +63,20 @@ table2ÀïµÄÊı¾İÃ»ÓĞÓëtable1ÏàÆ¥ÅäµÄ,
 ÕâÑù¾Í»á±¨No row with the given identifier existsÕâ¸ö´í.
 (Ò»¾ä»°,¾ÍÊÇÊı¾İµÄÎÊÌâ!)
 
-9.
-SQL Server 2005¡°±¸·İ¼¯ÖĞµÄÊı¾İ¿â±¸·İÓëÏÖÓĞµÄÊı¾İ¿â²»Í¬¡±½â¾ö·½·¨
+................................................................................
+9.SQL Server 2005¡°±¸·İ¼¯ÖĞµÄÊı¾İ¿â±¸·İÓëÏÖÓĞµÄÊı¾İ¿â²»Í¬¡±½â¾ö·½·¨
 http://www.jb51.net/article/19233.htm
 
+.................................................................................
 10.
 java.lang.NumberFormatException: For input string: ""
 ÀàĞÍ×ª»»µÄÎÊÌâ
+................................................................................
 
 11. xgb »º´æ
 ClientAbortException: java.net.SocketException:
 Connection reset by peer: socket write error
-ÍøÉÏËÑÁËÒ»ÏÂ£¬´óÖÂ³öÏÖÎÊÌâµÄÔ­ÒòÈçÏÂ£º
+Ô­ÒòÈçÏÂ£º
 1¡¢Õâ¸öÎÊÌâÒ»°ãÊÇ¿Í»§¶ËÔÚÁ¬½Ó»¹Ã»ÓĞÍêÈ«½¨Á¢µÄÊ±ºò¾ÍÈ¡ÏûÁ¬½Ó£¬
 ±ÈÈçÓÃ»§°´ÁËä¯ÀÀÆ÷ÉÏÃæµÄ¡°Í£Ö¹¡±°´Å¥£¬Ò»°ãÀ´ËµÃ»ÓĞÊ²Ã´ÎÊÌâ¡£
 µ«ÊÇÈç¹ûÆµ·±³öÏÖ£¬¾Í±íÊ¾ºÜ¶à¿Í»§¶ËÁ¬½Óµ½Apache·şÎñÆ÷µÄÏìÓ¦Ê±¼äÌ«³¤ÁË£¬
@@ -98,11 +95,12 @@ Connection reset by peer: socket write error
 ÎÒÏë¿ÉÄÜ»áÊÇ£º.Êı¾İ¿â¿âÁ¬½Ó´ïµ½¼«ÏŞ
 £¬.Ó¦ÓÃ·şÎñÆ÷ ×î´óÏß³Ì²¢·¢Êı ´ïµ½¼«ÏŞ£¬.ÄÚ´æºÄ¾¡
 
+.....................................................................................
+
 13 xgb java
 ½±³Í²éÑ¯Ê±´íÎó
    stringÇ¿ÖÆ×ª»»int Ê±£¬null," " ²»ÄÜ±»×ª»»
-
-
+....................................................................................
 14.xgb »º´æ
 socket write error
 Õâ¸öÒì³£µÄÔ­ÒòÊÇ£¬ÄãµÄÒ³ÃæÓĞÒ»Ğ©¶¯Ì¬Éú³ÉµÄ¶«Î÷£¬¶øÇÒÏà¶Ô½Ï´ó¡£
@@ -116,6 +114,7 @@ socket write error
 Java heap space
 tomcat»º´æ²»×ã
 
+...........................................................................................
 16.xgb java serlet
 String filePath = request.getSession().getServletContext().getRealPath("/");
 request.getSession().getServletContext() »ñÈ¡µÄÊÇServletÈİÆ÷¶ÔÏó£¬
@@ -124,6 +123,7 @@ request.getSession().getServletContext() »ñÈ¡µÄÊÇServletÈİÆ÷¶ÔÏó£¬
 £ºI:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\
 wtpwebapps\UMPWeb_20131230\
 
+....................................................................................
 17.eclipse
 eclipse ÉèÖÃÄ¬ÈÏ±àÂëÎªUtf-8
 ĞèÒªÉèÖÃµÄ¼¸´¦µØ·½Îª£º
@@ -133,30 +133,20 @@ eclipse ÉèÖÃÄ¬ÈÏ±àÂëÎªUtf-8
  Window->Preferences->General->Workspace Ãæ°åText file encoding Ñ¡ÔñUTF-8
  Window->Preferences->Web->JSP FilesÃæ°åÑ¡Ôñ ISO 10646/Unicode(UTF-8)
 
+....................................................................................
 18.hibernate
 ÏîÄ¿ÅÔÓĞ!
     ÒÔÇ°ÒıÓÃµÄ°ü£¬ÒòÎªÂ·¾¶µÄµÈÎÊÌâ
     ÕÒ²»µ½ÁË
     buildpath¾Í¿ÉÒÔ
 
-19.hibernate Ñ§Ï°
-   Alt + shift + j ×¢ÊÍÀà
-20
-EclipseÈçºÎĞ¶ÔØ²å¼ş
-
-eclipse
-Help ---> About Eclipse -->Installation details--->]
-Ñ¡ÖĞÄãµÄ²å¼ş-->Uninstall..
-
-21 xgb
+..................................................................................
+19 
 Tomcat±¨´í£ºDocument base ¡­¡­does not exist or is not a readable directory
 É¾³ıeclipseÖĞµÄtomcat¾ÍºÃÁË
 
-22
-sqlserverÔÚµÚ¶ş´Î°²×°Ê±¶Ë¿Ú¸Ä³É1434
-
-
-23
+.................................................................................
+20
 log4j:ERROR LogMananger.repositorySelector was null likely due to error in class reloading, usin (2011-05-10 19:54:32)×ªÔØ¨‹
 ±êÇ©£º ÔÓÌ¸	·ÖÀà£º javascript_SSH
 Today I got this error message from Tomcat 6.0.24:
@@ -166,3 +156,6 @@ in class reloading, using NOPLoggerRepository.
 The reason for the error is a new listener in Tomcat 6.0.24. You can fix this error by adding this line:
 org.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
 to the "conf/catalina.properties" file in your tomcat directory.
+
+..........................................................................................
+21
