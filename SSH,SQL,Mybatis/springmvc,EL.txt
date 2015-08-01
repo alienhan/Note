@@ -1,0 +1,77 @@
+
+1. Spring MVC 无项目
+2. RequestMapping setting
+3. EL
+4. El Spring mvc 连接注意
+.............................................................
+1. Spring MVC 无项目
+
+创建spring mvc project demo
+
+没有spring mvc project
+   可能是电脑没有加载上
+   重启电脑就ok了
+
+demo1 UI 练习前后台传参
+
+............................................................
+2. RequestMapping setting
+
+不能把控制器的注释名 + 方法的注释名与包含前台页面的的相同
+
+不要用
+@RequestMapping("user/login56")
+这种形式，
+因为再次转地址时候会
+会在user这个下面搜寻RequestMappering
+会报错，没有这个文件
+
+...............................................................
+3. EL
+
+EL（Expression Language） 目的：为了使JSP写起来更加简单。
+
+1）获取变量值
+
+${username}   <-后台返回的参数名称
+取出某一范围中名称为username的变量。
+因为没有指定哪一个范围的username，
+所以它会依序从Page、Request、Session、Application范围查找。
+假如途中找到username，就直接回传，
+不再继续找下去，但是假如全部的范围都没有找到时，就回传null。
+
+2）[]与.运算符
+     EL 提供.和[]两种运算符来存取数据。
+     当要存取的属性名称中包含一些特殊字符，
+     如.或?等并非字母或数字的符号，就一定要使用 []。
+   例如：
+     ${user.My-Name}应当改为${user["My-Name"] }
+     如果要动态取值时，就可以用[]来做，而.无法做到动态取值。例如：
+     ${sessionScope.user[data]}中data 是一个变量
+
+
+3）等价关系：
+< %=request. getParameter(“username”)% > 等价于 ${ param. username }
+<%=request.getAttribute(“userlist”) %> 等价于$ { requestScope.userlist }
+<%=user.getAddr( ) %> 等价于 ${user.addr}
+
+
+........................................................................
+4. El Spring mvc 连接注意
+
+前台传后台
+   <form action="robot/getAnswer" method="get">
+      <input name="tagDesc" type="text">
+   name与实体类属性名一样
+   action与spring mvc controller RequestMapping 相同 
+
+后台传前台
+   获取对象
+   model.addAttribute("qaCont", qaCont);
+   ${qaCont}
+
+   获取对象属性
+   model.addAttribute("pq",pq);
+   ${pq.qaCont}
+
+.........................................................................

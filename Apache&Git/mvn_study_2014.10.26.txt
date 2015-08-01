@@ -1,6 +1,20 @@
-maven
 
-maven简介：
+1. maven简介：
+2. mvn属性说明，配置
+3. demo
+4. mvn error
+5. 安装，配置
+
+
+
+..............................................
+远程中央仓库的地址为 http://repo1.maven.org/
+http://search.maven.org
+http://maven.oschina.net/home.html
+http://mvnrepository.com/  是mvn官方仓库
+
+............................................................................
+1. maven简介：
 
 作用：
 用来帮助实现项目的构建、测试、打包和部署
@@ -9,6 +23,7 @@ maven简介：
 Maven是基于项目对象模型(POM)，
 可以通过一小段描述信息来管理项目的构建，报告和文档的软件项目管理工具。
 可以多个项目中共享JAR
+
 生命周期:
 当你运行 mvn install 的时候被调用。
 这条命令告诉 Maven 执行一系列的有序的步骤，
@@ -36,12 +51,15 @@ maven是单独管理一个项目。的jar包位置，组织形式的。
 在安装了 Maven 的机器上，会生成一个 ~\.m2\repository 目录，
 这个目录被称为本地仓库，当 Maven 查找需要的依赖时，首先会在本地查找，
 如果本地仓库中存在，则直接使用，否则 Maven 回去远程仓库查找，
-查找到后下载到本地进行使用。远程中央仓库的地址为 http://repo1.maven.org/。
+查找到后下载到本地进行使用。
+
 ...............................................................................
-mvn属性说明，配置：
+2. mvn属性说明，配置：
 
 配置文件作用域：
-conf/settings > .m2/settings > pom.xml 
+conf/settings > 
+
+.m2/settings > pom.xml 
 
 settings.xml对于maven来说相当于全局性的配置，用于所有的项目
 加载的方向正好相反，下级影响上级
@@ -59,26 +77,20 @@ pom.xml节点的说明：
 　　　　<description>　　　　项目的描述
 
 修改maven本地仓库的位置：
-conf/settings.xml下
 apache-maven-3.1.2/conf/setting.xml
 <localRepository>d:maven2</localRepository>
+
 ............................................................................... 
-demo
+3. demo
 
 mvn dependency search查询位置
-mvnrepositoty.com
-http://mvnrepository.com/ 也是mvn官方仓库
 
 1.mvn archetype:generate -DarchetypeCatalog=internal
-
 2.mvn eclipse:eclipse 在eclipse工作目录下运行
-
 3.src/main/java
-
 3.mvn tomcat:run
-
 4.指定eclipse中的maven的本地仓库地址,运行命令: 
-mvn   -Declipse.workspace= <eclipse   workspace路径>   eclipse:add-maven-repo 
+mvn  -Declipse.workspace= <eclipse   workspace路径>   eclipse:add-maven-repo 
 
 创建依赖
 <dependency>
@@ -88,9 +100,8 @@ mvn   -Declipse.workspace= <eclipse   workspace路径>   eclipse:add-maven-repo
 </dependency>
             
 http://www.jarvana.com/jarvana/ 
-
 ................................................................
-mvnerror
+4. mvn error
 
 1.出现创建不了mvn project 
 错误：can mot resolve archetype
@@ -99,16 +110,23 @@ add remote catalog
 http://repo1.maven.org/maven2/archetype-catalog.xml
 
 2.
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+http://maven.apache.org/maven-v4_0_0.xsd">
+
 报错：
-Description	Resource	Path	Location	Type 
-Could not calculate build plan: Failure to transfer org.apache.maven.plugins:maven-war-plugin:pom:2.1.1 from 
-http://repo1.maven.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval
-of central has elapsed or updates are forced. Original error: Could not transfer artifact org.apache.maven.plugins:maven-war-plugin:pom:2.1.1 
-from/to central (http://repo1.maven.org/maven2): ConnectException	first-maven Unknown	Maven Problem
+Description Resource Path Location Type 
+Could not calculate build plan: 
+Failure to transfer org.apache.maven.plugins:maven-war-plugin:pom:2.1.1 from 
+http://repo1.maven.org/maven2 was cached in the local repository,
+resolution will not be reattempted until the update interval
+of central has elapsed or updates are forced. Original error:
+Could not transfer artifact org.apache.maven.plugins:maven-war-plugin:pom:2.1.1 
+from/to central (http://repo1.maven.org/maven2): ConnectException
+first-maven Unknown	Maven Problem
 解决：
-应该是连不上http://repo1.maven.org/maven2这个仓库，在你的pom.xml文件加一下下面的配置 
+应该是连不上http://repo1.maven.org/maven2这个仓库，在pom.xml文件加一下下面的配置 
 <repositories>  
     <repository>  
       <snapshots>  
@@ -118,8 +136,22 @@ from/to central (http://repo1.maven.org/maven2): ConnectException	first-maven Un
       <name>Maven Repository Switchboard</name>  
       <url>http://repo2.maven.org/maven2</url>  
     </repository>  
-  </repositories> 
+</repositories> 
 分析：
 ./m2/settings 影响默认conf/settiongs的配置
 
+
 创建maven项目
+......................................................................
+5. 安装，配置
+
+1） 解压maven压缩包
+2） 配置环境变量，添加%MAVEN_HOME%,path中添加%MAVEN_HOME%\bin
+3） 测试安装是否成功，mvn -v
+4） 安装eclipse的插件
+5） eclipse创建maven项目
+6） eclipse添加maven的配置
+        进入MyEclipse→window→Preferences→
+	Maven4MyEclipse→Maven→Installations→User Sittings
+        点击右侧Browse指向%MAVEN_HOME%\conf\settings.xml
+7） 

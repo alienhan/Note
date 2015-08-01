@@ -4,7 +4,6 @@
 4. dom
 5.js autocomplete
 6. Flexigrid
-7. EL表达式
 8. tiles SiteMesh
 
 ....................................................................
@@ -226,40 +225,6 @@ autocomplete不能集成到同一个文本框中
 	flexigrid生成的xml保存在一个.xml文件中
 	  url: 'grid_lock.xml', 
 	  dataType: 'xml', 
-.................................................................
-7. EL表达式
-
-EL（Expression Language） 目的：为了使JSP写起来更加简单。
-
-1）获取变量值
-
-${username}   <-后台返回的参数名称
-取出某一范围中名称为username的变量。
-因为没有指定哪一个范围的username，
-所以它会依序从Page、Request、Session、Application范围查找。
-假如途中找到username，就直接回传，
-不再继续找下去，但是假如全部的范围都没有找到时，就回传null。
-
-
-
-2）[]与.运算符
-     EL 提供.和[]两种运算符来存取数据。
-     当要存取的属性名称中包含一些特殊字符，
-     如.或?等并非字母或数字的符号，就一定要使用 []。
-   例如：
-     ${user.My-Name}应当改为${user["My-Name"] }
-     如果要动态取值时，就可以用[]来做，而.无法做到动态取值。例如：
-     ${sessionScope.user[data]}中data 是一个变量
-
-
-
-
-3）等价关系：
-< %=request. getParameter(“username”)% > 等价于 ${ param. username }
-<%=request.getAttribute(“userlist”) %> 等价于$ { requestScope.userlist }
-<%=user.getAddr( ) %> 等价于 ${user.addr}
-
-
 
 ................................................................................
 8. tiles SiteMesh

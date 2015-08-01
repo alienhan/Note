@@ -1,0 +1,120 @@
+1.jdk配置
+2. keytools
+3. list
+5. java泛型
+7. 实参个数可变
+
+
+
+................................................................
+1.jdk配置：
+classpath
+C:\Program Files(x86)\Java\jdk1.6.0_19\lib\rt.jar;
+C:\Program Files (x86)\Java\jdk1.6.0_19\lib\tools.jar;
+D:\tomcat\apache-tomcat-7.0.32;D:\tomcat\apache-tomcat-6.0.35
+
+java_home
+C:\Program Files (x86)\Java\jdk1.6.0_19
+
+
+path
+%M2%;%JAVA_HOME%\bin;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools\WinNT;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\MSDev98\Bin;
+C:\Program Files (x86)\Microsoft Visual Studio\Common\Tools;
+c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;
+C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;
+C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;
+C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;
+C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;
+C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;D:\mysqlserver32\mysql-5.1.66-winx64\bin
+
+...............................................................
+2. keytools
+jdk密钥生成工具
+
+Keytool是一个Java数据证书的管理工具。
+
+keystore 
+Keytool将密钥（key）和证书（certificates）
+存在一个称为keystore的文件中 
+在keystore里，包含两种数据： 
+密钥实体（Key entity）——密钥（secret key）
+又或者是私钥和配对公钥（采用非对称加密） 
+可信任的证书实体（trusted certificate entries）——只包含公钥 
+
+Alias（别名） 
+每个keystore都关联这一个独一无二的alias，这个alias通常不区分大小写 
+
+cacerts证书文件(The cacerts Certificates File) 
+改证书文件存在于java.home\lib\security目录下，是Java系统的CA证书仓库 
+
+%Java_home%\bin\keytool -genkey -alias tomcat -keyalg RSA
+
+................................................................
+3. list
+list使用
+
+example:/applicationtest/src/test/cust/project/UserList.java
+
+list<class>
+List接口的常用实现类有ArrayList和LinkedList，
+在使用List集合时，通常情况下声明为List类型，
+实例化时根据实际情况的需要，实例化为ArrayList或LinkedList，
+例如：
+List<String> l = new ArrayList<String>();
+// 利用ArrayList类实例化List集合
+List<String> l2 = new LinkedList<String>();
+// 利用LinkedList类实例化List集合
+
+.................................................................
+5. java泛型
+
+http://www.w3cschool.cc/
+
+泛型（Generic type 或者 generics）是对 
+Java 语言的类型系统的一种扩展，以支持创建可以按类型进行参数化的类。
+
+example:
+public void write(Integer i, Integer[] ia);
+public void write(Double  d, Double[] da);
+的范型版本为
+public <T> void write(T t, T[] ta);
+
+
+
+
+
+..........................................................................
+7. 实参个数可变
+
+定义实参个数可变的方法
+只要在一个形参的“类型”与“参数名”之间加上三个
+连续的“.”（即“...”，英文里的句中省略号），就可以让它和不确定
+个实参相匹配。而一个带有这样的形参的方法，就是一个实参个数可变的方法。
+一个实参个数可变的方法
+private static int sumUp(int... values) {}
+
+Object... params
+new Object[]{para1, para2, para3 }等同于这样的形式。
+
+private static int sumUp(int... values) {
+    int sum = 0;
+    for (int i = 0; i < values.length; i++) {
+        sum += values[i];
+    }
+    return sum;
+}
+public static void generalUse(int []args){  
+        for (int i = 0;i < args.length ; i++ ){  
+                System.out.println(args[i]);  
+        }  
+    }   
+public static void newBehaviour(int... args){  
+        for (int i = 0;i < args.length ; i++ ){  
+                System.out.println(args[i]);  
+        }  
+    }   
+
+............................................................................
+8.

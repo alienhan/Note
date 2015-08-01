@@ -1,7 +1,7 @@
 1. 默认访问
 2. tomcat单项配置ssl
 3. tomcat下配置https环境
-
+4. eclipse tomcat servers 配置文件
 
 
 .................................................................
@@ -65,4 +65,33 @@ JKS是一种格式。一般使用openssl的都是jks格式或者key格式，
 客户端证书你所说的导入，我没明白。我觉得客户端不需要再导入了吧，
 在服务器上做双向认证，也不需要导入，只需要从服务器上配置一下即可。
 tomcat的证书导入，是需要导入根证书（如果有中级根证书，也是需要导入的）
+
 ........................................................................
+4. eclipse tomcat servers 配置文件
+
+server.xml
+
+<!--浏览器访问目录,是否重新加载-->
+<Context docBase="dev_pss" path="/dev_pss" 
+reloadable="true" source="org.eclipse.jst.jee.server:dev_pss"/>
+
+.................
+context.xml
+
+项目底层位置
+<Context path="/pss-dev"
+docBase="E:/worksapce/wondersWorkspace/dev_pss/WebRoot">
+
+数据库
+<Resource
+            name="jdbc/pss"
+            type="javax.sql.DataSource"
+            driverClassName="oracle.jdbc.driver.OracleDriver"
+            url="jdbc:oracle:thin:@10.1.8.217:1521:sck"
+            username="PSS"
+            password="xdrcft56"
+            maxIdle="2"
+            maxWait="5000"
+            maxActive="4" />
+
+.......................................................................
