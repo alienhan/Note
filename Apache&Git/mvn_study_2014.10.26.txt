@@ -1,17 +1,20 @@
 
 1. maven简介：
-2. mvn属性说明，配置
+2. mvn pom.xml属性说明，配置：
 3. demo
 4. mvn error
 5. 安装，配置
+6. settings.xml
+7. maven error
 
 
 
 ..............................................
 远程中央仓库的地址为 http://repo1.maven.org/
 http://search.maven.org
-http://maven.oschina.net/home.html
 http://mvnrepository.com/  是mvn官方仓库
+
+http://maven.oschina.net/home.html
 
 ............................................................................
 1. maven简介：
@@ -54,7 +57,7 @@ maven是单独管理一个项目。的jar包位置，组织形式的。
 查找到后下载到本地进行使用。
 
 ...............................................................................
-2. mvn属性说明，配置：
+2. mvn pom.xml属性说明，配置：
 
 配置文件作用域：
 conf/settings > 
@@ -142,6 +145,10 @@ first-maven Unknown	Maven Problem
 
 
 创建maven项目
+
+创建web项目
+mvn archetype:create -DgroupId=easitech.test -DartifactId=test-all -DarchetypeArtifactId=maven-archetype-webapp   
+
 ......................................................................
 5. 安装，配置
 
@@ -155,3 +162,28 @@ first-maven Unknown	Maven Problem
 	Maven4MyEclipse→Maven→Installations→User Sittings
         点击右侧Browse指向%MAVEN_HOME%\conf\settings.xml
 7） 
+
+........................................................................
+6. settings.xml
+
+
+..........................................................................
+7. maven error
+
+No operations to display at this time.
+关闭myeclipse重新启动
+
+设置morror时，镜像里面没有类包时，
+会报没有包的错误
+将主库也设置成mirror，就在主库中查找了
+
+Failure to find org.apache.maven.surefire:surefire:pom:2.10
+碰到一个类似以上的错误.
+原因是maven的plugin并未下载到本地.
+
+
+1.找到maven库目录，进入：~\.m2\repository\org\apache\maven\plugins\maven-surefire-plugin\2.7.1
+2.若2.7.1目录下只有，"maven-surefire-plugin-2.7.1.pom.lastUpdated"
+则需要到http://repo1.maven.org/maven2/org/apache/maven/plugins/maven-surefire-plugin/2.7.1/，把里面的文件下载下来放到2.7.1
+3.删除2.7.1下的maven-surefire-plugin-2.7.1.pom.lastUpdated文件。
+4.项目右键-->maven-->Update Dependencies

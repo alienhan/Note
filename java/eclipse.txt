@@ -2,6 +2,7 @@
 2. eclipse ¿ì½Ý¼ü
 3. eclipse error
 4. EclipseÈçºÎÐ¶ÔØ²å¼þ
+5. eclipse import ,export ×¢ÊÍÅäÖÃ
 
 .................................................................
 
@@ -34,3 +35,7 @@ Help ---> About Eclipse -->Installation details--->]
 Ñ¡ÖÐÄãµÄ²å¼þ-->Uninstall..
 
 ..................................................................
+5. eclipse import ,export ×¢ÊÍÅäÖÃ
+
+windows ->properties ->java
+-> code style -> code template

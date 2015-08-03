@@ -20,6 +20,22 @@ net stop mysql
 mysql -u root -p（注:u与root之间可以不用加空格，其它也一样）
  mysql -h110.110.110.110 -u root -p 123(例)
 
+创建数据库
+create database <数据库名>
+
+显示数据库
+show databases 
+
+删除数据库
+drop database  <数据库名>
+
+连接数据库
+use <数据库名>
+
+当前选择的数据库
+select database();
+
+
 .............................................................
 2. mysql命令
 

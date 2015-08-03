@@ -1,0 +1,17 @@
+1.demo
+
+...................................................................
+1.demo
+新建表：
+file ->new model-> Physical Diagram
+->拖拽表就可以了
+
+设置自增：
+当设置自增时，不能手动增加id
+—>identity
+
+导出表到sqlserver
+Database=>Generate Database
+PowerDesigner怎么导出建表sql脚本
+
+..................................................................

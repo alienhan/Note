@@ -4,7 +4,6 @@
 3. velocity
 4. junit
 5. 修改本地域名,IIS
-6. PowerDesigner
 7. 自动注释
 8. javadoc
 9. VSS
@@ -105,21 +104,6 @@ IIS
 控制面板——》管理工具
 
 ...................................................................................
-6. PowerDesigner
-
-新建表：
-file ->new model-> Physical Diagram
-->拖拽表就可以了
-
-设置自增：
-当设置自增时，不能手动增加id
-—>identity
-
-导出表到sqlserver
-Database=>Generate Database
-PowerDesigner怎么导出建表sql脚本
-
-.................................................................
 7. 自动注释
 windows ->preferences ->
 java ->code style
