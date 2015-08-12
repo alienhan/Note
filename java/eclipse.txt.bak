@@ -43,5 +43,5 @@ Help ---> About Eclipse -->Installation details--->]
 6. eclipse svn项目导出问题
  
  1）.乱码 svn: Can't open file  导出的文件loc与.metadata下的文件冲突
-	 ->开放读写权限 ->换一个工程名可能就好了->不要变默认WebContent文件名
+	 ->开放读写权限 ->换一个工程名可能就好了
 	

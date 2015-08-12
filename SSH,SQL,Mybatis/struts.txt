@@ -1,9 +1,12 @@
-struts
+struts1, struts2
 
 1. 引用包
 2. struts基础
 3. 传参
 4. OGNL
+5. demo
+6. ActionForm struts1
+7. ActionMapping 
 
 
 ...............................................................
@@ -27,6 +30,7 @@ struts
 2).引入所有包
 struts-2.3.15.2
 错误：Unload....   struts2-gxp-plugin-2.3.15.2.jar 
+
 ............................................................................
 2. struts基础
 
@@ -51,7 +55,7 @@ structs2.0是一种v—o的框架
 	    extends表示引用structs.cfg.xml
 
   2.2Eclipes 中的位置 程序中的入口
-	    右击project名 -> properties -> properties for structs
+	    右击project名 -> properties -> properties for struts
 	    ->Web Project Settings -> Context root
 
   2.3constant(常数)
@@ -148,6 +152,45 @@ webwork2和现在的Struts2.x中
 所谓界面数据绑定，
 也就是把界面元素（例如一个textfield,hidden)
 和对象层某个类的某个属性绑定在一起，修改和显示自动同步。
+
+........................................................................
+5. demo
+
+........................................................................
+6. ActionForm struts1
+
+   struts1中的属性，struts2中不用配置
+   struts2的优点之一就是与struts1API解耦
+   
+   ActionForm本质上是一种JavaBean，
+   是专门用来传递表单数据的DTO(Data Transfer Object,数据传递对象)
+   Struts框架利用ActionForm对象来临时存放视图页面中的表单数据。
+
+   Struts将输入域的数据自动填充到相应的ActionForm对象中，
+   然后控制层可以从该ActionForm对象中读取用户输入的表单数据，
+   也可以把来自模型层的数据存放到ActionForm中，然后返回给视图显示。
+
+   配置
+   struts-config.xml
+   <form-beans>		
+	<form-bean name="dataQueryForm" type="com.wondersgroup.sabic.corp.dataquery.form.DataQueryForm" />	
+   </form-beans>
+
+   后台接受
+   public ActionForward queryList(ActionForm form)
+
+...................................................................................
+7. ActionMapping 
+
+首先明白ActionMapping一个实例对应了struts-config.xml文件中的一个<action>标签
+
+
+8. struts1 配置
+
+
+
+
+
 
 
 
