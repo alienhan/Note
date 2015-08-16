@@ -4,10 +4,9 @@
 3. git本地仓库与github连接
 4. git基本命令
 5. git branch
-6. eclipse svn 导出文件中断
 
 
-官网http://www.git-scm.com/
+
 .......................................................................
 1. github 
 username :tonghuajianghan
@@ -16,6 +15,8 @@ password : jiangahn603
 
 ........................................................................
 2. 创建git仓库
+
+官网http://www.git-scm.com/
 
 添加用户名和密码：
 git config --global user.name "jh" （github登录名）
@@ -169,8 +170,7 @@ $ git checkout testing
 git merge 合并
 
 .............................................................................
-6. eclipse svn 导出文件中断
-.metadata文件锁住了或者与pull下的文件发生冲突，应该删除文件，重新生成
+
 
 
 

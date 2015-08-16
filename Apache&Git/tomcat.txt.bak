@@ -6,7 +6,6 @@
 6. tomcat-user.xml在这里就是配置tomcat的用户
 7. tomcat通过conf-Catalina-localhost目录发布项目
 8. tomcat 下访问localhost错误
-9. 
 
 .................................................................
 1. 默认访问
