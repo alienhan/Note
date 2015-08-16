@@ -1,11 +1,12 @@
-1.eclipse JavaEE版本 如何发布WEB应用到tomcat中
+1. eclipse JavaEE版本 如何发布WEB应用到tomcat中
 2. eclipse 快捷键
 3. eclipse error
 4. Eclipse如何卸载插件
+5. Eclipse 设置 编译目录
 
 .................................................................
 
-1.eclipse JavaEE版本 如何发布WEB应用到tomcat中
+1. eclipse JavaEE版本 如何发布WEB应用到tomcat中
 
 1)首先要打包的右击—》export ->web /war file
 2)将war包 文件拷贝到 webapps下，启动tomcat  直接访问即可
@@ -15,6 +16,8 @@
 
 给类注释
 建一个类,鼠标点在类名(或者方法名)处,按添加注释的快捷键ALT+shift+J
+
+ctrl + H 全局查找
 
 
 
@@ -34,3 +37,8 @@ Help ---> About Eclipse -->Installation details--->]
 选中你的插件-->Uninstall..
 
 ..................................................................
+5. Eclipse 设置 编译目录
+
+right click -> properties -> Java Build Path ->
+Default output folder
+最好设置在 web目录下
