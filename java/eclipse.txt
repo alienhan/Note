@@ -4,10 +4,8 @@
 4. Eclipse如何卸载插件
 <<<<<<< HEAD
 5. Eclipse 设置 编译目录
-=======
-5. delete error reminder(提示)
-6. eclipse svn项目导出问题
->>>>>>> 030ff121f63410a3293a87b1db7c62b90180e43f
+6. delete error reminder(提示)
+7. eclipse svn项目导出问题
 
 .................................................................
 
@@ -42,20 +40,18 @@ Help ---> About Eclipse -->Installation details--->]
 选中你的插件-->Uninstall..
 
 ..................................................................
-<<<<<<< HEAD
 5. Eclipse 设置 编译目录
 
 right click -> properties -> Java Build Path ->
 Default output folder
 最好设置在 web目录下
-=======
-5. delete error reminder(提示)
+
+..................................................................
+6. delete error reminder(提示)
  window - properties - java - compiler - error/warm
 
 ..................................................................
-6. eclipse svn项目导出问题
+7. eclipse svn项目导出问题
  
  1）.乱码 svn: Can't open file  导出的文件loc与.metadata下的文件冲突
 	 ->开放读写权限 ->换一个工程名可能就好了->不要变默认WebContent文件名
-	
->>>>>>> 030ff121f63410a3293a87b1db7c62b90180e43f
