@@ -1,9 +1,10 @@
 
 1. maven简介：
-2. mvn属性说明，配置
+2. settings.xml ,pom.xml
 3. demo
 4. mvn error
 5. 安装，配置
+6. 引用包配置(http://mvnrepository.com)
 
 
 
@@ -54,15 +55,21 @@ maven是单独管理一个项目。的jar包位置，组织形式的。
 查找到后下载到本地进行使用。
 
 ...............................................................................
-2. mvn属性说明，配置：
+2. settings.xml ,pom.xml
 
 配置文件作用域：
-conf/settings > 
+conf/settings.xml
 
-.m2/settings > pom.xml 
+修改maven本地仓库的位置：
+apache-maven-3.1.2/conf/setting.xml
+<localRepository>d:maven2</localRepository>
+当修改过后，不会自动新建/.m2文件
 
 settings.xml对于maven来说相当于全局性的配置，用于所有的项目
 加载的方向正好相反，下级影响上级
+
+
+
 
 pom.xml节点的说明：
 <project>　　　　　　pom文件的顶级节点
@@ -75,10 +82,6 @@ pom.xml节点的说明：
 　　　　<url>　　　　　　　　项目的地址
 　　　　<dependencies>　　 构建项目依赖的jar
 　　　　<description>　　　　项目的描述
-
-修改maven本地仓库的位置：
-apache-maven-3.1.2/conf/setting.xml
-<localRepository>d:maven2</localRepository>
 
 ............................................................................... 
 3. demo
@@ -154,4 +157,18 @@ first-maven Unknown	Maven Problem
         进入MyEclipse→window→Preferences→
 	Maven4MyEclipse→Maven→Installations→User Sittings
         点击右侧Browse指向%MAVEN_HOME%\conf\settings.xml
-7） 
+7）
+
+.................................................................................
+6. 引用包配置(http://mvnrepository.com)
+   
+搜索结果   
+   引用spring mvc
+   Spring Web MVC
+
+   引用hibernate
+   Hibernate Core Aggregator 
+
+   引用struts
+   struts 2
+   struts-core
