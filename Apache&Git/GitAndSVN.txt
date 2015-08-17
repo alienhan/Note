@@ -4,6 +4,7 @@
 3. git本地仓库与github连接
 4. git基本命令
 5. git branch
+6. eclipse svn 导出文件中断
 
 
 官网http://www.git-scm.com/
@@ -168,7 +169,8 @@ $ git checkout testing
 git merge 合并
 
 .............................................................................
-
+6. eclipse svn 导出文件中断
+.metadata文件锁住了或者与pull下的文件发生冲突，应该删除文件，重新生成
 
 
 

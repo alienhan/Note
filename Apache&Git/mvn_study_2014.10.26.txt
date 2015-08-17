@@ -4,15 +4,16 @@
 3. demo
 4. mvn error
 5. 安装，配置
-6. 引用包配置(http://mvnrepository.com)
-
-
+6. 引用框架包配置(http://mvnrepository.com)
+7. 配置mirrors ，repository
+8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 
 ..............................................
 远程中央仓库的地址为 http://repo1.maven.org/
 http://search.maven.org
 http://maven.oschina.net/home.html
 http://mvnrepository.com/  是mvn官方仓库
+
 
 ............................................................................
 1. maven简介：
@@ -140,11 +141,11 @@ first-maven Unknown	Maven Problem
       <url>http://repo2.maven.org/maven2</url>  
     </repository>  
 </repositories> 
+
 分析：
 ./m2/settings 影响默认conf/settiongs的配置
 
 
-创建maven项目
 ......................................................................
 5. 安装，配置
 
@@ -171,4 +172,47 @@ first-maven Unknown	Maven Problem
 
    引用struts
    struts 2
-   struts-core
+   struts-core 
+
+......................................................................
+7. 配置mirrors ，repository
+
+  覆盖中央仓库的默认地址，
+  那么这里我们就会使用的镜像了，在setting.xml里面配置
+  <mirrorOf>,表示只为central仓库做镜像，
+  如果想为所有的仓库做镜像那么可以改为： <mirrorOf>*</mirrorOf>
+
+  <mirrors>
+	<mirror>
+		<id>repo1</id>
+		<name>repo1</name>
+		<url>http://repo1.maven.org/maven2/spring/</url>
+		<mirrorOf>central</mirrorOf>    <!--表明为central中央仓库配置镜像仓库-->
+	</mirror>
+  </mirrors>
+  <profiles> 
+	  
+		<profile>
+		  <id>repo</id>  
+		  <repositories>
+			   <repository>  
+				  <id>com.springsource.repository.maven.release</id>  
+				  <url>http://maven.springframework.org/release/</url>  
+				  <snapshots><enabled>false</enabled></snapshots>  
+			   </repository> 
+		  </repositories>
+	   </profile>
+
+  </profiles>
+   <activeProfiles>  
+	 <activeProfile>repo</activeProfile>  	
+  </activeProfiles>  
+
+..........................................................................
+8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
+在项目上右键选择properties，
+然后点击java build path，在Librarys下，
+编辑JRE System Library，
+选择workspace default jre就可以了。
+
+..........................................................................
