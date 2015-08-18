@@ -1,12 +1,13 @@
 
 1. maven简介：
-2. mvn属性说明，配置
+2. settings.xml ,pom.xml
 3. demo
 4. mvn error
 5. 安装，配置
-6. 配置mirrors ，repository
-7. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
-
+6. 引用框架包配置(http://mvnrepository.com)
+7. 配置mirrors ，repository
+8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
+9. mvn 命令
 ..............................................
 远程中央仓库的地址为 http://repo1.maven.org/
 http://search.maven.org
@@ -55,15 +56,21 @@ maven是单独管理一个项目。的jar包位置，组织形式的。
 查找到后下载到本地进行使用。
 
 ...............................................................................
-2. mvn属性说明，配置：
+2. settings.xml ,pom.xml
 
 配置文件作用域：
-conf/settings > 
+conf/settings.xml
 
-.m2/settings > pom.xml 
+修改maven本地仓库的位置：
+apache-maven-3.1.2/conf/setting.xml
+<localRepository>d:maven2</localRepository>
+当修改过后，不会自动新建/.m2文件
 
 settings.xml对于maven来说相当于全局性的配置，用于所有的项目
 加载的方向正好相反，下级影响上级
+
+
+
 
 pom.xml节点的说明：
 <project>　　　　　　pom文件的顶级节点
@@ -77,18 +84,15 @@ pom.xml节点的说明：
 　　　　<dependencies>　　 构建项目依赖的jar
 　　　　<description>　　　　项目的描述
 
-修改maven本地仓库的位置：
-apache-maven-3.1.2/conf/setting.xml
-<localRepository>d:maven2</localRepository>
-
 ............................................................................... 
 3. demo
 
 mvn dependency search查询位置
 
 1.mvn archetype:generate -DarchetypeCatalog=internal
+  或mvn archetype:generate（简单）
+
 2.mvn eclipse:eclipse 在eclipse工作目录下运行
-3.src/main/java
 3.mvn tomcat:run
 4.指定eclipse中的maven的本地仓库地址,运行命令: 
 mvn  -Declipse.workspace= <eclipse   workspace路径>   eclipse:add-maven-repo 
@@ -155,10 +159,24 @@ first-maven Unknown	Maven Problem
         进入MyEclipse→window→Preferences→
 	Maven4MyEclipse→Maven→Installations→User Sittings
         点击右侧Browse指向%MAVEN_HOME%\conf\settings.xml
-7） 
+7）
+
+.................................................................................
+6. 引用包配置(http://mvnrepository.com)
+   
+搜索结果   
+   引用spring mvc
+   Spring Web MVC
+
+   引用hibernate
+   Hibernate Core Aggregator 
+
+   引用struts
+   struts 2
+   struts-core 
 
 ......................................................................
-6. 配置mirrors ，repository
+7. 配置mirrors ，repository
 
   覆盖中央仓库的默认地址，
   那么这里我们就会使用的镜像了，在setting.xml里面配置
@@ -192,11 +210,54 @@ first-maven Unknown	Maven Problem
   </activeProfiles>  
 
 ..........................................................................
-7. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
+8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 在项目上右键选择properties，
 然后点击java build path，在Librarys下，
 编辑JRE System Library，
 选择workspace default jre就可以了。
 
-..........................................................................
+......................................................................................................
+9. mvn 命令
+
+生成清除Eclipse项目结构：
+mvn eclipse:eclipse
+mvn eclipse:clean
+
+清理（删除target目录下编译内容）
+mvn clean
+
+仅打包Web页面文件
+mvn war:exploded
+
+编译项目
+mvn compile
+
+打包发布
+mvn package
+
+打包时跳过测试
+mvn package -Dmaven.test.skip=ture
+
+编译源代码： mvn compile 
+编译测试代码：mvn test-compile    
+运行测试：mvn test  
+
+安装第三方包
+经常有第三方包，因为一些原因，在网上repository上没有，需要自己动手安装。
+比如sun某些版本的jar文件，比如oracle的驱动。
+已oracle驱动程序为例，比如驱动路径为c:/driver/ojdbc14.jar，
+是10.2.0.3.0版本
+在该网址能够查到：
+http://www.mvnrepository.com/artifact/com.oracle/ojdbc14
+artifactId和groupId。
+mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.3.0 -Dpackaging=jar -Dfile=c:/driver/ojdbc14.jar
+这样就可以在pom中依赖引用了：
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>ojdbc14</artifactId>
+    <version>10.2.0.3.0</version>
+</dependency>
+
+.........................................................................
+
 

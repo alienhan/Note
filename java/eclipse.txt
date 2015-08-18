@@ -6,6 +6,7 @@
 6. delete error reminder(提示)
 7. eclipse svn项目导出问题
 8. Building Workspace速度慢
+9. breakpoints 
 
 .................................................................
 
@@ -47,6 +48,7 @@ Default output folder
 最好设置在 web目录下
 
 ...................................................................
+
 6. delete error reminder(提示)
  window - properties - java - compiler - error/warm
 
@@ -73,3 +75,47 @@ Allow projects to override these preference settings）
 
 右击项目->properties->Builders-> validator
 	
+ ->开放读写权限 ->换一个工程名可能就好了->不要变默认WebContent文件名
+
+....................................................................
+9. breakpoints 
+
+tomcat 添加断点程序
+Run -> Apache Tomcat -> Source -> 添加需要Debug的程序
+
+F5键与F6键均为单步调试，
+
+F5是step into,也就是进入本行代码中执行，
+
+F6是step over，也就是执行本行代码，跳到下一行，
+
+F7 继续执行当前方法，当当前方法执行完毕的时候，控制将转到当前方法被调用的行。（慎用）
+
+F8是执行到最后 ,表示当前实现继续运行直到下一个断点 。(执行完这个功能)
+
+F6过后，查询对象的值
+Ctrl+Shift+ i 显示对象对应的参数
+
+step Filter 逐步过滤 一直执行直到遇到未经过滤的位置或断点
+
+resume 重新开始执行debug,一直运行直到遇到breakpoint。
+watch 实时地监视对象、方法或变量的变化
+
+断点属性：
+   1.hit count 执行多少次数后暂挂 用于循环
+   2.enable condition 遇到符合你输入条件(为ture\改变时)就暂挂
+   3.suspend thread 多线程时暂挂此线程
+   4.suspend VM 暂挂虚拟机
+
+异常断点
+在断点view中有一个看起来像J！的按钮，我们可以使用它添加一个基于异常的断点
+
+Drop to frame就是说，可以重新跳到当前方法的开始处重新执行
+
+Step 过滤
+debug缺点:可能会进入到一些库的内部
+Prefrences ->search ->  step filtering
+
+debug error 
+当前台点击button不能定位到eclipse 的具体类的语句时，多点击几回就可以了
+....................................................................
