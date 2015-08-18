@@ -110,7 +110,7 @@ Caused by: java.lang.ClassNotFoundException:javax.persistence.EntityListene
 原因是没有导入
 hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
 
-javax.persistence.PersistenceException: [PersistenceUnit: itcast] class or package not found
+
 	
 
 
@@ -235,6 +235,10 @@ getReference(*,class,ID) :若实体Bean不存在,
   refresh() 刷新实体Bean,以得到对新对象
   contains() 检测实体当前是否被管理
   flush() 将实体的改变立刻刷新到数据库中
+
+error:
+javax.persistence.PersistenceException: [PersistenceUnit: itcast] class or package not found
+persistences.xml不在编译路径下，mvn update 后，build project
 
 ..............................................................................
 7. mvn hibernate
