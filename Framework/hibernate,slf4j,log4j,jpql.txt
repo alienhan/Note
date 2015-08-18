@@ -4,13 +4,15 @@
 4. error
 5. jpql
 6. JPA
+7. mvn hibernate
 
 ......................................................................
 1.hibernate基础配置  
      例子：hibernnate_0100 // hibernate_0100_HelloWorld
      引入必须jar包
-         hibernate3.jar
-         hibernate-testing.jar
+     
+	 hibernate3.jar
+     hibernate-testing.jar
 	 antlr-2.7.6.jar
 	 commons-collections-3.1.jar
 	 javassist-3.9.0.jar
@@ -107,6 +109,11 @@ Caused by: java.lang.ClassNotFoundException:javax.persistence.EntityListene
 使用Hibernate3.6.0.final出现问题
 原因是没有导入
 hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
+
+javax.persistence.PersistenceException: [PersistenceUnit: itcast] class or package not found
+	
+
+
 
 ..........................................................................
 5. jpql
@@ -230,6 +237,45 @@ getReference(*,class,ID) :若实体Bean不存在,
   flush() 将实体的改变立刻刷新到数据库中
 
 ..............................................................................
+7. mvn hibernate
+
+		mvnsearch:
+		Hibernate Core Aggregator
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate</artifactId>
+			<version>3.2.7.ga</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.1.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-annotations</artifactId>
+			<version>3.2.1.ga</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.2.1.ga</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>3.1.14</version>
+		</dependency>
+
+...................................................................................
+
+
 
   
 
