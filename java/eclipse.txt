@@ -5,13 +5,9 @@
 5. Eclipse 设置 编译目录
 6. delete error reminder(提示)
 7. eclipse svn项目导出问题
-<<<<<<< HEAD
-8. breakpoints debug
-
-=======
 8. Building Workspace速度慢
-9. breakpoints 
->>>>>>> d5f3727d830660d04a19333b1ec33a8ecc93bdb3
+9. Breakpoints debug
+
 
 .................................................................
 
@@ -83,11 +79,7 @@ Allow projects to override these preference settings）
  ->开放读写权限 ->换一个工程名可能就好了->不要变默认WebContent文件名
 
 ....................................................................
-<<<<<<< HEAD
-8. breakpoints debug
-=======
-9. breakpoints 
->>>>>>> d5f3727d830660d04a19333b1ec33a8ecc93bdb3
+9. breakpoints debug 
 
 tomcat 添加断点程序
 Run -> Apache Tomcat -> Source -> 添加需要Debug的程序
