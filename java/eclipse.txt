@@ -5,7 +5,7 @@
 5. Eclipse 设置 编译目录
 6. delete error reminder(提示)
 7. eclipse svn项目导出问题
-8. breakpoints 
+8. breakpoints debug
 
 
 .................................................................
@@ -58,7 +58,7 @@ Default output folder
  ->开放读写权限 ->换一个工程名可能就好了->不要变默认WebContent文件名
 
 ....................................................................
-8. breakpoints 
+8. breakpoints debug
 
 tomcat 添加断点程序
 Run -> Apache Tomcat -> Source -> 添加需要Debug的程序
