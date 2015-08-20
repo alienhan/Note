@@ -8,6 +8,7 @@
 7. 配置mirrors ，repository
 8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 9. mvn 命令
+10. mvn commond build  java web project
 ..............................................
 远程中央仓库的地址为 http://repo1.maven.org/
 http://search.maven.org
@@ -108,13 +109,13 @@ http://www.jarvana.com/jarvana/
 ................................................................
 4. mvn error
 
-1.出现创建不了mvn project 
+1）.出现创建不了mvn project 
 错误：can mot resolve archetype
 windows - preference - maven -archetype
 add remote catalog
 http://repo1.maven.org/maven2/archetype-catalog.xml
 
-2.
+2）.
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -143,8 +144,16 @@ first-maven Unknown	Maven Problem
     </repository>  
 </repositories> 
 
-分析：
+
+3）.分析：
 ./m2/settings 影响默认conf/settiongs的配置
+
+4）.
+Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin错误解决方法 
+解决方法：将命令中的create改为generate：
+mvn archetype:generate -DgroupId=com.tutorialspoint.test 
+-DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp
+
 
 
 ......................................................................
@@ -259,5 +268,6 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.
 </dependency>
 
 .........................................................................
+10. mvn commond build  java web project
 
 

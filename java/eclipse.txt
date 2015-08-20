@@ -6,7 +6,8 @@
 6. delete error reminder(提示)
 7. eclipse svn项目导出问题
 8. Building Workspace速度慢
-9. Breakpoints debug
+9. Breakpoints 
+10. 兼容性视图设置
 
 
 .................................................................
@@ -23,16 +24,20 @@
 建一个类,鼠标点在类名(或者方法名)处,按添加注释的快捷键ALT+shift+J
 
 ctrl + H 全局查找
+ctrl + shift + -> 选取单个单词
 
 
 
 .................................................................
 3. eclipse error
 
-报不知名的错误
+报不知名的错误：
 Servlet.service() for servlet [jsp] 
 in context with path [/dew] threw exception [javax.servlet.Servl
 解决：project ->clean ->清空当前服务器中的项目缓存。从起tomcat
+
+出现没有理由的包引用错误：
+重新加载自己添加的Liberaries 就可以了
 
 .................................................................
 4. Eclipse如何卸载插件
@@ -120,3 +125,11 @@ Prefrences ->search ->  step filtering
 debug error 
 当前台点击button不能定位到eclipse 的具体类的语句时，多点击几回就可以了
 ....................................................................
+10. 兼容性视图设置
+
+IE
+兼容性视图设置可能影响
+    按钮点击不触发后台方法
+	加载jsp影响显示
+
+.........................................................................	
