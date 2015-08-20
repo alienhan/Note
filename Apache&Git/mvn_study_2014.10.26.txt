@@ -8,6 +8,7 @@
 7. 配置mirrors ，repository
 8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 9. mvn 命令
+10. mvn commond build webapp
 
 
 
@@ -267,5 +268,8 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.
 </dependency>
 
 .........................................................................
+10. mvn commond build webapp
 
-
+1. 创建：
+mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp
+若是缺少maven-archetype-plugin:2.4:create 则将create变成generate 
