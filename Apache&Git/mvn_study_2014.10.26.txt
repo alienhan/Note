@@ -8,6 +8,9 @@
 7. 配置mirrors ，repository
 8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 9. mvn 命令
+
+
+
 ..............................................
 远程中央仓库的地址为 http://repo1.maven.org/
 http://search.maven.org
@@ -142,6 +145,11 @@ first-maven Unknown	Maven Problem
       <url>http://repo2.maven.org/maven2</url>  
     </repository>  
 </repositories> 
+
+
+
+
+
 
 分析：
 ./m2/settings 影响默认conf/settiongs的配置
