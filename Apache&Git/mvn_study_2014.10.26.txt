@@ -9,6 +9,12 @@
 8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 9. mvn 命令
 10. mvn commond build  java web project
+11. Nexus
+
+
+
+
+
 ..............................................
 远程中央仓库的地址为 http://repo1.maven.org/
 http://search.maven.org
@@ -267,7 +273,58 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.
     <version>10.2.0.3.0</version>
 </dependency>
 
-.........................................................................
+..................................................................................................
 10. mvn commond build  java web project
 
+z. zero
+	error:		当使用maven-3.1.0时报引用包错误。找不到xxx-2.0.6
+	selution:	更换3.2.6就可以了，它引用2.1.0 plugin包
+
+a. 创建：
+	mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp
+	error:		[ERROR] Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin:2
+			.4:create (default-cli) on project standalone-pom: Unable to parse configuration
+	solution:	可以将 create 换成 generate
+
+b. 生成elipse项目
+	mvn eclipse:eclipse
+	待解决：
+	error :		缺包
+				Failed to execute goalk org.apache.maven.plugins:maven-eclipse-plugin:2.1.0
+	solution:	手动添加jar包到本地仓库
+	mvn install:install-file -Dfile=jar包的位置 -DgroupId=groupId -DartifactId=artifactId -Dversion=version -Dpackaging=jar
+
+c. eclipse 添加maven生成的工程
+	export-> exists maven project
+	导入后自动生成 .classpath  .project
+	但是不能mvn configration file 会报找不到文件错误
+
+d. 运行：
+	Run -> mvn install -> run as java application
+	没有mvn intall则找不到.class类文件 
+	mvn install 是将你打好的jar包安装到你的本地库中，一般没有设置过是在 用户目录下的 .m2\下面。
+	mvn package 只是将你的代码打包到输出目录，一般的是 target下面
+
+e. 作为web项目运行
+
+..............................................................................................
+11. Nexus
+
+Synatype Nexus
+
+maven 配置依赖nexus
+<repositories>
+	 <repository>
+		 <id>nexus</id>
+		 <name>Team Nexus Repository</name>
+		 <url>http://localhost:8081/nexus/content/groups/public</url>
+	 </repository>
+</repositories>
+<pluginRepositories>
+	 <pluginRepository>
+		 <id>nexus</id>
+		 <name>Team Nexus Repository</name>
+		 <url>http://localhost:8081/nexus/content/groups/public</url>
+	 </pluginRepository>
+</pluginRepositories>
 

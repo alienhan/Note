@@ -3,6 +3,7 @@
 3. list
 5. java泛型
 7. 实参个数可变
+8. windows多版本jdk
 
 
 
@@ -117,4 +118,6 @@ public static void newBehaviour(int... args){
     }   
 
 ............................................................................
-8.
+8. windows多版本jdk
+	将jdk8，jdk6安装，复制安装文件后
+	卸载两个jdk，这样就只有java_home影响系统的jdk版本
