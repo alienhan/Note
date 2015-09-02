@@ -160,6 +160,9 @@ Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin错误解决方
 mvn archetype:generate -DgroupId=com.tutorialspoint.test 
 -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp
 
+e.	Class not found dao.UserDaoTest		java.lang.ClassNotFoundException:
+	
+
 
 
 ......................................................................
@@ -276,7 +279,7 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.
 ..................................................................................................
 10. mvn commond build  java web project
 
-z. zero
+z.	zero
 	error:		当使用maven-3.1.0时报引用包错误。找不到xxx-2.0.6
 	selution:	更换3.2.6就可以了，它引用2.1.0 plugin包
 
@@ -286,7 +289,7 @@ a. 创建：
 			.4:create (default-cli) on project standalone-pom: Unable to parse configuration
 	solution:	可以将 create 换成 generate
 
-b. 生成elipse项目
+b.	生成elipse项目
 	mvn eclipse:eclipse
 	待解决：
 	error :		缺包
@@ -294,10 +297,12 @@ b. 生成elipse项目
 	solution:	手动添加jar包到本地仓库
 	mvn install:install-file -Dfile=jar包的位置 -DgroupId=groupId -DartifactId=artifactId -Dversion=version -Dpackaging=jar
 
-c. eclipse 添加maven生成的工程
+c.	eclipse 添加maven生成的工程
 	export-> exists maven project
 	导入后自动生成 .classpath  .project
 	但是不能mvn configration file 会报找不到文件错误
+
+	也可以在myeclipse中创建文件
 
 d. 运行：
 	Run -> mvn install -> run as java application
@@ -306,6 +311,18 @@ d. 运行：
 	mvn package 只是将你的代码打包到输出目录，一般的是 target下面
 
 e. 作为web项目运行
+   增加MyEclipse的Web Project功能
+   选择工程-->MyEclipse-->Project Capabilities-->Add Web Project Capabilites，
+   弹出窗口中设置参数如下，再接下来的弹出窗口中选择yes。
+   这样我们的工程就是web工程了(注意工程图标有变化，而且MyEclipse自动依赖了JEE的包)。
+
+f. 修改根路径名
+   Myeclipse-->Web
+   这一个是用来修改设置工程的web特性
+
+g. 当页面还是报404 的时候可能是myeclipse的tomcat缓存
+	删除tomcat路径下的项目，就可以了
+
 
 ..............................................................................................
 11. Nexus

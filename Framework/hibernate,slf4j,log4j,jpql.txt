@@ -118,10 +118,12 @@ hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
 ..........................................................................
 5. jpql
 
+JPQL是EJB2使用的查询语言EJB QL的扩展，它继承了EJB QL并对其做了一些改变。
+
 JPQL全称Java Persistence Query Language Java持久化查询语言
 特点：
-其特征与原生SQL语句类似，并且完全面向对象，通过类名和属性访问，
-而不是表名和表的属性。
+	其特征与原生SQL语句类似，并且完全面向对象，通过类名和属性访问，
+	而不是表名和表的属性。
 
 
 select name ,age from user; //原生SQL语句
@@ -132,8 +134,8 @@ SQL语句是在数据库空间中对字段，列，行进行操作
 JPQL语句是在EJB实体空间中面向对象,属性进行操作
 JPQL必须由JPA的JPQL解析器解析为SQL才能执行，必须先获取Query对象
 
-不能使用 *
-unexpected token: *
+error:	不能使用 *
+		unexpected token: *
 
 .................................................................
 6. JPA
@@ -141,28 +143,31 @@ unexpected token: *
 http://blog.csdn.net/hmk2011/article/details/6289151
 http://docs.oracle.com/javaee/5/api/javax/persistence/Query.html#getResultList%28%29
 
-JPA全称Java Persistence API.
-JPA通过JDK 5.0注解或XML描述对象－关系表的映射关系，
-并将运行期的实体对象持久化到数据库中。
 
-JPA的查询语言是面向对象而非面向数据库的，
-它以面向对象的自然语法构造查询语句，
-可以看成是Hibernate HQL的等价物。
-JPA定义了独特的JPQL（Java Persistence Query Language），
-JPQL是EJB QL的一种扩展，它是针对实体的一种查询语言，
-操作对象是实体，而不是关系数据库的表，
-而且能够支持批量更新和修改、JOIN、GROUP BY、HAVING 等通常只有 
-SQL 才能够提供的高级查询特性，甚至还能够支持子查询。
+
+JPA全称Java Persistence API.
+	JPA通过JDK 5.0注解或XML描述对象－关系表的映射关系，
+	并将运行期的实体对象持久化到数据库中。
+
+JPQL:
+	JPA的查询语言是面向对象而非面向数据库的，
+	它以面向对象的自然语法构造查询语句，
+	可以看成是Hibernate HQL的等价物。
+	JPA定义了独特的JPQL（Java Persistence Query Language），
+	JPQL是EJB QL的一种扩展，它是针对实体的一种查询语言，
+	操作对象是实体，而不是关系数据库的表，
+	而且能够支持批量更新和修改、JOIN、GROUP BY、HAVING 等通常只有 
+	SQL 才能够提供的高级查询特性，甚至还能够支持子查询。
 
 hibernate and JPA
-JPA是需要Provider来实现其功能的，
-Hibernate就是JPA Provider中很强的一个，
-应该说无人能出其右。从功能上来说，
+	JPA是需要Provider来实现其功能的，Hibernate就是JPA Provider中很强的一个，
+	应该说无人能出其右。从功能上来说，
 JPA就是Hibernate功能的一个子集。
-Hibernate 从3.2开始，就开始兼容JPA。
+	Hibernate 从3.2开始，就开始兼容JPA。
+	JPA本身是一套接口和标准，我们可以使用hibernate的EntityManager模块来作为JPA的引擎
 
 Spring  and JPA 
-Spring 2.0.1中，正式提供对JPA的支持
+	Spring 2.0.1中，正式提供对JPA的支持
 
 通过将@PersistenceContext注解标注在EntityManager类型的字段上，
 这样得到的EntityManager就是容器管理的EntityManager。
@@ -239,6 +244,7 @@ getReference(*,class,ID) :若实体Bean不存在,
 error:
 javax.persistence.PersistenceException: [PersistenceUnit: itcast] class or package not found
 persistences.xml不在编译路径下，mvn update 后，build project
+
 
 ..............................................................................
 7. mvn hibernate
