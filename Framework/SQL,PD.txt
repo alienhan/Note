@@ -1,4 +1,3 @@
-
 1. 使用数据库,创建数据库,删除数据库
 2. 创建一个表，删除表
 3. 增删改查
@@ -10,7 +9,8 @@
 9. sql语句拼接到string字符串传产问题
 10. PowerDesigner
 11. exists
-
+12. PL/SQL 
+13. Navicat
 ...................................................
 1. 使用数据库,创建数据库,删除数据库
    use kyc2
@@ -227,3 +227,41 @@ SQL 语句之后使用分号，
 11. exists
 
 指定一个子查询，检测行的存在。
+
+..........................................................................
+12. PL/SQL
+
+连接Oricle数据库配置
+
+1.安装Oricle客户端
+
+2.配置Oricle客户端
+	将instantclient_11_2解压到D:\java\app\jhon\product下
+
+3.配置环境变量
+	TNS_ADMIN
+	D:\java\app\jhon\product\instantclient_11_2
+
+	ORACLE_HOME
+	D:\java\app\jhon\product\instantclient_11_2
+
+	path
+	当安装client时，自动配置
+
+4. PL/SQL -> 工具(tools) ->首选项(persistense)
+	-> Oricle -> 连接(contents)
+
+5.中文乱码
+
+快捷键：
+	f8:执行
+	f10：提交
+	
+.....................................................................
+13. Navicat
+	Navicat连接Oricle database 配置同PL/SQL相同
+
+
+快捷键：
+
+
