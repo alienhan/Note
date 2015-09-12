@@ -10,6 +10,9 @@
 9. mvn 命令
 10. mvn commond build  java web project
 11. Nexus
+12. eclipse maven plugin
+13. mvn spring 
+14. mvn update
 
 
 
@@ -241,6 +244,9 @@ e.	Class not found dao.UserDaoTest		java.lang.ClassNotFoundException:
 mvn eclipse:eclipse
 mvn eclipse:clean
 
+编译项目到target、安装项目到.m2文件夹下的资源库中
+mvn install
+
 清理（删除target目录下编译内容）
 mvn clean
 
@@ -344,4 +350,62 @@ maven 配置依赖nexus
 		 <url>http://localhost:8081/nexus/content/groups/public</url>
 	 </pluginRepository>
 </pluginRepositories>
+
+.....................................................................................
+12. eclipse maven plugin
+
+	1）下载eclipse maven plugin插件
+	2）在eclipse安装文件夹下创建links文件夹
+			新建maven.link文件：
+			内容为：path=D:/java/eclipse/myplugins/maven
+
+	3）在eclipse安装文件夹下创建myplugins文件
+			将maven插件解压到当前文件夹下
+
+	4）重启eclipse
+	5）配置eclipse maven plugin 
+
+....................................................................................
+13. mvn spring 
+
+.classpath
+	error:
+		mvn java.lang.ClassNotFoundException: org.springframework.web.context.
+				  ContextLoaderListener
+		根本原因是eclipse只是添加了类的引用
+	1.solution:
+		项目根目录下的.classpath,找到
+		<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+
+		替换为:
+		<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER">
+			 <attributes>
+				 <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			 </attributes>
+		</classpathentry>
+	2. 
+		1.右键点击项目--选择Properties选择Deployment（部署） Assembly（程序集）,
+		在右边点击Add按钮，在弹出的窗口中选择Java Build Path Entries
+		2.点击Next，选择Maven Dependencies
+		3.点击Finish，然后可以看到已经把Maven Dependencies添加到Web应用结构中了
+	
+
+添加maven库包的引用
+<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+
+
+...................................................................................
+14. mvn update
+	
+	1.在eclipse中对项目右键点击 maven --> update dependencies,这样对maven库进行更新。
+	
+	2.update Project Configration 会根据maven默认的设置改变项目的配置文件
+		例：可以改变.classpath文件
+		（不要轻易使用）
+
+
+
+...................................................................................
+
+
 

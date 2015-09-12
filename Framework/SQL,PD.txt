@@ -231,6 +231,8 @@ SQL 语句之后使用分号，
 ..........................................................................
 12. PL/SQL
 
+用于连接Oricle数据库
+
 连接Oricle数据库配置
 
 1.安装Oricle客户端
@@ -238,7 +240,7 @@ SQL 语句之后使用分号，
 2.配置Oricle客户端
 	将instantclient_11_2解压到D:\java\app\jhon\product下
 
-3.配置环境变量
+3.配置环境变量（instantclient需要）
 	TNS_ADMIN
 	D:\java\app\jhon\product\instantclient_11_2
 
@@ -246,12 +248,17 @@ SQL 语句之后使用分号，
 	D:\java\app\jhon\product\instantclient_11_2
 
 	path
-	当安装client时，自动配置
+	当安装client时，在path最前面自动配置为
+	D:\java\app\jhon\product\11.2.0\client_1
 
 4. PL/SQL -> 工具(tools) ->首选项(persistense)
 	-> Oricle -> 连接(contents)
 
 5.中文乱码
+	配置环境变量
+	NLS_LANG
+	SIMPLIFIED CHINESE_CHINA.ZHS16GBK
+
 
 快捷键：
 	f8:执行
@@ -259,9 +266,17 @@ SQL 语句之后使用分号，
 	
 .....................................................................
 13. Navicat
+	
 	Navicat连接Oricle database 配置同PL/SQL相同
+		在 tools-> options->oci中加入client下的oci.dll就行
+
+	Navicat连接SQL Server
+		先下载sqlncli 软件并安装
+		在创建连接的时候没有端口号选项，添加端口号，（例）10.1.41.215,3011
 
 
 快捷键：
+	Ctrl + R 运行所有
+	Ctrl + R 运行选中
 
 

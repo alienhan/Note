@@ -3,6 +3,7 @@
 3. EL
 4. El Spring mvc 连接注意
 5. spring mvc demo
+6. spring ajax
 
 
 
@@ -79,6 +80,8 @@ ${username}   <-后台返回的参数名称
    获取对象属性
    model.addAttribute("pq",pq);
    ${pq.qaCont}
+
+引用spring 3.1.1 否则会出现406错误 
 
 .........................................................................
 5. spring mvc demo
