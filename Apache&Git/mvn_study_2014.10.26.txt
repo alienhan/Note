@@ -13,6 +13,7 @@
 12. eclipse maven plugin
 13. mvn spring 
 14. mvn update
+15. eclipse create mvn project
 
 
 
@@ -406,6 +407,15 @@ maven 配置依赖nexus
 
 
 ...................................................................................
+15. eclipse create mvn project
 
+1. new->mvn project
+2. 生成web项目 properties->project facets->Dynamic Web Module
+   注意添加的web文件的位置
+
+3. 配置build path 新建java ，配置编译文件位置,
+   配置java版本
+
+4. 配置maven引用包编译位置 deployment assembly ->add -> java build enties path
 
 

@@ -222,6 +222,36 @@ SQL 语句之后使用分号，
 ..........................................................................
 10. PowerDesigner
 
+改变table字体：
+Tools -----> Display Preference....--> Table --> Format --> Modify --> Font
+
+新建数据库工程：
+file -> new model -> model types -> physical data model
+->physical diagram
+
+保存文件 pdb,pdm
+
+新建表
+	在设计属性(字段)的时候，三个字母(M、P、D)分别表示：
+		M：是否为空；(√表示不允许为空)
+		P：是否为主键；
+		D：是否在该软件的视图中显示
+	设置主键自增：
+		Columns选项卡,选中整列,查看列属性,
+		打开另外一个窗口,右下角有个Identity,勾上即可.
+
+新建外键：
+
+生成数据库：
+	Database -> Generate Database
+
+	不生成外键：
+	   Database -> Generate Database ->options
+
+..................................................................................
+
+		
+
 
 ..........................................................................
 11. exists
