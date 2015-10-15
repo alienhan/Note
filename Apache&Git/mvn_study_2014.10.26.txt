@@ -164,8 +164,10 @@ Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin错误解决方
 mvn archetype:generate -DgroupId=com.tutorialspoint.test 
 -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp
 
-e.	Class not found dao.UserDaoTest		java.lang.ClassNotFoundException:
-	
+5)Java compiler level does not match the version of the installed
+  Java project facet.SSJ UnknownFaceted Project Problem (Java Version Mismatch)	
+
+  properties-> java complier -> 改成与版本相同的jre
 
 
 
@@ -417,5 +419,7 @@ maven 配置依赖nexus
    配置java版本
 
 4. 配置maven引用包编译位置 deployment assembly ->add -> java build enties path
+
+5. 添加tomcat lib jar
 
 

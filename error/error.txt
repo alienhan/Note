@@ -4,7 +4,7 @@ error
 1.hibernate
 Caused by: java.lang.ClassNotFoundException:
 javax.persistence.EntityListene
-我用的是Hibernate3.6.0.final,
+用的是Hibernate3.6.0.final,
 出现这个问题的可能原因是没有导入
 hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
 
@@ -97,11 +97,11 @@ Connection reset by peer: socket write error
 
 .....................................................................................
 
-13 xgb java
+13	string
 奖惩查询时错误
    string强制转换int 时，null," " 不能被转换
 ....................................................................................
-14.xgb 缓存
+14.	缓存
 socket write error
 这个异常的原因是，你的页面有一些动态生成的东西，而且相对较大。
 你的服务器向客户端发送数据，结果刚发一半，客户端关闭了链接，就造成了这个错误，
@@ -110,12 +110,13 @@ socket write error
 
 除非你的这部分程序有错误！
 
-15.xgb 缓存
+..............................................................................................
+15.	缓存
 Java heap space
 tomcat缓存不足
 
 ...........................................................................................
-16.xgb java serlet
+16.	serlet
 String filePath = request.getSession().getServletContext().getRealPath("/");
 request.getSession().getServletContext() 获取的是Servlet容器对象，
 相当于tomcat容器了。getRealPath("/") 获取实际路径，“/”指代项目根目录
@@ -124,7 +125,7 @@ request.getSession().getServletContext() 获取的是Servlet容器对象，
 wtpwebapps\UMPWeb_20131230\
 
 ....................................................................................
-17.eclipse
+17.	eclipse
 eclipse 设置默认编码为Utf-8
 需要设置的几处地方为：
 
@@ -141,12 +142,12 @@ eclipse 设置默认编码为Utf-8
     buildpath就可以
 
 ..................................................................................
-19 
+19	Tomca
 Tomcat报错：Document base ……does not exist or is not a readable directory
 删除eclipse中的tomcat就好了
 
 .................................................................................
-20
+20	log4j
 log4j:ERROR LogMananger.repositorySelector was null likely due to error in class reloading, usin (2011-05-10 19:54:32)转载▼
 标签： 杂谈	分类： javascript_SSH
 Today I got this error message from Tomcat 6.0.24:
@@ -158,4 +159,15 @@ org.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
 to the "conf/catalina.properties" file in your tomcat directory.
 
 ..........................................................................................
-21
+21 JSP
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 23 in the generated java file
+The method getJspApplicationContext(ServletContext) is undefined for the type JspFactory
+
+项目中有像jsp-api.jar servlet-api.jar跟tomcat6的lib中同样的包，
+但版本比tomcat6的版本要低，在运行的时候，因为会优先加载项目中的包，
+所以 产生了错误，把项目中和tomcat相同的包删除(必须删除，如果替换还会产生其他的错误)，
+问题就可以解决了。
+
+............................................................................................................
