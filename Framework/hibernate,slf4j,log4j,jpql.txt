@@ -1,10 +1,12 @@
 1.hibernate基础配置 
 2.annocation
 3. 配置slf4j,配置log4j.properties
-4. error
+4. 
 5. jpql
 6. JPA
 7. mvn hibernate
+8. 注释
+final error
 
 ......................................................................
 1.hibernate基础配置  
@@ -103,15 +105,7 @@
    log4j.logger.org.hibernate=debug
 
 ..................................................................................
-4. error
-
-Caused by: java.lang.ClassNotFoundException:javax.persistence.EntityListene
-使用Hibernate3.6.0.final出现问题
-原因是没有导入
-hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
-
-
-	
+4. 
 
 
 
@@ -284,10 +278,32 @@ persistences.xml不在编译路径下，mvn update 后，build project
 		</dependency>
 
 ...................................................................................
+8. 注释
+
+    @OneToMany(mappedBy="",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+     //拥有mappedBy注解的实体类为关系被维护端
+     //mappedBy=""中的为多对一方中的对应属性
+
+
+................................................................................
+final error
+
+Caused by: java.lang.ClassNotFoundException:javax.persistence.EntityListene
+使用Hibernate3.6.0.final出现问题
+原因是没有导入
+hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
+
+org.springframework.beans.factory.BeanCreationException:
+Error creating bean with name 'entityManagerFactory' defined in class path resource [beans.xml]
+不是缺少了包，反而可能是多了jpa包，极有可能是项目里面引了一个jpa包，hibernate又自带了一个，且版本不一样。
+删除hibernate-jpa-2.0-api-1.0.0.Final.jar
+hibernate3.6final，已经把Annotation类库集成到了hibernate3.6。当我们想使用Annotation时，
+下载hibernate3.6final，不再需要下载hibernate-annotations-3.4.0.GA.zip了。
+	
 
 
 
-  
+......................................................................................
 
   
 
