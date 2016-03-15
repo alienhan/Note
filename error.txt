@@ -22,12 +22,19 @@ java.lang.NumberFormatException: For input string: ""
 而这个String为""时的异常,即你的String不能转为Integer的异常
 
 ...........................................................................
-4. struts
-url传值到Action的乱码解决方法
-jsp页面 URL传中文参数到Action里面出现乱码，
-用过滤器和控制器都解决不了，用了我两个多小时解决这个小问题！
+4. struts，springMVC  中文乱码问题
+
+url传值到Action的乱码解决方法：
+	jsp页面 URL传中文参数到Action里面出现乱码，
+用过滤器和控制器都解决不了，用了我两个多小时解决这个小问题！---------
+
+原因：
+默认情况下，tomcat使用的的编码方式：iso-8859-1
+
 解决方法有以下几种：
-第一种：在Action中用 new String(str.getBytes("ISO8859_1"), "UTF8")，进行转码，因为传递的时候，中文默人的是ISO8859_1
+第一种：在Action中用 new String(str.getBytes("ISO-8859-1"), "UTF-8")，进行转码，因为传递的时候，中文默人的是ISO-8859-1
+					 new String(str.getBytes("GBK"), "ISO-8859-1")
+
 第二种：可通过配置TOMCAT来解决此问题，具体解决方法如下：在tomcat的server.xml里，找到<Connector port="8080" 
               maxThreads="150" minSpareThreads="25" maxSpareThreads="75" 
               enableLookups="false" redirectPort="8443" acceptCount="100" 
@@ -38,8 +45,59 @@ jsp页面 URL传中文参数到Action里面出现乱码，
 <%@ page pageEncoding=”gb2312″%>
 <%@ page contentType=”text/html;charset=gb2312″%>
 <%request.setCharacterEncoding(”gb2312″);%>
+
 第三种：直接在ACTION中利用以下方法解决：request.setCharacterEncoding("gb2312");
         response.setCharacterEncoding("gb2312");
+
+action,controller 返回页面的值乱码：
+	前台传过来的参数
+	str = new String(str.getBytes("ISO-8859-1"),"utf-8");
+	返回前台的参数--下载文件时
+	String str2 = new String(str.getBytes("GBK"), "ISO-8859-1");
+
+getBytes方法：
+	String的getBytes()方法是得到一个操作系统默认的编码格式的字节数组。
+这个表示在不通OS下，返回的东西不一样！ 
+	String.getBytes(String decode)方法会根据指定的decode编码返回某字符串在该编码下的byte数组表示，如
+byte[] b_gbk = "中".getBytes("GBK"); 
+byte[] b_utf8 = "中".getBytes("UTF-8");
+byte[] b_iso88591 = "中".getBytes("ISO8859-1");
+将分别返回“中”这个汉字在GBK、UTF-8和ISO8859-1编码下的byte数组表示，
+此时b_gbk的长度为2，b_utf8的长度为3，b_iso88591的长度为1。 
+
+	而与getBytes相对的，可以通过new String(byte[], decode)的方式来还原这个“中”字时，
+这个new String(byte[], decode)实际是使用decode指定的编码来将byte[]解析成字符串。
+String s_gbk = new String(b_gbk,"GBK");
+String s_utf8 = new String(b_utf8,"UTF-8");
+String s_iso88591 = new String(b_iso88591,"ISO8859-1");
+
+通过打印s_gbk、s_utf8和s_iso88591，会发现，s_gbk和s_utf8都是“中”，而只有s_iso88591是一个不认识的字符，
+为什么使用ISO8859-1编码再组合之后，无法还原“中”字呢，其实原因很简单，
+因为ISO8859-1编码的编码表中，根本就没有包含汉字字符，
+当然也就无法通过"中".getBytes("ISO8859-1");来得到正确的“中”字在ISO8859-1中的编码值了，
+所以再通过new String()来还原就无从谈起了。
+因此，通过String.getBytes(String decode)方法来得到byte[]时，
+一定要确定decode的编码表中确实存在String表示的码值，这样得到的byte[]数组才能正确被还原。
+
+------------------------为什么要转换编码：
+有时候，为了让中文字符适应某些特殊要求（如http header头要求其内容必须为iso8859-1编码），
+可能会通过将中文字符按照字节方式来编码的情况，如
+String s_iso88591 = new String("中".getBytes("UTF-8"),"ISO8859-1")，
+这样得到的s_iso8859-1字符串实际是三个在 ISO8859-1中的字符，在将这些字符传递到目的地后，
+目的地程序再通过相反的方式
+String s_utf8 = new String(s_iso88591.getBytes("ISO8859-1"),"UTF-8")
+来得到正确的中文汉字“中”。这样就既保证了遵守协议规定、也支持中文。 
+
+servlet规范：
+(1) HttpServletRequest.setCharacterEncoding()方法 仅仅只适用于设置post提交的request body的编码而不是设置get方法提交的queryString的编码。该方法告诉应用服务器应该采用什么编码解析post传过来的内容。很多文章并没有说明这一点。
+(2) HttpServletRequest.getPathInfo()返回的结果是由Servlet服务器解码(decode)过的。
+(3) HttpServletRequest.getRequestURI()返回的字符串没有被Servlet服务器decoded过。
+(4) POST提交的数据是作为request body的一部分。
+(5) 网页的Http头中ContentType("text/html; charset=GBK")的作用：
+    (a) 告诉浏览器网页中数据是什么编码；
+    (b) 表单提交时，通常浏览器会根据ContentType指定的charset对表单中的数据编码，然后发送给服务器的。
+这里需要注意的是：这里所说的ContentType是指http头的ContentType，而不是在网页中meta中的ContentType。
+
 .......................................................................................
 5 ctrl + c ??tomcat
 
@@ -48,7 +106,6 @@ jsp页面 URL传中文参数到Action里面出现乱码，
   stuts 标签。谨慎使用
 
 ..................................................................................
-
 7.<A href="javascript:void(0)">点击</a>点击链接后不会回到网页顶部
 
 .................................................................................
@@ -84,7 +141,7 @@ Connection reset by peer: socket write error
 你的数据传输的时候，可能由于时间等待的太久，
 但是server段设置的连接检验时间限制一定，
 那么就可能出现这种情况的！ 
-
+------------------------------------------------------
 12、xgb 缓存
 ClientAbortException: java.net.SocketException:
 Connection reset by peer: socket write error
@@ -125,8 +182,7 @@ request.getSession().getServletContext() 获取的是Servlet容器对象，
 wtpwebapps\UMPWeb_20131230\
 
 ....................................................................................
-17.	eclipse
-eclipse 设置默认编码为Utf-8
+17.	eclipse 设置默认编码为Utf-8
 需要设置的几处地方为：
 
  Window->Preferences->General ->Content Type->Text->JSP 最下面设置为UTF-8
@@ -135,14 +191,14 @@ eclipse 设置默认编码为Utf-8
  Window->Preferences->Web->JSP Files面板选择 ISO 10646/Unicode(UTF-8)
 
 ....................................................................................
-18.hibernate
-项目旁有!
+18.项目旁有!
+
     以前引用的包，因为路径的等问题
     找不到了
     buildpath就可以
 
 ..................................................................................
-19	Tomca
+19	Tomcat
 Tomcat报错：Document base ……does not exist or is not a readable directory
 删除eclipse中的tomcat就好了
 
@@ -171,3 +227,16 @@ The method getJspApplicationContext(ServletContext) is undefined for the type Js
 问题就可以解决了。
 
 ............................................................................................................
+22. 规范--wonders
+方法命名规范：
+1.java驼峰命名法，首字母以小写开头，每个单词首字母大写（第一个单词除外）
+2.方法表示一种行为，它代表一种动作，最好是一个动词或者动词词组或者第一个单词为一个动词。
+    页面跳转命名规则：to+XXX
+    页面查询命名规则：query+XXX，find+XXX，get+XXX，load+XXX，search+XXX
+    页面更新命名规则：update+XXX, modify+XXX
+    页面保存命名规则：save+XXX
+    页面删除命名规则：remove+XXX，delete+XXX
+
+.............................................................................................................
+
+

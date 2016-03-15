@@ -296,7 +296,8 @@ file -> new model -> model types -> physical data model
 	
 .....................................................................
 13. Navicat
-	
+
+连接数据库
 	Navicat连接Oricle database 配置同PL/SQL相同
 		在 tools-> options->oci中加入client下的oci.dll就行
 
@@ -307,9 +308,15 @@ file -> new model -> model types -> physical data model
 
 快捷键：
 	Ctrl + R 运行所有
-	Ctrl + R 运行选中
+	Ctrl + Shift + R 运行选中
 
-.....................................................................
+导出表结构，视图结构
+	导出表：
+		表名->右击->duplicate->structure only
+	导出视图：
+		视图名->右击->object information->第二个 ddl 
+
+..................................................................................................................
 14. sql server 存储过程
 
 调用系统存储过程----------------------------------------
@@ -367,5 +374,6 @@ set @no = '2015-01';
 exec proc_meetinginfo3 @name out, @no output;
 select @name as name, @no as no; 查询返回的参数
 print @name + '#' + @no  消息中显示返回的参数
+----------------------------------------------------------------------------------------------------
 
 
