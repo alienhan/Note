@@ -1,7 +1,7 @@
-1. init
+1. init mybatis
 
 ..............................................................................
-1. init
+1. init mybatis
  pom.xml添加MyBatis依赖
  在resource/下添加mybatis-config.xml
  在resource/下添加sqlserver.properties
