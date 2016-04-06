@@ -558,7 +558,8 @@ insert into dic_load_config values('dic_unit_tag','企业表示字典','1','DIC_ITEM',
 %>
 
 --------------------------------------------------------------------------------------------------------
-32 java error
+32 java error map map.entry 遍历map
+					n. 修改，修正；改变
 java.util.ConcurrentModificationException
 在使用iterator.hasNext()操作迭代器的时候，如果此时迭代的对象发生改变，比如插入了新数据，或者有数据被删除。
 
@@ -566,7 +567,7 @@ java.util.ConcurrentModificationException
 java.util.ConcurrentModificationException
         at java.util.HashMap$HashIterator.nextEntry(HashMap.java:793)
         at java.util.HashMap$KeyIterator.next(HashMap.java:828)
-
+//遍历map
 public static Map<String, String> DicToSingle(String deptId, String dic) {
 	Map<String, String> map = DicLoadUtil.getInstance().getDic(dic);
 	if (!map.isEmpty()) {
@@ -583,14 +584,30 @@ public static Map<String, String> DicToSingle(String deptId, String dic) {
 		}
 	}
 	return map;
+} 
+java Map及Map.Entry详解
+Map提供了一些常用方法，如keySet()、entrySet()等方法。
+keySet()方法返回值是Map中key值的集合；
+entrySet()的返回值也是返回一个Set集合，此集合的类型为Map.Entry。
+Map.Entry是Map声明的一个内部接口，此接口为泛型，定义为Entry<K,V>。
+它表示Map中的一个实体（一个key-value对）。接口中有getKey(),getValue方法。
+
+Map<String, String> map = ...
+for (Map.Entry<String, String> entry : map.entrySet())
+{
+    System.out.println(entry.getKey() + "/" + entry.getValue());
 }
 
+--------------------------------------------------------------------------------------------------------
+33 jqery 设置 <form:select> <input type="select"> 默认值  select默认值 设置select selected
+$(function(){
+	 $("#unitTag option[value='01']").attr("selected", true); 
+});
 
 
 --------------------------------------------------------------------------------------------------------
-33
---------------------------------------------------------------------------------------------------------
-34
+34 form表单
+	数据提交不到后台  两个form表单重叠
 
 --------------------------------------------------------------------------------------------------------
 35
