@@ -9,7 +9,7 @@
 8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 9. mvn 命令
 10. mvn commond build webapp
-
+11. nux
 
 
 ..............................................
@@ -147,13 +147,10 @@ first-maven Unknown	Maven Problem
     </repository>  
 </repositories> 
 
-
-
-
-
-
 分析：
 ./m2/settings 影响默认conf/settiongs的配置
+
+java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener
 
 
 ......................................................................

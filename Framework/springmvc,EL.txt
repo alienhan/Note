@@ -84,12 +84,13 @@ maven 要引用 spring-webmvc
 ................................................................................................
 6. spring error
 
-error:org.springframework.web.servlet.PageNotFound noHandlerFound
+error:		org.springframework.web.servlet.PageNotFound noHandlerFound
 No mapping found for HTTP request with URI [/spring_test_002/userContoller/userManager]
 in DispatcherServlet with name 'dispatcher'
-
-solution: p:prefix="/page/" 默认开始寻找的文件位置，找不到页面。
+solution:	p:prefix="/page/" 默认开始寻找的文件位置，找不到页面。
 example: return "userpage/userManager"; 
+
+
 
 
 .................................................................................................
