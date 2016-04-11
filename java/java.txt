@@ -3,12 +3,14 @@
 3. list
 5. java泛型
 7. 实参个数可变
+8. windows多版本jdk
 
 
 
 ................................................................
 1.jdk配置：
-classpath
+系统变量配置
+classpath， 最后一个为tomcat配置
 C:\Program Files(x86)\Java\jdk1.6.0_19\lib\rt.jar;
 C:\Program Files (x86)\Java\jdk1.6.0_19\lib\tools.jar;
 D:\tomcat\apache-tomcat-7.0.32;D:\tomcat\apache-tomcat-6.0.35
@@ -117,4 +119,6 @@ public static void newBehaviour(int... args){
     }   
 
 ............................................................................
-8.
+8. windows多版本jdk
+	将jdk8，jdk6安装，复制安装文件后
+	卸载两个jdk，这样就只有java_home影响系统的jdk版本

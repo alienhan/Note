@@ -1,10 +1,19 @@
-
 1. Spring MVC 无项目
 2. RequestMapping setting
 3. EL
 4. El Spring mvc 连接注意
 5. spring mvc demo
+<<<<<<< HEAD:Framework/springmvc,EL.txt
 6. spring error
+=======
+6. spring ajax
+
+
+
+官方文档：
+http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/index.html
+
+>>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306:Framework/Spring,EL.txt
 .............................................................
 1. Spring MVC 无项目
 
@@ -75,6 +84,8 @@ ${username}   <-后台返回的参数名称
    获取对象属性
    model.addAttribute("pq",pq);
    ${pq.qaCont}
+
+引用spring 3.1.1 否则会出现406错误 
 
 .........................................................................
 5. spring mvc demo

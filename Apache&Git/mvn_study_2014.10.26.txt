@@ -8,8 +8,20 @@
 7. 配置mirrors ，repository
 8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 9. mvn 命令
+<<<<<<< HEAD
 10. mvn commond build webapp
 11. nux
+=======
+10. mvn commond build  java web project
+11. Nexus
+12. eclipse maven plugin
+13. mvn spring 
+14. mvn update
+15. eclipse create mvn project
+
+
+
+>>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
 
 
 ..............................................
@@ -112,13 +124,13 @@ http://www.jarvana.com/jarvana/
 ................................................................
 4. mvn error
 
-1.出现创建不了mvn project 
+1）.出现创建不了mvn project 
 错误：can mot resolve archetype
 windows - preference - maven -archetype
 add remote catalog
 http://repo1.maven.org/maven2/archetype-catalog.xml
 
-2.
+2）.
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
@@ -147,10 +159,25 @@ first-maven Unknown	Maven Problem
     </repository>  
 </repositories> 
 
-分析：
+
+3）.分析：
 ./m2/settings 影响默认conf/settiongs的配置
 
+<<<<<<< HEAD
 java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener
+=======
+4）.
+Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin错误解决方法 
+解决方法：将命令中的create改为generate：
+mvn archetype:generate -DgroupId=com.tutorialspoint.test 
+-DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp
+
+5)Java compiler level does not match the version of the installed
+  Java project facet.SSJ UnknownFaceted Project Problem (Java Version Mismatch)	
+
+  properties-> java complier -> 改成与版本相同的jre
+
+>>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
 
 
 ......................................................................
@@ -229,6 +256,9 @@ java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderL
 mvn eclipse:eclipse
 mvn eclipse:clean
 
+编译项目到target、安装项目到.m2文件夹下的资源库中
+mvn install
+
 清理（删除target目录下编译内容）
 mvn clean
 
@@ -264,8 +294,147 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.
     <version>10.2.0.3.0</version>
 </dependency>
 
+<<<<<<< HEAD
 .........................................................................
 10. mvn commond build webapp
+=======
+..................................................................................................
+10. mvn commond build  java web project
+
+z.	zero
+	error:		当使用maven-3.1.0时报引用包错误。找不到xxx-2.0.6
+	selution:	更换3.2.6就可以了，它引用2.1.0 plugin包
+
+a. 创建：
+	mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp
+	error:		[ERROR] Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin:2
+			.4:create (default-cli) on project standalone-pom: Unable to parse configuration
+	solution:	可以将 create 换成 generate
+
+b.	生成elipse项目
+	mvn eclipse:eclipse
+	待解决：
+	error :		缺包
+				Failed to execute goalk org.apache.maven.plugins:maven-eclipse-plugin:2.1.0
+	solution:	手动添加jar包到本地仓库
+	mvn install:install-file -Dfile=jar包的位置 -DgroupId=groupId -DartifactId=artifactId -Dversion=version -Dpackaging=jar
+
+c.	eclipse 添加maven生成的工程
+	export-> exists maven project
+	导入后自动生成 .classpath  .project
+	但是不能mvn configration file 会报找不到文件错误
+
+	也可以在myeclipse中创建文件
+
+d. 运行：
+	Run -> mvn install -> run as java application
+	没有mvn intall则找不到.class类文件 
+	mvn install 是将你打好的jar包安装到你的本地库中，一般没有设置过是在 用户目录下的 .m2\下面。
+	mvn package 只是将你的代码打包到输出目录，一般的是 target下面
+
+e. 作为web项目运行
+   增加MyEclipse的Web Project功能
+   选择工程-->MyEclipse-->Project Capabilities-->Add Web Project Capabilites，
+   弹出窗口中设置参数如下，再接下来的弹出窗口中选择yes。
+   这样我们的工程就是web工程了(注意工程图标有变化，而且MyEclipse自动依赖了JEE的包)。
+
+f. 修改根路径名
+   Myeclipse-->Web
+   这一个是用来修改设置工程的web特性
+
+g. 当页面还是报404 的时候可能是myeclipse的tomcat缓存
+	删除tomcat路径下的项目，就可以了
+
+
+..............................................................................................
+11. Nexus
+
+Synatype Nexus
+
+maven 配置依赖nexus
+<repositories>
+	 <repository>
+		 <id>nexus</id>
+		 <name>Team Nexus Repository</name>
+		 <url>http://localhost:8081/nexus/content/groups/public</url>
+	 </repository>
+</repositories>
+<pluginRepositories>
+	 <pluginRepository>
+		 <id>nexus</id>
+		 <name>Team Nexus Repository</name>
+		 <url>http://localhost:8081/nexus/content/groups/public</url>
+	 </pluginRepository>
+</pluginRepositories>
+
+.....................................................................................
+12. eclipse maven plugin
+
+	1）下载eclipse maven plugin插件
+	2）在eclipse安装文件夹下创建links文件夹
+			新建maven.link文件：
+			内容为：path=D:/java/eclipse/myplugins/maven
+
+	3）在eclipse安装文件夹下创建myplugins文件
+			将maven插件解压到当前文件夹下
+
+	4）重启eclipse
+	5）配置eclipse maven plugin 
+
+....................................................................................
+13. mvn spring 
+
+.classpath
+	error:
+		mvn java.lang.ClassNotFoundException: org.springframework.web.context.
+				  ContextLoaderListener
+		根本原因是eclipse只是添加了类的引用
+	1.solution:
+		项目根目录下的.classpath,找到
+		<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+
+		替换为:
+		<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER">
+			 <attributes>
+				 <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+			 </attributes>
+		</classpathentry>
+	2. 
+		1.右键点击项目--选择Properties选择Deployment（部署） Assembly（程序集）,
+		在右边点击Add按钮，在弹出的窗口中选择Java Build Path Entries
+		2.点击Next，选择Maven Dependencies
+		3.点击Finish，然后可以看到已经把Maven Dependencies添加到Web应用结构中了
+	
+
+添加maven库包的引用
+<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>
+
+
+...................................................................................
+14. mvn update
+	
+	1.在eclipse中对项目右键点击 maven --> update dependencies,这样对maven库进行更新。
+	
+	2.update Project Configration 会根据maven默认的设置改变项目的配置文件
+		例：可以改变.classpath文件
+		（不要轻易使用）
+
+
+
+...................................................................................
+15. eclipse create mvn project
+
+1. new->mvn project
+2. 生成web项目 properties->project facets->Dynamic Web Module
+   注意添加的web文件的位置
+
+3. 配置build path 新建java ，配置编译文件位置,
+   配置java版本
+
+4. 配置maven引用包编译位置 deployment assembly ->add -> java build enties path
+
+5. 添加tomcat lib jar
+>>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
 
 1. 创建：
 mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp

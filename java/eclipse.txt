@@ -6,7 +6,11 @@
 6. delete error reminder(提示)
 7. eclipse svn项目导出问题
 8. Building Workspace速度慢
-9. breakpoints 
+9. Breakpoints 
+10. 兼容性视图设置
+11. 自动注释
+12. javadoc
+13. Eclipse plujins
 
 .................................................................
 
@@ -22,16 +26,20 @@
 建一个类,鼠标点在类名(或者方法名)处,按添加注释的快捷键ALT+shift+J
 
 ctrl + H 全局查找
+ctrl + shift + -> 选取单个单词
 
 
 
 .................................................................
 3. eclipse error
 
-报不知名的错误
+报不知名的错误：
 Servlet.service() for servlet [jsp] 
 in context with path [/dew] threw exception [javax.servlet.Servl
 解决：project ->clean ->清空当前服务器中的项目缓存。从起tomcat
+
+出现没有理由的包引用错误：
+重新加载自己添加的Liberaries 就可以了
 
 .................................................................
 4. Eclipse如何卸载插件
@@ -78,7 +86,7 @@ Allow projects to override these preference settings）
  ->开放读写权限 ->换一个工程名可能就好了->不要变默认WebContent文件名
 
 ....................................................................
-9. breakpoints 
+9. breakpoints debug 
 
 tomcat 添加断点程序
 Run -> Apache Tomcat -> Source -> 添加需要Debug的程序
@@ -119,3 +127,58 @@ Prefrences ->search ->  step filtering
 debug error 
 当前台点击button不能定位到eclipse 的具体类的语句时，多点击几回就可以了
 ....................................................................
+10. 兼容性视图设置
+
+IE
+兼容性视图设置可能影响
+    按钮点击不触发后台方法
+	加载jsp影响显示
+
+.........................................................................	
+11. 自动注释 
+
+windows ->preferences ->
+java ->code style
+->code comments
+
+types
+/** 
+ * 	
+ *
+ * @ClassName: ${type_name} 
+ * @author jh 
+ * @date ${date} ${time} 
+ * 
+ * ${tags} 
+ */
+
+methods
+/** 
+ *
+ *
+ * @Title: ${enclosing_method} 
+ * @Author: jianghan
+ * ${tags}
+ *    
+ */
+
+->code 
+new java files
+/*------------------------------------------------------------------------- 
+ * 版权所有：
+ * 作者：姜晗
+ * 联系方式：jianghan@gyyx.cn 
+ * 创建时间：${date} ${time} 
+ * 版本号：v1.0 
+ * 本类主要用途描述： 
+ * 
+-------------------------------------------------------------------------*/
+
+..........................................................................
+12. javadoc
+
+资料：
+http://blog.csdn.net/zklxuankai/article/details/8235640
+
+............................................................................
+
