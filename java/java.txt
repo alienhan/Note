@@ -1,16 +1,17 @@
-1.jdkÅäÖÃ
+1.jdké…ç½®
 2. keytools
 3. list
-5. java·ºĞÍ
-7. Êµ²Î¸öÊı¿É±ä
-8. windows¶à°æ±¾jdk
+5. javaæ³›å‹
+7. å®å‚ä¸ªæ•°å¯å˜
+8. windowså¤šç‰ˆæœ¬jdk
 
 javaÑ§Ï°ÎÄµµ
 
 ................................................................
-1.jdkÅäÖÃ£º
-ÏµÍ³±äÁ¿ÅäÖÃ
-classpath£¬ ×îºóÒ»¸öÎªtomcatÅäÖÃ
+1.jdké…ç½®ï¼š
+->ç³»ç»Ÿ-ã€‹é«˜çº§ç¯å¢ƒå˜é‡
+ç³»ç»Ÿå˜é‡é…ç½®
+classpathï¼Œ æœ€åä¸€ä¸ªä¸ºtomcaté…ç½®
 C:\Program Files(x86)\Java\jdk1.6.0_19\lib\rt.jar;
 C:\Program Files (x86)\Java\jdk1.6.0_19\lib\tools.jar;
 D:\tomcat\apache-tomcat-7.0.32;D:\tomcat\apache-tomcat-6.0.35
@@ -33,33 +34,39 @@ C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)
 
 ...............................................................
 2. keytools
-jdkÃÜÔ¿Éú³É¹¤¾ß
+jdkå¯†é’¥ç”Ÿæˆå·¥å…·
 
-KeytoolÊÇÒ»¸öJavaÊı¾İÖ¤ÊéµÄ¹ÜÀí¹¤¾ß¡£
+Keytoolæ˜¯ä¸€ä¸ªJavaæ•°æ®è¯ä¹¦çš„ç®¡ç†å·¥å…·ã€‚
 
 keystore 
-Keytool½«ÃÜÔ¿£¨key£©ºÍÖ¤Êé£¨certificates£©
-´æÔÚÒ»¸ö³ÆÎªkeystoreµÄÎÄ¼şÖĞ 
-ÔÚkeystoreÀï£¬°üº¬Á½ÖÖÊı¾İ£º 
-ÃÜÔ¿ÊµÌå£¨Key entity£©¡ª¡ªÃÜÔ¿£¨secret key£©
-ÓÖ»òÕßÊÇË½Ô¿ºÍÅä¶Ô¹«Ô¿£¨²ÉÓÃ·Ç¶Ô³Æ¼ÓÃÜ£© 
-¿ÉĞÅÈÎµÄÖ¤ÊéÊµÌå£¨trusted certificate entries£©¡ª¡ªÖ»°üº¬¹«Ô¿ 
+Keytoolå°†å¯†é’¥ï¼ˆkeyï¼‰å’Œè¯ä¹¦ï¼ˆcertificatesï¼‰
+å­˜åœ¨ä¸€ä¸ªç§°ä¸ºkeystoreçš„æ–‡ä»¶ä¸­ 
+åœ¨keystoreé‡Œï¼ŒåŒ…å«ä¸¤ç§æ•°æ®ï¼š 
+å¯†é’¥å®ä½“ï¼ˆKey entityï¼‰â€”â€”å¯†é’¥ï¼ˆsecret keyï¼‰
+åˆæˆ–è€…æ˜¯ç§é’¥å’Œé…å¯¹å…¬é’¥ï¼ˆé‡‡ç”¨éå¯¹ç§°åŠ å¯†ï¼‰ 
+å¯ä¿¡ä»»çš„è¯ä¹¦å®ä½“ï¼ˆtrusted certificate entriesï¼‰â€”â€”åªåŒ…å«å…¬é’¥ 
 
-Alias£¨±ğÃû£© 
-Ã¿¸ökeystore¶¼¹ØÁªÕâÒ»¸ö¶ÀÒ»ÎŞ¶şµÄalias£¬Õâ¸öaliasÍ¨³£²»Çø·Ö´óĞ¡Ğ´ 
+Aliasï¼ˆåˆ«åï¼‰ 
+æ¯ä¸ªkeystoreéƒ½å…³è”è¿™ä¸€ä¸ªç‹¬ä¸€æ— äºŒçš„aliasï¼Œè¿™ä¸ªaliasé€šå¸¸ä¸åŒºåˆ†å¤§å°å†™ 
 
-cacertsÖ¤ÊéÎÄ¼ş(The cacerts Certificates File) 
-¸ÄÖ¤ÊéÎÄ¼ş´æÔÚÓÚjava.home\lib\securityÄ¿Â¼ÏÂ£¬ÊÇJavaÏµÍ³µÄCAÖ¤Êé²Ö¿â 
+cacertsè¯ä¹¦æ–‡ä»¶(The cacerts Certificates File) 
+æ”¹è¯ä¹¦æ–‡ä»¶å­˜åœ¨äºjava.home\lib\securityç›®å½•ä¸‹ï¼Œæ˜¯Javaç³»ç»Ÿçš„CAè¯ä¹¦ä»“åº“ 
 
 %Java_home%\bin\keytool -genkey -alias tomcat -keyalg RSA
 
 ................................................................
+<<<<<<< HEAD
 3. list java.util.List 
 ÓĞĞòµÄ collection£¨Ò²³ÆÎªĞòÁĞ£©¡£
+=======
+3. list
+listä½¿ç”¨
+>>>>>>> 64cfc2902bbf750b4de83681d1e75fa9fc765193
 
 example:/applicationtest/src/test/cust/project/UserList.java
 
 list<class>
+<<<<<<< HEAD
 List½Ó¿ÚµÄ³£ÓÃÊµÏÖÀàÓĞArrayListºÍLinkedList£¬
 ÔÚÊ¹ÓÃList¼¯ºÏÊ±£¬Í¨³£Çé¿öÏÂÉùÃ÷ÎªListÀàĞÍ£¬
 ÊµÀı»¯Ê±¸ù¾İÊµ¼ÊÇé¿öµÄĞèÒª£¬ÊµÀı»¯ÎªArrayList»òLinkedList£¬
@@ -69,19 +76,29 @@ List<String> l = new ArrayList<String>();
 // ÀûÓÃLinkedListÀàÊµÀı»¯List¼¯ºÏ
 List<String> l2 = new LinkedList<String>();
 
+=======
+Listæ¥å£çš„å¸¸ç”¨å®ç°ç±»æœ‰ArrayListå’ŒLinkedListï¼Œ
+åœ¨ä½¿ç”¨Listé›†åˆæ—¶ï¼Œé€šå¸¸æƒ…å†µä¸‹å£°æ˜ä¸ºListç±»å‹ï¼Œ
+å®ä¾‹åŒ–æ—¶æ ¹æ®å®é™…æƒ…å†µçš„éœ€è¦ï¼Œå®ä¾‹åŒ–ä¸ºArrayListæˆ–LinkedListï¼Œ
+ä¾‹å¦‚ï¼š
+List<String> l = new ArrayList<String>();
+// åˆ©ç”¨ArrayListç±»å®ä¾‹åŒ–Listé›†åˆ
+List<String> l2 = new LinkedList<String>();
+// åˆ©ç”¨LinkedListç±»å®ä¾‹åŒ–Listé›†åˆ
+>>>>>>> 64cfc2902bbf750b4de83681d1e75fa9fc765193
 
 .................................................................
-5. java·ºĞÍ
+5. javaæ³›å‹
 
 http://www.w3cschool.cc/
 
-·ºĞÍ£¨Generic type »òÕß generics£©ÊÇ¶Ô 
-Java ÓïÑÔµÄÀàĞÍÏµÍ³µÄÒ»ÖÖÀ©Õ¹£¬ÒÔÖ§³Ö´´½¨¿ÉÒÔ°´ÀàĞÍ½øĞĞ²ÎÊı»¯µÄÀà¡£
+æ³›å‹ï¼ˆGeneric type æˆ–è€… genericsï¼‰æ˜¯å¯¹ 
+Java è¯­è¨€çš„ç±»å‹ç³»ç»Ÿçš„ä¸€ç§æ‰©å±•ï¼Œä»¥æ”¯æŒåˆ›å»ºå¯ä»¥æŒ‰ç±»å‹è¿›è¡Œå‚æ•°åŒ–çš„ç±»ã€‚
 
 example:
 public void write(Integer i, Integer[] ia);
 public void write(Double  d, Double[] da);
-µÄ·¶ĞÍ°æ±¾Îª
+çš„èŒƒå‹ç‰ˆæœ¬ä¸º
 public <T> void write(T t, T[] ta);
 
 
@@ -89,17 +106,17 @@ public <T> void write(T t, T[] ta);
 
 
 ..........................................................................
-7. Êµ²Î¸öÊı¿É±ä
+7. å®å‚ä¸ªæ•°å¯å˜
 
-¶¨ÒåÊµ²Î¸öÊı¿É±äµÄ·½·¨
-Ö»ÒªÔÚÒ»¸öĞÎ²ÎµÄ¡°ÀàĞÍ¡±Óë¡°²ÎÊıÃû¡±Ö®¼ä¼ÓÉÏÈı¸ö
-Á¬ĞøµÄ¡°.¡±£¨¼´¡°...¡±£¬Ó¢ÎÄÀïµÄ¾äÖĞÊ¡ÂÔºÅ£©£¬¾Í¿ÉÒÔÈÃËüºÍ²»È·¶¨
-¸öÊµ²ÎÏàÆ¥Åä¡£¶øÒ»¸ö´øÓĞÕâÑùµÄĞÎ²ÎµÄ·½·¨£¬¾ÍÊÇÒ»¸öÊµ²Î¸öÊı¿É±äµÄ·½·¨¡£
-Ò»¸öÊµ²Î¸öÊı¿É±äµÄ·½·¨
+å®šä¹‰å®å‚ä¸ªæ•°å¯å˜çš„æ–¹æ³•
+åªè¦åœ¨ä¸€ä¸ªå½¢å‚çš„â€œç±»å‹â€ä¸â€œå‚æ•°åâ€ä¹‹é—´åŠ ä¸Šä¸‰ä¸ª
+è¿ç»­çš„â€œ.â€ï¼ˆå³â€œ...â€ï¼Œè‹±æ–‡é‡Œçš„å¥ä¸­çœç•¥å·ï¼‰ï¼Œå°±å¯ä»¥è®©å®ƒå’Œä¸ç¡®å®š
+ä¸ªå®å‚ç›¸åŒ¹é…ã€‚è€Œä¸€ä¸ªå¸¦æœ‰è¿™æ ·çš„å½¢å‚çš„æ–¹æ³•ï¼Œå°±æ˜¯ä¸€ä¸ªå®å‚ä¸ªæ•°å¯å˜çš„æ–¹æ³•ã€‚
+ä¸€ä¸ªå®å‚ä¸ªæ•°å¯å˜çš„æ–¹æ³•
 private static int sumUp(int... values) {}
 
 Object... params
-new Object[]{para1, para2, para3 }µÈÍ¬ÓÚÕâÑùµÄĞÎÊ½¡£
+new Object[]{para1, para2, para3 }ç­‰åŒäºè¿™æ ·çš„å½¢å¼ã€‚
 
 private static int sumUp(int... values) {
     int sum = 0;
@@ -120,6 +137,6 @@ public static void newBehaviour(int... args){
     }   
 
 ............................................................................
-8. windows¶à°æ±¾jdk
-	½«jdk8£¬jdk6°²×°£¬¸´ÖÆ°²×°ÎÄ¼şºó
-	Ğ¶ÔØÁ½¸öjdk£¬ÕâÑù¾ÍÖ»ÓĞjava_homeÓ°ÏìÏµÍ³µÄjdk°æ±¾
+8. windowså¤šç‰ˆæœ¬jdk
+	å°†jdk8ï¼Œjdk6å®‰è£…ï¼Œå¤åˆ¶å®‰è£…æ–‡ä»¶å
+	å¸è½½ä¸¤ä¸ªjdkï¼Œè¿™æ ·å°±åªæœ‰java_homeå½±å“ç³»ç»Ÿçš„jdkç‰ˆæœ¬

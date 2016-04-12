@@ -8,6 +8,10 @@
 7. 配置mirrors ，repository
 8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 9. mvn 命令
+<<<<<<< HEAD
+10. mvn commond build webapp
+11. nux
+=======
 10. mvn commond build  java web project
 11. Nexus
 12. eclipse maven plugin
@@ -17,6 +21,7 @@
 
 
 
+>>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
 
 
 ..............................................
@@ -158,6 +163,9 @@ first-maven Unknown	Maven Problem
 3）.分析：
 ./m2/settings 影响默认conf/settiongs的配置
 
+<<<<<<< HEAD
+java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener
+=======
 4）.
 Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin错误解决方法 
 解决方法：将命令中的create改为generate：
@@ -169,6 +177,7 @@ mvn archetype:generate -DgroupId=com.tutorialspoint.test
 
   properties-> java complier -> 改成与版本相同的jre
 
+>>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
 
 
 ......................................................................
@@ -285,6 +294,10 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.
     <version>10.2.0.3.0</version>
 </dependency>
 
+<<<<<<< HEAD
+.........................................................................
+10. mvn commond build webapp
+=======
 ..................................................................................................
 10. mvn commond build  java web project
 
@@ -421,5 +434,8 @@ maven 配置依赖nexus
 4. 配置maven引用包编译位置 deployment assembly ->add -> java build enties path
 
 5. 添加tomcat lib jar
+>>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
 
-
+1. 创建：
+mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp
+若是缺少maven-archetype-plugin:2.4:create 则将create变成generate 
