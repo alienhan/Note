@@ -5,7 +5,7 @@
 7. 实参个数可变
 8. windows多版本jdk
 
-
+java学习文档
 
 ................................................................
 1.jdk配置：
@@ -54,8 +54,8 @@ cacerts证书文件(The cacerts Certificates File)
 %Java_home%\bin\keytool -genkey -alias tomcat -keyalg RSA
 
 ................................................................
-3. list
-list使用
+3. list java.util.List 
+有序的 collection（也称为序列）。
 
 example:/applicationtest/src/test/cust/project/UserList.java
 
@@ -64,10 +64,11 @@ List接口的常用实现类有ArrayList和LinkedList，
 在使用List集合时，通常情况下声明为List类型，
 实例化时根据实际情况的需要，实例化为ArrayList或LinkedList，
 例如：
-List<String> l = new ArrayList<String>();
 // 利用ArrayList类实例化List集合
-List<String> l2 = new LinkedList<String>();
+List<String> l = new ArrayList<String>();
 // 利用LinkedList类实例化List集合
+List<String> l2 = new LinkedList<String>();
+
 
 .................................................................
 5. java泛型
