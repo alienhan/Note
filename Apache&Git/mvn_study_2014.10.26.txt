@@ -8,21 +8,13 @@
 7. 配置mirrors ，repository
 8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法
 9. mvn 命令
-<<<<<<< HEAD
-10. mvn commond build webapp
-11. nux
-=======
-10. mvn commond build  java web project
-11. Nexus
+10. mvn commond build webapp java web project
+11. nux Nexus
 12. eclipse maven plugin
 13. mvn spring 
 14. mvn update
 15. eclipse create mvn project
-
-
-
->>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
-
+16. mvn 引用不到链接sqllserver的jar包
 
 ..............................................
 远程中央仓库的地址为 http://repo1.maven.org/
@@ -160,13 +152,11 @@ first-maven Unknown	Maven Problem
 </repositories> 
 
 
-3）.分析：
+3）分析：
 ./m2/settings 影响默认conf/settiongs的配置
-
-<<<<<<< HEAD
 java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener
-=======
-4）.
+
+4）
 Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin错误解决方法 
 解决方法：将命令中的create改为generate：
 mvn archetype:generate -DgroupId=com.tutorialspoint.test 
@@ -174,11 +164,7 @@ mvn archetype:generate -DgroupId=com.tutorialspoint.test
 
 5)Java compiler level does not match the version of the installed
   Java project facet.SSJ UnknownFaceted Project Problem (Java Version Mismatch)	
-
   properties-> java complier -> 改成与版本相同的jre
-
->>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
-
 
 ......................................................................
 5. 安装，配置
@@ -294,10 +280,9 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.
     <version>10.2.0.3.0</version>
 </dependency>
 
-<<<<<<< HEAD
 .........................................................................
 10. mvn commond build webapp
-=======
+
 ..................................................................................................
 10. mvn commond build  java web project
 
@@ -434,8 +419,15 @@ maven 配置依赖nexus
 4. 配置maven引用包编译位置 deployment assembly ->add -> java build enties path
 
 5. 添加tomcat lib jar
->>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306
 
 1. 创建：
 mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp
 若是缺少maven-archetype-plugin:2.4:create 则将create变成generate 
+-------------------------------------------------------------------------------------
+16. mvn 引用不到链接sqllserver的jar包
+	Missing artifact com.microsoft.sqlserver:sqljdbc4:jar:4.0
+1.在这个网站下载jdbc驱动包https://www.microsoft.com/en-us/download/details.aspx?id=11774
+2.手动添加sqlserver jdbc驱动包到mvn仓库中。
+cd到jar包的路径下
+	mvn install:install-file -Dfile=sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0 -Dpackaging=jar
+----------------------------------------------------------------------------------------
