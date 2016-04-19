@@ -96,3 +96,33 @@
 ----------------------------------------
 
 ...................................................................................
+3. mybatis sql insert update delete
+
+<insert id="insertUsers" parameterType="com.jh.vo.Users">
+	insert into users (id,name,age) values (#{id},#{name},#{age})
+</insert>
+
+	error:### Cause: org.apache.ibatis.builder.BuilderException: Error parsing SQL Mapper Configuration. 
+			  Cause: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. 
+			  Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. 
+			  Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'Users'.  
+			  Cause: java.lang.ClassNotFoundException: Cannot find class: Users
+	do: 没有使用类的全名作为参数写入到parameterType中，出现读不到参数类型的错误，也就是找不到类，
+		将类的全名写入就ok
+
+	error:insert 无效，数据库中没有结果
+	do: sqlSession 没有提交操作  
+	    加语句sqlSession.commit();
+		所有影响数据库数据的操作都要commit
+
+-------------------------------------------------------------
+<update id="updateUsers" parameterType="com.jh.vo.Users">
+	update users set 
+		name = #{name},
+		age = #{age}
+	where id = #{id}
+</update>
+--------------------------------------------------------------
+
+
+.............................................................................................................
