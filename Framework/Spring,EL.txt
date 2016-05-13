@@ -3,17 +3,13 @@
 3. EL
 4. El Spring mvc 连接注意
 5. spring mvc demo
-<<<<<<< HEAD:Framework/springmvc,EL.txt
 6. spring error
-=======
-6. spring ajax
-
+7. spring ajax
 
 
 官方文档：
 http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/index.html
 
->>>>>>> d6821926d781ddbd3791edd642a20424a0ee0306:Framework/Spring,EL.txt
 .............................................................
 1. Spring MVC 无项目
 

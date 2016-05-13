@@ -45,7 +45,9 @@ Eclipse Git 插件：
 3. git本地仓库与github连接
 
 1).生成ssh密钥在Administrator/.ssh（文件位置，默认生成）
+这个格式改过，每个git版本有些许的不同：
 $ssh keygen -t rsa -C "tonghuajianghan@gmail.com"
+$ssh-keygen -t rsa -C "tonghuajianghan@gmail.com"
 生成 id_rsa 和 id_rsa.pub 两个秘钥文件
 接着又会提示你输入两次密码（该密码是你push文件的时候要输入的密码，
 而不是github管理者的密码）
