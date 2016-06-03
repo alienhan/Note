@@ -245,11 +245,11 @@
           
 * js 操作cookie:          
 添加：          
-	document.cookie = "agentMerNo=" + $("#agentMerNo").val();          
+	> document.cookie = "agentMerNo=" + $("#agentMerNo").val();          
           
-获取：   
-	
-	```javascript
+获取：  
+
+	```
 	$("#agentMerNo option[value='" + getCookie("agentMerNo") + "']").attr(          
 					"selected", "selected");          
 	function getCookieVal(offset) { //取得项名称为offset的cookie值           
@@ -258,7 +258,7 @@
 			endstr = document.cookie.length;          
 		return unescape(document.cookie.substring(offset, endstr));          
 	}          
-          
+	  
 	function getCookie(name) { //取得名称为name的cookie值           
 		var arg = name + "=";          
 		var alen = arg.length;          
@@ -274,5 +274,5 @@
 		}          
 		return "";          
 	}
-        ```  
+	```  
 ----------------------------------------------------------------------------------------------
