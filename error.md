@@ -4,102 +4,102 @@ error
 错误解决
 ------------------------------------------------------------------------------------------------
 1.hibernate  
-Caused by: java.lang.ClassNotFoundException:
-javax.persistence.EntityListene
-用的是Hibernate3.6.0.final,
-出现这个问题的可能原因是没有导入
-hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
+Caused by: java.lang.ClassNotFoundException:  
+javax.persistence.EntityListene  
+用的是Hibernate3.6.0.final,  
+出现这个问题的可能原因是没有导入  
+hibernate-jpa-2.0-api-1.0.0.Final.jar这个包  
 
 ------------------------------------------------------------------------------------------------
-2.eclipse  
-.报不知名的错误
-Servlet.service() for servlet [jsp] in context with path
-[/dew] threw exception [javax.servlet.Servl
-解决：project ->clean ->清空当前服务器中的项目缓存。从起tomcat
+2.eclipse    
+.报不知名的错误  
+Servlet.service() for servlet [jsp] in context with path  
+[/dew] threw exception [javax.servlet.Servl  
+解决：project ->clean ->清空当前服务器中的项目缓存。从起tomcat  
 
 ------------------------------------------------------------------------------------------------
-3.java API  
-java.lang.NumberFormatException: For input string: ""
-当你强制转换一个String为Integer时,
-而这个String为""时的异常,即你的String不能转为Integer的异常
+3.java API    
+java.lang.NumberFormatException: For input string: ""   
+当你强制转换一个String为Integer时,    
+而这个String为""时的异常,即你的String不能转为Integer的异常    
 
 ------------------------------------------------------------------------------------------------
-4.struts，springMVC  中文乱码问题  
+4.struts，springMVC  中文乱码问题    
 
 url传值到Action的乱码解决方法：
-	jsp页面 URL传中文参数到Action里面出现乱码，
-用过滤器和控制器都解决不了，用了我两个多小时解决这个小问题！---------
+	jsp页面 URL传中文参数到Action里面出现乱码， 
+用过滤器和控制器都解决不了，用了我两个多小时解决这个小问题！---------    
 
-原因：
-默认情况下，tomcat使用的的编码方式：iso-8859-1
+原因：  
+默认情况下，tomcat使用的的编码方式：iso-8859-1  
 
 解决方法有以下几种：
-第一种：在Action中用 new String(str.getBytes("ISO-8859-1"), "UTF-8")，进行转码，因为传递的时候，中文默人的是ISO-8859-1
-					 new String(str.getBytes("GBK"), "ISO-8859-1")
+第一种：在Action中用 new String(str.getBytes("ISO-8859-1"), "UTF-8")，进行转码，因为传递的时候，中文默人的是ISO-8859-1  
+					 new String(str.getBytes("GBK"), "ISO-8859-1")  
 
-第二种：可通过配置TOMCAT来解决此问题，具体解决方法如下：在tomcat的server.xml里，找到<Connector port="8080" 
-              maxThreads="150" minSpareThreads="25" maxSpareThreads="75" 
-              enableLookups="false" redirectPort="8443" acceptCount="100" 
-              debug="0" connectionTimeout="20000" 
-              disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk">
-其中是修改 disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk" 其方法是防止在url中出现乱码
-然后在每个Jsp页面添加如下代码
-<%@ page pageEncoding=”gb2312″%>
-<%@ page contentType=”text/html;charset=gb2312″%>
-<%request.setCharacterEncoding(”gb2312″);%>
+第二种：可通过配置TOMCAT来解决此问题，具体解决方法如下：在tomcat的server.xml里，找到<Connector port="8080"   
+              maxThreads="150" minSpareThreads="25" maxSpareThreads="75"   
+              enableLookups="false" redirectPort="8443" acceptCount="100"   
+              debug="0" connectionTimeout="20000"   
+              disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk">   
+其中是修改 disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk" 其方法是防止在url中出现乱码   
+然后在每个Jsp页面添加如下代码  
+<%@ page pageEncoding=”gb2312″%>  
+<%@ page contentType=”text/html;charset=gb2312″%>  
+<%request.setCharacterEncoding(”gb2312″);%>  
 
-第三种：直接在ACTION中利用以下方法解决：request.setCharacterEncoding("gb2312");
-        response.setCharacterEncoding("gb2312");
+第三种：直接在ACTION中利用以下方法解决：request.setCharacterEncoding("gb2312");  
+        response.setCharacterEncoding("gb2312");  
 
-action,controller 返回页面的值乱码：
-	前台传过来的参数
-	str = new String(str.getBytes("ISO-8859-1"),"utf-8");
-	返回前台的参数--下载文件时
-	String str2 = new String(str.getBytes("GBK"), "ISO-8859-1");
+action,controller 返回页面的值乱码：  
+	前台传过来的参数  
+	str = new String(str.getBytes("ISO-8859-1"),"utf-8");   
+	返回前台的参数--下载文件时  
+	String str2 = new String(str.getBytes("GBK"), "ISO-8859-1");  
 
-getBytes方法：
-	String的getBytes()方法是得到一个操作系统默认的编码格式的字节数组。
-这个表示在不通OS下，返回的东西不一样！ 
-	String.getBytes(String decode)方法会根据指定的decode编码返回某字符串在该编码下的byte数组表示，如
-byte[] b_gbk = "中".getBytes("GBK"); 
-byte[] b_utf8 = "中".getBytes("UTF-8");
-byte[] b_iso88591 = "中".getBytes("ISO8859-1");
-将分别返回“中”这个汉字在GBK、UTF-8和ISO8859-1编码下的byte数组表示，
-此时b_gbk的长度为2，b_utf8的长度为3，b_iso88591的长度为1。 
+getBytes方法：  
+	String的getBytes()方法是得到一个操作系统默认的编码格式的字节数组。  
+这个表示在不通OS下，返回的东西不一样！   
+	String.getBytes(String decode)方法会根据指定的decode编码返回某字符串在该编码下的byte数组表示，如  
+byte[] b_gbk = "中".getBytes("GBK");   
+byte[] b_utf8 = "中".getBytes("UTF-8");  
+byte[] b_iso88591 = "中".getBytes("ISO8859-1");  
+将分别返回“中”这个汉字在GBK、UTF-8和ISO8859-1编码下的byte数组表示，  
+此时b_gbk的长度为2，b_utf8的长度为3，b_iso88591的长度为1。   
 
-	而与getBytes相对的，可以通过new String(byte[], decode)的方式来还原这个“中”字时，
-这个new String(byte[], decode)实际是使用decode指定的编码来将byte[]解析成字符串。
-	String s_gbk = new String(b_gbk,"GBK");
-	String s_utf8 = new String(b_utf8,"UTF-8");
-	String s_iso88591 = new String(b_iso88591,"ISO8859-1");
+	而与getBytes相对的，可以通过new String(byte[], decode)的方式来还原这个“中”字时，  
+这个new String(byte[], decode)实际是使用decode指定的编码来将byte[]解析成字符串。  
+	String s_gbk = new String(b_gbk,"GBK");  
+	String s_utf8 = new String(b_utf8,"UTF-8");  
+	String s_iso88591 = new String(b_iso88591,"ISO8859-1");  
 
-通过打印s_gbk、s_utf8和s_iso88591，会发现，s_gbk和s_utf8都是“中”，而只有s_iso88591是一个不认识的字符，
-为什么使用ISO8859-1编码再组合之后，无法还原“中”字呢，其实原因很简单，
-因为ISO8859-1编码的编码表中，根本就没有包含汉字字符，
-当然也就无法通过"中".getBytes("ISO8859-1");来得到正确的“中”字在ISO8859-1中的编码值了，
-所以再通过new String()来还原就无从谈起了。
-因此，通过String.getBytes(String decode)方法来得到byte[]时，
-一定要确定decode的编码表中确实存在String表示的码值，这样得到的byte[]数组才能正确被还原。
-
+通过打印s_gbk、s_utf8和s_iso88591，会发现，s_gbk和s_utf8都是“中”，而只有s_iso88591是一个不认识的字符，  
+为什么使用ISO8859-1编码再组合之后，无法还原“中”字呢，其实原因很简单，  
+因为ISO8859-1编码的编码表中，根本就没有包含汉字字符，  
+当然也就无法通过"中".getBytes("ISO8859-1");来得到正确的“中”字在ISO8859-1中的编码值了，  
+所以再通过new String()来还原就无从谈起了。  
+因此，通过String.getBytes(String decode)方法来得到byte[]时，  
+一定要确定decode的编码表中确实存在String表示的码值，这样得到的byte[]数组才能正确被还原。  
+ 
 ------------------------
 为什么要转换编码： 
-有时候，为了让中文字符适应某些特殊要求（如http header头要求其内容必须为iso8859-1编码），
-可能会通过将中文字符按照字节方式来编码的情况，如
-String s_iso88591 = new String("中".getBytes("UTF-8"),"ISO8859-1")，
-这样得到的s_iso8859-1字符串实际是三个在 ISO8859-1中的字符，在将这些字符传递到目的地后，
-目的地程序再通过相反的方式
-String s_utf8 = new String(s_iso88591.getBytes("ISO8859-1"),"UTF-8")
-来得到正确的中文汉字“中”。这样就既保证了遵守协议规定、也支持中文。 
+有时候，为了让中文字符适应某些特殊要求（如http header头要求其内容必须为iso8859-1编码），  
+可能会通过将中文字符按照字节方式来编码的情况，如  
+String s_iso88591 = new String("中".getBytes("UTF-8"),"ISO8859-1")， 
+这样得到的s_iso8859-1字符串实际是三个在 ISO8859-1中的字符，在将这些字符传递到目的地后，  
+目的地程序再通过相反的方式   
+String s_utf8 = new String(s_iso88591.getBytes("ISO8859-1"),"UTF-8")   
+来得到正确的中文汉字“中”。这样就既保证了遵守协议规定、也支持中文。   
  
 servlet规范： 
-(1) HttpServletRequest.setCharacterEncoding()方法 仅仅只适用于设置post提交的request body的编码而不是设置get方法提交的queryString的编码。该方法告诉应用服务器应该采用什么编码解析post传过来的内容。很多文章并没有说明这一点。
-(2) HttpServletRequest.getPathInfo()返回的结果是由Servlet服务器解码(decode)过的。
-(3) HttpServletRequest.getRequestURI()返回的字符串没有被Servlet服务器decoded过。
-(4) POST提交的数据是作为request body的一部分。
-(5) 网页的Http头中ContentType("text/html; charset=GBK")的作用：
-    (a) 告诉浏览器网页中数据是什么编码；
-    (b) 表单提交时，通常浏览器会根据ContentType指定的charset对表单中的数据编码，然后发送给服务器的。
-这里需要注意的是：这里所说的ContentType是指http头的ContentType，而不是在网页中meta中的ContentType。
+(1) HttpServletRequest.setCharacterEncoding()方法 仅仅只适用于设置post提交的request body的编码而不是设置get方法提交的   queryString的编码。该方法告诉应用服务器应该采用什么编码解析post传过来的内容。很多文章并没有说明这一点。  
+(2) HttpServletRequest.getPathInfo()返回的结果是由Servlet服务器解码(decode)过的。 
+(3) HttpServletRequest.getRequestURI()返回的字符串没有被Servlet服务器decoded过。 
+(4) POST提交的数据是作为request body的一部分。 
+(5) 网页的Http头中ContentType("text/html; charset=GBK")的作用： 
+    (a) 告诉浏览器网页中数据是什么编码； 
+    (b) 表单提交时，通常浏览器会根据ContentType指定的charset对表单中的数据编码，然后发送给服务器的。 
+这里需要注意的是：这里所说的ContentType是指http头的ContentType，而不是在网页中meta中的ContentType。 
 
 -------------------------------------------------------------------------------------------------------------
 5 ctrl + c ??tomcat  
