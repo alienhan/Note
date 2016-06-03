@@ -26,6 +26,10 @@ ALT+shift+J	给类注释
 ctrl + H 全局查找 可以设置只弹出File Search 在Customize中设置
 ctrl + shift + -> 选取单个单词
 Ctrl+Shift+ i 显示对象对应的参数
+ctrl + shift + 数字键盘/    缩略方法
+ctrl + shift + 数字键盘*    反缩略方法
+ctrl + alt + 向下箭头   复制选中
+
 
 
 

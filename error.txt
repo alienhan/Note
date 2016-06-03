@@ -610,9 +610,35 @@ $(function(){
 	数据提交不到后台  两个form表单重叠
 
 --------------------------------------------------------------------------------------------------------
-35
---------------------------------------------------------------------------------------------------------
-36
---------------------------------------------------------------------------------------------------------
-37
+35 tomcat myeclipse 
+java.lang.UnsupportedOperationException: Manual close is not allowed over a Spring managed SqlSession
+
+org.springframework.beans.factory.BeanCreationException: 
+Error creating bean with name 'cashierAction' defined in file 
+[D:\java\apache-tomcat-6.0.44-windows-x86\apache-tomcat-6.0.44\webapps\mendian-tms\WEB-INF\classes\com\mendian\action\appStore\CashierAction.class]:
+Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: 
+Could not instantiate bean class [com.mendian.action.appStore.CashierAction]: Constructor threw exception; nested exception is java.lang.Error: 
+Unresolved compilation problems: 
+
+do:
+myeclise servers 从新导入项目
+一般都是未加载，未编译的问题
+
+
+------------------------------------------------------------------------------------------------------------------
+36 Caused by: java.lang.ClassNotFoundException:javax.persistence.EntityListene
+使用Hibernate3.6.0.final出现问题
+原因是没有导入
+hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
+
+
+-----------------------------------------------------------------------------------------------------------------
+37 org.springframework.beans.factory.BeanCreationException:
+   Error creating bean with name 'entityManagerFactory' defined in class path resource [beans.xml]
+不是缺少了包，反而可能是多了jpa包，极有可能是项目里面引了一个jpa包，hibernate又自带了一个，且版本不一样。
+删除hibernate-jpa-2.0-api-1.0.0.Final.jar
+hibernate3.6final，已经把Annotation类库集成到了hibernate3.6。当我们想使用Annotation时，
+下载hibernate3.6final，不再需要下载hibernate-annotations-3.4.0.GA.zip了。
+
+------------------------------------------------------------------------------------------------------------------
 

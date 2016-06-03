@@ -233,3 +233,21 @@ Tiles 是一种JSP布局框架，主要目的是为了将复数的jsp页面作为一个
 的页面的部分机能，然后用来组合成一个最终表示用页面用的
 
 ................................................................................
+9. jquery td 遍历
+
+//通过遍历来取得所有的td
+	var tr=$(".result .checkFlag");
+	tr.each(function(){
+		var checkFlag = $(this).attr("id");
+		alert(checkFlag);
+		if("1" == checkFlag){
+			$(this).attr("style","color:green");
+			$(this).parent().find(".check").html("");
+		} 
+	    if("2" == checkFlag){
+			$(this).attr("style","color:red");
+		    $(this).parent().find(".check").html("");
+		} 
+	});
+
+----------------------------------------------------------------------------------
