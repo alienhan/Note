@@ -1,36 +1,36 @@
-## Ç°ºóÌ¨½»»¥ÓïÑÔ    
+## å‰åå°äº¤äº’è¯­è¨€    
 ----------------------------------------------------------------------------------------------          
 #JSTL          
-          
+```
 <c:if> if and else          
 <c:if var="flag" test=""></c:if>          
 <c:if test="${!flag}"></c:if>          
-          
+```
 ----------------------------------------------------------------------------------------------          
-#EL£¨Expression Language£© Ä¿µÄ£ºÎªÁËÊ¹JSPĞ´ÆğÀ´¸ü¼Ó¼òµ¥¡£          
+#ELï¼ˆExpression Languageï¼‰ ç›®çš„ï¼šä¸ºäº†ä½¿JSPå†™èµ·æ¥æ›´åŠ ç®€å•ã€‚          
           
-1£©»ñÈ¡±äÁ¿Öµ          
-	${username}   <-ºóÌ¨·µ»ØµÄ²ÎÊıÃû³Æ          
-	È¡³öÄ³Ò»·¶Î§ÖĞÃû³ÆÎªusernameµÄ±äÁ¿¡£          
-	ÒòÎªÃ»ÓĞÖ¸¶¨ÄÄÒ»¸ö·¶Î§µÄusername£¬          
-	ËùÒÔËü»áÒÀĞò´ÓPage¡¢Request¡¢Session¡¢Application·¶Î§²éÕÒ¡£          
-	¼ÙÈçÍ¾ÖĞÕÒµ½username£¬¾ÍÖ±½Ó»Ø´«£¬          
-	²»ÔÙ¼ÌĞøÕÒÏÂÈ¥£¬µ«ÊÇ¼ÙÈçÈ«²¿µÄ·¶Î§¶¼Ã»ÓĞÕÒµ½Ê±£¬¾Í»Ø´«null¡£          
+1ï¼‰è·å–å˜é‡å€¼          
+	${username}   <-åå°è¿”å›çš„å‚æ•°åç§°          
+	å–å‡ºæŸä¸€èŒƒå›´ä¸­åç§°ä¸ºusernameçš„å˜é‡ã€‚          
+	å› ä¸ºæ²¡æœ‰æŒ‡å®šå“ªä¸€ä¸ªèŒƒå›´çš„usernameï¼Œ          
+	æ‰€ä»¥å®ƒä¼šä¾åºä»Pageã€Requestã€Sessionã€ApplicationèŒƒå›´æŸ¥æ‰¾ã€‚          
+	å‡å¦‚é€”ä¸­æ‰¾åˆ°usernameï¼Œå°±ç›´æ¥å›ä¼ ï¼Œ          
+	ä¸å†ç»§ç»­æ‰¾ä¸‹å»ï¼Œä½†æ˜¯å‡å¦‚å…¨éƒ¨çš„èŒƒå›´éƒ½æ²¡æœ‰æ‰¾åˆ°æ—¶ï¼Œå°±å›ä¼ nullã€‚          
           
-2£©[]Óë.ÔËËã·û          
-     EL Ìá¹©.ºÍ[]Á½ÖÖÔËËã·ûÀ´´æÈ¡Êı¾İ¡£          
-     µ±Òª´æÈ¡µÄÊôĞÔÃû³ÆÖĞ°üº¬Ò»Ğ©ÌØÊâ×Ö·û£¬          
-     Èç.»ò?µÈ²¢·Ç×ÖÄ¸»òÊı×ÖµÄ·ûºÅ£¬¾ÍÒ»¶¨ÒªÊ¹ÓÃ []¡£          
-   ÀıÈç£º          
-     ${user.My-Name}Ó¦µ±¸ÄÎª${user["My-Name"] }          
-     Èç¹ûÒª¶¯Ì¬È¡ÖµÊ±£¬¾Í¿ÉÒÔÓÃ[]À´×ö£¬¶ø.ÎŞ·¨×öµ½¶¯Ì¬È¡Öµ¡£ÀıÈç£º          
-     ${sessionScope.user[data]}ÖĞdata ÊÇÒ»¸ö±äÁ¿          
+2ï¼‰[]ä¸.è¿ç®—ç¬¦          
+     EL æä¾›.å’Œ[]ä¸¤ç§è¿ç®—ç¬¦æ¥å­˜å–æ•°æ®ã€‚          
+     å½“è¦å­˜å–çš„å±æ€§åç§°ä¸­åŒ…å«ä¸€äº›ç‰¹æ®Šå­—ç¬¦ï¼Œ          
+     å¦‚.æˆ–?ç­‰å¹¶éå­—æ¯æˆ–æ•°å­—çš„ç¬¦å·ï¼Œå°±ä¸€å®šè¦ä½¿ç”¨ []ã€‚          
+   ä¾‹å¦‚ï¼š          
+     ${user.My-Name}åº”å½“æ”¹ä¸º${user["My-Name"] }          
+     å¦‚æœè¦åŠ¨æ€å–å€¼æ—¶ï¼Œå°±å¯ä»¥ç”¨[]æ¥åšï¼Œè€Œ.æ— æ³•åšåˆ°åŠ¨æ€å–å€¼ã€‚ä¾‹å¦‚ï¼š          
+     ${sessionScope.user[data]}ä¸­data æ˜¯ä¸€ä¸ªå˜é‡          
           
           
-3£©µÈ¼Û¹ØÏµ£º          
-	< %=request. getParameter(¡°username¡±)% > µÈ¼ÛÓÚ ${ param. username }          
-	<%=request.getAttribute(¡°userlist¡±) %> µÈ¼ÛÓÚ$ { requestScope.userlist }          
-	<%=user.getAddr( ) %> µÈ¼ÛÓÚ ${user.addr}          
+3ï¼‰ç­‰ä»·å…³ç³»ï¼š          
+	< %=request. getParameter(â€œusernameâ€)% > ç­‰ä»·äº ${ param. username }          
+	<%=request.getAttribute(â€œuserlistâ€) %> ç­‰ä»·äº$ { requestScope.userlist }          
+	<%=user.getAddr( ) %> ç­‰ä»·äº ${user.addr}          
           
           
           
@@ -38,19 +38,19 @@
 ----------------------------------------------------------------------------------------------          
 2. Tag          
     
-* jspÒıÓÃ    
+* jspå¼•ç”¨    
 <%@ taglib uri="http://www.justtide.com/mytags" prefix="my"%>    
     
 * mytag.tld    
-	Î»ÖÃ£º WEB-INF    
+	ä½ç½®ï¼š WEB-INF    
 				tld    
 					mytag.tld    
 	code:    
-		```    
-		<?xml version="1.0" encoding="UTF-8"?>    
-		<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"    
+	```    
+	<?xml version="1.0" encoding="UTF-8"?>    
+	<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"   
 		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">    
-		<description><![CDATA[×Ô¶¨Òå±êÇ©]]]]></description>    
+		<description><![CDATA[è‡ªå®šä¹‰æ ‡ç­¾]]]]></description>    
 		<display-name>my Tags</display-name>    
 		<tlib-version>1.0</tlib-version>    
 		<short-name>s</short-name>    
@@ -104,19 +104,19 @@
 				<rtexprvalue>true</rtexprvalue>    
 			</attribute>    
 			<attribute>    
-				<description><![CDATA[Ä¬ÈÏÑ¡ÖĞÖµ]]></description>    
+				<description><![CDATA[é»˜è®¤é€‰ä¸­å€¼]]></description>    
 				<name>defaultValue</name>    
 				<required>false</required>    
 				<rtexprvalue>true</rtexprvalue>    
 			</attribute>    
 			<attribute>    
-				<description><![CDATA[ÊÇ·ñ°üº¬¿ÕÑ¡Ïî]]></description>    
+				<description><![CDATA[æ˜¯å¦åŒ…å«ç©ºé€‰é¡¹]]></description>    
 				<name>hasEmpty</name>    
 				<required>false</required>    
 				<rtexprvalue>true</rtexprvalue>    
 			</attribute>    
 			<attribute>    
-				<description><![CDATA[ÊÇ·ñ°üº¬¿ÕÑ¡Ïî]]></description>    
+				<description><![CDATA[æ˜¯å¦åŒ…å«ç©ºé€‰é¡¹]]></description>    
 				<name>readOnly</name>    
 				<required>false</required>    
 				<rtexprvalue>true</rtexprvalue>    
@@ -125,6 +125,7 @@
 	</taglib>    
 	```    
 * java    
+	```
 	package com.mendian.tag;    
 	import java.io.IOException;    
 	import javax.servlet.jsp.JspException;    
@@ -143,7 +144,6 @@
 		private String disabled;    
 		private String defaultValue;    
 		private boolean hasEmpty;    
-    
 		public String doSomeThing() {    
 			StringBuffer sb = new StringBuffer("<select ");    
 			if (StringUtil.isNotEmpty(id)) {    
@@ -177,8 +177,7 @@
 			}    
 			sb.append("</select>");    
 			return sb.toString();    
-		}    
-    
+		}   
 		public int doEndTag() throws JspException {    
 			String result = doSomeThing();    
 			if (result != null) {    
@@ -191,90 +190,75 @@
 			}    
 			return 6;    
 		}    
-    
 		public String getId() {    
 			return id;    
 		}    
-    
 		public void setId(String id) {    
 			this.id = id;    
 		}    
-    
 		public String getName() {    
 			return name;    
 		}    
-    
 		public void setName(String name) {    
 			this.name = name;    
 		}    
-    
 		public String getStyle() {    
 			return style;    
 		}    
-    
 		public void setStyle(String style) {    
 			this.style = style;    
 		}    
-    
 		public String getCssClass() {    
 			return cssClass;    
 		}    
-    
 		public void setCssClass(String cssClass) {    
 			this.cssClass = cssClass;    
 		}    
-    
 		public String getDefaultValue() {    
 			return defaultValue;    
 		}    
-    
 		public void setDefaultValue(String defaultValue) {    
 			this.defaultValue = defaultValue;    
 		}    
-    
 		public boolean isHasEmpty() {    
 			return hasEmpty;    
 		}    
-    
 		public void setHasEmpty(boolean hasEmpty) {    
 			this.hasEmpty = hasEmpty;    
 		}    
-    
 		public String getReadOnly() {    
 			return readOnly;    
 		}    
-    
 		public void setReadOnly(String readOnly) {    
 			this.readOnly = readOnly;    
 		}    
-    
 		public String getDisabled() {    
 			return disabled;    
 		}    
-    
 		public void setDisabled(String disabled) {    
 			this.disabled = disabled;    
 		}    
 	}    
+	```
 ----------------------------------------------------------------------------------------------          
 #cookie          
           
-* js ²Ù×÷cookie:          
-Ìí¼Ó£º          
+* js æ“ä½œcookie:          
+æ·»åŠ ï¼š          
 	document.cookie = "agentMerNo=" + $("#agentMerNo").val();          
           
-»ñÈ¡£º          
-	      
+è·å–ï¼š          
+	```    
 	$("#agentMerNo option[value='" + getCookie("agentMerNo") + "']").attr(          
 					"selected", "selected");          
-	function getCookieVal(offset) { //È¡µÃÏîÃû³ÆÎªoffsetµÄcookieÖµ           
-		var endstr = document.cookie.indexOf(";", offset);//»ñÈ¡×Ö·û´®³¤¶È          
+	function getCookieVal(offset) { //å–å¾—é¡¹åç§°ä¸ºoffsetçš„cookieå€¼           
+		var endstr = document.cookie.indexOf(";", offset);//è·å–å­—ç¬¦ä¸²é•¿åº¦          
 		if (endstr == -1)          
 			endstr = document.cookie.length;          
 		return unescape(document.cookie.substring(offset, endstr));          
 	}          
           
-	function getCookie(name) { //È¡µÃÃû³ÆÎªnameµÄcookieÖµ           
+	function getCookie(name) { //å–å¾—åç§°ä¸ºnameçš„cookieå€¼           
 		var arg = name + "=";          
 		var alen = arg.length;          
 		var clen = document.cookie.length;          
@@ -289,5 +273,5 @@
 		}          
 		return "";          
 	}          
-          
+        ```
 ----------------------------------------------------------------------------------------------
