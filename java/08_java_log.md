@@ -62,32 +62,32 @@ private static Logger log = LoggerFactory.getLogger(TicketQrInfoAction.class);
 --------------------------------------------------------------------------------------------------------
 log4j.properties
 
-# Output pattern : date [thread] priority category - message   FATAL 0  ERROR 3  WARN 4  INFO 6  DEBUG 7 
-log4j.rootLogger=DEBUG,Console,File
+	# Output pattern : date [thread] priority category - message   FATAL 0  ERROR 3  WARN 4  INFO 6  DEBUG 7 
+	log4j.rootLogger=DEBUG,Console,File
 
-#Console
-log4j.appender.Console=org.apache.log4j.ConsoleAppender
-log4j.appender.Console.threshold=DEBUG
-log4j.appender.Console.layout=org.apache.log4j.PatternLayout
-log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+	#Console
+	log4j.appender.Console=org.apache.log4j.ConsoleAppender
+	log4j.appender.Console.threshold=DEBUG
+	log4j.appender.Console.layout=org.apache.log4j.PatternLayout
+	log4j.appender.Console.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
 
-#Springframework level
-log4j.logger.org.springframework=DEBUG
-log4j.logger.com.mybatis=DEBUG
-log4j.logger.org.apache.ibatis=DEBUG
-log4j.logger.com.ibatis = DEBUG
-log4j.logger.java.sql=DEBUG
-log4j.logger.java.sql.ResultSet=DEBUG  
-log4j.logger.org.apache=DEBUG  
-log4j.logger.java.sql.Connection=DEBUG  
-log4j.logger.java.sql.Statement=DEBUG  
-log4j.logger.java.sql.PreparedStatement=DEBUG   
+	#Springframework level
+	log4j.logger.org.springframework=DEBUG
+	log4j.logger.com.mybatis=DEBUG
+	log4j.logger.org.apache.ibatis=DEBUG
+	log4j.logger.com.ibatis = DEBUG
+	log4j.logger.java.sql=DEBUG
+	log4j.logger.java.sql.ResultSet=DEBUG  
+	log4j.logger.org.apache=DEBUG  
+	log4j.logger.java.sql.Connection=DEBUG  
+	log4j.logger.java.sql.Statement=DEBUG  
+	log4j.logger.java.sql.PreparedStatement=DEBUG   
 
-#log4j.appender.File=org.apache.log4j.DailyRollingFileAppender
-#log4j.appender.File.File=${tms.root}logs/log
-#log4j.appender.File.DatePattern='_'yyyy-MM-dd'.log' 
-#log4j.appender.File.layout=org.apache.log4j.PatternLayout
-#log4j.appender.File.layout.ConversionPattern=[TMS] %p [%t] %-d{yyyy-MM-dd HH\:mm\:ss} %C.%M(%L) | %m%n
+	#log4j.appender.File=org.apache.log4j.DailyRollingFileAppender
+	#log4j.appender.File.File=${tms.root}logs/log
+	#log4j.appender.File.DatePattern='_'yyyy-MM-dd'.log' 
+	#log4j.appender.File.layout=org.apache.log4j.PatternLayout
+	#log4j.appender.File.layout.ConversionPattern=[TMS] %p [%t] %-d{yyyy-MM-dd HH\:mm\:ss} %C.%M(%L) | %m%n
 
 ---------------------------------------------------------------------------------------------------------
 
