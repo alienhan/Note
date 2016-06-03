@@ -1,6 +1,6 @@
 #js
 -------------------------------------------------------------------------------------------------------  
-##定义JavaScript 通常用于操作 HTML 元素   
+* 定义JavaScript 通常用于操作 HTML 元素   
 
 	JavaScript 语句  
 	JavaScript 语句向浏览器发出的命令。  
@@ -9,7 +9,8 @@
 
 	使用 document.write() 仅仅向文档输出写内容。
 	如果在文档已完成加载后执行 document.write，整个 HTML 页面将被覆盖：
-
+	
+	```
 	<!DOCTYPE html>
 	<html>
 		<body>
@@ -26,6 +27,7 @@
 	JavaScript 语句向 id="demo" 
 	的 HTML 元素输出文本 "Hello World"：
 	document.getElementById("demo").innerHTML="Hello World";
+	```
 
 * 空格    
 
@@ -37,7 +39,7 @@
 #jquery
 
 * jquery td 遍历
-
+	```
 	//通过遍历来取得所有的td
 	var tr=$(".result .checkFlag");
 	tr.each(function(){
@@ -52,5 +54,6 @@
 			$(this).parent().find(".check").html("");
 		} 
 	});
+	```
 
 ---------------------------------------------------------------------------------------------------------------
