@@ -249,7 +249,7 @@
           
 获取：   
 	
-	```
+	```javascript
 	$("#agentMerNo option[value='" + getCookie("agentMerNo") + "']").attr(          
 					"selected", "selected");          
 	function getCookieVal(offset) { //取得项名称为offset的cookie值           
@@ -274,5 +274,5 @@
 		}          
 		return "";          
 	}
-        ```
+        ```  
 ----------------------------------------------------------------------------------------------
