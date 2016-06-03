@@ -559,7 +559,7 @@ insert into dic_load_config values('dic_unit_tag','企业表示字典','1','DIC_ITEM',
 
 --------------------------------------------------------------------------------------------------------
 32 java error map map.entry 遍历map
-					n. 修改，修正；改变
+	  修改，修正；改变
 java.util.ConcurrentModificationException
 在使用iterator.hasNext()操作迭代器的时候，如果此时迭代的对象发生改变，比如插入了新数据，或者有数据被删除。
 
@@ -633,8 +633,9 @@ hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
 
 
 -----------------------------------------------------------------------------------------------------------------
-37 org.springframework.beans.factory.BeanCreationException:
+37 org.springframework.beans.factory.BeanCreationException: 
    Error creating bean with name 'entityManagerFactory' defined in class path resource [beans.xml]
+
 不是缺少了包，反而可能是多了jpa包，极有可能是项目里面引了一个jpa包，hibernate又自带了一个，且版本不一样。
 删除hibernate-jpa-2.0-api-1.0.0.Final.jar
 hibernate3.6final，已经把Annotation类库集成到了hibernate3.6。当我们想使用Annotation时，
