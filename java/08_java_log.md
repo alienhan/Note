@@ -18,27 +18,26 @@ slf4j
      
 
 配置log4j：
-      配置log4j.properties
+	配置log4j.properties
     
         
 ① 配置根Logger
-
-   配置显示日志记录的优先级
-   log4j.rootLogger=warn, stdout
+	配置显示日志记录的优先级
+	log4j.rootLogger=warn, stdout
 
 ② 配置日志信息输出目的地Appender
 
-   log4j.appender.appenderName.option = valueN 
+log4j.appender.appenderName.option = valueN 
 
-   valueN的值
-   org.apache.log4j.ConsoleAppender（控制台）， 
-　 org.apache.log4j.FileAppender（文件）， 
-　 org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），
-　 org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）， 
-　 org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方） 
+	valueN的值
+	org.apache.log4j.ConsoleAppender（控制台）， 
+	org.apache.log4j.FileAppender（文件）， 
+　	org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），
+　	org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）， 
+　	org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方） 
    
 3. 输出debug语句
-   log4j.logger.org.hibernate=debug
+	log4j.logger.org.hibernate=debug
 
 -----------------------------------------------------------------------------------------------
 web.xml配置：
