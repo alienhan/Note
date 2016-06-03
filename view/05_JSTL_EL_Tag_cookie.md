@@ -247,7 +247,8 @@
 添加：          
 	document.cookie = "agentMerNo=" + $("#agentMerNo").val();          
           
-获取：          
+获取：   
+	
 	```    
 	$("#agentMerNo option[value='" + getCookie("agentMerNo") + "']").attr(          
 					"selected", "selected");          
