@@ -3,7 +3,7 @@ error
 错误原因
 错误解决
 ------------------------------------------------------------------------------------------------
-1.hibernate
+1.hibernate  
 Caused by: java.lang.ClassNotFoundException:
 javax.persistence.EntityListene
 用的是Hibernate3.6.0.final,
@@ -11,20 +11,20 @@ javax.persistence.EntityListene
 hibernate-jpa-2.0-api-1.0.0.Final.jar这个包
 
 ------------------------------------------------------------------------------------------------
-2.eclipse
+2.eclipse  
 .报不知名的错误
 Servlet.service() for servlet [jsp] in context with path
 [/dew] threw exception [javax.servlet.Servl
 解决：project ->clean ->清空当前服务器中的项目缓存。从起tomcat
 
 ------------------------------------------------------------------------------------------------
-3. java API
+3.java API  
 java.lang.NumberFormatException: For input string: ""
 当你强制转换一个String为Integer时,
 而这个String为""时的异常,即你的String不能转为Integer的异常
 
 ------------------------------------------------------------------------------------------------
-4. struts，springMVC  中文乱码问题
+4.struts，springMVC  中文乱码问题  
 
 url传值到Action的乱码解决方法：
 	jsp页面 URL传中文参数到Action里面出现乱码，
@@ -69,9 +69,9 @@ byte[] b_iso88591 = "中".getBytes("ISO8859-1");
 
 	而与getBytes相对的，可以通过new String(byte[], decode)的方式来还原这个“中”字时，
 这个new String(byte[], decode)实际是使用decode指定的编码来将byte[]解析成字符串。
-String s_gbk = new String(b_gbk,"GBK");
-String s_utf8 = new String(b_utf8,"UTF-8");
-String s_iso88591 = new String(b_iso88591,"ISO8859-1");
+	String s_gbk = new String(b_gbk,"GBK");
+	String s_utf8 = new String(b_utf8,"UTF-8");
+	String s_iso88591 = new String(b_iso88591,"ISO8859-1");
 
 通过打印s_gbk、s_utf8和s_iso88591，会发现，s_gbk和s_utf8都是“中”，而只有s_iso88591是一个不认识的字符，
 为什么使用ISO8859-1编码再组合之后，无法还原“中”字呢，其实原因很简单，
@@ -81,7 +81,8 @@ String s_iso88591 = new String(b_iso88591,"ISO8859-1");
 因此，通过String.getBytes(String decode)方法来得到byte[]时，
 一定要确定decode的编码表中确实存在String表示的码值，这样得到的byte[]数组才能正确被还原。
 
-------------------------为什么要转换编码：
+------------------------
+为什么要转换编码： 
 有时候，为了让中文字符适应某些特殊要求（如http header头要求其内容必须为iso8859-1编码），
 可能会通过将中文字符按照字节方式来编码的情况，如
 String s_iso88591 = new String("中".getBytes("UTF-8"),"ISO8859-1")，
@@ -89,8 +90,8 @@ String s_iso88591 = new String("中".getBytes("UTF-8"),"ISO8859-1")，
 目的地程序再通过相反的方式
 String s_utf8 = new String(s_iso88591.getBytes("ISO8859-1"),"UTF-8")
 来得到正确的中文汉字“中”。这样就既保证了遵守协议规定、也支持中文。 
-
-servlet规范：
+ 
+servlet规范： 
 (1) HttpServletRequest.setCharacterEncoding()方法 仅仅只适用于设置post提交的request body的编码而不是设置get方法提交的queryString的编码。该方法告诉应用服务器应该采用什么编码解析post传过来的内容。很多文章并没有说明这一点。
 (2) HttpServletRequest.getPathInfo()返回的结果是由Servlet服务器解码(decode)过的。
 (3) HttpServletRequest.getRequestURI()返回的字符串没有被Servlet服务器decoded过。
@@ -101,17 +102,17 @@ servlet规范：
 这里需要注意的是：这里所说的ContentType是指http头的ContentType，而不是在网页中meta中的ContentType。
 
 -------------------------------------------------------------------------------------------------------------
-5 ctrl + c ??tomcat
+5 ctrl + c ??tomcat  
 
 -------------------------------------------------------------------------------------------------------------
-6.required="true"
+6.required="true"  
   stuts 标签。谨慎使用
 
 -------------------------------------------------------------------------------------------------------------
-7.<A href="javascript:void(0)">点击</a>点击链接后不会回到网页顶部
+7.<A href="javascript:void(0)">点击</a>点击链接后不会回到网页顶部  
 
 -------------------------------------------------------------------------------------------------------------
-No row with the given identifier exists
+No row with the given identifier exists  
 有两张表,table1和table2.
 产生此问题的原因就是table1
 里做了关联<one-to-one>或者<many-to-one unique="true">
@@ -122,16 +123,14 @@ table2里的数据没有与table1相匹配的,
 (一句话,就是数据的问题!)
 
 -------------------------------------------------------------------------------------------------------------
-9.SQL Server 2005“备份集中的数据库备份与现有的数据库不同”解决方法
+9.SQL Server 2005“备份集中的数据库备份与现有的数据库不同”解决方法  
 http://www.jb51.net/article/19233.htm
 
 -------------------------------------------------------------------------------------------------------------
-10.
-java.lang.NumberFormatException: For input string: ""
+10.java.lang.NumberFormatException: For input string: ""  
 类型转换的问题
 -------------------------------------------------------------------------------------------------------------
-
-11. xgb 缓存
+11. xgb 缓存  
 ClientAbortException: java.net.SocketException:
 Connection reset by peer: socket write error
 原因如下：
@@ -141,9 +140,8 @@ Connection reset by peer: socket write error
 可能是网络的问题或者服务器性能问题 可能你的网络连接存在一些问题，
 你的数据传输的时候，可能由于时间等待的太久，
 但是server段设置的连接检验时间限制一定，
-那么就可能出现这种情况的！ 
--------------------------------------------------------------------------------------------------------------
-12、xgb 缓存
+那么就可能出现这种情况的！  
+
 ClientAbortException: java.net.SocketException:
 Connection reset by peer: socket write error
 的原因是由于处理http连接时，正在输出内容时，
@@ -154,12 +152,11 @@ Connection reset by peer: socket write error
 ，.应用服务器 最大线程并发数 达到极限，.内存耗尽
 
 -------------------------------------------------------------------------------------------------------------
-
-13	string
+13.string  
 奖惩查询时错误
    string强制转换int 时，null," " 不能被转换
 -------------------------------------------------------------------------------------------------------------
-14.	缓存
+14.缓存  
 socket write error
 这个异常的原因是，你的页面有一些动态生成的东西，而且相对较大。
 你的服务器向客户端发送数据，结果刚发一半，客户端关闭了链接，就造成了这个错误，
@@ -169,12 +166,12 @@ socket write error
 除非你的这部分程序有错误！
 
 -------------------------------------------------------------------------------------------------------------
-15.	缓存
+15.缓存  
 Java heap space
 tomcat缓存不足
 
 -------------------------------------------------------------------------------------------------------------
-16.	serlet
+16.serlet  
 String filePath = request.getSession().getServletContext().getRealPath("/");
 request.getSession().getServletContext() 获取的是Servlet容器对象，
 相当于tomcat容器了。getRealPath("/") 获取实际路径，“/”指代项目根目录
@@ -183,7 +180,7 @@ request.getSession().getServletContext() 获取的是Servlet容器对象，
 wtpwebapps\UMPWeb_20131230\
 
 -------------------------------------------------------------------------------------------------------------
-17.	eclipse 设置默认编码为Utf-8
+17.eclipse 设置默认编码为Utf-8  
 需要设置的几处地方为：
 
  Window->Preferences->General ->Content Type->Text->JSP 最下面设置为UTF-8
@@ -192,19 +189,19 @@ wtpwebapps\UMPWeb_20131230\
  Window->Preferences->Web->JSP Files面板选择 ISO 10646/Unicode(UTF-8)
 
 -------------------------------------------------------------------------------------------------------------
-18. eclipse
+18.eclipse  
 	项目旁有!
     以前引用的包，因为路径的等问题
     找不到了
     buildpath就可以
 
 -------------------------------------------------------------------------------------------------------------
-19	Tomcat
+19.Tomcat  
 Tomcat报错：Document base ……does not exist or is not a readable directory
 删除eclipse中的tomcat就好了
 
 -------------------------------------------------------------------------------------------------------------
-20	log4j
+20.log4j  
 log4j:ERROR LogMananger.repositorySelector was null likely due to error in class reloading, usin (2011-05-10 19:54:32)
 标签： 杂谈	分类： javascript_SSH
 Today I got this error message from Tomcat 6.0.24:
@@ -216,7 +213,7 @@ org.apache.catalina.loader.WebappClassLoader.ENABLE_CLEAR_REFERENCES=false
 to the "conf/catalina.properties" file in your tomcat directory.
 
 -------------------------------------------------------------------------------------------------------------
-21 JSP
+21.JSP  
 org.apache.jasper.JasperException: Unable to compile class for JSP: 
 
 An error occurred at line: 23 in the generated java file
@@ -228,7 +225,7 @@ The method getJspApplicationContext(ServletContext) is undefined for the type Js
 问题就可以解决了。
 
 -------------------------------------------------------------------------------------------------------------
-22. 规范--wonders
+22.规范--wonders  
 xhzs
 方法命名规范：
 	1.java驼峰命名法，首字母以小写开头，每个单词首字母大写（第一个单词除外）
@@ -240,7 +237,7 @@ xhzs
 		页面删除命名规则：remove+XXX，delete+XXX
 
 -------------------------------------------------------------------------------------------------------------
-23 spring fileupload 上传 文件上传 多文件上传
+23.spring fileupload 上传 文件上传 多文件上传  
 xhzs
 user jar：
 	使用commons-fileupload.jar上传
@@ -268,52 +265,50 @@ code：
 		}
 	}
 ----------------------------------------------------------------------------------------------------------------
-24 excel  读取excel 写入excel 操作excel
-xhzs
-code：
-/**
- * 读取excel文件数据
- * 
- * @param is输入字节流
- * @param isXlsOrXlsx文件类型
- * @return
- * @throws IOException
- */
-private void readExcel(InputStream is,
-			String isXlsOrXlsx) throws IOException {
-	/** 根据版本选择创建Workbook的方式 */
-	Workbook wb = null;
+24excel 读取excel 写入excel 操作excel    
+	/**
+	 * 读取excel文件数据
+	 * 
+	 * @param is输入字节流
+	 * @param isXlsOrXlsx文件类型
+	 * @return
+	 * @throws IOException
+	 */
+	private void readExcel(InputStream is,
+				String isXlsOrXlsx) throws IOException {
+		/** 根据版本选择创建Workbook的方式 */
+		Workbook wb = null;
 
-	if ("xls".equals(isXlsOrXlsx)) {
-		wb = new HSSFWorkbook(is);
-	} else {
-		wb = new XSSFWorkbook(is);
-	}
-	for (int numSheet = 0; numSheet < wb.getNumberOfSheets(); numSheet++) {
-		Sheet sheet = wb.getSheetAt(numSheet);
-		if (sheet == null) {
-			continue;
+		if ("xls".equals(isXlsOrXlsx)) {
+			wb = new HSSFWorkbook(is);
+		} else {
+			wb = new XSSFWorkbook(is);
 		}
-		/** 得到Excel的行数 */
-		int totalRows = sheet.getPhysicalNumberOfRows();
-		// 循环行Row
-		for (int rowNum = 0; rowNum < totalRows; rowNum++) {
-			Row row = sheet.getRow(rowNum);
-			if (row != null) {
-				if (row.getCell(0) != null) {
-					row.getCell(0).setCellType(Cell.CELL_TYPE_STRING);
-					String value = row.getCell(0).getStringCellValue(); // 读取第一列单元格的值
-					if (StringUtils.isNotEmpty(value)) {
-						//写入到pojo
+		for (int numSheet = 0; numSheet < wb.getNumberOfSheets(); numSheet++) {
+			Sheet sheet = wb.getSheetAt(numSheet);
+			if (sheet == null) {
+				continue;
+			}
+			/** 得到Excel的行数 */
+			int totalRows = sheet.getPhysicalNumberOfRows();
+			// 循环行Row
+			for (int rowNum = 0; rowNum < totalRows; rowNum++) {
+				Row row = sheet.getRow(rowNum);
+				if (row != null) {
+					if (row.getCell(0) != null) {
+						row.getCell(0).setCellType(Cell.CELL_TYPE_STRING);
+						String value = row.getCell(0).getStringCellValue(); // 读取第一列单元格的值
+						if (StringUtils.isNotEmpty(value)) {
+							//写入到pojo
+						}
 					}
 				}
+				//list添加多个pojo
 			}
-			//list添加多个pojo
 		}
 	}
-}
 --------------------------------------------------------------------------------------------------------
-25 hibernate annotation配置排序    hibernate排序  hibernate顺序
+25 hibernate annotation配置排序    hibernate排序  hibernate顺序   
 
 @OneToMany(cascade = { CascadeType.PERSIST ,CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "meetingInfo")
 @Cascade(org.hibernate.annotations.CascadeType.ALL)
@@ -322,152 +317,150 @@ public Set<MeetingAttach> getMeetingAttachs() {
 	return meetingAttachs;
 }
 --------------------------------------------------------------------------------------------------------
-26 jquery valicate jquery提交验证 jquery验证 表单验证插件jquery validation  xhzs
+26 jquery valicate jquery提交验证 jquery验证 表单验证插件jquery validation  xhzs   
 
-<!--引入 jquery validate 相关js -->
-<script src="${assets_path}/assets/js/jquery.validate.min.js"></script>
-<script src="${assets_path}/assets/js/messages_zh.min.js"></script>
+	<!--引入 jquery validate 相关js -->
+	<script src="${assets_path}/assets/js/jquery.validate.min.js"></script>
+	<script src="${assets_path}/assets/js/messages_zh.min.js"></script>
 
-默认校验规则
-序号	规则	        描述
-1	required:true	    必须输入的字段。
-2	remote:"check.php"	使用 ajax 方法调用 check.php 验证输入值。
-3	email:true	        必须输入正确格式的电子邮件。
-4	url:true			必须输入正确格式的网址。
-5	date:true			必须输入正确格式的日期。日期校验 ie6 出错，慎用。
-6	dateISO:true		必须输入正确格式的日期（ISO），例如：2009-06-23，1998/01/22。只验证格式，不验证有效性。
-7	number:true			必须输入合法的数字（负数，小数）。
-8	digits:true			必须输入整数。
-9	creditcard:			必须输入合法的信用卡号。
-10	equalTo:"#field"	输入值必须和 #field 相同。
-11	accept:				输入拥有合法后缀名的字符串（上传文件的后缀）。
-12	maxlength:5			输入长度最多是 5 的字符串（汉字算一个字符）。
-13	minlength:10		输入长度最小是 10 的字符串（汉字算一个字符）。
-14	rangelength:[5,10]	输入长度必须介于 5 和 10 之间的字符串（汉字算一个字符）。
-15	range:[5,10]		输入值必须介于 5 和 10 之间。
-16	max:5				输入值不能大于 5。
-17	min:10				输入值不能小于 10。
+	默认校验规则
+	序号	规则	        描述
+	1	required:true	    必须输入的字段。
+	2	remote:"check.php"	使用 ajax 方法调用 check.php 验证输入值。
+	3	email:true	        必须输入正确格式的电子邮件。
+	4	url:true			必须输入正确格式的网址。
+	5	date:true			必须输入正确格式的日期。日期校验 ie6 出错，慎用。
+	6	dateISO:true		必须输入正确格式的日期（ISO），例如：2009-06-23，1998/01/22。只验证格式，不验证有效性。
+	7	number:true			必须输入合法的数字（负数，小数）。
+	8	digits:true			必须输入整数。
+	9	creditcard:			必须输入合法的信用卡号。
+	10	equalTo:"#field"	输入值必须和 #field 相同。
+	11	accept:				输入拥有合法后缀名的字符串（上传文件的后缀）。
+	12	maxlength:5			输入长度最多是 5 的字符串（汉字算一个字符）。
+	13	minlength:10		输入长度最小是 10 的字符串（汉字算一个字符）。
+	14	rangelength:[5,10]	输入长度必须介于 5 和 10 之间的字符串（汉字算一个字符）。
+	15	range:[5,10]		输入值必须介于 5 和 10 之间。
+	16	max:5				输入值不能大于 5。
+	17	min:10				输入值不能小于 10。
 
-jquery.validate.min.js里自带的messages就是错误规则提示 
-messages: {
-    required: "This field is required.",
-    remote: "Please fix this field.",
-    email: "Please enter a valid email address.",
-    url: "Please enter a valid URL.",
-    date: "Please enter a valid date.",
-    dateISO: "Please enter a valid date (ISO).",
-    dateDE: "Bitte geben Sie ein gültiges Datum ein.",
-    number: "Please enter a valid number.",
-    numberDE: "Bitte geben Sie eine Nummer ein.",
-    digits: "Please enter only digits",
-    creditcard: "Please enter a valid credit card number.",
-    equalTo: "Please enter the same value again.",
-    accept: "Please enter a value with a valid extension.",
-    maxlength: $.validator.format("Please enter no more than {0} characters."),
-    minlength: $.validator.format("Please enter at least {0} characters."),
-    rangelength: $.validator.format("Please enter a value between {0} and {1} characters long."),
-    range: $.validator.format("Please enter a value between {0} and {1}."),
-    max: $.validator.format("Please enter a value less than or equal to {0}."),
-    min: $.validator.format("Please enter a value greater than or equal to {0}.")
-},
-
-code：
-//校验
-$('#addMeetingInfo').validate({
-	rules : {
-		'meetingName':{required:true,maxlength:100},
-		'meetingType':{required:true}
-	},messages : {
-		'meetingName':{required:"请输入会议名称！",maxlength:"会议名称不能超过33字！"},
-		'meetingType':{required:"请选择会议类型"}
+	jquery.validate.min.js里自带的messages就是错误规则提示 
+	messages: {
+		required: "This field is required.",
+		remote: "Please fix this field.",
+		email: "Please enter a valid email address.",
+		url: "Please enter a valid URL.",
+		date: "Please enter a valid date.",
+		dateISO: "Please enter a valid date (ISO).",
+		dateDE: "Bitte geben Sie ein gültiges Datum ein.",
+		number: "Please enter a valid number.",
+		numberDE: "Bitte geben Sie eine Nummer ein.",
+		digits: "Please enter only digits",
+		creditcard: "Please enter a valid credit card number.",
+		equalTo: "Please enter the same value again.",
+		accept: "Please enter a value with a valid extension.",
+		maxlength: $.validator.format("Please enter no more than {0} characters."),
+		minlength: $.validator.format("Please enter at least {0} characters."),
+		rangelength: $.validator.format("Please enter a value between {0} and {1} characters long."),
+		range: $.validator.format("Please enter a value between {0} and {1}."),
+		max: $.validator.format("Please enter a value less than or equal to {0}."),
+		min: $.validator.format("Please enter a value greater than or equal to {0}.")
 	},
-	submitHandler:function() {
-		var success = true;
-		if(success) {
-			var isNecessary = "${dicAttachTypeList[0].isNecessary}";
-			//获取
-			if(isNecessary == 1){
-				
-			}else{
-				var form=document.getElementById("addMeetingInfo");
-				var url=form.action;
-				url=url+"?status="+status;
-				form.action=url;
-				document.getElementById("addMeetingInfo").action=url;
-				form.submit();
+
+	//校验
+	$('#addMeetingInfo').validate({
+		rules : {
+			'meetingName':{required:true,maxlength:100},
+			'meetingType':{required:true}
+		},messages : {
+			'meetingName':{required:"请输入会议名称！",maxlength:"会议名称不能超过33字！"},
+			'meetingType':{required:"请选择会议类型"}
+		},
+		submitHandler:function() {
+			var success = true;
+			if(success) {
+				var isNecessary = "${dicAttachTypeList[0].isNecessary}";
+				//获取
+				if(isNecessary == 1){
+					
+				}else{
+					var form=document.getElementById("addMeetingInfo");
+					var url=form.action;
+					url=url+"?status="+status;
+					form.action=url;
+					document.getElementById("addMeetingInfo").action=url;
+					form.submit();
+				}
 			}
 		}
-	}
-});
+	});
 
-code2：
-$(document).ready(function validateFrom (argument) {
-     $("#form").validate({
-          rules:{
-               name:{		//input name 值
-                    required:true,
-                    minlength:2,
-                    maxlength:10
-               },
-               IDNumber:{
-                    required:true,
-                    minlength:15,
-                    maxlength:18
-               }
-          },
-          messages:{
-               name:{
-                    required:"必须填写用户名",
-                    minlength:"用户名最小为2位",
-                    maxlength:"用户名最大为10位"
-               },
-               IDNumber:{
-                    required:"身份证不能为空",
-                    minlength:15,
-                    maxlength:18
-               }
-          }
-     });
-});
+	$(document).ready(function validateFrom (argument) {
+		 $("#form").validate({
+			  rules:{
+				   name:{		//input name 值
+						required:true,
+						minlength:2,
+						maxlength:10
+				   },
+				   IDNumber:{
+						required:true,
+						minlength:15,
+						maxlength:18
+				   }
+			  },
+			  messages:{
+				   name:{
+						required:"必须填写用户名",
+						minlength:"用户名最小为2位",
+						maxlength:"用户名最大为10位"
+				   },
+				   IDNumber:{
+						required:"身份证不能为空",
+						minlength:15,
+						maxlength:18
+				   }
+			  }
+		 });
+	});
 
-validate()方法配置项：
-submitHandler(form) 通过验证后运行的函数，可以加上表单提交的方法
-invalidHandler 无效表单提交后运行的函数
-ignore 对某些元素不进行验证
-rules 定义检验规则
-messages 定义提示信息
-groups 对一组元素的验证，用一个错误提示，用errorPlacement控制把错误信息放在哪里
-onsubmit 提交时是否进行验证，默认是true，提交的时候进行验证
-onfocusout 是否在获取焦点时验证
-onkeyup 是否在敲击键盘时验证
-onclick 是否在鼠标点击时验证，一般用于checkbox
-focusInvalid 提交表单后，未通过验证的表单是否获得焦点
-focusCleanup 当未通过验证的元素获取焦点时，是否移除错误提示
-errorClass 指定错误提示的css类名，可以自定义错误提示样式
-validClass 指定验证通过使用的css的类名
-errorElement 使用什么标签标记错误
-wrapper 使用什么标签把上边的errorElement包起来
-errorLabelContainer 把错误信息统一放在一个容器里面
-errorContainer 显示或者隐藏验证信息，可以自动实现有错误信息出现时把容器属性变为显示，无错误时隐藏
-showErrors(errorMap,errorList) 显示总共有多少个未通过验证的元素
-errorPlacement 定义错误信息放在哪里
-success: 要验证的元素通过验证后的动作
-highlight(element,errorClass,validClass) 可以给未通过验证的元素加效果
-unhighlight 去除未通过验证的元素的效果，一般和highlight同时使用
+	validate()方法配置项：
+	submitHandler(form) 通过验证后运行的函数，可以加上表单提交的方法
+	invalidHandler 无效表单提交后运行的函数
+	ignore 对某些元素不进行验证
+	rules 定义检验规则
+	messages 定义提示信息
+	groups 对一组元素的验证，用一个错误提示，用errorPlacement控制把错误信息放在哪里
+	onsubmit 提交时是否进行验证，默认是true，提交的时候进行验证
+	onfocusout 是否在获取焦点时验证
+	onkeyup 是否在敲击键盘时验证
+	onclick 是否在鼠标点击时验证，一般用于checkbox
+	focusInvalid 提交表单后，未通过验证的表单是否获得焦点
+	focusCleanup 当未通过验证的元素获取焦点时，是否移除错误提示
+	errorClass 指定错误提示的css类名，可以自定义错误提示样式
+	validClass 指定验证通过使用的css的类名
+	errorElement 使用什么标签标记错误
+	wrapper 使用什么标签把上边的errorElement包起来
+	errorLabelContainer 把错误信息统一放在一个容器里面
+	errorContainer 显示或者隐藏验证信息，可以自动实现有错误信息出现时把容器属性变为显示，无错误时隐藏
+	showErrors(errorMap,errorList) 显示总共有多少个未通过验证的元素
+	errorPlacement 定义错误信息放在哪里
+	success: 要验证的元素通过验证后的动作
+	highlight(element,errorClass,validClass) 可以给未通过验证的元素加效果
+	unhighlight 去除未通过验证的元素的效果，一般和highlight同时使用
 
-选择器扩展
-:blank 选择所有值为空的元素
-:filled 选择所有值不为空的元素
-:unchecked 选择所有没有被选中的元素
+	选择器扩展
+	:blank 选择所有值为空的元素
+	:filled 选择所有值不为空的元素
+	:unchecked 选择所有没有被选中的元素
 
-自定义验证方法:
-jQuery.validator.addMethod(name,method,[message])
-name 方法名称
-method: function(value,element,params) 方法逻辑
-messages:提示消息
+	自定义验证方法:
+	jQuery.validator.addMethod(name,method,[message])
+	name 方法名称
+	method: function(value,element,params) 方法逻辑
+	messages:提示消息
 
 .....................................
-jquery valicate 正则表达式 匹配  添加新的自己的函数，添加自己的函数
+jquery valicate 正则表达式 匹配  添加新的自己的函数，添加自己的函数    
 	$(document).ready(function(){
 		//联系电话(手机/电话皆可)验证   
 		$.validator.addMethod("isPhone", function(value,element) {   
@@ -495,7 +488,7 @@ jquery valicate 正则表达式 匹配  添加新的自己的函数，添加自己的函数
 
 
 --------------------------------------------------------------------------------------------------------
-27 jquery ajax ajax ajax提交 
+27 jquery ajax ajax ajax提交    
 	//ajax提交后天
 	var meetingYear = $("#meetingYear").val();
 	var meetingType = $("#meetingType").val();
@@ -520,7 +513,7 @@ jquery valicate 正则表达式 匹配  添加新的自己的函数，添加自己的函数
 		}
 	}); 
 --------------------------------------------------------------------------------------------------------
-28 jquery ui dialog dialog对话框
+28 jquery ui dialog dialog对话框   
 
 
 
