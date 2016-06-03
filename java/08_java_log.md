@@ -54,10 +54,10 @@ web.xml配置：
 ------------------------------------------------------------------------------------------------
 java 调用：
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-private static Logger log = LoggerFactory.getLogger(TicketQrInfoAction.class);
+	import org.slf4j.Logger;
+	import org.slf4j.LoggerFactory;
+	
+	private static Logger log = LoggerFactory.getLogger(TicketQrInfoAction.class);
 
 --------------------------------------------------------------------------------------------------------
 log4j.properties
