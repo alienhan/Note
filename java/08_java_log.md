@@ -30,11 +30,11 @@ slf4j
 log4j.appender.appenderName.option = valueN 
 
 	valueN的值
-	org.apache.log4j.ConsoleAppender（控制台）， 
-	org.apache.log4j.FileAppender（文件）， 
-　	org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件），
-　	org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）， 
-　	org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方） 
+	org.apache.log4j.ConsoleAppender（控制台）
+	org.apache.log4j.FileAppender（文件)
+　	org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件）
+　	org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件）
+　	org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）
    
 3. 输出debug语句
 	log4j.logger.org.hibernate=debug
