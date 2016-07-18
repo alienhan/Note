@@ -7,6 +7,7 @@
 7. tomcat通过conf-Catalina-localhost目录发布项目
 8. tomcat 下访问localhost错误
 9. 发布项目
+10. tomcat 配置服务器监听,用于eclipse的debug功能 || eclipse 调试远程tomcat || tomcat服务器配置远程调试
 
 .................................................................
 1. 默认访问
@@ -61,10 +62,12 @@ jdk自带的keytool与openssl
 1)、keytool 与 openssl都是工具。
 区别就是根据应用服务器或者web server不同，
 而使用对应的工具.tomcat需要使用keytool工具。
+
 2)、cer与crt都是证书格式，看你webserver 
 或者应用服务器支持哪种就将证书改成哪个，很简单。
 JKS是一种格式。一般使用openssl的都是jks格式或者key格式，
 使用keytool的都是keystore格式。
+
 3)、至于导入根证书问题，一般都要导入根证书。
 客户端证书你所说的导入，我没明白。我觉得客户端不需要再导入了吧，
 在服务器上做双向认证，也不需要导入，只需要从服务器上配置一下即可。
@@ -127,3 +130,20 @@ eclipse3.2中的tomcat插件就可以直接启动tomcat，不是在eclipse中虚拟启动
 			配置%tomcat%/conf/Catalina/localhost/xx.xml
 		2.第二次发布的时候，将保存原有配置
 		3.正确重启tomcat
+
+-----------------------------------------------------------------------------------------------------------------------
+10. tomcat 配置服务器监听,用于eclipse的debug功能 || eclipse 调试远程tomcat || tomcat服务器配置远程调试
+服务器tomcat端:
+	bin->catalina.bat -->
+
+	set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%
+	set CATALINA_OPTS=-server -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000
+	rem ----- Execute The Requested Command ---------------------------------------
+
+
+
+本地eclipse端:
+	servers --> tomcat 6.x --> 项目 -->right click -> Remote Java Application --> Coonect -->
+	配置本地项目,远程服务器地址,端口
+
+----------------------------------------------------------------------------------------------------------------------

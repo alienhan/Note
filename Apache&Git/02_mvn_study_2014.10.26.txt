@@ -238,6 +238,9 @@ mvn archetype:generate -DgroupId=com.tutorialspoint.test
 ......................................................................................................
 9. mvn 命令
 
+运行mvn command 必须在有pom.xml文件的父文件夹
+
+
 生成清除Eclipse项目结构：
 mvn eclipse:eclipse
 mvn eclipse:clean

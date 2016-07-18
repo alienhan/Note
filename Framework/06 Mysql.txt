@@ -1,28 +1,67 @@
+###################MYSQL##########################
+
+
 
 1. mysql配置
 2. mysql命令
-3. sqlserver
-4.oricle
+
 5.分页
 
-............................................................
+---------------------------------------------------------------------------------------------------------------------------------------
 1. mysql配置
 
-1). 安装：
-使用安装版就可以
+安装 mysql 5.7：
+	下载地址: http://dev.mysql.com/downloads/mysql/5.1.html
+	
+解压版安装:	
+1.配置环境变量
+2.cd到mysql的bin下面
+	mysqld --initialize
+	mysqld -install
+	net start mysql
+3.然后登入,第一次登入是没有密码的
+	 mysql -u root
+  有密码则设置不用密码访问:
+	 在mysql.ini文件最后添加(默认没有mysql.ini要自己手动新建)
+		skip-grant-tables (注意末尾空格)
 
-2).环境配置
-配置mysql的bin目录为环境变量
+4.登入之后进行密码修改:
+mysql 5.7以前的做法:(新版本没有password字段)
+	mysql> use mysql;
+	mysql> update user set password=password("新密码") where user="root";
+mysql 5.7 password字段被替换成authentication_string
+	mysql> update `User` SET authentication_string=PASSWORD("root") where USER='root';
+	mysql> flush privileges;
+	mysql> quit;
 
-3).cmd启动，关闭mysql服务
-net start mysql
-net stop mysql
 
-4).cmd 进入mysql操作界面
-mysql -u root -p（注:u与root之间可以不用加空格，其它也一样）
- mysql -h110.110.110.110 -u root -p 123(例)
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+如果遇到第一次安装mysql的时候密码不为空,问题解决如下:
+1.编辑mysql配置文件my.ini在[mysqld]这个条目下加入skip-grant-tables
+2.保存退出后重启mysql
+3.点击“开始”->“运行”(快捷键Win+R)。
+4.启动：输入 net stop mysql
+5.停止：输入 net start mysql
+6.在cmd里面输入mysql -u root -p就可以不用密码登录了，出现password：的时候直接回车可以进入
+7.mysql> use mysql;
+8.mysql> update user set password=password("新密码") where user="root";
+(如果是user表中没有password字段的时候,如下所示,否则直接跳过)
+mysql> update `User` SET authentication_string=PASSWORD("0000") where USER='root';
+mysql> flush privileges;
+mysql> quit;
+在第一个登入之后,还需要重新设置密码,否则会提示没有权限操作:
+step 1: SET PASSWORD = PASSWORD(‘your new password‘);
+step 2: ALTER USER ‘root‘@‘localhost‘ PASSWORD EXPIRE NEVER;
+step 3: flush privileges;
 
-.............................................................
+在my.ini中设置如下,解决数据库乱码问题:
+[mysql]
+default-character-set=utf8
+[mysqld]
+character-set-server=utf8
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
 2. mysql命令
 
 create database xxx;
@@ -86,16 +125,8 @@ update 表名 set 字段名 = replace(字段名,'旧内容','新内容');
 文章前面加入4个空格
 update article set content=concat('　　',content); 
 
-...................................................................................
-3. sqlserver
-3.1安装：
 
-3.2安装问题：
-sqlserver在第二次安装时端口改成1434
-................................................................
-4. oricle
-
-.................................................................................................
+----------------------------------------------------------------------------------------------------------------------.
 5.分页
 
 5.1 mysql 分页
@@ -107,25 +138,7 @@ select * from person order by id desc limit 0, 10
 select * from persons limit 10;
 意思是，起点为0，开始查询，返回10条记录。
 
-------------------------------------------------------------------------------------------------------
-5.2 sqlserver 分页
-
-SELECT TOP 10 * FROM unit_info
-WHERE
-	unit_id NOT IN (
-		SELECT
-			TOP 5 unit_id
-		FROM
-			unit_info
-		ORDER BY
-			unit_id
-	)
-ORDER BY
-	unit_id
-
---------------------------------------------------------------------------------------------------------
-5.3 oricle 分页
-
+-----------------------------------------------------------------------------------------------------------------------
 
 
 

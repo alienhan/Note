@@ -5,7 +5,7 @@
 7. å®å‚ä¸ªæ•°å¯å˜
 8. windowså¤šç‰ˆæœ¬jdk
 
-javaÑ§Ï°ÎÄµµ
+java å®‰è£…ï¼Œé…ç½®ç›¸å…³
 
 ................................................................
 1.jdké…ç½®ï¼š
@@ -55,25 +55,15 @@ cacertsè¯ä¹¦æ–‡ä»¶(The cacerts Certificates File)
 %Java_home%\bin\keytool -genkey -alias tomcat -keyalg RSA
 
 ................................................................
-<<<<<<< HEAD
 3. list java.util.List 
-ÓĞĞòµÄ collection£¨Ò²³ÆÎªĞòÁĞ£©¡£
 =======
 3. list
 listä½¿ç”¨
->>>>>>> 64cfc2902bbf750b4de83681d1e75fa9fc765193
 
 example:/applicationtest/src/test/cust/project/UserList.java
 
 list<class>
-<<<<<<< HEAD
-List½Ó¿ÚµÄ³£ÓÃÊµÏÖÀàÓĞArrayListºÍLinkedList£¬
-ÔÚÊ¹ÓÃList¼¯ºÏÊ±£¬Í¨³£Çé¿öÏÂÉùÃ÷ÎªListÀàĞÍ£¬
-ÊµÀı»¯Ê±¸ù¾İÊµ¼ÊÇé¿öµÄĞèÒª£¬ÊµÀı»¯ÎªArrayList»òLinkedList£¬
-ÀıÈç£º
-// ÀûÓÃArrayListÀàÊµÀı»¯List¼¯ºÏ
 List<String> l = new ArrayList<String>();
-// ÀûÓÃLinkedListÀàÊµÀı»¯List¼¯ºÏ
 List<String> l2 = new LinkedList<String>();
 
 =======
@@ -85,7 +75,6 @@ List<String> l = new ArrayList<String>();
 // åˆ©ç”¨ArrayListç±»å®ä¾‹åŒ–Listé›†åˆ
 List<String> l2 = new LinkedList<String>();
 // åˆ©ç”¨LinkedListç±»å®ä¾‹åŒ–Listé›†åˆ
->>>>>>> 64cfc2902bbf750b4de83681d1e75fa9fc765193
 
 .................................................................
 5. javaæ³›å‹

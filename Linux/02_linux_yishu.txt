@@ -1,0 +1,5 @@
+重新发布项目:
+sh /root/Downloads/tms.sh 0
+
+查看日志:
+tail -f /root/Downloads/apache-tomcat-7.0.42/webapps/mendian-tms/logs/log

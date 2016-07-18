@@ -50,12 +50,45 @@ String 字符串常量
 StringBuffer 字符串变量（线程安全）
 StringBuilder 字符串变量（非线程安全）
 
-1.三者在执行速度方面的比较： StringBuilder >  StringBuffer  >  String
-原因：
-	当用String操作字符串时，实际上是在不断的创建新的对象，而原来的对象就会变为垃圾被ＧＣ回收掉，
-	因此执行效率降低
+	1.三者在执行速度方面的比较： StringBuilder >  StringBuffer  >  String
+	原因：
+		当用String操作字符串时，实际上是在不断的创建新的对象，而原来的对象就会变为垃圾被ＧＣ回收掉，
+		因此执行效率降低
 
-2.区别：
-	StringBuilder ：线程非安全的
-	StringBuffer ：线程安全的
+	2.区别：
+		StringBuilder ：线程非安全的
+		StringBuffer ：线程安全的
 --------------------------------------------------------------------------------------------
+4. 对象克隆
+	Java中所有的对象都是保存在堆中，而堆是供全局共享的。也就是说，
+	如果同一个Java程序的不同方法，只要能拿到某个对象的引用，
+	引用者就可以随意的修改对象的内部数据（前提是这个对象的内部数据通过get/set方法曝露出来）。
+	有的时候，我们编写的代码想让调用者只获得该对象的一个拷贝
+	（也就是一个内容完全相同的对象，但是在内存中存在两个这样的对象）
+
+	继承Cloneable
+"code:====
+public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
+	public Object clone() throws CloneNotSupportedException {
+		return super.clone();
+	}
+}
+
+"demo====
+	User u1 = new User("Kent", "123456", new Date());
+	User u2 = u1;
+	User u3 = (User) u1.clone();
+	
+	System.out.println(u1 == u2);		// true
+	System.out.println(u1.equals(u2));	// true
+	
+	System.out.println(u1 == u3);		// false
+	System.out.println(u1.equals(u3));	// true
+
+--------------------------------------------------------------------------------------------------
+java.io.IOException: failed to decrypt safe contents entry: javax.crypto.BadPaddingException:
+Given final block not properly padded
+
+Sometimes this error is symptomatic of using an incorrect password for the p12 key.
+
+---------------------------------------------------------------------------------------------------
