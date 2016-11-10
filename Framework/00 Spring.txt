@@ -1,9 +1,9 @@
-#spring 
+Spring 
 
 官方文档：
 http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/index.html
 ===========================================================================================================
-Spring MVC
+Spring MVC annocation
 
 @Controller
 	注释类，成为请求分发器
@@ -15,41 +15,39 @@ Spring MVC
 		会报错，没有这个文件
 
 --------------------------------------------------------------------------------------------------------
-Spring MVC -- jsp 传参
+Spring MVC  jsp传参
 
 form表单传参-----------------------------------
-前台传后台
-	<form action="robot/getAnswer" method="get">
-	  <input name="tagDesc" type="text">
-	</form>
-	<div>${qaCont}</div>
-	<div>${pq.qaCont}</div>
-    name与实体类属性名一样
-    action与spring mvc controller @RequestMapping value相同 
+	前台传后台
+		<form action="robot/getAnswer" method="get">
+		  <input name="tagDesc" type="text">
+		</form>
+		<div>${qaCont}</div>
+		<div>${pq.qaCont}</div>
+		name与实体类属性名一样
+		action与spring mvc controller @RequestMapping value相同 
 
-    <form:form commandName="account">
-	指定form默认自动绑定的是Model的command属性值，那么当我的form对象对应的属性名称不是command的时候，
-	应该怎么办呢？对于这种情况，Spring给我们提供了一个commandName属性，
-	我们可以通过该属性来指定我们将使用Model中的哪个属性作为form需要绑定的command对象。
-	除了commandName属性外，指定modelAttribute属性也可以达到相同的效果。
-	但是在spring controller中要new
-		request.setAttribute("accout", new Account());	
+		<form:form commandName="account">
+		指定form默认自动绑定的是Model的command属性值，那么当我的form对象对应的属性名称不是command的时候，
+		应该怎么办呢？对于这种情况，Spring给我们提供了一个commandName属性，
+		我们可以通过该属性来指定我们将使用Model中的哪个属性作为form需要绑定的command对象。
+		除了commandName属性外，指定modelAttribute属性也可以达到相同的效果。
+		但是在spring controller中要new
+			request.setAttribute("accout", new Account());	
 
-后台传前台
-   获取对象,对象属性
-		model.addAttribute("qaCont", qaCont);
-		model.addAttribute("pq",pq);
+	后台传前台
+	   获取对象,对象属性
+			model.addAttribute("qaCont", qaCont);
+			model.addAttribute("pq",pq);
 
 ajax 传参------------------------------------------
 
 ============================================================================================================
-Spring 
-
-@Component
+Spring @Component
 
 
 
-初始化回调-------------- InitializingBean-----------------------------------------------------------------------------------------  
+初始化回调-------------- InitializingBean-------------------------------------
 InitializingBean接口为bean提供了初始化方法的方式，
 它只包括afterPropertiesSet方法，凡是继承该接口的类，在初始化bean的时候会执行该方法。
 
@@ -70,8 +68,7 @@ public class initBean implements InitializingBean{
 }
 
 
-Spring task-----------------------------------------------------------------------------------------------
-spring 定时任务
+Spring task---------------------------spring 定时任务----------------------------
 
 xml配置
 application.xml引入spring-tasks配置文件
@@ -133,22 +130,40 @@ public class ScheduledTaskManager  {
 
 }
 
-Spring ehcache-------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------
+Spring ehcache
 
 
 
 
 
+--------------------------------------------------------------------------------------------------------------------------------------------
+Spring 拦截
+
+
+
+preHandle( )
+拦截器页面跳转
+request.getRequestDispatcher("/WEB-INF/view/test.jsp").forward(request,response);
 
 
 
 
 
+//error----------------------------------------------------------------------------------------------------------------------------------------
+progress loading spring xsd
+	最常见的导致这一问题的原因其实与使用了一个名为“assembly”的maven打包插件有关。
+很多项目需要将工程连同其所依赖的所有jar包打包成一个jar包，maven的assembly插件就是用来完成这个任务的。
+但是由于工程往往依赖很多的jar包，而被依赖的jar又会依赖其他的jar包，这样，当工程中依赖到不同的版本的spring时，
+在使用assembly进行打包时，只能将某一个版本jar包下的spring.schemas文件放入最终打出的jar包里，这就有可能遗漏了
+一些版本的xsd的本地映射，进而出现了文章开始提到的错误。如果你的项目是打成单一jar的，你可以通过检查最终生成的
+jar里的spring.schemas文件来确认是不是这种情况。而关于这种情况，解决的方法一般是推荐使用另外一种打包插件shade,
+它确实是一款比assembly更加优秀的工具，在对spring.schemas文件处理上，shade能够将所有jar里的spring.schemas文件
+进行合并，在最终生成的单一jar包里，spring.schemas包含了所有出现过的版本的集合！
 
-=============================================================================================================================================
-#################################################Error##########################################################
-================================================================================================================
 
+
+//error---------------------------------------------------------------------------------------------------------------------------------------
 org.springframework.web.servlet.PageNotFound noHandlerFound 
 No mapping found for HTTP request with URI [/spring_test_002/userContoller/userManager]
 in DispatcherServlet with name 'dispatcher'
@@ -156,5 +171,5 @@ in DispatcherServlet with name 'dispatcher'
 	do:	p:prefix="/page/" 默认开始寻找的文件位置，找不到页面。
 		return "userpage/userManager"; 
 
-------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------
 
