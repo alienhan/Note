@@ -241,4 +241,7 @@ git reset --soft | --mixed | --hard
 Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤
 
 ----------------------------------------------------------------------------------------------
-	
+EGit myeclipse 
+
+egit http://archive.eclipse.org/egit/updates-3.0
+myeclipse 2013

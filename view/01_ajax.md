@@ -11,3 +11,37 @@
 	xmlhttp.send("fname=Bill&lname=Gates");            
             
 -----------------------------------------------------------------------------------------------------------
+js submit file
+
+#gameIcon 为<input type="file" name="gameIcon"/>
+$("#gameIcon").change(function(){
+        var file = this.files[0];
+        console.log(file);
+        var reader = new FileReader();
+        reader.readAsDataURL(file); 
+        reader.onload = function(e){ 
+        	var form = new FormData();// ??只有form格式可以传数据
+        	form.append("uploadFile", file);
+        	var settings = {
+        	  "async": true,
+        	  "crossDomain": true,
+        	  "url": ctx + "/fileAction/commonFileUpLoad.action",
+        	  "method": "POST",
+        	  "headers": {
+        	    "cache-control": "no-cache",
+        	  },
+        	  "processData": false,
+        	  "contentType": false,
+        	  "mimeType": "multipart/form-data",
+        	  "data": form
+        	}
+
+        	$.ajax(settings).done(function (response) {
+        	  console.log(response);
+        	});
+        
+        }; 
+	});
+
+---------------------------------------------------------------------------------------------------------
+spring js 序列化传参 serialize
