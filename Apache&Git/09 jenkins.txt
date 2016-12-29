@@ -38,19 +38,32 @@ jenkins.xml配置
 
 	2.配置tomcat-user.xml
 		jenkins有权限操作tomcat
+			 <role rolename="tomcat"/>
+ 			 <role rolename="role1"/>
+  			 <role rolename="manager-script"/>
+ 			 <role rolename="manager-gui"/>
+  			 <role rolename="manager-status"/> 
+  			 <role rolename="admin-gui"/>
+  			 <role rolename="admin-script"/> 
+  			 <user username="tomcat" password="tomcat" roles="manager-gui,manager-script,tomcat,admin-gui,admin-script"/>
+ 			 <user username="both" password="tomcat" roles="tomcat,role1"/>
+  			 <user username="role1" password="tomcat" roles="role1"/>
 
 	3.配置context.xml
 		jenkins可以删除项目
+			<Context antiResourceLocking="true">
 
 	4.配置catalita.bat 配置缓存
 		报错 perGerm 问题
 
 ------------------------------------------------------------------------------------------------
 error : 可能对tomcat 虚拟路径下的文件上传之后的访问造成影响
+	配置tomcat属性的时候
+	<Context antiResourceLocking="true"></Context>
 
 
-
-
+	tomcat 锁文件问题:
+	
 
 
 
