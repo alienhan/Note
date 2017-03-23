@@ -1,62 +1,62 @@
 ### storm 
 
+2017/3/22 17:19:31 
 ---------------------------------------------------------------------------------
-* strom °²×°
+* strom å®‰è£…
 
-1. °²×°python  
-   ÕâÊÇÎªÁË²âÊÔ°²×°Ğ§¹û£¬ÎÒÃÇ½«²¿Êğ storm-starter project°¸ÀıÖĞword coun³ÌĞò£¬ 
-   ÓÃµÄÊÇpythonĞ´µÄmulti-lang bolt£¬Ê¹ÓÃpython 2.7.6£¬ 
+1. å®‰è£…python  
+   è¿™æ˜¯ä¸ºäº†æµ‹è¯•å®‰è£…æ•ˆæœï¼Œæˆ‘ä»¬å°†éƒ¨ç½² storm-starter projectæ¡ˆä¾‹ä¸­word counç¨‹åºï¼Œ 
+   ç”¨çš„æ˜¯pythonå†™çš„multi-lang boltï¼Œä½¿ç”¨python 2.7.6ï¼Œ 
     
-   °²×°Â·¾¶ÔÚ£º  
+   å®‰è£…è·¯å¾„åœ¨ï¼š  
       C:\Python27\    
-   pythonºÃÏñ°²×°µÄÊ±ºò×Ô¶¯¾ÍÅäÖÃÁË»·¾³±äÁ¿
-   Õâ¸öÎÒÒ²²»ÖªµÀÎªÊ²Ã´Òª°²×°£¬ÍøÉÏ½Ì³Ì°²×°£¬ÎÒÒ²°²×°ÁË£¬²»¹ıÃ»ÓĞ²âÊÔÊÇ·ñÓĞÓÃ   
+   pythonå¥½åƒå®‰è£…çš„æ—¶å€™è‡ªåŠ¨å°±é…ç½®äº†ç¯å¢ƒå˜é‡
+   è¿™ä¸ªæˆ‘ä¹Ÿä¸çŸ¥é“ä¸ºä»€ä¹ˆè¦å®‰è£…ï¼Œç½‘ä¸Šæ•™ç¨‹å®‰è£…ï¼Œæˆ‘ä¹Ÿå®‰è£…äº†ï¼Œä¸è¿‡æ²¡æœ‰æµ‹è¯•æ˜¯å¦æœ‰ç”¨   
 
-2. °²×°²¢ÔËĞĞzookeeper
-   µØÖ·£º [zookeeper] http://zookeeper.apache.org/doc/r3.3.6/zookeeperStarted.html#sc_Download "zookeeper"  
-   ÅäÖÃ£º
+2. å®‰è£…å¹¶è¿è¡Œzookeeper
+   åœ°å€ï¼š http://zookeeper.apache.org/doc/r3.3.6/zookeeperStarted.html#sc_Download  
+   é…ç½®ï¼š
       > cd zookeeper-3.3.6  
       > copy conf\zoo_sample.cfg conf\zoo.cfg  
-      > .\bin\zkServer.cmd  
+      > .\bin\zkServer.cmd  (å¯åŠ¨zookeeperæœåŠ¡)
    
-3. °²×°storm
-   StormµÄwindows¹Ù·½°æ»¹Ã»ÓĞÊÍ·Å£¬Òò´ËÍøÉÏÕÒÁËÒ»Ğ©¸öÈË×öµÄ°²×°°ü¡£   
-   windowsÔËĞĞ°æ±¾£º[storm] https://dl.dropboxusercontent.com/s/iglqz73chkul1tu/storm-0.9.1-incubating-SNAPSHOT-12182013.zip  
-   source°æ±¾£º[storm source] https://github.com/ptgoetz/storm/tree/windows-test  
+3. å®‰è£…storm
+
+   Stormçš„windowså®˜æ–¹ç‰ˆè¿˜æ²¡æœ‰é‡Šæ”¾ï¼Œå› æ­¤ç½‘ä¸Šæ‰¾äº†ä¸€äº›ä¸ªäººåšçš„å®‰è£…åŒ…ã€‚   
+   windowsè¿è¡Œç‰ˆæœ¬ï¼š https://dl.dropboxusercontent.com/s/iglqz73chkul1tu/storm-0.9.1-incubating-SNAPSHOT-12182013.zip  
+   sourceç‰ˆæœ¬ï¼š https://github.com/ptgoetz/storm/tree/windows-test  
   
-4. ÅäÖÃstorm»·¾³±äÁ¿  
-      STORM_HOME £ºD:\java\storm\storm-0.9.1  
-      ÔÚpathÖĞ¼ÓÈë£º
-        %STORM_HOME%\bin;C:\Python27;C:\Python27\Lib\site-packages\;C:\Python27\Scripts\
+4. é…ç½®stormç¯å¢ƒå˜é‡  
+      `STORM_HOMEï¼šD:\java\storm\storm-0.9.1  `
+      åœ¨pathä¸­åŠ å…¥ï¼š
+        `%STORM_HOME%\bin;C:\Python27;C:\Python27\Lib\site-packages\;C:\Python27\Scripts\`
 
-5. Æô¶¯Storm
-    stormºÃÏñÊÇÓÉÕâÈı²¿·Ö×é³ÉµÄ£¬Òò´ËĞèÒª·Ö±ğÆô¶¯stormµÄÈı¸ö×é¼ş  
-    Æô¶¯Nimbus  
-      > cd %STORM_HOME%  > storm nimbus   
-    Æô¶¯Supervisor  
-      > cd %STORM_HOME%  > storm supervisor   
-    Æô¶¯Storm UI    
-      > cd %STORM_HOME%  > storm ui   
+5. å¯åŠ¨Storm
+    stormå¥½åƒæ˜¯ç”±è¿™ä¸‰éƒ¨åˆ†ç»„æˆçš„ï¼Œå› æ­¤éœ€è¦åˆ†åˆ«å¯åŠ¨stormçš„ä¸‰ä¸ªç»„ä»¶
+    å¯åŠ¨Nimbus  
+     ` cd %STORM_HOME%  > storm nimbus   `
+    å¯åŠ¨Supervisor  
+      `cd %STORM_HOME%  > storm supervisor   `
+    å¯åŠ¨Storm UI    
+      ` cd %STORM_HOME%  > storm ui   `
       
-    ÑéÖ¤Æô¶¯³É¹¦£º  
-      ä¯ÀÀÆ÷´ò¿ªhttp://localhost:8080/ ¿É¿´µ½StormÔËĞĞ¡£  
-      ÎÊÌâ£ºstorm uiÔËĞĞÔÚjettyÖĞµÚÒ»´ÎÆô¶¯¿ÉÄÜ¿´µ½jettyÒ³Ãæ£¬Ë¢ĞÂÒ»´Î¾ÍºÃÁË  
+        éªŒè¯å¯åŠ¨æˆåŠŸï¼š
+        æµè§ˆå™¨æ‰“å¼€http://localhost:8080/ å¯çœ‹åˆ°Stormè¿è¡Œã€‚  
+        é—®é¢˜ï¼šstorm uiè¿è¡Œåœ¨jettyä¸­ç¬¬ä¸€æ¬¡å¯åŠ¨å¯èƒ½çœ‹åˆ°jettyé¡µé¢ï¼Œåˆ·æ–°ä¸€æ¬¡å°±å¥½äº†  
 
-6. ²¿Êğwork count  
-    ÍøÉÏÎÄµµ¸øµÄ£¬²»ÖªµÀÊÇÊ²Ã´  
+6. éƒ¨ç½²work count  
+
+    ç½‘ä¸Šæ–‡æ¡£ç»™çš„ï¼Œä¸çŸ¥é“æ˜¯ä»€ä¹ˆ  
     
-    ÏÂÔØµØÖ·£º[work count] https://dl.dropboxusercontent.com/s/kc933u6vz2crqkb/storm-starter-0.0.1-SNAPSHOT-jar-with-dependencies.jar   
+    ä¸‹è½½åœ°å€ï¼š
+    https://dl.dropboxusercontent.com/s/kc933u6vz2crqkb/storm-starter-0.0.1-SNAPSHOTjar-with-dependencies.jar   
      
-    ²¿ÊğÕâ¸öjarÔÚ±¾µØ£º  
-        > >storm jar storm-starter-0.0.1-SNAPSHOT-jar-with-dependencies.jar storm.starter.WordCountTopology WordCount -c nimbus.host=localhost
+    éƒ¨ç½²è¿™ä¸ªjaråœ¨æœ¬åœ°ï¼š  
+    >storm jar storm-starter-0.0.1-SNAPSHOT-jar-with-dependencies.jar storm.starter.WordCountTopology WordCount -c nimbus.host=localhost
       
-    ÑéÖ¤£º  
-        Ë¢ĞÂ Storm UIÒ³Ãæ£¬»á¿´µ½ ¡°WordCount¡± topologyÏÔÊ¾ÁĞ³ö£¬µã°´Á´½ÓÈ·ÈÏËü´¦ÀíÊı¾İ¡£
+    éªŒè¯ï¼š  
+        åˆ·æ–° Storm UIé¡µé¢ï¼Œä¼šçœ‹åˆ° â€œWordCountâ€ topologyæ˜¾ç¤ºåˆ—å‡ºï¼Œç‚¹æŒ‰é“¾æ¥ç¡®è®¤å®ƒå¤„ç†æ•°æ®ã€‚
 
 
-------------------------------------------------------------------------------------------------------------------
-* storm java Á´½Ó 
-
-
-
-  
+------------------------------------------------------------------------------
+* storm java é“¾æ¥ 
