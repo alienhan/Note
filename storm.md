@@ -14,7 +14,10 @@
    这个我也不知道为什么要安装，网上教程安装，我也安装了，不过没有测试是否有用   
 
 2. 安装并运行zookeeper
-   地址： http://zookeeper.apache.org/doc/r3.3.6/zookeeperStarted.html#sc_Download  
+
+   地址： 
+    >http://zookeeper.apache.org/doc/r3.3.6/zookeeperStarted.html#sc_Download  
+
    配置：
       > cd zookeeper-3.3.6  
       > copy conf\zoo_sample.cfg conf\zoo.cfg  
@@ -24,6 +27,7 @@
 
    Storm的windows官方版还没有释放，因此网上找了一些个人做的安装包。   
    windows运行版本： https://dl.dropboxusercontent.com/s/iglqz73chkul1tu/storm-0.9.1-incubating-SNAPSHOT-12182013.zip  
+  
    source版本： https://github.com/ptgoetz/storm/tree/windows-test  
   
 4. 配置storm环境变量  
@@ -34,9 +38,11 @@
 5. 启动Storm
     storm好像是由这三部分组成的，因此需要分别启动storm的三个组件
     启动Nimbus  
-     ` cd %STORM_HOME%  > storm nimbus   `
+     ` cd %STORM_HOME%  > storm nimbus`
+
     启动Supervisor  
       `cd %STORM_HOME%  > storm supervisor   `
+
     启动Storm UI    
       ` cd %STORM_HOME%  > storm ui   `
       
@@ -55,6 +61,7 @@
     >storm jar storm-starter-0.0.1-SNAPSHOT-jar-with-dependencies.jar storm.starter.WordCountTopology WordCount -c nimbus.host=localhost
       
     验证：  
+
         刷新 Storm UI页面，会看到 “WordCount” topology显示列出，点按链接确认它处理数据。
 
 
