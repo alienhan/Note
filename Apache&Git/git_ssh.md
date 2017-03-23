@@ -1,5 +1,5 @@
   
-## gi t##  
+## git  
   
 官网 http://www.git-scm.com/  
 ------------------------------------------------------------------------------------------  
@@ -12,8 +12,8 @@ password : 百度
 2. 创建git仓库  
   
 添加用户名和密码：  
-git config --global user.name "jh" （github登录名）  
-git config --global user.email "tonghuajianghan@gmail.com"（github登陆邮箱）  
+>git config --global user.name "jh" （github登录名）  
+>git config --global user.email "tonghuajianghan@gmail.com"（github登陆邮箱）  
   
 初始化git本地存储库：  
 创建一个文件->cd 这个文件夹（例：cd E：note）  
@@ -38,12 +38,13 @@ ssh 操作
 1).生成ssh密钥在Administrator/.ssh（文件位置，默认生成）  
 这个格式改过，每个git版本有些许的不同：  
   
-格式1：	$ssh keygen -t rsa -C "tonghuajianghan@gmail.com"  
+格式1:
+>$ssh keygen -t rsa -C "tonghuajianghan@gmail.com"  
 可能报错：  
-	ssh: Could not resolve hostname keygen: Name or service not known  
+>ssh: Could not resolve hostname keygen: Name or service not known  
   
-格式2： $ssh-keygen -t rsa -C "tonghuajianghan@gmail.com"  
-  
+格式2：
+>$ssh-keygen -t rsa -C "tonghuajianghan@gmail.com"  
   
 生成 id_rsa 和 id_rsa.pub 两个秘钥文件  
 接着又会提示你输入两次密码（该密码是你push文件的时候要输入的密码，  
@@ -62,7 +63,7 @@ sts右击项目——>Team->share Patch
 4).新建github远程版本库（在github网站上新建）  
   4.1new repository ->create Repository->完成  
   4.2Create a new repository on the command line  
-  
+
 touch README.md  
 git init  
 git add README.md  
@@ -72,16 +73,19 @@ git push -u origin master
 Push an existing repository from the command line  
   
   
-5).连接本地版本库与远程版本库  
+5). 连接本地版本库与远程版本库  
 origin是默认已有远程版本库  
 $git remote -v 列出远程版本库详细内容  
+
 要添加一个新的远程仓库,可以指定一个简单的名字,  
 以便将来引用,运行 git remote add [shortname] [url]:  
+
 例1：  
-git remote add origin https://github.com/lizhenyu/helloworld.git  
-git push -u origin master				     
+>git remote add origin https://github.com/lizhenyu/helloworld.git  
+>git push -u origin master	
+
 例2：  
-$git remote add origintestgit0001 git@github.com:tonghuajianghan/firstdemo.git  
+>$git remote add origintestgit0001 git@github.com:tonghuajianghan/firstdemo.git  
                 (用于本地标名识)，取代firstdemo.git  
   
 $ git push -u origin master  
@@ -91,7 +95,7 @@ Compressing objects: 100% (19/19), done.
 Writing objects: 100% (19/19), 13.73 KiB, done.  
 Total 23 (delta 6), reused 0 (delta 0)  
 To git@github.com:tonghuajianghan/firstdemo.git  
- * [new branch]      master -> master  
+  [new branch]      master -> master  
 Branch master set up to track remote branch master from origin.  
 把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。  
 由于远程库是空的，我们第一次推送master分支时，  
@@ -119,7 +123,10 @@ $git clone git@github.com:tonghuajianghan/firstdemo.git
   
 9).git 提交时，忽略某些文件  
   
-  
+* error:
+>git无法pull仓库refusing to merge unrelated histories
+git pull origin master --allow-unrelated-histories
+
 ------------------------------------------------------------------------------------------  
 git基本命令：  
   
