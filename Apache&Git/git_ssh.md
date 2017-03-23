@@ -1,66 +1,66 @@
   
-##git##  
+## gi t##  
   
-����http://www.git-scm.com/  
+官网 http://www.git-scm.com/  
 ------------------------------------------------------------------------------------------  
 1. github   
 username :tonghuajianghan  
 email :tonghuajianghan@gmail.com  
-password : �ٶ�  
+password : 百度  
   
 ------------------------------------------------------------------------------------------  
-2. ����git�ֿ�  
+2. 创建git仓库  
   
-�����û��������룺  
-git config --global user.name "jh" ��github��¼����  
-git config --global user.email "tonghuajianghan@gmail.com"��github��½���䣩  
+添加用户名和密码：  
+git config --global user.name "jh" （github登录名）  
+git config --global user.email "tonghuajianghan@gmail.com"（github登陆邮箱）  
   
-��ʼ��git���ش洢�⣺  
-����һ���ļ�->cd ����ļ��У�����cd E��note��  
-->git init����ʼ������git��  
-��  
-ͼ�λ�����Git GUI����һ���°汾��  
-��  
-��¡һ�����ش洢��  
-cd f:  
-$ git clone git://github.com/schacon/grit.git  
+初始化git本地存储库：  
+创建一个文件->cd 这个文件夹（例：cd E：note）  
+->git init（初始化本地git）  
+或  
+图形化界面Git GUI创建一个新版本库  
+或  
+克隆一个本地存储库  
+>cd f:  
+>$ git clone git://github.com/schacon/grit.git  
   
   
-Eclipse Git �����  
-�Ҽ���Ŀ��->Team->share project ->Git->  
-->ѡ���ļ�λ�ã��洢�⣩  
-->ѡ��汾������Ŀ����λ�ã�  
+Eclipse Git 插件：  
+右键项目名->Team->share project ->Git->  
+->选择文件位置（存储库）  
+->选择版本名（项目所属位置）  
   
 ------------------------------------------------------------------------------------------  
-3. git���زֿ���github����  
+3. git本地仓库与github连接  
   
-ssh ����  
-1).����ssh��Կ��Administrator/.ssh���ļ�λ�ã�Ĭ�����ɣ�  
-�����ʽ�Ĺ���ÿ��git�汾��Щ���Ĳ�ͬ��  
+ssh 操作  
+1).生成ssh密钥在Administrator/.ssh（文件位置，默认生成）  
+这个格式改过，每个git版本有些许的不同：  
   
-��ʽ1��	$ssh keygen -t rsa -C "tonghuajianghan@gmail.com"  
-���ܱ�����  
+格式1：	$ssh keygen -t rsa -C "tonghuajianghan@gmail.com"  
+可能报错：  
 	ssh: Could not resolve hostname keygen: Name or service not known  
   
-��ʽ2�� $ssh-keygen -t rsa -C "tonghuajianghan@gmail.com"  
+格式2： $ssh-keygen -t rsa -C "tonghuajianghan@gmail.com"  
   
   
-���� id_rsa �� id_rsa.pub ������Կ�ļ�  
-�����ֻ���ʾ�������������루����������push�ļ���ʱ��Ҫ��������룬  
-������github�����ߵ����룩  
+生成 id_rsa 和 id_rsa.pub 两个秘钥文件  
+接着又会提示你输入两次密码（该密码是你push文件的时候要输入的密码，  
+而不是github管理者的密码）  
   
-2).������� SSH key �� github����ȥ  
-account setting������  
+2).添加你的 SSH key 到 github上面去  
+account setting下设置  
   
-3).�½����ذ汾��  
-����һ���ļ������ļ���  
-git init �ʹ���һ��git���ذ汾��  
-����һ��.git�ļ�  
-sts�һ���Ŀ����>Team->share Patch  
-->ѡ�иղ����õ�git���ذ汾�����  
+3).新建本地版本库  
+创建一个文件，在文件下  
+git init 就创建一个git本地版本库  
+生成一个.git文件  
+sts右击项目——>Team->share Patch  
+->选中刚才设置的git本地版本库就行  
   
-4).�½�githubԶ�̰汾�⣨��github��վ���½���  
-  4.1new repository ->create Repository->���  
+4).新建github远程版本库（在github网站上新建）  
+  4.1new repository ->create Repository->完成  
   4.2Create a new repository on the command line  
   
 touch README.md  
@@ -72,17 +72,17 @@ git push -u origin master
 Push an existing repository from the command line  
   
   
-5).���ӱ��ذ汾����Զ�̰汾��  
-origin��Ĭ������Զ�̰汾��  
-$git remote -v �г�Զ�̰汾����ϸ����  
-Ҫ����һ���µ�Զ�ֿ̲�,����ָ��һ���򵥵�����,  
-�Ա㽫������,���� git remote add [shortname] [url]:  
-��1��  
+5).连接本地版本库与远程版本库  
+origin是默认已有远程版本库  
+$git remote -v 列出远程版本库详细内容  
+要添加一个新的远程仓库,可以指定一个简单的名字,  
+以便将来引用,运行 git remote add [shortname] [url]:  
+例1：  
 git remote add origin https://github.com/lizhenyu/helloworld.git  
 git push -u origin master				     
-��2��  
+例2：  
 $git remote add origintestgit0001 git@github.com:tonghuajianghan/firstdemo.git  
-                (���ڱ��ر���ʶ)��ȡ��firstdemo.git  
+                (用于本地标名识)，取代firstdemo.git  
   
 $ git push -u origin master  
 Counting objects: 19, done.  
@@ -93,128 +93,128 @@ Total 23 (delta 6), reused 0 (delta 0)
 To git@github.com:tonghuajianghan/firstdemo.git  
  * [new branch]      master -> master  
 Branch master set up to track remote branch master from origin.  
-�ѱ��ؿ���������͵�Զ�̣���git push���ʵ�����ǰѵ�ǰ��֧master���͵�Զ�̡�  
-����Զ�̿��ǿյģ����ǵ�һ������master��֧ʱ��  
-������-u������Git������ѱ��ص�master��֧�������͵�Զ���µ�master��֧��  
-����ѱ��ص�master��֧��Զ�̵�master��֧����������  
+把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。  
+由于远程库是空的，我们第一次推送master分支时，  
+加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，  
+还会把本地的master分支和远程的master分支关联起来，  
   
-6).�ٴ��ύԶ�̰汾��  
+6).再次提交远程版本库  
 $ git push origin master	  
-���Ժ�����ͻ�����ȡʱ�Ϳ��Լ����  
-ֻҪ���������ύ���Ϳ���ͨ�����  
+在以后的推送或者拉取时就可以简化命令。  
+只要本地作了提交，就可以通过命令：  
   
 7).  
-��ĳ��Զ�������ĸ��£�ȫ��ȡ�ر��ء�  
-$ git fetch <Զ��������>  
-Ĭ������£�git fetchȡ�����з�֧��branch���ĸ��¡�  
-���ֻ��ȡ���ض���֧�ĸ��£�����ָ����֧����  
-$ git fetch <Զ��������> <��֧��>  
-���磬ȡ��origin������master��֧��  
+将某个远程主机的更新，全部取回本地。  
+$ git fetch <远程主机名>  
+默认情况下，git fetch取回所有分支（branch）的更新。  
+如果只想取回特定分支的更新，可以指定分支名。  
+$ git fetch <远程主机名> <分支名>  
+比如，取回origin主机的master分支。  
 $ git fetch origin master  
-��ȡ�صĸ��£��ڱ���������Ҫ��"Զ��������/��֧��"����ʽ��ȡ��  
-����origin������master����Ҫ��origin/master��ȡ��  
+所取回的更新，在本地主机上要用"远程主机名/分支名"的形式读取。  
+比如origin主机的master，就要用origin/master读取。  
   
-8).��¡Զ�̷������ֿ⵽���أ�  
+8).克隆远程服务器仓库到本地：  
 $git clone git@github.com:tonghuajianghan/firstdemo.git  
   
-9).git �ύʱ������ĳЩ�ļ�  
+9).git 提交时，忽略某些文件  
   
   
 ------------------------------------------------------------------------------------------  
-git�������  
+git基本命令：  
   
-ֻ�������ύ���û��������䣨������ʾ��  
+只是用于提交的用户名和邮箱（用作标示）  
 $git config --global user.name ""  
 $git config --global user.email ""  
   
-��ʾconfig����  
+显示config配置  
 $git config --list  
   
 updates were rejected because the tip  
-Զ�̰汾����ڱ��ذ汾��  
-Ӧ����pull  
+远程版本库高于本地版本库  
+应该先pull  
   
 ------------------------------------------------------------------------------------------  
 git branch  
   
-git branch �����������г������Ѿ����ڵķ�֧��  
-�����ڵ�ǰ��֧��ǰ��ӡ�*���ű��  
+git branch 不带参数：列出本地已经存在的分支，  
+并且在当前分支的前面加“*”号标记  
   
-git branch -r �г�Զ�̷�֧  
+git branch -r 列出远程分支  
   
-git branch -a �г����ط�֧��Զ�̷�֧  
+git branch -a 列出本地分支和远程分支  
   
-git branch ����һ���µı��ط�֧����Ҫע�⣬  
-�˴�ֻ�Ǵ�����֧�������з�֧�л�  
+git branch 创建一个新的本地分支，需要注意，  
+此处只是创建分支，不进行分支切换  
 example: git branch mybranch  
   
-$ git checkout -b iss53 �½����л�  
+$ git checkout -b iss53 新建并切换  
   
 git branch -m | -M oldbranch newbranc  
-��������֧�����newbranch���ַ�֧�Ѿ����ڣ�  
-����Ҫʹ��-Mǿ��������������ʹ��-m������������  
+重命名分支，如果newbranch名字分支已经存在，  
+则需要使用-M强制重命名，否则，使用-m进行重命名。  
   
 git branch -d | -D branchname   
-ɾ��branchname��֧  
+删除branchname分支  
   
 git branch -d -r branchname   
-ɾ��Զ��branchname��֧  
+删除远程branchname分支  
   
-Ҫ�л���������֧������ִ�� git checkout ����  
+要切换到其他分支，可以执行 git checkout 命令  
 $ git checkout testing  
-�������ļ�ʱ��û��git add ��git������ļ����м���  
-�������л���֧ʱ���ļ������ܵ�Ӱ��  
+当添加文件时，没有git add ，git不会对文件进行监听  
+这样在切换分支时，文件不会受到影响  
   
-��ͬ��֧��ʼ��ʱ�����̳�master���ļ�  
+不同分支初始化时，均继承master的文件  
   
-git merge �ϲ�  
+git merge 合并  
   
 ------------------------------------------------------------------------------------------  
-git ɾ���ļ�  
+git 删除文件  
   
-�ڱ� git ������Ŀ¼��ɾ���ļ�ʱ������ѡ���������ַ�ʽ����¼ɾ������:  
-һ��rm + git commit -am "abc"  
-����git rm + git commit -m "abc"  
-���⣬git add . ���ܼ�¼���ӡ��Ķ��Ķ�����ɾ���Ķ����迿 git rm ����ɡ�  
+在被 git 管理的目录中删除文件时，可以选择如下两种方式来记录删除动作:  
+一、rm + git commit -am "abc"  
+二、git rm + git commit -m "abc"  
+另外，git add . 仅能记录添加、改动的动作，删除的动作需靠 git rm 来完成。  
   
-���rm ɾ�����ļ��Ǵ��� not staged ״̬�ģ�  
-Ҳ����һ�ֽ��� ��δ�Ķ��� �� �����ύ���� ֮���״̬��  
+最后，rm 删除的文件是处于 not staged 状态的，  
+也就是一种介于 “未改动” 和 “已提交过” 之间的状态。  
   
   
 ------------------------------------------------------------------------------------------  
 git .gitignore  
-	ע��ո񣡣���  
+	注意空格！！！  
   
-	�� .git ��ͬ�ļ������½�.gitignore�ļ�  
+	在 .git 相同文件夹下新建.gitignore文件  
   
-	#ע��  
-	/build/ ���Ը�Ŀ¼��build�ļ����µ������ļ�  
+	#注释  
+	/build/ 忽略根目录下build文件夹下的所有文件  
   
 ------------------------------------------------------------------------------------------  
-git �ع� reset  
+git 回滚 reset  
   
-���ػع�  
+本地回滚  
   
 git reset --soft | --mixed | --hard  
-					Ĭ��  
+					默认  
   
 --mixed  
-�ᱣ��Դ��,ֻ�ǽ�git commit��index ��Ϣ���˵���ĳ���汾.  
+会保留源码,只是将git commit和index 信息回退到了某个版本.  
   
 --soft  
-����Դ��,ֻ���˵�commit ��Ϣ��ĳ���汾.���漰index�Ļ���,�������Ҫ�ύ,ֱ��commit����.  
+保留源码,只回退到commit 信息到某个版本.不涉及index的回退,如果还需要提交,直接commit即可.  
   
 --hard  
-Դ��Ҳ����˵�ĳ���汾,commit��index ���ػ��˵�ĳ���汾.(ע��,���ַ�ʽ�Ǹı䱾�ش���ֿ�Դ��)  
+源码也会回退到某个版本,commit和index 都回回退到某个版本.(注意,这种方式是改变本地代码仓库源码)  
   
 ----------------------------------------------------------------------------------------------  
 git commit -a -m 'added new benchmarks'   
   
-����ʹ���ݴ�����  
-����ʹ���ݴ�����ķ�ʽ���Ծ���׼��Ҫ�ύ��ϸ�ڣ�  
-����ʱ����ô�����Է����� Git �ṩ��һ������ʹ���ݴ�����ķ�ʽ��  
-ֻҪ���ύ��ʱ�򣬸� git commit ���� -a ѡ�  
-Git �ͻ��Զ��������Ѿ����ٹ����ļ��ݴ�����һ���ύ���Ӷ����� git add ����  
+跳过使用暂存区域  
+尽管使用暂存区域的方式可以精心准备要提交的细节，  
+但有时候这么做略显繁琐。 Git 提供了一个跳过使用暂存区域的方式，  
+只要在提交的时候，给 git commit 加上 -a 选项，  
+Git 就会自动把所有已经跟踪过的文件暂存起来一并提交，从而跳过 git add 步骤  
   
 ----------------------------------------------------------------------------------------------  
 EGit myeclipse   
