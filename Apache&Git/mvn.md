@@ -1,111 +1,111 @@
   
-1. maven¼ò½é£º  
+1. mavenç®€ä»‹ï¼š  
 2. settings.xml ,pom.xml  
 3. demo  
 4. mvn error  
-5. °²×°£¬ÅäÖÃ  
-6. ÒıÓÃ¿ò¼Ü°üÅäÖÃ(http://mvnrepository.com)  
-7. ÅäÖÃmirrors £¬repository  
-8. ½â¾öEclipse½¨Á¢MavenÏîÄ¿ºóÎŞ·¨½¨Á¢src/main/java×ÊÔ´ÎÄ¼ş¼ĞµÄ°ì·¨  
-9. mvn ÃüÁî  
+5. å®‰è£…ï¼Œé…ç½®  
+6. å¼•ç”¨æ¡†æ¶åŒ…é…ç½®(http://mvnrepository.com)  
+7. é…ç½®mirrors ï¼Œrepository  
+8. è§£å†³Eclipseå»ºç«‹Mavené¡¹ç›®åæ— æ³•å»ºç«‹src/main/javaèµ„æºæ–‡ä»¶å¤¹çš„åŠæ³•  
+9. mvn å‘½ä»¤  
 10. mvn commond build webapp java web project  
 11. nux Nexus  
 12. eclipse maven plugin  
 13. mvn spring   
 14. mvn update  
 15. eclipse create mvn project  
-16. mvn ÒıÓÃ²»µ½Á´½ÓsqllserverµÄjar°ü  
+16. mvn å¼•ç”¨ä¸åˆ°é“¾æ¥sqllserverçš„jaråŒ…  
   
-..............................................  
-Ô¶³ÌÖĞÑë²Ö¿âµÄµØÖ·Îª http://repo1.maven.org/  
+-------------------------------------------------------
+è¿œç¨‹ä¸­å¤®ä»“åº“çš„åœ°å€ä¸º http://repo1.maven.org/  
 http://search.maven.org  
 http://maven.oschina.net/home.html  
-http://mvnrepository.com/  ÊÇmvn¹Ù·½²Ö¿â  
+http://mvnrepository.com/  æ˜¯mvnå®˜æ–¹ä»“åº“  
   
   
 ------------------------------------------------------------------------------------------  
-1. maven¼ò½é£º  
+1. mavenç®€ä»‹ï¼š  
   
-×÷ÓÃ£º  
-ÓÃÀ´°ïÖúÊµÏÖÏîÄ¿µÄ¹¹½¨¡¢²âÊÔ¡¢´ò°üºÍ²¿Êğ  
+ä½œç”¨ï¼š  
+ç”¨æ¥å¸®åŠ©å®ç°é¡¹ç›®çš„æ„å»ºã€æµ‹è¯•ã€æ‰“åŒ…å’Œéƒ¨ç½²  
   
-Ô­Àí£º  
-MavenÊÇ»ùÓÚÏîÄ¿¶ÔÏóÄ£ĞÍ(POM)£¬  
-¿ÉÒÔÍ¨¹ıÒ»Ğ¡¶ÎÃèÊöĞÅÏ¢À´¹ÜÀíÏîÄ¿µÄ¹¹½¨£¬±¨¸æºÍÎÄµµµÄÈí¼şÏîÄ¿¹ÜÀí¹¤¾ß¡£  
-¿ÉÒÔ¶à¸öÏîÄ¿ÖĞ¹²ÏíJAR  
+åŸç†ï¼š  
+Mavenæ˜¯åŸºäºé¡¹ç›®å¯¹è±¡æ¨¡å‹(POM)ï¼Œ  
+å¯ä»¥é€šè¿‡ä¸€å°æ®µæè¿°ä¿¡æ¯æ¥ç®¡ç†é¡¹ç›®çš„æ„å»ºï¼ŒæŠ¥å‘Šå’Œæ–‡æ¡£çš„è½¯ä»¶é¡¹ç›®ç®¡ç†å·¥å…·ã€‚  
+å¯ä»¥å¤šä¸ªé¡¹ç›®ä¸­å…±äº«JAR  
   
-ÉúÃüÖÜÆÚ:  
-µ±ÄãÔËĞĞ mvn install µÄÊ±ºò±»µ÷ÓÃ¡£  
-ÕâÌõÃüÁî¸æËß Maven Ö´ĞĞÒ»ÏµÁĞµÄÓĞĞòµÄ²½Öè£¬  
-Ö±µ½µ½´ïÄãÖ¸¶¨µÄÉúÃüÖÜÆÚ¡£±éÀúÉúÃüÖÜÆÚÂÃÍ¾ÖĞµÄÒ»¸öÓ°Ïì¾ÍÊÇ£¬  
-Maven ÔËĞĞÁËĞí¶àÄ¬ÈÏµÄ²å¼şÄ¿±ê£¬ÕâĞ©Ä¿±êÍê³ÉÁËÏñ±àÒëºÍ´´½¨Ò»¸ö JAR ÎÄ¼şÕâÑùµÄ¹¤×÷¡£  
-´ËÍâ£¬MavenÄÜ¹»ºÜ·½±ãµÄ°ïÄã¹ÜÀíÏîÄ¿±¨¸æ£¬Éú³ÉÕ¾µã£¬¹ÜÀíJARÎÄ¼ş£¬µÈµÈ¡£  
+ç”Ÿå‘½å‘¨æœŸ:  
+å½“ä½ è¿è¡Œ mvn install çš„æ—¶å€™è¢«è°ƒç”¨ã€‚  
+è¿™æ¡å‘½ä»¤å‘Šè¯‰ Maven æ‰§è¡Œä¸€ç³»åˆ—çš„æœ‰åºçš„æ­¥éª¤ï¼Œ  
+ç›´åˆ°åˆ°è¾¾ä½ æŒ‡å®šçš„ç”Ÿå‘½å‘¨æœŸã€‚éå†ç”Ÿå‘½å‘¨æœŸæ—…é€”ä¸­çš„ä¸€ä¸ªå½±å“å°±æ˜¯ï¼Œ  
+Maven è¿è¡Œäº†è®¸å¤šé»˜è®¤çš„æ’ä»¶ç›®æ ‡ï¼Œè¿™äº›ç›®æ ‡å®Œæˆäº†åƒç¼–è¯‘å’Œåˆ›å»ºä¸€ä¸ª JAR æ–‡ä»¶è¿™æ ·çš„å·¥ä½œã€‚  
+æ­¤å¤–ï¼ŒMavenèƒ½å¤Ÿå¾ˆæ–¹ä¾¿çš„å¸®ä½ ç®¡ç†é¡¹ç›®æŠ¥å‘Šï¼Œç”Ÿæˆç«™ç‚¹ï¼Œç®¡ç†JARæ–‡ä»¶ï¼Œç­‰ç­‰ã€‚  
   
-ÓÅµã£º  
-ÔÚJavaÏîÄ¿ÖĞ,Ã¿¸öÏîÄ¿¶¼ÓĞºÜ¶àÒÀÀµµÄJar°ü,  
-ÎÒÃÇÒ»°ã¶¼·ÅÔÚ×Ô¼ºÏîÄ¿µÄlibÄ¿Â¼ÖĞ,  
-ÕâÑù¾Í»áµ¼ÖÂÍ¬ÑùµÄJar°üÔÚ¸÷¸ö²»Í¬µÄÏîÄ¿ÖĞÖØ¸´³öÏÖ£¬  
-Ê±¼ä³¤ÁË½«»áÀË·ÑºÜ´óµÄÓ²ÅÌ¿Õ¼ä¡£Ê¹ÓÃMaven¶ÔÏîÄ¿½øĞĞ¹ÜÀí¾Í¿ÉÒÔ½â¾öÒÔÉÏÎÊÌâ¡£  
+ä¼˜ç‚¹ï¼š  
+åœ¨Javaé¡¹ç›®ä¸­,æ¯ä¸ªé¡¹ç›®éƒ½æœ‰å¾ˆå¤šä¾èµ–çš„JaråŒ…,  
+æˆ‘ä»¬ä¸€èˆ¬éƒ½æ”¾åœ¨è‡ªå·±é¡¹ç›®çš„libç›®å½•ä¸­,  
+è¿™æ ·å°±ä¼šå¯¼è‡´åŒæ ·çš„JaråŒ…åœ¨å„ä¸ªä¸åŒçš„é¡¹ç›®ä¸­é‡å¤å‡ºç°ï¼Œ  
+æ—¶é—´é•¿äº†å°†ä¼šæµªè´¹å¾ˆå¤§çš„ç¡¬ç›˜ç©ºé—´ã€‚ä½¿ç”¨Mavenå¯¹é¡¹ç›®è¿›è¡Œç®¡ç†å°±å¯ä»¥è§£å†³ä»¥ä¸Šé—®é¢˜ã€‚  
   
-MavenÖ´ĞĞÔ­Àí£º  
-ÒÀÀµºÍÏîÄ¿¹¹½¨µÄÊä³ö¶¼¿ÉÒÔÓÉ Maven µÄ×ø±ê½øĞĞÎ¨Ò»µÄÇø·Ö£¬  
-»ùÓÚÕâÖÖ»úÖÆ£¬Maven ½«ËùÓĞÏîÄ¿µÄ¹¹¼şÎÄ¼ş·ÅÖÃÔÚÒ»¸öÍ³Ò»µÄÎ»ÖÃ£¬  
-Ò²¾ÍÊÇ Maven ²Ö¿â¡£  
-ËùÓĞ Maven ÏîÄ¿¿ÉÒÔ´ÓÍ¬Ò»¸ö Maven ²Ö¿âÖĞ»ñÈ¡×Ô¼ºËùĞèÒªµÄÒÀÀµ JAR£¬  
-Õâ½ÚÊ¡ÁË´ÅÅÌ×ÊÔ´¡£Êµ¼ÊµÄ Maven ÏîÄ¿ÖĞ²»ĞèÒª´æ´¢ÒÀÀµµÄÎÄ¼ş£¬  
-Ö»ĞèÒªÔÚ POM ÎÄ¼şÖĞÉú³ÉÒÀÀµ¹ØÏµ£¬ÔÚ¹¹½¨µÄÊ±ºò Maven ¾Í»á×Ô¶¯È¥²Ö¿âÖĞÏÂÔØ¡£  
+Mavenæ‰§è¡ŒåŸç†ï¼š  
+ä¾èµ–å’Œé¡¹ç›®æ„å»ºçš„è¾“å‡ºéƒ½å¯ä»¥ç”± Maven çš„åæ ‡è¿›è¡Œå”¯ä¸€çš„åŒºåˆ†ï¼Œ  
+åŸºäºè¿™ç§æœºåˆ¶ï¼ŒMaven å°†æ‰€æœ‰é¡¹ç›®çš„æ„ä»¶æ–‡ä»¶æ”¾ç½®åœ¨ä¸€ä¸ªç»Ÿä¸€çš„ä½ç½®ï¼Œ  
+ä¹Ÿå°±æ˜¯ Maven ä»“åº“ã€‚  
+æ‰€æœ‰ Maven é¡¹ç›®å¯ä»¥ä»åŒä¸€ä¸ª Maven ä»“åº“ä¸­è·å–è‡ªå·±æ‰€éœ€è¦çš„ä¾èµ– JARï¼Œ  
+è¿™èŠ‚çœäº†ç£ç›˜èµ„æºã€‚å®é™…çš„ Maven é¡¹ç›®ä¸­ä¸éœ€è¦å­˜å‚¨ä¾èµ–çš„æ–‡ä»¶ï¼Œ  
+åªéœ€è¦åœ¨ POM æ–‡ä»¶ä¸­ç”Ÿæˆä¾èµ–å…³ç³»ï¼Œåœ¨æ„å»ºçš„æ—¶å€™ Maven å°±ä¼šè‡ªåŠ¨å»ä»“åº“ä¸­ä¸‹è½½ã€‚  
   
-ÒÀ¿¿°ü²éÑ¯£º  
-ÎÒÃÇÏîÄ¿ÖĞÒÀÀµµÄ Jar °ü¿ÉÒÔÍ¨¹ıÒÀÀµµÄ·½Ê½ÒıÈë  
-mavenÊÇµ¥¶À¹ÜÀíÒ»¸öÏîÄ¿¡£µÄjar°üÎ»ÖÃ£¬×éÖ¯ĞÎÊ½µÄ¡£  
-ÔÚ°²×°ÁË Maven µÄ»úÆ÷ÉÏ£¬»áÉú³ÉÒ»¸ö ~\.m2\repository Ä¿Â¼£¬  
-Õâ¸öÄ¿Â¼±»³ÆÎª±¾µØ²Ö¿â£¬µ± Maven ²éÕÒĞèÒªµÄÒÀÀµÊ±£¬Ê×ÏÈ»áÔÚ±¾µØ²éÕÒ£¬  
-Èç¹û±¾µØ²Ö¿âÖĞ´æÔÚ£¬ÔòÖ±½ÓÊ¹ÓÃ£¬·ñÔò Maven »ØÈ¥Ô¶³Ì²Ö¿â²éÕÒ£¬  
-²éÕÒµ½ºóÏÂÔØµ½±¾µØ½øĞĞÊ¹ÓÃ¡£  
+ä¾é åŒ…æŸ¥è¯¢ï¼š  
+æˆ‘ä»¬é¡¹ç›®ä¸­ä¾èµ–çš„ Jar åŒ…å¯ä»¥é€šè¿‡ä¾èµ–çš„æ–¹å¼å¼•å…¥  
+mavenæ˜¯å•ç‹¬ç®¡ç†ä¸€ä¸ªé¡¹ç›®ã€‚çš„jaråŒ…ä½ç½®ï¼Œç»„ç»‡å½¢å¼çš„ã€‚  
+åœ¨å®‰è£…äº† Maven çš„æœºå™¨ä¸Šï¼Œä¼šç”Ÿæˆä¸€ä¸ª ~\.m2\repository ç›®å½•ï¼Œ  
+è¿™ä¸ªç›®å½•è¢«ç§°ä¸ºæœ¬åœ°ä»“åº“ï¼Œå½“ Maven æŸ¥æ‰¾éœ€è¦çš„ä¾èµ–æ—¶ï¼Œé¦–å…ˆä¼šåœ¨æœ¬åœ°æŸ¥æ‰¾ï¼Œ  
+å¦‚æœæœ¬åœ°ä»“åº“ä¸­å­˜åœ¨ï¼Œåˆ™ç›´æ¥ä½¿ç”¨ï¼Œå¦åˆ™ Maven å›å»è¿œç¨‹ä»“åº“æŸ¥æ‰¾ï¼Œ  
+æŸ¥æ‰¾åˆ°åä¸‹è½½åˆ°æœ¬åœ°è¿›è¡Œä½¿ç”¨ã€‚  
   
 ------------------------------------------------------------------------------------------  
 2. settings.xml ,pom.xml  
   
-ÅäÖÃÎÄ¼ş×÷ÓÃÓò£º  
+é…ç½®æ–‡ä»¶ä½œç”¨åŸŸï¼š  
 conf/settings.xml  
   
-ĞŞ¸Ämaven±¾µØ²Ö¿âµÄÎ»ÖÃ£º  
+ä¿®æ”¹mavenæœ¬åœ°ä»“åº“çš„ä½ç½®ï¼š  
 apache-maven-3.1.2/conf/setting.xml  
 <localRepository>d:maven2</localRepository>  
-µ±ĞŞ¸Ä¹ıºó£¬²»»á×Ô¶¯ĞÂ½¨/.m2ÎÄ¼ş  
+å½“ä¿®æ”¹è¿‡åï¼Œä¸ä¼šè‡ªåŠ¨æ–°å»º/.m2æ–‡ä»¶  
   
-settings.xml¶ÔÓÚmavenÀ´ËµÏàµ±ÓÚÈ«¾ÖĞÔµÄÅäÖÃ£¬ÓÃÓÚËùÓĞµÄÏîÄ¿  
-¼ÓÔØµÄ·½ÏòÕıºÃÏà·´£¬ÏÂ¼¶Ó°ÏìÉÏ¼¶  
-  
-  
+settings.xmlå¯¹äºmavenæ¥è¯´ç›¸å½“äºå…¨å±€æ€§çš„é…ç½®ï¼Œç”¨äºæ‰€æœ‰çš„é¡¹ç›®  
+åŠ è½½çš„æ–¹å‘æ­£å¥½ç›¸åï¼Œä¸‹çº§å½±å“ä¸Šçº§  
   
   
-pom.xml½ÚµãµÄËµÃ÷£º  
-<project>¡¡¡¡¡¡¡¡¡¡¡¡pomÎÄ¼şµÄ¶¥¼¶½Úµã  
-¡¡¡¡¡¡¡¡<modelVersion>¡¡¡¡¡¡object model°æ±¾£¬¶ÔMaven2ºÍMaven3À´Ëµ£¬Ö»ÄÜÊÇ4.0.0¡¡  
-¡¡¡¡¡¡¡¡<groupId>¡¡¡¡¡¡¡¡¡¡¡¡ÏîÄ¿´´½¨×éÖ¯µÄ±êÊ¶·û£¬Ò»°ãÊÇÓòÃûµÄµ¹Ğ´  
-¡¡¡¡¡¡¡¡<artifactId>¡¡¡¡¡¡¡¡¶¨ÒåÁËÏîÄ¿ÔÚËùÊô×éÖ¯µÄ±êÊ¶·ûÏÂµÄÎ¨Ò»±êÊ¶£¬Ò»¸ö×éÖ¯ÏÂ¿ÉÒÔÓĞ¶à¸öÏîÄ¿  
-¡¡¡¡¡¡¡¡<packaging>¡¡¡¡¡¡¡¡  ´ò°üµÄ·½Ê½£¬ÓĞjar¡¢war¡¢earµÈ  
-¡¡¡¡¡¡¡¡<version>¡¡¡¡¡¡¡¡¡¡  µ±Ç°ÏîÄ¿µÄ°æ±¾£¬SNAPSHOT£¬±íÊ¾ÊÇ¿ìÕÕ°æ±¾£¬ÔÚ¿ª·¢ÖĞ  
-  ¡¡¡¡¡¡<name>¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ÏîÄ¿µÄÃû³Æ  
-¡¡¡¡¡¡¡¡<url>¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ÏîÄ¿µÄµØÖ·  
-¡¡¡¡¡¡¡¡<dependencies>¡¡¡¡ ¹¹½¨ÏîÄ¿ÒÀÀµµÄjar  
-¡¡¡¡¡¡¡¡<description>¡¡¡¡¡¡¡¡ÏîÄ¿µÄÃèÊö  
+  
+  
+pom.xmlèŠ‚ç‚¹çš„è¯´æ˜ï¼š  
+<project>ã€€ã€€ã€€ã€€ã€€ã€€pomæ–‡ä»¶çš„é¡¶çº§èŠ‚ç‚¹  
+ã€€ã€€ã€€ã€€<modelVersion>ã€€ã€€ã€€object modelç‰ˆæœ¬ï¼Œå¯¹Maven2å’ŒMaven3æ¥è¯´ï¼Œåªèƒ½æ˜¯4.0.0ã€€  
+ã€€ã€€ã€€ã€€<groupId>ã€€ã€€ã€€ã€€ã€€ã€€é¡¹ç›®åˆ›å»ºç»„ç»‡çš„æ ‡è¯†ç¬¦ï¼Œä¸€èˆ¬æ˜¯åŸŸåçš„å€’å†™  
+ã€€ã€€ã€€ã€€<artifactId>ã€€ã€€ã€€ã€€å®šä¹‰äº†é¡¹ç›®åœ¨æ‰€å±ç»„ç»‡çš„æ ‡è¯†ç¬¦ä¸‹çš„å”¯ä¸€æ ‡è¯†ï¼Œä¸€ä¸ªç»„ç»‡ä¸‹å¯ä»¥æœ‰å¤šä¸ªé¡¹ç›®  
+ã€€ã€€ã€€ã€€<packaging>ã€€ã€€ã€€ã€€  æ‰“åŒ…çš„æ–¹å¼ï¼Œæœ‰jarã€warã€earç­‰  
+ã€€ã€€ã€€ã€€<version>ã€€ã€€ã€€ã€€ã€€  å½“å‰é¡¹ç›®çš„ç‰ˆæœ¬ï¼ŒSNAPSHOTï¼Œè¡¨ç¤ºæ˜¯å¿«ç…§ç‰ˆæœ¬ï¼Œåœ¨å¼€å‘ä¸­  
+  ã€€ã€€ã€€<name>ã€€ã€€ã€€ã€€ã€€ã€€ã€€ é¡¹ç›®çš„åç§°  
+ã€€ã€€ã€€ã€€<url>ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€é¡¹ç›®çš„åœ°å€  
+ã€€ã€€ã€€ã€€<dependencies>ã€€ã€€ æ„å»ºé¡¹ç›®ä¾èµ–çš„jar  
+ã€€ã€€ã€€ã€€<description>ã€€ã€€ã€€ã€€é¡¹ç›®çš„æè¿°  
   
 ------------------------------------------------------------------------------------------  
 3. demo  
   
-mvn dependency search²éÑ¯Î»ÖÃ  
+mvn dependency searchæŸ¥è¯¢ä½ç½®  
   
 1.mvn archetype:generate -DarchetypeCatalog=internal  
-  »òmvn archetype:generate£¨¼òµ¥£©  
+  æˆ–mvn archetype:generateï¼ˆç®€å•ï¼‰  
   
-2.mvn eclipse:eclipse ÔÚeclipse¹¤×÷Ä¿Â¼ÏÂÔËĞĞ  
+2.mvn eclipse:eclipse åœ¨eclipseå·¥ä½œç›®å½•ä¸‹è¿è¡Œ  
 3.mvn tomcat:run  
-4.Ö¸¶¨eclipseÖĞµÄmavenµÄ±¾µØ²Ö¿âµØÖ·,ÔËĞĞÃüÁî:   
-mvn  -Declipse.workspace= <eclipse   workspaceÂ·¾¶>   eclipse:add-maven-repo   
+4.æŒ‡å®šeclipseä¸­çš„mavençš„æœ¬åœ°ä»“åº“åœ°å€,è¿è¡Œå‘½ä»¤:   
+mvn  -Declipse.workspace= <eclipse   workspaceè·¯å¾„>   eclipse:add-maven-repo   
   
-´´½¨ÒÀÀµ  
+åˆ›å»ºä¾èµ–  
 <dependency>  
    <groupId>javax.servlet</groupId>  
    <artifactId>servlet-api</artifactId>  
@@ -116,19 +116,19 @@ http://www.jarvana.com/jarvana/
 ------------------------------------------------------------------------------------------  
 4. mvn error  
   
-1£©.³öÏÖ´´½¨²»ÁËmvn project   
-´íÎó£ºcan mot resolve archetype  
+1ï¼‰.å‡ºç°åˆ›å»ºä¸äº†mvn project   
+é”™è¯¯ï¼šcan mot resolve archetype  
 windows - preference - maven -archetype  
 add remote catalog  
 http://repo1.maven.org/maven2/archetype-catalog.xml  
   
-2£©.  
+2ï¼‰.  
 <project xmlns="http://maven.apache.org/POM/4.0.0"  
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0   
 http://maven.apache.org/maven-v4_0_0.xsd">  
   
-±¨´í£º  
+æŠ¥é”™ï¼š  
 Description Resource Path Location Type   
 Could not calculate build plan:   
 Failure to transfer org.apache.maven.plugins:maven-war-plugin:pom:2.1.1 from   
@@ -138,8 +138,9 @@ of central has elapsed or updates are forced. Original error:
 Could not transfer artifact org.apache.maven.plugins:maven-war-plugin:pom:2.1.1   
 from/to central (http://repo1.maven.org/maven2): ConnectException  
 first-maven Unknown	Maven Problem  
-½â¾ö£º  
-Ó¦¸ÃÊÇÁ¬²»ÉÏhttp://repo1.maven.org/maven2Õâ¸ö²Ö¿â£¬ÔÚpom.xmlÎÄ¼ş¼ÓÒ»ÏÂÏÂÃæµÄÅäÖÃ   
+è§£å†³ï¼š  
+åº”è¯¥æ˜¯è¿ä¸ä¸Šhttp://repo1.maven.org/maven2è¿™ä¸ªä»“åº“ï¼Œåœ¨pom.xmlæ–‡ä»¶åŠ ä¸€ä¸‹ä¸‹é¢çš„é…ç½®   
+```
 <repositories>    
     <repository>    
       <snapshots>    
@@ -150,64 +151,65 @@ first-maven Unknown	Maven Problem
       <url>http://repo2.maven.org/maven2</url>    
     </repository>    
 </repositories>   
+```
   
   
-3£©·ÖÎö£º  
-./m2/settings Ó°ÏìÄ¬ÈÏconf/settiongsµÄÅäÖÃ  
+3ï¼‰åˆ†æï¼š  
+./m2/settings å½±å“é»˜è®¤conf/settiongsçš„é…ç½®  
 java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener  
   
-4£©  
-Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin´íÎó½â¾ö·½·¨   
-½â¾ö·½·¨£º½«ÃüÁîÖĞµÄcreate¸ÄÎªgenerate£º  
+4ï¼‰  
+Failed to execute goal org.apache.maven.plugins:maven-archetype-pluginé”™è¯¯è§£å†³æ–¹æ³•   
+è§£å†³æ–¹æ³•ï¼šå°†å‘½ä»¤ä¸­çš„createæ”¹ä¸ºgenerateï¼š  
 mvn archetype:generate -DgroupId=com.tutorialspoint.test   
 -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp  
   
 5)Java compiler level does not match the version of the installed  
   Java project facet.SSJ UnknownFaceted Project Problem (Java Version Mismatch)	  
-  properties-> java complier -> ¸Ä³ÉÓë°æ±¾ÏàÍ¬µÄjre  
+  properties-> java complier -> æ”¹æˆä¸ç‰ˆæœ¬ç›¸åŒçš„jre  
   
 ------------------------------------------------------------------------------------------  
-5. °²×°£¬ÅäÖÃ  
+5. å®‰è£…ï¼Œé…ç½®  
   
-1£© ½âÑ¹mavenÑ¹Ëõ°ü  
-2£© ÅäÖÃ»·¾³±äÁ¿£¬Ìí¼Ó%MAVEN_HOME%,pathÖĞÌí¼Ó%MAVEN_HOME%\bin  
-3£© ²âÊÔ°²×°ÊÇ·ñ³É¹¦£¬mvn -v  
-4£© °²×°eclipseµÄ²å¼ş  
-5£© eclipse´´½¨mavenÏîÄ¿  
-6£© eclipseÌí¼ÓmavenµÄÅäÖÃ  
-        ½øÈëMyEclipse¡úwindow¡úPreferences¡ú  
-	Maven4MyEclipse¡úMaven¡úInstallations¡úUser Sittings  
-        µã»÷ÓÒ²àBrowseÖ¸Ïò%MAVEN_HOME%\conf\settings.xml  
-7£©  
+1ï¼‰ è§£å‹mavenå‹ç¼©åŒ…  
+2ï¼‰ é…ç½®ç¯å¢ƒå˜é‡ï¼Œæ·»åŠ %MAVEN_HOME%,pathä¸­æ·»åŠ %MAVEN_HOME%\bin  
+3ï¼‰ æµ‹è¯•å®‰è£…æ˜¯å¦æˆåŠŸï¼Œmvn -v  
+4ï¼‰ å®‰è£…eclipseçš„æ’ä»¶  
+5ï¼‰ eclipseåˆ›å»ºmavené¡¹ç›®  
+6ï¼‰ eclipseæ·»åŠ mavençš„é…ç½®  
+        è¿›å…¥MyEclipseâ†’windowâ†’Preferencesâ†’  
+	Maven4MyEclipseâ†’Mavenâ†’Installationsâ†’User Sittings  
+        ç‚¹å‡»å³ä¾§BrowseæŒ‡å‘%MAVEN_HOME%\conf\settings.xml  
+7ï¼‰  
   
 ------------------------------------------------------------------------------------------  
-6. ÒıÓÃ°üÅäÖÃ(http://mvnrepository.com)  
+6. å¼•ç”¨åŒ…é…ç½®(http://mvnrepository.com)  
      
-ËÑË÷½á¹û     
-   ÒıÓÃspring mvc  
+æœç´¢ç»“æœ     
+   å¼•ç”¨spring mvc  
    Spring Web MVC  
   
-   ÒıÓÃhibernate  
+   å¼•ç”¨hibernate  
    Hibernate Core Aggregator   
   
-   ÒıÓÃstruts  
+   å¼•ç”¨struts  
    struts 2  
    struts-core   
   
 ------------------------------------------------------------------------------------------  
-7. ÅäÖÃmirrors £¬repository  
+7. é…ç½®mirrors ï¼Œrepository  
   
-  ¸²¸ÇÖĞÑë²Ö¿âµÄÄ¬ÈÏµØÖ·£¬  
-  ÄÇÃ´ÕâÀïÎÒÃÇ¾Í»áÊ¹ÓÃµÄ¾µÏñÁË£¬ÔÚsetting.xmlÀïÃæÅäÖÃ  
-  <mirrorOf>,±íÊ¾Ö»Îªcentral²Ö¿â×ö¾µÏñ£¬  
-  Èç¹ûÏëÎªËùÓĞµÄ²Ö¿â×ö¾µÏñÄÇÃ´¿ÉÒÔ¸ÄÎª£º <mirrorOf>*</mirrorOf>  
-  
+  è¦†ç›–ä¸­å¤®ä»“åº“çš„é»˜è®¤åœ°å€ï¼Œ  
+  é‚£ä¹ˆè¿™é‡Œæˆ‘ä»¬å°±ä¼šä½¿ç”¨çš„é•œåƒäº†ï¼Œåœ¨setting.xmlé‡Œé¢é…ç½®  
+  <mirrorOf>,è¡¨ç¤ºåªä¸ºcentralä»“åº“åšé•œåƒï¼Œ  
+  å¦‚æœæƒ³ä¸ºæ‰€æœ‰çš„ä»“åº“åšé•œåƒé‚£ä¹ˆå¯ä»¥æ”¹ä¸ºï¼š <mirrorOf>*</mirrorOf>  
+```
   <mirrors>  
 	<mirror>  
 		<id>repo1</id>  
 		<name>repo1</name>  
 		<url>http://repo1.maven.org/maven2/spring/</url>  
-		<mirrorOf>central</mirrorOf>    <!--±íÃ÷ÎªcentralÖĞÑë²Ö¿âÅäÖÃ¾µÏñ²Ö¿â-->  
+		<mirrorOf>central</mirrorOf>    <!--è¡¨æ˜ä¸ºcentralä¸­å¤®ä»“åº“é…ç½®é•œåƒä»“åº“-->  
 	</mirror>  
   </mirrors>  
   <profiles>   
@@ -227,56 +229,57 @@ mvn archetype:generate -DgroupId=com.tutorialspoint.test
    <activeProfiles>    
 	 <activeProfile>repo</activeProfile>  	  
   </activeProfiles>    
+```
+ 
+------------------------------------------------------------------------------------------  
+8. è§£å†³Eclipseå»ºç«‹Mavené¡¹ç›®åæ— æ³•å»ºç«‹src/main/javaèµ„æºæ–‡ä»¶å¤¹çš„åŠæ³•  
+åœ¨é¡¹ç›®ä¸Šå³é”®é€‰æ‹©propertiesï¼Œ  
+ç„¶åç‚¹å‡»java build pathï¼Œåœ¨Librarysä¸‹ï¼Œ  
+ç¼–è¾‘JRE System Libraryï¼Œ  
+é€‰æ‹©workspace default jreå°±å¯ä»¥äº†ã€‚  
   
 ------------------------------------------------------------------------------------------  
-8. ½â¾öEclipse½¨Á¢MavenÏîÄ¿ºóÎŞ·¨½¨Á¢src/main/java×ÊÔ´ÎÄ¼ş¼ĞµÄ°ì·¨  
-ÔÚÏîÄ¿ÉÏÓÒ¼üÑ¡Ôñproperties£¬  
-È»ºóµã»÷java build path£¬ÔÚLibrarysÏÂ£¬  
-±à¼­JRE System Library£¬  
-Ñ¡Ôñworkspace default jre¾Í¿ÉÒÔÁË¡£  
+9. mvn å‘½ä»¤  
   
-------------------------------------------------------------------------------------------  
-9. mvn ÃüÁî  
-  
-ÔËĞĞmvn command ±ØĞëÔÚÓĞpom.xmlÎÄ¼şµÄ¸¸ÎÄ¼ş¼Ğ  
+è¿è¡Œmvn command å¿…é¡»åœ¨æœ‰pom.xmlæ–‡ä»¶çš„çˆ¶æ–‡ä»¶å¤¹  
   
   
-Éú³ÉÇå³ıEclipseÏîÄ¿½á¹¹£º  
+ç”Ÿæˆæ¸…é™¤Eclipseé¡¹ç›®ç»“æ„ï¼š  
 mvn eclipse:eclipse  
 mvn eclipse:clean  
   
-±àÒëÏîÄ¿µ½target¡¢°²×°ÏîÄ¿µ½.m2ÎÄ¼ş¼ĞÏÂµÄ×ÊÔ´¿âÖĞ  
+ç¼–è¯‘é¡¹ç›®åˆ°targetã€å®‰è£…é¡¹ç›®åˆ°.m2æ–‡ä»¶å¤¹ä¸‹çš„èµ„æºåº“ä¸­  
 mvn install  
   
-ÇåÀí£¨É¾³ıtargetÄ¿Â¼ÏÂ±àÒëÄÚÈİ£©  
+æ¸…ç†ï¼ˆåˆ é™¤targetç›®å½•ä¸‹ç¼–è¯‘å†…å®¹ï¼‰  
 mvn clean  
   
-½ö´ò°üWebÒ³ÃæÎÄ¼ş  
+ä»…æ‰“åŒ…Webé¡µé¢æ–‡ä»¶  
 mvn war:exploded  
   
-±àÒëÏîÄ¿  
+ç¼–è¯‘é¡¹ç›®  
 mvn compile  
   
-´ò°ü·¢²¼  
+æ‰“åŒ…å‘å¸ƒ  
 mvn package  
   
-´ò°üÊ±Ìø¹ı²âÊÔ  
+æ‰“åŒ…æ—¶è·³è¿‡æµ‹è¯•  
 mvn package -Dmaven.test.skip=ture  
   
-±àÒëÔ´´úÂë£º mvn compile   
-±àÒë²âÊÔ´úÂë£ºmvn test-compile      
-ÔËĞĞ²âÊÔ£ºmvn test    
+ç¼–è¯‘æºä»£ç ï¼š mvn compile   
+ç¼–è¯‘æµ‹è¯•ä»£ç ï¼šmvn test-compile      
+è¿è¡Œæµ‹è¯•ï¼šmvn test    
   
-°²×°µÚÈı·½°ü  
-¾­³£ÓĞµÚÈı·½°ü£¬ÒòÎªÒ»Ğ©Ô­Òò£¬ÔÚÍøÉÏrepositoryÉÏÃ»ÓĞ£¬ĞèÒª×Ô¼º¶¯ÊÖ°²×°¡£  
-±ÈÈçsunÄ³Ğ©°æ±¾µÄjarÎÄ¼ş£¬±ÈÈçoracleµÄÇı¶¯¡£  
-ÒÑoracleÇı¶¯³ÌĞòÎªÀı£¬±ÈÈçÇı¶¯Â·¾¶Îªc:/driver/ojdbc14.jar£¬  
-ÊÇ10.2.0.3.0°æ±¾  
-ÔÚ¸ÃÍøÖ·ÄÜ¹»²éµ½£º  
+å®‰è£…ç¬¬ä¸‰æ–¹åŒ…  
+ç»å¸¸æœ‰ç¬¬ä¸‰æ–¹åŒ…ï¼Œå› ä¸ºä¸€äº›åŸå› ï¼Œåœ¨ç½‘ä¸Šrepositoryä¸Šæ²¡æœ‰ï¼Œéœ€è¦è‡ªå·±åŠ¨æ‰‹å®‰è£…ã€‚  
+æ¯”å¦‚sunæŸäº›ç‰ˆæœ¬çš„jaræ–‡ä»¶ï¼Œæ¯”å¦‚oracleçš„é©±åŠ¨ã€‚  
+å·²oracleé©±åŠ¨ç¨‹åºä¸ºä¾‹ï¼Œæ¯”å¦‚é©±åŠ¨è·¯å¾„ä¸ºc:/driver/ojdbc14.jarï¼Œ  
+æ˜¯10.2.0.3.0ç‰ˆæœ¬  
+åœ¨è¯¥ç½‘å€èƒ½å¤ŸæŸ¥åˆ°ï¼š  
 http://www.mvnrepository.com/artifact/com.oracle/ojdbc14  
-artifactIdºÍgroupId¡£  
+artifactIdå’ŒgroupIdã€‚  
 mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.3.0 -Dpackaging=jar -Dfile=c:/driver/ojdbc14.jar  
-ÕâÑù¾Í¿ÉÒÔÔÚpomÖĞÒÀÀµÒıÓÃÁË£º  
+è¿™æ ·å°±å¯ä»¥åœ¨pomä¸­ä¾èµ–å¼•ç”¨äº†ï¼š  
 <dependency>  
     <groupId>com.oracle</groupId>  
     <artifactId>ojdbc14</artifactId>  
@@ -286,48 +289,48 @@ mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.
 10. mvn commond build  java web project  
   
 z.	zero  
-	error:		µ±Ê¹ÓÃmaven-3.1.0Ê±±¨ÒıÓÃ°ü´íÎó¡£ÕÒ²»µ½xxx-2.0.6  
-	selution:	¸ü»»3.2.6¾Í¿ÉÒÔÁË£¬ËüÒıÓÃ2.1.0 plugin°ü  
+	error:		å½“ä½¿ç”¨maven-3.1.0æ—¶æŠ¥å¼•ç”¨åŒ…é”™è¯¯ã€‚æ‰¾ä¸åˆ°xxx-2.0.6  
+	selution:	æ›´æ¢3.2.6å°±å¯ä»¥äº†ï¼Œå®ƒå¼•ç”¨2.1.0 pluginåŒ…  
   
-a. ´´½¨£º  
+a. åˆ›å»ºï¼š  
 	mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp  
 	error:		[ERROR] Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin:2  
 			.4:create (default-cli) on project standalone-pom: Unable to parse configuration  
-	solution:	¿ÉÒÔ½« create »»³É generate  
+	solution:	å¯ä»¥å°† create æ¢æˆ generate  
   
-b.	Éú³ÉelipseÏîÄ¿  
+b.	ç”Ÿæˆelipseé¡¹ç›®  
 	mvn eclipse:eclipse  
-	´ı½â¾ö£º  
-	error :		È±°ü  
+	å¾…è§£å†³ï¼š  
+	error :		ç¼ºåŒ…  
 				Failed to execute goalk org.apache.maven.plugins:maven-eclipse-plugin:2.1.0  
-	solution:	ÊÖ¶¯Ìí¼Ójar°üµ½±¾µØ²Ö¿â  
-	mvn install:install-file -Dfile=jar°üµÄÎ»ÖÃ -DgroupId=groupId -DartifactId=artifactId -Dversion=version -Dpackaging=jar  
+	solution:	æ‰‹åŠ¨æ·»åŠ jaråŒ…åˆ°æœ¬åœ°ä»“åº“  
+	mvn install:install-file -Dfile=jaråŒ…çš„ä½ç½® -DgroupId=groupId -DartifactId=artifactId -Dversion=version -Dpackaging=jar  
   
-c.	eclipse Ìí¼ÓmavenÉú³ÉµÄ¹¤³Ì  
+c.	eclipse æ·»åŠ mavenç”Ÿæˆçš„å·¥ç¨‹  
 	export-> exists maven project  
-	µ¼Èëºó×Ô¶¯Éú³É .classpath  .project  
-	µ«ÊÇ²»ÄÜmvn configration file »á±¨ÕÒ²»µ½ÎÄ¼ş´íÎó  
+	å¯¼å…¥åè‡ªåŠ¨ç”Ÿæˆ .classpath  .project  
+	ä½†æ˜¯ä¸èƒ½mvn configration file ä¼šæŠ¥æ‰¾ä¸åˆ°æ–‡ä»¶é”™è¯¯  
   
-	Ò²¿ÉÒÔÔÚmyeclipseÖĞ´´½¨ÎÄ¼ş  
+	ä¹Ÿå¯ä»¥åœ¨myeclipseä¸­åˆ›å»ºæ–‡ä»¶  
   
-d. ÔËĞĞ£º  
+d. è¿è¡Œï¼š  
 	Run -> mvn install -> run as java application  
-	Ã»ÓĞmvn intallÔòÕÒ²»µ½.classÀàÎÄ¼ş   
-	mvn install ÊÇ½«Äã´òºÃµÄjar°ü°²×°µ½ÄãµÄ±¾µØ¿âÖĞ£¬Ò»°ãÃ»ÓĞÉèÖÃ¹ıÊÇÔÚ ÓÃ»§Ä¿Â¼ÏÂµÄ .m2\ÏÂÃæ¡£  
-	mvn package Ö»ÊÇ½«ÄãµÄ´úÂë´ò°üµ½Êä³öÄ¿Â¼£¬Ò»°ãµÄÊÇ targetÏÂÃæ  
+	æ²¡æœ‰mvn intallåˆ™æ‰¾ä¸åˆ°.classç±»æ–‡ä»¶   
+	mvn install æ˜¯å°†ä½ æ‰“å¥½çš„jaråŒ…å®‰è£…åˆ°ä½ çš„æœ¬åœ°åº“ä¸­ï¼Œä¸€èˆ¬æ²¡æœ‰è®¾ç½®è¿‡æ˜¯åœ¨ ç”¨æˆ·ç›®å½•ä¸‹çš„ .m2\ä¸‹é¢ã€‚  
+	mvn package åªæ˜¯å°†ä½ çš„ä»£ç æ‰“åŒ…åˆ°è¾“å‡ºç›®å½•ï¼Œä¸€èˆ¬çš„æ˜¯ targetä¸‹é¢  
   
-e. ×÷ÎªwebÏîÄ¿ÔËĞĞ  
-   Ôö¼ÓMyEclipseµÄWeb Project¹¦ÄÜ  
-   Ñ¡Ôñ¹¤³Ì-->MyEclipse-->Project Capabilities-->Add Web Project Capabilites£¬  
-   µ¯³ö´°¿ÚÖĞÉèÖÃ²ÎÊıÈçÏÂ£¬ÔÙ½ÓÏÂÀ´µÄµ¯³ö´°¿ÚÖĞÑ¡Ôñyes¡£  
-   ÕâÑùÎÒÃÇµÄ¹¤³Ì¾ÍÊÇweb¹¤³ÌÁË(×¢Òâ¹¤³ÌÍ¼±êÓĞ±ä»¯£¬¶øÇÒMyEclipse×Ô¶¯ÒÀÀµÁËJEEµÄ°ü)¡£  
+e. ä½œä¸ºwebé¡¹ç›®è¿è¡Œ  
+   å¢åŠ MyEclipseçš„Web ProjectåŠŸèƒ½  
+   é€‰æ‹©å·¥ç¨‹-->MyEclipse-->Project Capabilities-->Add Web Project Capabilitesï¼Œ  
+   å¼¹å‡ºçª—å£ä¸­è®¾ç½®å‚æ•°å¦‚ä¸‹ï¼Œå†æ¥ä¸‹æ¥çš„å¼¹å‡ºçª—å£ä¸­é€‰æ‹©yesã€‚  
+   è¿™æ ·æˆ‘ä»¬çš„å·¥ç¨‹å°±æ˜¯webå·¥ç¨‹äº†(æ³¨æ„å·¥ç¨‹å›¾æ ‡æœ‰å˜åŒ–ï¼Œè€Œä¸”MyEclipseè‡ªåŠ¨ä¾èµ–äº†JEEçš„åŒ…)ã€‚  
   
-f. ĞŞ¸Ä¸ùÂ·¾¶Ãû  
+f. ä¿®æ”¹æ ¹è·¯å¾„å  
    Myeclipse-->Web  
-   ÕâÒ»¸öÊÇÓÃÀ´ĞŞ¸ÄÉèÖÃ¹¤³ÌµÄwebÌØĞÔ  
+   è¿™ä¸€ä¸ªæ˜¯ç”¨æ¥ä¿®æ”¹è®¾ç½®å·¥ç¨‹çš„webç‰¹æ€§  
   
-g. µ±Ò³Ãæ»¹ÊÇ±¨404 µÄÊ±ºò¿ÉÄÜÊÇmyeclipseµÄtomcat»º´æ  
-	É¾³ıtomcatÂ·¾¶ÏÂµÄÏîÄ¿£¬¾Í¿ÉÒÔÁË  
+g. å½“é¡µé¢è¿˜æ˜¯æŠ¥404 çš„æ—¶å€™å¯èƒ½æ˜¯myeclipseçš„tomcatç¼“å­˜  
+	åˆ é™¤tomcatè·¯å¾„ä¸‹çš„é¡¹ç›®ï¼Œå°±å¯ä»¥äº†  
   
   
 ------------------------------------------------------------------------------------------  
@@ -335,7 +338,7 @@ g. µ±Ò³Ãæ»¹ÊÇ±¨404 µÄÊ±ºò¿ÉÄÜÊÇmyeclipseµÄtomcat»º´æ
   
 Synatype Nexus  
   
-maven ÅäÖÃÒÀÀµnexus  
+maven é…ç½®ä¾èµ–nexus  
 <repositories>  
 	 <repository>  
 		 <id>nexus</id>  
@@ -354,16 +357,16 @@ maven ÅäÖÃÒÀÀµnexus
 ------------------------------------------------------------------------------------------  
 12. eclipse maven plugin  
   
-	1£©ÏÂÔØeclipse maven plugin²å¼ş  
-	2£©ÔÚeclipse°²×°ÎÄ¼ş¼ĞÏÂ´´½¨linksÎÄ¼ş¼Ğ  
-			ĞÂ½¨maven.linkÎÄ¼ş£º  
-			ÄÚÈİÎª£ºpath=D:/java/eclipse/myplugins/maven  
+	1ï¼‰ä¸‹è½½eclipse maven pluginæ’ä»¶  
+	2ï¼‰åœ¨eclipseå®‰è£…æ–‡ä»¶å¤¹ä¸‹åˆ›å»ºlinksæ–‡ä»¶å¤¹  
+			æ–°å»ºmaven.linkæ–‡ä»¶ï¼š  
+			å†…å®¹ä¸ºï¼špath=D:/java/eclipse/myplugins/maven  
   
-	3£©ÔÚeclipse°²×°ÎÄ¼ş¼ĞÏÂ´´½¨mypluginsÎÄ¼ş  
-			½«maven²å¼ş½âÑ¹µ½µ±Ç°ÎÄ¼ş¼ĞÏÂ  
+	3ï¼‰åœ¨eclipseå®‰è£…æ–‡ä»¶å¤¹ä¸‹åˆ›å»ºmypluginsæ–‡ä»¶  
+			å°†mavenæ’ä»¶è§£å‹åˆ°å½“å‰æ–‡ä»¶å¤¹ä¸‹  
   
-	4£©ÖØÆôeclipse  
-	5£©ÅäÖÃeclipse maven plugin   
+	4ï¼‰é‡å¯eclipse  
+	5ï¼‰é…ç½®eclipse maven plugin   
   
 ------------------------------------------------------------------------------------------  
 13. mvn spring   
@@ -372,36 +375,36 @@ maven ÅäÖÃÒÀÀµnexus
 	error:  
 		mvn java.lang.ClassNotFoundException: org.springframework.web.context.  
 				  ContextLoaderListener  
-		¸ù±¾Ô­ÒòÊÇeclipseÖ»ÊÇÌí¼ÓÁËÀàµÄÒıÓÃ  
+		æ ¹æœ¬åŸå› æ˜¯eclipseåªæ˜¯æ·»åŠ äº†ç±»çš„å¼•ç”¨  
 	1.solution:  
-		ÏîÄ¿¸ùÄ¿Â¼ÏÂµÄ.classpath,ÕÒµ½  
+		é¡¹ç›®æ ¹ç›®å½•ä¸‹çš„.classpath,æ‰¾åˆ°  
 		<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>  
   
-		Ìæ»»Îª:  
+		æ›¿æ¢ä¸º:  
 		<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER">  
 			 <attributes>  
 				 <attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>  
 			 </attributes>  
 		</classpathentry>  
 	2.   
-		1.ÓÒ¼üµã»÷ÏîÄ¿--Ñ¡ÔñPropertiesÑ¡ÔñDeployment£¨²¿Êğ£© Assembly£¨³ÌĞò¼¯£©,  
-		ÔÚÓÒ±ßµã»÷Add°´Å¥£¬ÔÚµ¯³öµÄ´°¿ÚÖĞÑ¡ÔñJava Build Path Entries  
-		2.µã»÷Next£¬Ñ¡ÔñMaven Dependencies  
-		3.µã»÷Finish£¬È»ºó¿ÉÒÔ¿´µ½ÒÑ¾­°ÑMaven DependenciesÌí¼Óµ½WebÓ¦ÓÃ½á¹¹ÖĞÁË  
+		1.å³é”®ç‚¹å‡»é¡¹ç›®--é€‰æ‹©Propertiesé€‰æ‹©Deploymentï¼ˆéƒ¨ç½²ï¼‰ Assemblyï¼ˆç¨‹åºé›†ï¼‰,  
+		åœ¨å³è¾¹ç‚¹å‡»AddæŒ‰é’®ï¼Œåœ¨å¼¹å‡ºçš„çª—å£ä¸­é€‰æ‹©Java Build Path Entries  
+		2.ç‚¹å‡»Nextï¼Œé€‰æ‹©Maven Dependencies  
+		3.ç‚¹å‡»Finishï¼Œç„¶åå¯ä»¥çœ‹åˆ°å·²ç»æŠŠMaven Dependenciesæ·»åŠ åˆ°Webåº”ç”¨ç»“æ„ä¸­äº†  
 	  
   
-Ìí¼Ómaven¿â°üµÄÒıÓÃ  
+æ·»åŠ mavenåº“åŒ…çš„å¼•ç”¨  
 <classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>  
   
   
 ------------------------------------------------------------------------------------------  
 14. mvn update  
 	  
-	1.ÔÚeclipseÖĞ¶ÔÏîÄ¿ÓÒ¼üµã»÷ maven --> update dependencies,ÕâÑù¶Ômaven¿â½øĞĞ¸üĞÂ¡£  
+	1.åœ¨eclipseä¸­å¯¹é¡¹ç›®å³é”®ç‚¹å‡» maven --> update dependencies,è¿™æ ·å¯¹mavenåº“è¿›è¡Œæ›´æ–°ã€‚  
 	  
-	2.update Project Configration »á¸ù¾İmavenÄ¬ÈÏµÄÉèÖÃ¸Ä±äÏîÄ¿µÄÅäÖÃÎÄ¼ş  
-		Àı£º¿ÉÒÔ¸Ä±ä.classpathÎÄ¼ş  
-		£¨²»ÒªÇáÒ×Ê¹ÓÃ£©  
+	2.update Project Configration ä¼šæ ¹æ®mavené»˜è®¤çš„è®¾ç½®æ”¹å˜é¡¹ç›®çš„é…ç½®æ–‡ä»¶  
+		ä¾‹ï¼šå¯ä»¥æ”¹å˜.classpathæ–‡ä»¶  
+		ï¼ˆä¸è¦è½»æ˜“ä½¿ç”¨ï¼‰  
   
   
   
@@ -409,27 +412,40 @@ maven ÅäÖÃÒÀÀµnexus
 15. eclipse create mvn project  
   
 1. new->mvn project  
-2. Éú³ÉwebÏîÄ¿ properties->project facets->Dynamic Web Module  
-   ×¢ÒâÌí¼ÓµÄwebÎÄ¼şµÄÎ»ÖÃ  
+2. ç”Ÿæˆwebé¡¹ç›® properties->project facets->Dynamic Web Module  
+   æ³¨æ„æ·»åŠ çš„webæ–‡ä»¶çš„ä½ç½®  
   
-3. ÅäÖÃbuild path ĞÂ½¨java £¬ÅäÖÃ±àÒëÎÄ¼şÎ»ÖÃ,  
-   ÅäÖÃjava°æ±¾  
+3. é…ç½®build path æ–°å»ºjava ï¼Œé…ç½®ç¼–è¯‘æ–‡ä»¶ä½ç½®,  
+   é…ç½®javaç‰ˆæœ¬  
   
-4. ÅäÖÃmavenÒıÓÃ°ü±àÒëÎ»ÖÃ deployment assembly ->add -> java build enties path  
+4. é…ç½®mavenå¼•ç”¨åŒ…ç¼–è¯‘ä½ç½® deployment assembly ->add -> java build enties path  
   
-5. Ìí¼Ótomcat lib jar  
+5. æ·»åŠ tomcat lib jar  
   
-1. ´´½¨£º  
+1. åˆ›å»ºï¼š  
 mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp  
-ÈôÊÇÈ±ÉÙmaven-archetype-plugin:2.4:create Ôò½«create±ä³Égenerate   
+è‹¥æ˜¯ç¼ºå°‘maven-archetype-plugin:2.4:create åˆ™å°†createå˜æˆgenerate   
   
--------------------------------------------------------------------------------------  
-16. mvn ÒıÓÃ²»µ½Á´½ÓsqllserverµÄjar°ü  
-	Missing artifact com.microsoft.sqlserver:sqljdbc4:jar:4.0  
+-----------------------------------------------------------------------------
+mvn å¼•ç”¨ä¸åˆ°é“¾æ¥sqllserverçš„jaråŒ…  
+    Missing artifact com.microsoft.sqlserver:sqljdbc4:jar:4.0  
+
   
-1.ÔÚÕâ¸öÍøÕ¾ÏÂÔØjdbcÇı¶¯°ühttps://www.microsoft.com/en-us/download/details.aspx?id=11774  
+1. åœ¨è¿™ä¸ªç½‘ç«™ä¸‹è½½jdbcé©±åŠ¨åŒ…
+    https://www.microsoft.com/en-us/download/details.aspx?id=11774  
   
-2.ÊÖ¶¯Ìí¼Ósqlserver jdbcÇı¶¯°üµ½mvn²Ö¿âÖĞ¡£  
-cdµ½jar°üµÄÂ·¾¶ÏÂ  
-	mvn install:install-file -Dfile=sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0 -Dpackaging=jar  
-----------------------------------------------------------------------------------------
+2. æ‰‹åŠ¨æ·»åŠ sqlserver jdbcé©±åŠ¨åŒ…åˆ°mvnä»“åº“ä¸­ã€‚  
+cdåˆ°jaråŒ…çš„è·¯å¾„ä¸‹  
+    ```
+	mvn install:install-file -Dfile=sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0 -Dpackaging=jar
+    ```  
+
+-----------------------------------------------------------------------------
+æ–°å»ºmavenå¤šå­é¡¹ç›®ï¼Œæƒ³è¦æ·»åŠ çš„å­é¡¹ç›®ä¸åœ¨çˆ¶é¡¹ç›®ä¸‹(ä¸çˆ¶é¡¹ç›®å¹¶è¡Œ)
+
+1. file-->import-->General-->Existing Project into Workspace
+2. åˆ é™¤æ‰çˆ¶é¡¹ç›®ä¸‹çš„æ–‡ä»¶å¤¹å³å¯
+
+-----------------------------------------------------------------------------
+
+

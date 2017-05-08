@@ -1,0 +1,15 @@
+server
+
+------------------------------------------------------------------------------------------
+jboss post 提交中文乱码
+
+在HTTP的POST请求中，如果是这种情况 Content-Type: application/x-www-form-urlencoded;charset=utf-8 
+，若没有设置charset=utf-8，这时可能会出现请求参数中文乱码的情况
+
+do:
+1. 改成get提交
+
+2. Headers改 Content-Type:application/x-www-form-urlencoded;charset=UTF-8
+
+
+------------------------------------------------------------------------------------------
