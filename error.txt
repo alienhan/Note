@@ -633,4 +633,4 @@ hibernate3.6final，已经把Annotation类库集成到了hibernate3.6。当我们想使用Annotat
 下载hibernate3.6final，不再需要下载hibernate-annotations-3.4.0.GA.zip了。
 
 ------------------------------------------------------------------------------------------------------------------
-
+astah uml 工具
