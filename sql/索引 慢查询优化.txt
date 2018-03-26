@@ -2,6 +2,8 @@ index
 
 index type
 	聚集index
+		== 主键
+		根据这个来组织数据存储(InnoDB)
 	非聚集index
 
 	辅助索引
