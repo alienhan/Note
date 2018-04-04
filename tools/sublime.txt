@@ -1,0 +1,11 @@
+安装插件 package control
+
+
+ctrl + p -- in
+ctrl + shift + p -- 命令面板（Command Palette）
+
+ctrl + shift + t -- cmd
+
+
+增强侧边栏
+https://github.com/titoBouzout/SideBarEnhancements/tree/st3

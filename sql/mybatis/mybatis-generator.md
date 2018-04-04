@@ -1,12 +1,12 @@
-# mybatis 自动代码生成 #
+# mybatis 自动代码生成 
 
 
-- mybatis-generator 简介：
+mybatis-generator 简介：
     官网： http://www.mybatis.org/generator/index.html
 
 ---
 
-## mybatis-generator安装： ##
+## mybatis-generator安装:
 1. 以maven插件安装：
 ```
 <plugin>
@@ -77,11 +77,13 @@
 </generatorConfiguration>
 ```
 
+---
 3. 生成代码
 - 择pom.xml文件，击右键先择Run AS——>Maven Build… ——>在Goals框中输入：mybatis-generator:generate 
 
 - 如果在命令行输入Maven命令即可，注意：一定是当前项目目录下运行该命令：
 mvn mybatis-generator:generate
 
+---
 4. 生成代码位置：
-在项目target/generated-sources下
+    在项目target/generated-sources下
