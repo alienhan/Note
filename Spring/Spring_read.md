@@ -1,24 +1,50 @@
+    
 
-
+#BeanFactory
+    构建ioc基本功能
 
 
 #Aware (感知)
-容器管理的Bean一般不需要了解容器的状态和直接使用容器，但是在某些情况下，是需要在Bean中直接对IOC容器进行操作的，
-这时候，就需要在Bean中设定对容器的感知。
-spring IOC容器也提供了该功能，它是通过特定的Aware接口来完成的。aware接口有以下这些：
+    容器管理的Bean一般不需要了解容器的状态和直接使用容器，但是在某些情况下，是需要在Bean中直接对IOC容器进行操作的，
+    这时候，就需要在Bean中设定对容器的感知。
+    spring IOC容器也提供了该功能，它是通过特定的Aware接口来完成的。aware接口有以下这些：
+        BeanNameAware，可以在Bean中得到它在IOC容器中的Bean的实例的名字。
+        BeanFactoryAware，可以在Bean中得到Bean所在的IOC容器，从而直接在Bean中使用IOC容器的服务。
+        ApplicationContextAware，可以在Bean中得到Bean所在的应用上下文，从而直接在Bean中使用上下文的服务。
+        MessageSourceAware，在Bean中可以得到消息源。
+        ApplicationEventPublisherAware，在bean中可以得到应用上下文的事件发布器，从而可以在Bean中发布应用上下文的事件。
+        ResourceLoaderAware，在Bean中可以得到ResourceLoader，从而在bean中使用ResourceLoader加载外部对应的Resource资源。
+    在设置Bean的属性之后，调用初始化回调方法之前，Spring会调用aware接口中的setter方法。
 
-BeanNameAware，可以在Bean中得到它在IOC容器中的Bean的实例的名字。
 
-BeanFactoryAware，可以在Bean中得到Bean所在的IOC容器，从而直接在Bean中使用IOC容器的服务。
+#Transaction
+    本地事务和全局事务
+        全局事务让你可以和多个事务资源工作在一起，比如，关系型数据库，消息队列
+        
+        而本地事务则是与某个指定的事务资源联系在一起，比如，与JDBC连接相关的事务。本地事务相对于全局事务更容易使用，但不能跨多个事务资源。管理JDBC连接所写的事务代码不能够在全局事务中使用。
 
-ApplicationContextAware，可以在Bean中得到Bean所在的应用上下文，从而直接在Bean中使用上下文的服务。
-
-MessageSourceAware，在Bean中可以得到消息源。
-
-ApplicationEventPublisherAware，在bean中可以得到应用上下文的事件发布器，从而可以在Bean中发布应用上下文的事件。
-
-ResourceLoaderAware，在Bean中可以得到ResourceLoader，从而在bean中使用ResourceLoader加载外部对应的Resource资源。
-
-在设置Bean的属性之后，调用初始化回调方法之前，Spring会调用aware接口中的setter方法。
-
----
+    settings
+        隔离级别
+        传播行为
+            required
+                 如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。
+            requires_new
+                创建一个新的事务，如果当前存在事务，则把当前事务挂起。
+            supports
+                如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。
+            not_supported
+                非事务方式运行，如果当前存在事务，则把当前事务挂起。
+            never
+                以非事务方式运行，如果当前存在事务，则抛出异常。
+            mandatory
+                如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。 
+            nested
+                如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于required
+            当前有事物
+                加入
+                挂起,新建
+                抛异常
+            当前没有事物
+                新建
+                非事物运行
+                抛异常
