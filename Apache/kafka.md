@@ -1,16 +1,13 @@
 ##kafka
+  官网：http://kafka.apache.org
 
-官网：http://kafka.apache.org
-
---- 
+---
+#安装启动
 1. 前提条件：
     >jdk
     >zookeeper(详细在zookeeper.txt中)
 
-
-
----
-2. 安装kafka
+#安装kafka
 - 下载地址：https://www.apache.org/dyn/closer.cgi?path=/kafka/0.10.2.0/kafka_2.10-0.10.2.0.tgz
    >注意：
    >kafka 2.10-0.10,kafka_2.10-0.9.0.0   对应java8
@@ -35,9 +32,7 @@ KAFKA_JVM_PERFORMANCE_OPTS="-server -XX:+UseCompressedOops -XX:+UseParNewGC -XX:
 after removing :
 KAFKA_JVM_PERFORMANCE_OPTS="-server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:+CMSScavengeBeforeRemark -XX:+DisableExplicitGC -Djava.awt.headless=true"
 
-
-  ---
-3. 运行kafka
+#运行kafka
     重要：确保在启动Kafka服务器前，Zookeeper实例已经准备好并开始运行。
 
     window启动:
@@ -49,25 +44,15 @@ KAFKA_JVM_PERFORMANCE_OPTS="-server -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX
 
 
 ---
-4. topic
-  topic 是在broker站点上新建的因此 无论生产端,消费端都没有配置的权利,
-  因此在项目中的关于topic配置,只是单纯的与broker站点上的配置相同,不起任何配置性作用.
-
-  项目中只能配置producer,customer的相关配置.
-
-
-
-
----
-5. 监控
-  partition：分区编号
-  offset：表示该parition已经消费了多少条message
-  logSize：表示该partition已经写了多少条message
-  Lag：表示有多少条message没有被消费。
-
-
----
-
+#component
+topic
+    topic 是在broker站点上新建的因此 无论生产端,消费端都没有配置的权利,
+    因此在项目中的关于topic配置,只是单纯的与broker站点上的配置相同,不起任何配置性作用.
+    项目中只能配置producer,customer的相关配置. 
+partition：分区编号
+offset：表示该parition已经消费了多少条message
+logSize：表示该partition已经写了多少条message
+Lag：表示有多少条message没有被消费。
 
 
 

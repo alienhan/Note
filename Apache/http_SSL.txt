@@ -1,5 +1,4 @@
 #java http 链接
----------------
 code:
 	String urlStr = "www.baidu.com";
 	URL url = new URL(urlStr);
@@ -21,9 +20,8 @@ code:
 	byte[] jsonBytes = new byte[size];
 	is.read(jsonBytes);
 	message = new String(jsonBytes, encode);//jsonBytes为字节
-=================
+
 #HttpClient 链接
------------------
 code：
 	ca验证：
 	// 指定读取证书格式为PKCS12
@@ -79,4 +77,4 @@ code：
 	} finally {
 		httpclient.close();
 	}
-----------------------------------------------------------------------------------------------------------------
+
