@@ -18,6 +18,8 @@
 
 
 #Transaction
+https://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/
+
     本地事务和全局事务
         全局事务让你可以和多个事务资源工作在一起，比如，关系型数据库，消息队列
         
@@ -48,3 +50,7 @@
                 新建
                 非事物运行
                 抛异常
+        事务超时
+        事务的只读属性
+        事务的回滚规则        
+
