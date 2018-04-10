@@ -6,7 +6,7 @@
 windows配置：
     cd zookeeper-3.3.6  
     copy conf\zoo_sample.cfg conf\zoo.cfg  
-    .\bin\zkServer.cmd  (启动zookeeper服务)
+    .\bin\zkServer.cmd  `(启动zookeeper服务)`
 
 linux 配置:
 	 sh zkServer.sh start
