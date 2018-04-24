@@ -1,16 +1,14 @@
 #java 多线程#
-
+    http://penghb.com
 
 #线程 dump
-1. 执行jps命令，列出正在运行的java程序的进程ID
-    ```
+1. 执行`jps`命令，列出正在运行的java程序的进程ID
     D:\gitrepo\thread-test>jps
     5056 RemoteMavenServer (pid 对应线程名字)
     7264 Launcher
     10644 Jps
     7636
-    ```
-2. 执行jstack pid
+2. 执行`jstack pid`
 
 ---
 
@@ -33,18 +31,57 @@
     5. LockSupport的parkUntil方法，带有时间
 6. TERMINATED: 线程中止的状态，这个线程已经完整地执行了它的任务(jstack 看不到线程了)
 
+在Thread.java 下的 enum State下
+
 ---
+#Dump文件中的线程状态
+1. Deadlock
+2. Runnable
+3. Waiting on condition
+4. Blocked
+5. Waiting for monitor entry 和 in Object.wait()
 
 
+---
+#Thread.java分析
+>exit()
+    exit( )是由系统调用的，用于线程在真正的退出前进行一些清理的操作。看看里面进行的操作是什么吧，可以看出，里面执行的是group 赋值为null了， 将target引用进行释放，同时释放了threadLocals所占用的资源，等等属性都赋值为null。
+sleep()
+    这个方法的作用使得当前线程休眠一定的时间，但是这个期间是不释放持有的锁的。这个方法里面首先进行的是休眠时间的判断，然后又是调用本地方法。
+join()方法
+    join方法是等待该线程执行，直到超时或者终止，可以作为线程通信的一种方式，A线程调用B线程的join（阻塞），等待B完成后再往下执行。 join（）方法中重载了多个方法，但是主要的方法是下面的方法。
+interrupt()方法
+    中断当前的线程
+    阻塞状态:
+        阻塞函数,如Thread.sleep、Thread.join、Object.wait等在检查到线程的中断状态的时候，
+        会抛出InteruptedExeption, 同时会清除线程的中断状态。
+            对于InterruptedException的处理，可以有两种情况：
+                外层代码处理异常，直接抛出这个异常即可
+                不能抛出这个异常，比如在run()方法内，因为在得到这个异常的同时，线程的中断状态已经被清除了，需要保留线程的中断状态，则需要调用Thread.currentThread().interrupt()
+    运行状态:
+        将该线程的中断标志设置为 true，仅此而已。被设置中断标志的线程将继续正常运行，不受影响。
 
 
+---
+#终止线程
+    首先，一个线程不应该由其他线程来强制中断或停止，而是应该由线程自己自行停止。所以，Thread.stop, Thread.suspend, Thread.resume 都已经被废弃了。而 Thread.interrupt 的作用其实也不是中断线程，而是「通知线程应该中断了」，具体到底中断还是继续运行，应该由被通知的线程自己处理。
 
+```java
+@Override
+public void run() {
+    //“中断”方式终止处于“阻塞状态”的线程。
+    try {
+        // 执行任务...
+    } catch (InterruptedException ie) {  
+        // 由于产生InterruptedException异常，退出while(true)循环，线程终止！
+    }
 
-
-
-
-
-
+    //终止处于“运行状态”的线程
+    if (!isInterrupted()) {
+        // 执行任务...
+    }
+}
+```
 
 
 
