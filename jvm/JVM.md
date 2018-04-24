@@ -13,7 +13,7 @@ jvm
     resolution:虚拟机将`常量池内`的符号引用替换成`直接引用`的过程.
     initialization:执行<clinit>()方法的过程
             <clinit>()方法是编译器自动收集类变量,静态语句{}合成的.
-    
+
     类加载器(双亲委派机制,树状结构):
         启动类加载器(bootstrap ClassLoader c++实现)
         扩展类加载器(Extension ClassLoader)
@@ -21,7 +21,6 @@ jvm
         自定义类加载器(User ClassLoader)
         过程:类加载器收到一个类加载请求,先请求委派给父加载器完成加载
         OSGi 非树状结构
-
     初始化前提:
         1. 遇到 `new getstatic putstatic invokestatic`这4条字节码(java 代码场景 使用new 实例化对象,读取或设置一个类的静态字段(final 除外))
         2. 反射调用时

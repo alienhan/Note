@@ -5,7 +5,7 @@
 
 
 #Aware (感知)
-    容器管理的Bean一般不需要了解容器的状态和直接使用容器，但是在某些情况下，是需要在Bean中直接对IOC容器进行操作的，
+容器管理的Bean一般不需要了解容器的状态和直接使用容器，但是在某些情况下，是需要在Bean中直接对IOC容器进行操作的，
     这时候，就需要在Bean中设定对容器的感知。
     spring IOC容器也提供了该功能，它是通过特定的Aware接口来完成的。aware接口有以下这些：
         BeanNameAware，可以在Bean中得到它在IOC容器中的Bean的实例的名字。
@@ -20,37 +20,66 @@
 #Transaction
 https://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/
 
-    本地事务和全局事务
-        全局事务让你可以和多个事务资源工作在一起，比如，关系型数据库，消息队列
-        
-        而本地事务则是与某个指定的事务资源联系在一起，比如，与JDBC连接相关的事务。本地事务相对于全局事务更容易使用，但不能跨多个事务资源。管理JDBC连接所写的事务代码不能够在全局事务中使用。
+本地事务和全局事务
+    全局事务让你可以和多个事务资源工作在一起，比如，关系型数据库，消息队列
+    
+而本地事务则是与某个指定的事务资源联系在一起，比如，与JDBC连接相关的事务。本地事务相对于全局事务更容易使用，但不能跨多个事务资源。管理JDBC连接所写的事务代码不能够在全局事务中使用。
 
-    settings
-        隔离级别
-        传播行为
-            required
-                 如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。
-            requires_new
-                创建一个新的事务，如果当前存在事务，则把当前事务挂起。
-            supports
-                如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。
-            not_supported
-                非事务方式运行，如果当前存在事务，则把当前事务挂起。
-            never
-                以非事务方式运行，如果当前存在事务，则抛出异常。
-            mandatory
-                如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。 
-            nested
-                如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于required
-            当前有事物
-                加入
-                挂起,新建
-                抛异常
-            当前没有事物
-                新建
-                非事物运行
-                抛异常
-        事务超时
-        事务的只读属性
-        事务的回滚规则        
+settings
+    隔离级别
+    传播行为
+        required
+             如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。
+        requires_new
+            创建一个新的事务，如果当前存在事务，则把当前事务挂起。
+        supports
+            如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。
+        not_supported
+            非事务方式运行，如果当前存在事务，则把当前事务挂起。
+        never
+            以非事务方式运行，如果当前存在事务，则抛出异常。
+        mandatory
+            如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。 
+        nested
+            如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于required
+        当前有事物
+            加入
+            挂起,新建
+            抛异常
+        当前没有事物
+            新建
+            非事物运行
+            抛异常
+    事务超时
+    事务的只读属性
+    事务的回滚规则        
+
+#spring结构
+具体的ioc实现
+DefaultListableBeanFactory
+    在spring中,实际上是把DefaultListableBeanFactory作为一个默认的功能完整的Ioc容器来使用的.
+    XmlBeanFactory,ApplicationContect都是在DefaultListableBeanFactory基础上扩展的.
+
+    AbstractRefreshableApplicationContext中包含DefaultListableBeanFactory的实例
+
+
+BeanFacory
+    BeanFactory的实现是Ioc的基本形式
+
+ApplicationContext
+    ApplicationContext的各种实现是IoC容器的高级表现形式
+
+
+#spring 容器启动过程
+启动时执行
+1.Resource定位
+    Resource是spring对i/o的封装类.
+2.BeanDefinition载入
+3.注册BeanDefinition
+    在IoC容器内部将BeanDefinition注入到HashMap中
+
+4.Bean依赖注入
+    时间:发生在应用第一次调用getBean向容器索取bean的时候
+    AbstractBeanFactory中的doGetBean具体实现
+
 

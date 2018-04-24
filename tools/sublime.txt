@@ -9,3 +9,7 @@ ctrl + shift + t -- cmd
 
 增强侧边栏
 https://github.com/titoBouzout/SideBarEnhancements/tree/st3
+
+markdown 样式
+sublime-monokai-extended
+https://github.com/jonschlinkert/sublime-monokai-extended

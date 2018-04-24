@@ -105,7 +105,7 @@ ref ： bean   例子：
 		initial-delay：初始延迟
 
 方法：
-```
+```java
 package com.mendian.component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
