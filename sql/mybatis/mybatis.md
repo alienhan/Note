@@ -5,7 +5,7 @@
     sql 查询->SqlSession->DeFaultSqlSession(implements)
 
     Executor
-    ->CachingExecutor-->delegate
+    ->CachingExecutor-->delegate(委派)
     ->SimpleExecutor(通过delegate机制完成) ,执行query方法的时候先调用BaseExecutor中的query函数,base中的query再调用simple中的doQuery函数
     
     ->doQuery通过StatementHandler组装jdbc的statement,connnection...

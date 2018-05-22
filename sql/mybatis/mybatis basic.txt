@@ -1,8 +1,6 @@
 1. init mybatis
 2. 建立整个mybatis项目的架构体系
 
-
-
 ---
 1. init mybatis
  pom.xml添加MyBatis依赖
