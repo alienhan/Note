@@ -40,5 +40,4 @@ redis-server.exe sentinel.conf --sentinel
 #windows启动redis 客户端
 redis-cli.exe -h address -p port
 address,port 必须正确,否则cmd就会卡住.
-
 ---

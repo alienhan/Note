@@ -79,7 +79,17 @@ ApplicationContext
     在IoC容器内部将BeanDefinition注入到HashMap中
 
 4.Bean依赖注入
-    时间:发生在应用第一次调用getBean向容器索取bean的时候
+    时间:发生在应用第一次调用AbstractBeanFactory中的getBean-->doGetBean向容器索取bean的时候
     AbstractBeanFactory中的doGetBean具体实现
+DefaultSingletonBeanRegistry含有bean的三级缓存
+    /** Cache of singleton objects: bean name --> bean instance */
+    private final Map<String, Object> singletonObjects = new ConcurrentHashMap<String, Object>(256);
+    /** Cache of singleton factories: bean name --> ObjectFactory */
+    private final Map<String, ObjectFactory<?>> singletonFactories = new HashMap<String, ObjectFactory<?>>(16);
+    /** Cache of early singleton objects: bean name --> bean instance */
+    private final Map<String, Object> earlySingletonObjects = new HashMap<String, Object>(16);
+   
+    getSingleton是调用
 
 
+#Spring-bean的循环依赖以及解决方式
