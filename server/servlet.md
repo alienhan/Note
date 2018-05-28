@@ -2,13 +2,12 @@
 servlet生命周期
 rpc 结构,原理
 kafka原理,保证消息不会丢..
-redis错误处理,网络断了,出问题应该怎么处理
-redis性能监控
 mysql性能监控
 多线程优化
 高并发处理问题
 jvm调优,线程监控命令
-
+spring 事物的具体实现
+rpc框架原理,协议,设计
 
 #Servlet的生命周期
 1. init(ServletConfig)方法：负责初始化Servlet对象，在Servlet的生命周期中，该方法执行一次；该方法执行在单线程的环境下，因此开发者不用考虑线程安全的问题；
