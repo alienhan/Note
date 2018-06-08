@@ -10,6 +10,9 @@ hashtable区别
 1.8改进
     数据存储结构引进了`红黑树`，使得查询更加的快捷.
 
+
+
+
 ---
 #ConcurrentHashMap source read
 参考:

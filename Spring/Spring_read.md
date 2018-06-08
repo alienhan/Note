@@ -90,6 +90,5 @@ DefaultSingletonBeanRegistry含有bean的三级缓存
     private final Map<String, Object> earlySingletonObjects = new HashMap<String, Object>(16);
    
     getSingleton是调用
+Spring-bean的循环依赖以及解决方式
 
-
-#Spring-bean的循环依赖以及解决方式

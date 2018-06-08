@@ -63,6 +63,9 @@ producer.type：
   消息发送类型同步还是异步，默认为同步
 compression.codec：
   消息的压缩格式，默认为none不压缩，也可以为gzip, snappy, lz4
+max.in.flight.requests.per.connection=1
+  同一分区消息乱序：假设a,b两条消息，a先发送后由于发送失败重试，这时顺序就会在b的消息后面，可以设置max.in.flight.requests.per.connection=1来避免
+  max.in.flight.requests.per.connection：限制客户端在单个连接上能够发送的未响应请求的个数。设置此值是1表示kafka broker在响应请求之前client不能再向同一个broker发送请求，但吞吐量会下降
 **异步生产者配置**
   queue.buffering.max.ms：生产者异步缓存数据的最大时间，单位毫秒
   queue.buffering.max.messages：生产者异步缓存消息的最大容量
