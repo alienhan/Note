@@ -112,10 +112,3 @@ permanent generation
 #命令 调试
 jps jvm process status
     列出正在运行的虚拟机进程
-
-
-
-
-
-
-
