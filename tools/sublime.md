@@ -1,20 +1,29 @@
-安装插件 package control
+---
+title: sublime使用
+date:
+categories:
+- tools
+tags:
+- sublime使用
+- sublime
+---
+
+### 安装插件 package control
+ctrl + p -- in  
+ctrl + shift + p -- 命令面板（Command Palette）  
+
+ctrl + shift + t -- cmd  
 
 
-ctrl + p -- in
-ctrl + shift + p -- 命令面板（Command Palette）
-
-ctrl + shift + t -- cmd
-
-
-#增强侧边栏
+### 增强侧边栏
 https://github.com/titoBouzout/SideBarEnhancements/tree/st3
 
-#markdown 样式
+### markdown 样式
 sublime-monokai-extended
 https://github.com/jonschlinkert/sublime-monokai-extended
 
-#markdown gfm配置
+### markdown gfm配置
+```json
 {
     //"color_scheme": "Packages/MarkdownEditing/MarkdownEditor.tmTheme",
     "color_scheme": "Packages/MarkdownEditing/MarkdownEditor-Yellow.tmTheme",
@@ -29,3 +38,4 @@ https://github.com/jonschlinkert/sublime-monokai-extended
     "draw_centered": false, // 改为false，原始值为true
     "wrap_width": 110, // 每行字符数上限
 }
+```
