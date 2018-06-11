@@ -1,10 +1,14 @@
-sql server
+---
+title: sqlserver
+date:
+categories:
+- sqlserver
+tags:
+- sqlserver
+---
 
-----------------
-
-
-
-sqlserver 分页
+### sqlserver 分页
+```sql
 	SELECT TOP 10 * FROM unit_info
 	WHERE
 		unit_id NOT IN (
@@ -17,5 +21,4 @@ sqlserver 分页
 		)
 	ORDER BY
 		unit_id
-
----------------------------------------------------------
+```
