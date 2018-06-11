@@ -1,5 +1,16 @@
-#java http 链接
+---
+title: java处理网络协议
+date:
+categories:
+- 网络协议
+tags:
+- java 处理http
+- java 处理ssl
+---
+
+### java http 链接
 code:
+```java
 	String urlStr = "www.baidu.com";
 	URL url = new URL(urlStr);
 	HttpURLConnection http = (HttpURLConnection) url.openConnection();
@@ -20,9 +31,11 @@ code:
 	byte[] jsonBytes = new byte[size];
 	is.read(jsonBytes);
 	message = new String(jsonBytes, encode);//jsonBytes为字节
+```
 
-#HttpClient 链接
+### HttpClient 链接
 code：
+```java
 	ca验证：
 	// 指定读取证书格式为PKCS12
 	KeyStore keyStore = KeyStore.getInstance("PKCS12");
@@ -77,3 +90,4 @@ code：
 	} finally {
 		httpclient.close();
 	}
+```

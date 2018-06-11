@@ -105,4 +105,3 @@ innoDB存储引擎中的锁
 phantom(幻像) 问题
 	phantom problem 是指在同一事物下,连续两次执行同样的sql,导致不同的结果,
 	第二次sql可能返回之前不存在的结果
-

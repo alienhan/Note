@@ -110,10 +110,11 @@ main->启动线程->调用方法->线程结束
           上一次GC的幸存者，作为这一次GC的被扫描者。  
       - to space 1  
           保留了一次MinorGC过程中的幸存者。  
-    - gc:MinorGC
-        MinorGC的过程：  
-        MinorGC采用复制算法。首先，把Eden和ServivorFrom区域中存活的对象复制到ServicorTo区域（如果有对象的年龄以及达到了老年的标准，则赋值到老年代区），同时把这些对象的年龄+1（如果ServicorTo不够位置了就放到老年区）；  
-        然后，清空Eden和ServicorFrom中的对象；最后，ServicorTo和ServicorFrom互换，原ServicorTo成为下一次GC时的ServicorFrom区。
+    - gc:MinorGC  
+      + MinorGC的过程：  
+        - MinorGC采用复制算法。  
+        - 首先，把Eden和ServivorFrom区域中存活的对象复制到ServicorTo区域（如果有对象的年龄以及达到了老年的标准，则赋值到老年代区），同时把这些对象的年龄+1（如果ServicorTo不够位置了就放到老年区）；  
+        - 然后，清空Eden和ServicorFrom中的对象；最后，ServicorTo和ServicorFrom互换，原ServicorTo成为下一次GC时的ServicorFrom区。
 + tenured generation
     - gc:MajorGC
     - 进入条件  
