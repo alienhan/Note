@@ -1,100 +1,101 @@
-1. Ä¬ÈÏ·ÃÎÊ
-2. tomcatµ¥ÏîÅäÖÃssl
-3. tomcatÏÂÅäÖÃhttps»·¾³
-4. eclipse tomcat servers ÅäÖÃÎÄ¼ş
-5. context.xml
-6. tomcat-user.xmlÔÚÕâÀï¾ÍÊÇÅäÖÃtomcatµÄÓÃ»§
-7. tomcatÍ¨¹ıconf-Catalina-localhostÄ¿Â¼·¢²¼ÏîÄ¿
-8. tomcat ÏÂ·ÃÎÊlocalhost´íÎó
-9. ·¢²¼ÏîÄ¿
-10. tomcat ÅäÖÃ·şÎñÆ÷¼àÌı,ÓÃÓÚeclipseµÄdebug¹¦ÄÜ || eclipse µ÷ÊÔÔ¶³Ìtomcat || tomcat·şÎñÆ÷ÅäÖÃÔ¶³Ìµ÷ÊÔ
+---
+title: tomcat
+date:
+categories:
+- tomcat
+tags:
+- tomcat
+---
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-1. Ä¬ÈÏ·ÃÎÊ
-tomcatÄ¬ÈÏ·ÃÎÊROOT Ó¦ÓÃ³ÌĞò
+### é»˜è®¤è®¿é—®
+tomcaté»˜è®¤è®¿é—®ROOT åº”ç”¨ç¨‹åº
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-2. tomcatµ¥ÏîÅäÖÃssl
-
-
-1):Éú³ÉkeystoreÎÄ¼ş
-keytool -v -genkey -alias tomcat -keyalg RSA -keystore d:/tomcat.keystore
-×¢Òâ£º
+### tomcatå•é¡¹é…ç½®ssl
+1. ç”Ÿæˆkeystoreæ–‡ä»¶  
+```
+keytool -v -genkey -alias tomcat -keyalg RSA -keystore
+d:/tomcat.keystore
+```
+æ³¨æ„ï¼š
       cn=localhost
 
-2):´ÓkeystoreÖĞµ¼³öserver.cerµÄÎÄ¼ş
-   keytool -export -trustcacerts -alias tomcat -file d:/server.cer -keystore d:/tomcat.keystore -storepass 123456
+2. ä»keystoreä¸­å¯¼å‡ºserver.cerçš„æ–‡ä»¶  
+```
+   keytool -export -trustcacerts -alias tomcat -file
+   d:/server.cer -keystore d:/tomcat.keystore -storepass 123456
+```
 
+3. å°†server.ceræ–‡ä»¶å¯¼å…¥åˆ°jdkä¸­çš„å‚¨å­˜è¯ä¹¦çš„åº“ä¸­  
+```
+keytool -import -trustcacerts -alias tomcat -file d:/server.cer -keystore  
+D:\Java\jdk1.6.0_19/jre/lib/security/cacerts -storepass changeit
+```
 
-3):½«server.cerÎÄ¼şµ¼Èëµ½jdkÖĞµÄ´¢´æÖ¤ÊéµÄ¿âÖĞ
-keytool -import -trustcacerts -alias tomcat -file d:/server.cer -keystore D:\Java\jdk1.6.0_19/jre/lib/security/cacerts -storepass changeit
-
-
-4):ÅäÖÃtomcatµÄconfÎÄ¼şÏÂµÄsever.xmlÎÄ¼ş
+4. é…ç½®tomcatçš„confæ–‡ä»¶ä¸‹çš„sever.xmlæ–‡ä»¶  
+```
 <Connector port="8443" protocol="HTTP/1.1" SSLEnabled="true"
                maxThreads="150" scheme="https" secure="true"
                clientAuth="false" keystoreFile="D:\tomcat.keystore" keystorePass="123456" sslProtocol="TLS" />
+```
+5. å®‰è£…server.cerè¯ä¹¦  
+  å°†server.cerå®‰è£…åˆ°å—ä¿¡ä»»çš„æ ¹ç›®å½•ä¸‹
 
-5)°²×°server.cerÖ¤Êé
-  ½«server.cer°²×°µ½ÊÜĞÅÈÎµÄ¸ùÄ¿Â¼ÏÂ
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-3. tomcatÏÂÅäÖÃhttps»·¾³
+### tomcatä¸‹é…ç½®httpsç¯å¢ƒ
+example:  
+  http://blog.csdn.net/supersky07/article/details/7407523
 
-example:
-http://blog.csdn.net/supersky07/article/details/7407523
-
-
-[tomcatÏÂÅäÖÃhttps»·¾³ºóÖ¤Êé´íÎó£¨Ë«ÏòÈÏÖ¤£©]
-tomcat ÅäÖÃÖ¤ÊéµÄÃüÁî
+tomcatä¸‹é…ç½®httpsç¯å¢ƒåè¯ä¹¦é”™è¯¯ï¼ˆåŒå‘è®¤è¯ï¼‰
+tomcat é…ç½®è¯ä¹¦çš„å‘½ä»¤  
+```
 keytool -import -alias rootca.cer -keystore your_keystore 
  -storepass your_pass -trustcacerts -file c:\rootca.cer
-µ¼Èë¸ùÖ¤ÊéÊ±£¬±ğÃû²»ÒªºÍ·şÎñÆ÷Ö¤Êéalias±ğÃûÏàÍ¬¡£
+``` 
+å¯¼å…¥æ ¹è¯ä¹¦æ—¶ï¼Œåˆ«åä¸è¦å’ŒæœåŠ¡å™¨è¯ä¹¦aliasåˆ«åç›¸åŒã€‚   
+å¯¼å…¥æœåŠ¡å™¨è¯ä¹¦æ—¶ï¼Œè¯·æ³¨æ„è‡ªå·±çš„aliasã€‚  
 
-µ¼Èë·şÎñÆ÷Ö¤ÊéÊ±£¬Çë×¢Òâ×Ô¼ºµÄalias¡£
+å¦‚æœæ˜¯å•å‘SSLï¼Œ  
+åªéœ€è¦åœ¨æœåŠ¡ç«¯éƒ¨ç½²SSLè¯ä¹¦å³å¯å®é™…https://åŠ å¯†è®¿é—®ï¼Œ  
+å¦‚æœåŒå‘è®¤è¯ï¼ˆæœåŠ¡ç«¯SSL+å®¢æˆ·ç«¯è¯ä¹¦è®¤è¯ï¼‰ï¼Œ  
+ä¹Ÿåªéœ€è¦Web Serverä¸Šé…ç½®å³å¯ï¼Œå®Œå…¨ä¸éœ€è¦å†™ä»£ç ã€‚  
+  
+jdkè‡ªå¸¦çš„keytoolä¸openssl  
 
-Èç¹ûÊÇµ¥ÏòSSL£¬
-Ö»ĞèÒªÔÚ·şÎñ¶Ë²¿ÊğSSLÖ¤Êé¼´¿ÉÊµ¼Êhttps://¼ÓÃÜ·ÃÎÊ£¬
-Èç¹ûË«ÏòÈÏÖ¤£¨·şÎñ¶ËSSL+¿Í»§¶ËÖ¤ÊéÈÏÖ¤£©£¬
-Ò²Ö»ĞèÒªWeb ServerÉÏÅäÖÃ¼´¿É£¬ÍêÈ«²»ĞèÒªĞ´´úÂë¡£
+1)ã€keytool ä¸ openssléƒ½æ˜¯å·¥å…·ã€‚  
+åŒºåˆ«å°±æ˜¯æ ¹æ®åº”ç”¨æœåŠ¡å™¨æˆ–è€…web serverä¸åŒï¼Œ  
+è€Œä½¿ç”¨å¯¹åº”çš„å·¥å…·.tomcatéœ€è¦ä½¿ç”¨keytoolå·¥å…·ã€‚  
 
-jdk×Ô´øµÄkeytoolÓëopenssl
+2)ã€cerä¸crtéƒ½æ˜¯è¯ä¹¦æ ¼å¼ï¼Œçœ‹ä½ webserver   
+æˆ–è€…åº”ç”¨æœåŠ¡å™¨æ”¯æŒå“ªç§å°±å°†è¯ä¹¦æ”¹æˆå“ªä¸ªï¼Œå¾ˆç®€å•ã€‚  
+JKSæ˜¯ä¸€ç§æ ¼å¼ã€‚ä¸€èˆ¬ä½¿ç”¨opensslçš„éƒ½æ˜¯jksæ ¼å¼æˆ–è€…keyæ ¼å¼ï¼Œ  
+ä½¿ç”¨keytoolçš„éƒ½æ˜¯keystoreæ ¼å¼ã€‚  
 
-1)¡¢keytool Óë openssl¶¼ÊÇ¹¤¾ß¡£
-Çø±ğ¾ÍÊÇ¸ù¾İÓ¦ÓÃ·şÎñÆ÷»òÕßweb server²»Í¬£¬
-¶øÊ¹ÓÃ¶ÔÓ¦µÄ¹¤¾ß.tomcatĞèÒªÊ¹ÓÃkeytool¹¤¾ß¡£
+3)ã€è‡³äºå¯¼å…¥æ ¹è¯ä¹¦é—®é¢˜ï¼Œä¸€èˆ¬éƒ½è¦å¯¼å…¥æ ¹è¯ä¹¦ã€‚  
+å®¢æˆ·ç«¯è¯ä¹¦ä½ æ‰€è¯´çš„å¯¼å…¥ï¼Œæˆ‘æ²¡æ˜ç™½ã€‚æˆ‘è§‰å¾—å®¢æˆ·ç«¯ä¸éœ€è¦å†å¯¼å…¥äº†å§ï¼Œ
+åœ¨æœåŠ¡å™¨ä¸ŠåšåŒå‘è®¤è¯ï¼Œä¹Ÿä¸éœ€è¦å¯¼å…¥ï¼Œåªéœ€è¦ä»æœåŠ¡å™¨ä¸Šé…ç½®ä¸€ä¸‹å³å¯ã€‚
+tomcatçš„è¯ä¹¦å¯¼å…¥ï¼Œæ˜¯éœ€è¦å¯¼å…¥æ ¹è¯ä¹¦ï¼ˆå¦‚æœæœ‰ä¸­çº§æ ¹è¯ä¹¦ï¼Œä¹Ÿæ˜¯éœ€è¦å¯¼å…¥çš„ï¼‰  
 
-2)¡¢cerÓëcrt¶¼ÊÇÖ¤Êé¸ñÊ½£¬¿´Äãwebserver 
-»òÕßÓ¦ÓÃ·şÎñÆ÷Ö§³ÖÄÄÖÖ¾Í½«Ö¤Êé¸Ä³ÉÄÄ¸ö£¬ºÜ¼òµ¥¡£
-JKSÊÇÒ»ÖÖ¸ñÊ½¡£Ò»°ãÊ¹ÓÃopensslµÄ¶¼ÊÇjks¸ñÊ½»òÕßkey¸ñÊ½£¬
-Ê¹ÓÃkeytoolµÄ¶¼ÊÇkeystore¸ñÊ½¡£
-
-3)¡¢ÖÁÓÚµ¼Èë¸ùÖ¤ÊéÎÊÌâ£¬Ò»°ã¶¼Òªµ¼Èë¸ùÖ¤Êé¡£
-¿Í»§¶ËÖ¤ÊéÄãËùËµµÄµ¼Èë£¬ÎÒÃ»Ã÷°×¡£ÎÒ¾õµÃ¿Í»§¶Ë²»ĞèÒªÔÙµ¼ÈëÁË°É£¬
-ÔÚ·şÎñÆ÷ÉÏ×öË«ÏòÈÏÖ¤£¬Ò²²»ĞèÒªµ¼Èë£¬Ö»ĞèÒª´Ó·şÎñÆ÷ÉÏÅäÖÃÒ»ÏÂ¼´¿É¡£
-tomcatµÄÖ¤Êéµ¼Èë£¬ÊÇĞèÒªµ¼Èë¸ùÖ¤Êé£¨Èç¹ûÓĞÖĞ¼¶¸ùÖ¤Êé£¬Ò²ÊÇĞèÒªµ¼ÈëµÄ£©
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-4. eclipse tomcat servers ÅäÖÃÎÄ¼ş
+### eclipse tomcat servers é…ç½®æ–‡ä»¶
 
 server.xml
-
-<!--ä¯ÀÀÆ÷·ÃÎÊÄ¿Â¼,ÊÇ·ñÖØĞÂ¼ÓÔØ-->
+```
+<!--æµè§ˆå™¨è®¿é—®ç›®å½•,æ˜¯å¦é‡æ–°åŠ è½½-->
 <Context docBase="dev_pss" path="/dev_pss" 
 reloadable="true" source="org.eclipse.jst.jee.server:dev_pss"/>
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------
-5. context.xml
-context.xmlÒ»¸öÊÇCatalinaÏÂµÄÎÄ¼ş
-ÓÃÀ´ÅäÖÃ»·¾³µÄ.
-ÎÒÃÇ¿ª·¢´óÏîÄ¿µÄÊ±ºò
-Ò»°ã¶¼ÊÇÅäÖÃÕâ¸öÎÄ¼şµÄÀ´Ìí¼ÓÒ»¸öÏîÄ¿µÄ
-¶ø²»ÊÇ°ÑÏîÄ¿¿½±´µ½webappÏÂÈ¥,
-
-ÏîÄ¿µ×²ãÎ»ÖÃ
+```
+### context.xml
+context.xmlä¸€ä¸ªæ˜¯Catalinaä¸‹çš„æ–‡ä»¶  
+ç”¨æ¥é…ç½®ç¯å¢ƒçš„.  
+æˆ‘ä»¬å¼€å‘å¤§é¡¹ç›®çš„æ—¶å€™  
+ä¸€èˆ¬éƒ½æ˜¯é…ç½®è¿™ä¸ªæ–‡ä»¶çš„æ¥æ·»åŠ ä¸€ä¸ªé¡¹ç›®çš„  
+è€Œä¸æ˜¯æŠŠé¡¹ç›®æ‹·è´åˆ°webappä¸‹å»,  
+  
+é¡¹ç›®åº•å±‚ä½ç½®  
+```
 <Context path="/pss-dev"
 docBase="E:/worksapce/wondersWorkspace/dev_pss/WebRoot">
-
-Êı¾İ¿â
+```
+æ•°æ®åº“
+```
 <Resource
             name="jdbc/pss"
             type="javax.sql.DataSource"
@@ -105,63 +106,57 @@ docBase="E:/worksapce/wondersWorkspace/dev_pss/WebRoot">
             maxIdle="2"
             maxWait="5000"
             maxActive="4" />
+```
+### tomcaté€šè¿‡conf-Catalina-localhostç›®å½•å‘å¸ƒé¡¹ç›®  
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------
-7. tomcatÍ¨¹ıconf-Catalina-localhostÄ¿Â¼·¢²¼ÏîÄ¿
+æ³¨æ„ï¼šxmlçš„æ–‡ä»¶åä¸€å®šè¦å’Œå‘å¸ƒè·¯å¾„ä¸€è‡´ï¼ 
 
-×¢Òâ£ºxmlµÄÎÄ¼şÃûÒ»¶¨ÒªºÍ·¢²¼Â·¾¶Ò»ÖÂ£¡
+è¿™æ ·é…ç½®ä¸ç»è¿‡eclipseç›´æ¥å°†é¡¹ç›®åŠ è½½åˆ°tomcatä¸­ï¼Œå› æ­¤ä¸ç”¨å†eclipseä¸­å¯åŠ¨é¡¹ç›®
+ç›´æ¥é©±åŠ¨tomcatå°±è¡Œã€‚  
 
-ÕâÑùÅäÖÃ²»¾­¹ıeclipseÖ±½Ó½«ÏîÄ¿¼ÓÔØµ½tomcatÖĞ£¬Òò´Ë²»ÓÃÔÙeclipseÖĞÆô¶¯ÏîÄ¿
-Ö±½ÓÇı¶¯tomcat¾ÍĞĞ¡£
+(é…åˆ)  
+eclipse3.2ä¸­çš„tomcatæ’ä»¶å°±å¯ä»¥ç›´æ¥å¯åŠ¨tomcatï¼Œä¸æ˜¯åœ¨eclipseä¸­è™šæ‹Ÿå¯åŠ¨
 
-(ÅäºÏ)
-eclipse3.2ÖĞµÄtomcat²å¼ş¾Í¿ÉÒÔÖ±½ÓÆô¶¯tomcat£¬²»ÊÇÔÚeclipseÖĞĞéÄâÆô¶¯
+### tomcat ä¸‹è®¿é—®localhosté”™è¯¯  
+ å¯èƒ½æ˜¯tomcatåŠ è½½è·¯å¾„çš„é—®é¢˜ï¼Œæ”¹å˜æˆ127.0.0.1è¯•è¯•
 
+### å‘å¸ƒé¡¹ç›®
+	tomcat6å‘å¸ƒé¡¹ç›®ï¼š
+		1.é…ç½®å¤–éƒ¨æ–‡ä»¶
+			é…ç½®%tomcat%/conf/Catalina/localhost/xx.xml
+		2.ç¬¬äºŒæ¬¡å‘å¸ƒçš„æ—¶å€™ï¼Œå°†ä¿å­˜åŸæœ‰é…ç½®
+		3.æ­£ç¡®é‡å¯tomcat
 
-
------------------------------------------------------------------------------------------------------------------------
-8. tomcat ÏÂ·ÃÎÊlocalhost´íÎó
- ¿ÉÄÜÊÇtomcat¼ÓÔØÂ·¾¶µÄÎÊÌâ£¬¸Ä±ä³É127.0.0.1ÊÔÊÔ
-
------------------------------------------------------------------------------------------------------------------------
-9. ·¢²¼ÏîÄ¿
-	tomcat6·¢²¼ÏîÄ¿£º
-		1.ÅäÖÃÍâ²¿ÎÄ¼ş
-			ÅäÖÃ%tomcat%/conf/Catalina/localhost/xx.xml
-		2.µÚ¶ş´Î·¢²¼µÄÊ±ºò£¬½«±£´æÔ­ÓĞÅäÖÃ
-		3.ÕıÈ·ÖØÆôtomcat
-
------------------------------------------------------------------------------------------------------------------------
-10. tomcat ÅäÖÃ·şÎñÆ÷¼àÌı,ÓÃÓÚeclipseµÄdebug¹¦ÄÜ || eclipse µ÷ÊÔÔ¶³Ìtomcat || tomcat·şÎñÆ÷ÅäÖÃÔ¶³Ìµ÷ÊÔ
-·şÎñÆ÷tomcat¶Ë:
+### tomcat é…ç½®æœåŠ¡å™¨ç›‘å¬
+  ç”¨äºeclipseçš„debugåŠŸèƒ½ || eclipse è°ƒè¯•è¿œç¨‹tomcat || tomcatæœåŠ¡å™¨é…ç½®è¿œç¨‹è°ƒè¯•    
+æœåŠ¡å™¨tomcatç«¯:   
+```
 	bin->catalina.bat -->
-
-	set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%
-	set CATALINA_OPTS=-server -Xdebug -Xnoagent -Djava.compiler=NONE -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000
-	rem ----- Execute The Requested Command ---------------------------------------
-
-
-
-±¾µØeclipse¶Ë:
-	servers --> tomcat 6.x --> ÏîÄ¿ -->right click -> Remote Java Application --> Coonect -->
-	ÅäÖÃ±¾µØÏîÄ¿,Ô¶³Ì·şÎñÆ÷µØÖ·,¶Ë¿Ú
-
-----------------------------------------------------------------------------------------------------------------------
+	set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%  
+	set CATALINA_OPTS=-server -Xdebug -Xnoagent
+   -Djava.compiler=NONE
+    -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000
+	rem ----- Execute The Requested Command 
+```  
 
 
 
-=========================================================================================================================================
-=========================================================================================================================================
+æœ¬åœ°eclipseç«¯:  
+	servers --> tomcat 6.x --> é¡¹ç›® -->right click -> Remote Java Application --> Coonect -->  
+	é…ç½®æœ¬åœ°é¡¹ç›®,è¿œç¨‹æœåŠ¡å™¨åœ°å€,ç«¯å£  
 
-error
 
-jetty Ã»ÓĞÎÊÌâ,tomcatÉÏ¾ÍÓĞÎÊÌâ
-SAX2 driver class org.apache.xerces.parsers.SAXParser not found
-½â¾ö:
-https://stackoverflow.com/questions/11677572/dealing-with-xerces-hell-in-java-maven
 
+## error
+
+jetty æ²¡æœ‰é—®é¢˜,tomcatä¸Šå°±æœ‰é—®é¢˜  
+SAX2 driver class org.apache.xerces.parsers.SAXParser not found  
+è§£å†³:   
+https://stackoverflow.com/questions/11677572/dealing-with-xerces-hell-in-java-maven  
+```
 <dependency>
     <groupId>xerces</groupId>
     <artifactId>xercesImpl</artifactId>
     <version>2.0.2</version>
 </dependency>
+```
