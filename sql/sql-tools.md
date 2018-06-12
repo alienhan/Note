@@ -10,15 +10,15 @@ tags:
 ---
 
 ### PL/SQL
-用于连接Oricle数据库
-连接Oricle数据库配置
+用于连接Oricle数据库  
+连接Oricle数据库配置  
 
-1.安装Oricle客户端  
+1. 安装Oricle客户端  
 
-2.配置Oricle客户端  
+2. 配置Oricle客户端  
 	将instantclient_11_2解压到D:\java\app\jhon\product下
 
-3.配置环境变量（instantclient需要）  
+3. 配置环境变量（instantclient需要）  
 	TNS_ADMIN  
 	D:\java\app\jhon\product\instantclient_11_2  
 
@@ -28,11 +28,11 @@ tags:
 	path  
 	当安装client时，在path最前面自动配置为  
 	D:\java\app\jhon\product\11.2.0\client_1  
-
+	
 4. PL/SQL -> 工具(tools) ->首选项(persistense)  
 	-> Oricle -> 连接(contents)  
 
-5.中文乱码  
+5. 中文乱码  
 	配置环境变量  
 	NLS_LANG  
 	SIMPLIFIED CHINESE_CHINA.ZHS16GBK  

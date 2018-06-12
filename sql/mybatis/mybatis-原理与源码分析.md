@@ -1,4 +1,13 @@
-#执行过程
+---
+title: mybatis 原理与源码分析
+date:
+categories:
+- mybatis
+tags:
+- mybatis 原理与源码分析
+---
+
+### mybatis执行过程\方法的调用过程
     
     SqlSession
     SqlSessionFactoryBuilder->SqlSessionFactory
@@ -14,8 +23,8 @@
     ->RoutingStatementHandler-->delegate
     -->PreparedStatementHandler(负责对数据库执行statement,返回结果)
 
----
-#缓存
+
+### 缓存
 
     一级缓存
         开启:mybaits-settings中设置<setting name="localCacheScope" value="SESSION"/>
@@ -23,4 +32,3 @@
         一级缓存只在数据库会话内部共享
     
     二级缓存
-
