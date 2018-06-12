@@ -13,7 +13,6 @@ tags:
 
 ### java多线程
     http://penghb.com
-
 ### jvm线程监控
 #### 线程 dump
 1. 执行`jps`命令，列出正在运行的java程序的进程ID

@@ -1,10 +1,10 @@
 ---
-title: redis-q
+title: redis 使用中遇到的问题及解决
 date:
 categories:
 - redis
 tags:
-- redis 缓存
+- redis 缓存击穿/失效
 - redis 热点key
 ---
 

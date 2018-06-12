@@ -1,3 +1,12 @@
+---
+title: mockito 基础使用
+date:
+categories:
+- mockito
+tags:
+- mockito基础使用
+---
+
 mockito 是一个模拟测试框架
 一般与junit一起使用
 用于模拟复杂的对象 eg: service dao ..
