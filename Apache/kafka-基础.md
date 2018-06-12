@@ -1,13 +1,10 @@
 ---
-title: kafka
+title: kafka 基础
 date:
 categories:
 - kafka
 tags:
 - kafka 基础
-- kafka producer
-- kafka consumer
-- kafka消息持久性
 ---
 
 

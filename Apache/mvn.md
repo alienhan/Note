@@ -1,3 +1,12 @@
+---
+title: maven
+date: 2017/3/22
+categories:
+- maven
+tags:
+- maven
+---
+  
   
 1. maven简介：  
 2. settings.xml ,pom.xml  
@@ -16,17 +25,17 @@
 15. eclipse create mvn project  
 16. mvn 引用不到链接sqllserver的jar包  
   
--------------------------------------------------------
-远程中央仓库的地址为 http://repo1.maven.org/  
+--- 
+远程中央仓库的地址为  
+http://repo1.maven.org/  
 http://search.maven.org  
 http://maven.oschina.net/home.html  
 http://mvnrepository.com/  是mvn官方仓库  
   
   
-------------------------------------------------------------------------------------------  
-1. maven简介：  
+### maven简介：  
   
-作用：  
+作用：   
 用来帮助实现项目的构建、测试、打包和部署  
   
 原理：  
@@ -63,8 +72,8 @@ maven是单独管理一个项目。的jar包位置，组织形式的。
 如果本地仓库中存在，则直接使用，否则 Maven 回去远程仓库查找，  
 查找到后下载到本地进行使用。  
   
-------------------------------------------------------------------------------------------  
-2. settings.xml ,pom.xml  
+
+### settings.xml ,pom.xml  
   
 配置文件作用域：  
 conf/settings.xml  
@@ -80,7 +89,8 @@ settings.xml对于maven来说相当于全局性的配置，用于所有的项目
   
   
   
-pom.xml节点的说明：  
+pom.xml节点的说明： 
+```` 
 <project>　　　　　　pom文件的顶级节点  
 　　　　<modelVersion>　　　object model版本，对Maven2和Maven3来说，只能是4.0.0　  
 　　　　<groupId>　　　　　　项目创建组织的标识符，一般是域名的倒写  
@@ -91,44 +101,47 @@ pom.xml节点的说明：
 　　　　<url>　　　　　　　　项目的地址  
 　　　　<dependencies>　　 构建项目依赖的jar  
 　　　　<description>　　　　项目的描述  
-  
-------------------------------------------------------------------------------------------  
-3. demo  
+```  
+
+### demo  
   
 mvn dependency search查询位置  
   
-1.mvn archetype:generate -DarchetypeCatalog=internal  
+1. mvn archetype:generate -DarchetypeCatalog=internal  
   或mvn archetype:generate（简单）  
   
-2.mvn eclipse:eclipse 在eclipse工作目录下运行  
-3.mvn tomcat:run  
-4.指定eclipse中的maven的本地仓库地址,运行命令:   
+2. mvn eclipse:eclipse 在eclipse工作目录下运行  
+3. mvn tomcat:run  
+4. 指定eclipse中的maven的本地仓库地址,运行命令:   
 mvn  -Declipse.workspace= <eclipse   workspace路径>   eclipse:add-maven-repo   
   
 创建依赖  
+```xml
 <dependency>  
    <groupId>javax.servlet</groupId>  
    <artifactId>servlet-api</artifactId>  
    <version>2.5</version>  
 </dependency>  
-              
+```
 http://www.jarvana.com/jarvana/   
-------------------------------------------------------------------------------------------  
-4. mvn error  
+
+### mvn error  
   
-1）.出现创建不了mvn project   
+1. 出现创建不了mvn project   
 错误：can mot resolve archetype  
 windows - preference - maven -archetype  
 add remote catalog  
 http://repo1.maven.org/maven2/archetype-catalog.xml  
   
-2）.  
+2.   
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"  
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0   
 http://maven.apache.org/maven-v4_0_0.xsd">  
-  
+```
 报错：  
+```java
 Description Resource Path Location Type   
 Could not calculate build plan:   
 Failure to transfer org.apache.maven.plugins:maven-war-plugin:pom:2.1.1 from   
@@ -138,9 +151,11 @@ of central has elapsed or updates are forced. Original error:
 Could not transfer artifact org.apache.maven.plugins:maven-war-plugin:pom:2.1.1   
 from/to central (http://repo1.maven.org/maven2): ConnectException  
 first-maven Unknown	Maven Problem  
-解决：  
-应该是连不上http://repo1.maven.org/maven2这个仓库，在pom.xml文件加一下下面的配置   
 ```
+解决：  
+应该是连不上http://repo1.maven.org/maven2  
+这个仓库，在pom.xml文件加一下下面的配置   
+```xml
 <repositories>    
     <repository>    
       <snapshots>    
@@ -153,23 +168,22 @@ first-maven Unknown	Maven Problem
 </repositories>   
 ```
   
-  
-3）分析：  
+3. 分析：  
 ./m2/settings 影响默认conf/settiongs的配置  
 java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener  
   
-4）  
-Failed to execute goal org.apache.maven.plugins:maven-archetype-plugin错误解决方法   
+4. 
+Failed to execute goal   org.apache.maven.plugins:maven-archetype-plugin错误解决方法   
 解决方法：将命令中的create改为generate：  
 mvn archetype:generate -DgroupId=com.tutorialspoint.test   
 -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-webapp  
   
-5)Java compiler level does not match the version of the installed  
+5. Java compiler level does not match the version of the installed  
   Java project facet.SSJ UnknownFaceted Project Problem (Java Version Mismatch)	  
   properties-> java complier -> 改成与版本相同的jre  
   
-------------------------------------------------------------------------------------------  
-5. 安装，配置  
+
+### 安装，配置  
   
 1） 解压maven压缩包  
 2） 配置环境变量，添加%MAVEN_HOME%,path中添加%MAVEN_HOME%\bin  
@@ -182,8 +196,8 @@ mvn archetype:generate -DgroupId=com.tutorialspoint.test
         点击右侧Browse指向%MAVEN_HOME%\conf\settings.xml  
 7）  
   
-------------------------------------------------------------------------------------------  
-6. 引用包配置(http://mvnrepository.com)  
+ 
+### 引用包配置(http://mvnrepository.com)  
      
 搜索结果     
    引用spring mvc  
@@ -196,14 +210,14 @@ mvn archetype:generate -DgroupId=com.tutorialspoint.test
    struts 2  
    struts-core   
   
-------------------------------------------------------------------------------------------  
-7. 配置mirrors ，repository  
+
+### 配置mirrors ，repository  
   
   覆盖中央仓库的默认地址，  
   那么这里我们就会使用的镜像了，在setting.xml里面配置  
-  <mirrorOf>,表示只为central仓库做镜像，  
-  如果想为所有的仓库做镜像那么可以改为： <mirrorOf>*</mirrorOf>  
-```
+  ``<mirrorOf>``,表示只为central仓库做镜像，  
+  如果想为所有的仓库做镜像那么可以改为： ``<mirrorOf>*</mirrorOf>  ``
+```xml
   <mirrors>  
 	<mirror>  
 		<id>repo1</id>  
@@ -231,15 +245,13 @@ mvn archetype:generate -DgroupId=com.tutorialspoint.test
   </activeProfiles>    
 ```
  
-------------------------------------------------------------------------------------------  
-8. 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法  
+### 解决Eclipse建立Maven项目后无法建立src/main/java资源文件夹的办法  
 在项目上右键选择properties，  
 然后点击java build path，在Librarys下，  
 编辑JRE System Library，  
 选择workspace default jre就可以了。  
   
-------------------------------------------------------------------------------------------  
-9. mvn 命令  
+### mvn 命令  
   
 运行mvn command 必须在有pom.xml文件的父文件夹  
   
@@ -280,13 +292,15 @@ http://www.mvnrepository.com/artifact/com.oracle/ojdbc14
 artifactId和groupId。  
 mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.3.0 -Dpackaging=jar -Dfile=c:/driver/ojdbc14.jar  
 这样就可以在pom中依赖引用了：  
+```xml
 <dependency>  
     <groupId>com.oracle</groupId>  
     <artifactId>ojdbc14</artifactId>  
     <version>10.2.0.3.0</version>  
 </dependency>  
-------------------------------------------------------------------------------------------  
-10. mvn commond build  java web project  
+```
+
+### mvn commond build  java web project  
   
 z.	zero  
 	error:		当使用maven-3.1.0时报引用包错误。找不到xxx-2.0.6  
@@ -332,13 +346,11 @@ f. 修改根路径名
 g. 当页面还是报404 的时候可能是myeclipse的tomcat缓存  
 	删除tomcat路径下的项目，就可以了  
   
-  
-------------------------------------------------------------------------------------------  
-11. Nexus  
-  
+### Nexus  
 Synatype Nexus  
   
 maven 配置依赖nexus  
+```xml
 <repositories>  
 	 <repository>  
 		 <id>nexus</id>  
@@ -353,9 +365,9 @@ maven 配置依赖nexus
 		 <url>http://localhost:8081/nexus/content/groups/public</url>  
 	 </pluginRepository>  
 </pluginRepositories>  
-  
-------------------------------------------------------------------------------------------  
-12. eclipse maven plugin  
+```
+
+### eclipse maven plugin  
   
 	1）下载eclipse maven plugin插件  
 	2）在eclipse安装文件夹下创建links文件夹  
@@ -367,17 +379,17 @@ maven 配置依赖nexus
   
 	4）重启eclipse  
 	5）配置eclipse maven plugin   
-  
-------------------------------------------------------------------------------------------  
-13. mvn spring   
+   
+### mvn spring   
   
 .classpath  
 	error:  
-		mvn java.lang.ClassNotFoundException: org.springframework.web.context.  
+	   mvn java.lang.ClassNotFoundException: org.springframework.web.context.  
 				  ContextLoaderListener  
 		根本原因是eclipse只是添加了类的引用  
-	1.solution:  
-		项目根目录下的.classpath,找到  
+	1. solution:  
+		
+    项目根目录下的.classpath,找到  
 		<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>  
   
 		替换为:  
@@ -394,22 +406,19 @@ maven 配置依赖nexus
 	  
   
 添加maven库包的引用  
-<classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>  
+        
+      <classpathentry kind="con" path="org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER"/>  
   
-  
-------------------------------------------------------------------------------------------  
-14. mvn update  
+### mvn update  
 	  
 	1.在eclipse中对项目右键点击 maven --> update dependencies,这样对maven库进行更新。  
 	  
-	2.update Project Configration 会根据maven默认的设置改变项目的配置文件  
+	2.update Project Configration 会根据maven默认的设置改变项目的配置文件   
 		例：可以改变.classpath文件  
 		（不要轻易使用）  
   
   
-  
-------------------------------------------------------------------------------------------  
-15. eclipse create mvn project  
+### eclipse create mvn project  
   
 1. new->mvn project  
 2. 生成web项目 properties->project facets->Dynamic Web Module  
@@ -426,8 +435,8 @@ maven 配置依赖nexus
 mvn archetype:create -DgroupId=com.learn -DartifactId=LearnNew -DarchetypeArtifactId=maven-archetype-webapp  
 若是缺少maven-archetype-plugin:2.4:create 则将create变成generate   
   
------------------------------------------------------------------------------
-mvn 引用不到链接sqllserver的jar包  
+
+### mvn 引用不到链接sqllserver的jar包  
     Missing artifact com.microsoft.sqlserver:sqljdbc4:jar:4.0  
 
   
@@ -440,12 +449,6 @@ cd到jar包的路径下
 	mvn install:install-file -Dfile=sqljdbc4.jar -DgroupId=com.microsoft.sqlserver -DartifactId=sqljdbc4 -Dversion=4.0 -Dpackaging=jar
     ```  
 
------------------------------------------------------------------------------
-新建maven多子项目，想要添加的子项目不在父项目下(与父项目并行)
-
+### 新建maven多子项目，想要添加的子项目不在父项目下(与父项目并行)
 1. file-->import-->General-->Existing Project into Workspace
 2. 删除掉父项目下的文件夹即可
-
------------------------------------------------------------------------------
-
-

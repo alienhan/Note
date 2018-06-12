@@ -1,11 +1,10 @@
 ---
-title: redis-install
+title: redis 基础 安装与启动
 date:
 categories:
 - redis
 tags:
 - redis 基础
-- redis 安装
 ---
 
 ## 安装:

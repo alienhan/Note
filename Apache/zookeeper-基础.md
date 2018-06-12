@@ -1,10 +1,10 @@
 ---
-title: zookeeper
+title: zookeeper基础 安装 运行
 date:
 categories:
 - zookeeper
 tags:
-- zookeeper
+- zookeeper基础安装与运行
 ---
 
 ### 安装并运行zookeeper
