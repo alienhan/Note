@@ -68,7 +68,7 @@ Kafka消费端的offset主要由consumer来控制, Kafka将每个consumer所监�
   1. 消息丢失  
     消息处理耗时较多, 假如处理单条消息的耗时为t, 拉取的消息个数为n. t * n > auto_commit_interval_ms, 会导致没有处理完的消息的offset被commit到服务端. 假如此时消费端挂掉, 没有处理完的数据将会丢失.
   2. 重复消费  
-    假如消息处理完成, offset还未commit到服务端的时候消费端挂掉, 已经处理完的消息会被再次消费.  
+    假如消息处理完成, offset还未commit到服务端的时候``消费端挂掉``, 已经处理完的消息会被再次消费.  
     影响着数据一致性和性能  
     业务处理:  
       去重：将消息的唯一标识保存到外部介质中，每次消费处理时判断是否处理过
@@ -92,6 +92,8 @@ Kafka消费端的offset主要由consumer来控制, Kafka将每个consumer所监�
 ```java
  consumer.commitSync(Collections.singletonMap(new TopicPartition(record.topic(), record.partition()), new OffsetAndMetadata(record.offset() + 1)));
  ```
+  - 手动提交失败问题:
+  - 
 2.  
   新建线程处理消息  
 
