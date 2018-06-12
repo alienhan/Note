@@ -1,14 +1,16 @@
 ---
-title: 算法原理
+title: 算法原理/分析方法/应用场景
 date:
 categories:
 - 算法
 tags:
 - 算法原理 
 - 算法分析方法
+- 应用场景
 ---
 
 http://staff.ustc.edu.cn/~lszhuang/alg/  
+
 ### 数据有两种搞的方式  
   - 处理(计算)  
   - 存储  
