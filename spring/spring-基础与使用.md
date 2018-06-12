@@ -1,26 +1,33 @@
-Spring 
+---
+title: Spring基础与使用案例与场景
+date:
+categories:
+- spring
+tags:
+- spring 基础与使用
+---
 
-#官方文档：
+### 官方文档：
 http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/index.html
 
---- 
-#Spring MVC annocation
 
-@Controller
-	注释类，成为请求分发器
+### Spring MVC annocation / spring mvc注解
 
-@RequestMapping
-	@RequestMapping("user/login56")
+@Controller  
+- 注释类，成为请求分发器
+
+@RequestMapping  
+-	@RequestMapping("user/login56")  
 	不能把控制器的注释名 + 方法的注释名与包含前台页面的的相同
 		redirect:在user这个下面搜寻RequestMappering
 		会报错，没有这个文件
 
----
-#Spring MVC  jsp传参
 
-form表单传参
+### Spring MVC  前后台传参
+
+1. form表单传参  
+```
 	前台传后台
-
 		<form action="robot/getAnswer" method="get">
 		  <input name="tagDesc" type="text">
 		</form>
@@ -41,39 +48,41 @@ form表单传参
 	   获取对象,对象属性
 			model.addAttribute("qaCont", qaCont);
 			model.addAttribute("pq",pq);
+```
 
-ajax 传参
+2. ajax 传参
 
----
-#Spring @Component
+### Spring 初始化启动方法
+1. 初始化回调 InitializingBean  
+	- InitializingBean接口为bean提供了初始化方法的方式，
+	它只包括afterPropertiesSet方法，凡是继承该接口的类，在初始化bean的时候会执行该方法。
 
-初始化回调-------------- InitializingBean-------------------------------------
-InitializingBean接口为bean提供了初始化方法的方式，
-它只包括afterPropertiesSet方法，凡是继承该接口的类，在初始化bean的时候会执行该方法。
-
-通常避免使用InitializingBean 接口，因为这样会将代码与spring 耦合起开，可以在Bean中指定一个普通的初始化方法，
+2. 通常避免使用InitializingBean 接口，因为这样会将代码与spring 耦合起开，可以在Bean中指定一个普通的初始化方法，
 然后在xml文件配置中，指定初始化：
-<bean id="initBean" class="com.jh.InitBean" init-method="init">
+	```xml
+	<bean id="initBean" class="com.jh.InitBean" init-method="init">
+	```
 
-public class InitBean {
-    public void init(){
-		//do some initialization work
+	```java
+	public class InitBean {
+	    public void init(){
+			//do some initialization work
+		}
 	}
-}
-效果相同
-public class initBean implements InitializingBean{
-	public void afterPropertiesSet(){
+
+	//效果相同
+	public class initBean implements InitializingBean{
+		public void afterPropertiesSet(){
+		
+		}
+	}
+	```
 	
-	}
-}
-
----
-#Spring task spring 定时任务
-
-xml配置
+### Spring task spring 定时任务
+xml配置  
 application.xml引入spring-tasks配置文件
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
@@ -99,6 +108,7 @@ application.xml引入spring-tasks配置文件
 ```
 
 ref ： bean   例子：
+
 	@Component(value="scheduledTaskManager")
 	public class ScheduledTaskManager 
 		fixed-rate ：下一次的间隔时间
@@ -134,23 +144,14 @@ public class ScheduledTaskManager  {
 }
 ```
 
----
-#Spring ehcache
+### Spring ehcache
 
 
 
 
 
----
-#Spring 拦截
+### Spring 拦截
 
 preHandle( )
 拦截器页面跳转
 request.getRequestDispatcher("/WEB-INF/view/test.jsp").forward(request,response);
-
-
-
-
-
-
-

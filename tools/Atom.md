@@ -8,4 +8,6 @@ tags:
 - Atom
 ---
 
-预览: ctrl + shift + m  
+#### 预览: ctrl + shift + m  
+
+#### atom使用markdown保存时自动取消句末双空格  

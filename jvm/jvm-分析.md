@@ -1,5 +1,5 @@
 ---
-title: jvm
+title: jvm 加载/执行/GC算法/GC收集器/jvm调试命令/内存分配
 date:
 categories:
 - jvm

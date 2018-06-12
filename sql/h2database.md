@@ -2,7 +2,7 @@
 title: h2数据库
 date:
 categories:
-- h2
+- sql
 tags:
 - h2配置
 - h2
