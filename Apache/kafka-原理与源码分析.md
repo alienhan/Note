@@ -20,7 +20,7 @@ tags:
 4. logSize：表示该partition已经写了多少条message  
 5. Lag：表示有多少条message没有被消费。  
 
-#### producer 配置
+### producer 配置
 1. acks  
   数据 durability 的设置；  
   producer希望leader返回的用于确认请求完成的确认数量. 可选值   all, -1, 0 1. 默认值为1  
@@ -60,9 +60,10 @@ tags:
 5. refresh.leader.backoff.ms  
   在consumer发现失去某个partition的leader后，在leader选出来前的等待的backoff时间。
 
-**Consumer Kafka消息消费一致性**  
-Kafka消费端的offset主要由consumer来控制, Kafka将每个consumer所监听的tocpic的partition的offset保存在__consumer_offsets主题中. consumer需要将处理完成的消息的offset提交到服务端, 主要有ConsumerCoordinator完成的.  
+### Consumer Kafka消息消费一致性(重复,丢失,提交失败)  
+Kafka消费端的offset主要由consumer来控制, Kafka将每个consumer所监听的tocpic的partition的offset保存在__consumer_offsets主题中. consumer需要将处理完成的消息的offset提交到服务端, 主要有ConsumerCoordinator(协调者)完成的.  
 
+**自动提交**:  
 每次从kafka拉取数据之前, 假如是异步提交offset, 会先调用已经完成的offset commit的callBack, 然后检查ConsumerCoordinator的连接状态. 如果设置了自动提交offset, 会继续上次从服务端获取的数据的offset异步提交到服务端. 这里需要注意的是会有几种情况出现:
   1. 消息丢失  
     消息处理耗时较多, 假如处理单条消息的耗时为t, 拉取的消息个数为n. t * n > auto_commit_interval_ms, 会导致没有处理完的消息的offset被commit到服务端. 假如此时消费端挂掉, 没有处理完的数据将会丢失.
@@ -78,20 +79,23 @@ Kafka消费端的offset主要由consumer来控制, Kafka将每个consumer所监�
        (保证单个partition有序)    
 
   4. enable.auto.commit 默认为true  
-  5. auto.commit.interval.ms 默认为5000 ms (5s)  
+  5. auto.commit.interval.ms 默认为5000 ms (5s)(间隔)  
   6. max.poll.records 默认为500  
-  7. fetch.max.bytes 默认为52428800 bytes (50Mib).  
+  7. fetch.max.bytes 默认为52428800 bytes (50Mib). (取来)  
 
 ***解决方案. ***  
-1.  
-  把enable.auto.commit设置为false, 并在每处理完一条数据后手动提交offset.  
-  这里需要主意的时, 提交的offset是对当前消息的offset基础上进行加1.  
+1. 手动提交:  
+  把enable.auto.commit设置为false,  
+  并在每处理完一条数据后手动提交offset.  
+  这里需要注意的是:  
+      提交的offset是对当前消息的offset基础上进行加1.  
 ```java
  consumer.commitSync(Collections.singletonMap(new TopicPartition(record.topic(), record.partition()), new OffsetAndMetadata(record.offset() + 1)));
  ```
 2.  
   新建线程处理消息  
-**kafka partition和consumer数目关系**  
+
+### kafka partition和consumer数目关系 
   kafka的设计是在一个partition上是不允许并发  
   partiton数目是consumer数目的整数倍  
   kafka只保证在一个partition上数据是有序  
