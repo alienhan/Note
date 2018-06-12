@@ -10,6 +10,9 @@ tags:
 - kafka 消息持久性
 ---
 
+### 参考
+http://orchome.com
+
 ### component 组件  
 1. topic  
     topic 是在broker站点上新建的因此 无论生产端,消费端都没有配置的权利,  
