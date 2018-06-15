@@ -1,7 +1,13 @@
-微信公众号开发
-
 ---
-1.微信 mysql nickname 乱码问题: 
+title: 微信公众号开发
+date:
+categories:
+- 微信公众号开发
+tags:
+- 微信公众号开发
+---
+
+### 微信 mysql nickname 乱码问题: 
 	java.sql.SQLException: Incorrect string value: '\xF0\x9F\x92\x94' for column 'nickname' at row 1
 
 	1.mysql在5.5.3版本中引入新的编码格式，取名为utf8mb4，
@@ -25,6 +31,4 @@
 	4.数据库连接池配置:
 		jdbc.url=jdbc\:mysql\://localhost\:3306/ams?autoReconnect\=true&amp;failOverReadOnly\=false
 		#jdbc.url=jdbc\:mysql\://localhost\:3306/ams?useUnicode\=true&amp;characterEncoding\=utf-8&amp;autoReconnect\=true&amp;failOverReadOnly\=false
-
----
-2.			
+			
