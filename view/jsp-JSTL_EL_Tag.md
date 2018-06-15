@@ -1,56 +1,63 @@
-## Ç°ºóÌ¨½»»¥ÓïÑÔ    
-----------------------------------------------------------------------------------------------          
-#JSTL          
+---
+title: jspåŸºç¡€ æ“ä½œJSTL EL Tag
+date:
+categories:
+- å‰ç«¯
+tags:
+- jspåŸºç¡€æ“ä½œJSTL,EL,Tag
+---
 
+### å‰åå°äº¤äº’è¯­è¨€    
+        
+### JSTL          
+```xml
 <c:if> if and else          
 <c:if var="flag" test=""></c:if>          
 <c:if test="${!flag}"></c:if>          
+```
+
+### ELï¼ˆExpression Languageï¼‰ 
+    ç›®çš„ï¼šä¸ºäº†ä½¿JSPå†™èµ·æ¥æ›´åŠ ç®€å•ã€‚          
           
-----------------------------------------------------------------------------------------------          
-#EL£¨Expression Language£© Ä¿µÄ£ºÎªÁËÊ¹JSPĞ´ÆğÀ´¸ü¼Ó¼òµ¥¡£          
+1. è·å–å˜é‡å€¼          
+	${username} -> åå°è¿”å›çš„å‚æ•°åç§°    
+	- å–å‡ºæŸä¸€èŒƒå›´ä¸­åç§°ä¸ºusernameçš„å˜é‡ã€‚        
+	å› ä¸ºæ²¡æœ‰æŒ‡å®šå“ªä¸€ä¸ªèŒƒå›´çš„usernameï¼Œ        
+	æ‰€ä»¥å®ƒä¼šä¾åºä»Pageã€Requestã€Sessionã€ApplicationèŒƒå›´æŸ¥æ‰¾ã€‚ 
+	å‡å¦‚é€”ä¸­æ‰¾åˆ°usernameï¼Œå°±ç›´æ¥å›ä¼ ï¼Œ          
+	ä¸å†ç»§ç»­æ‰¾ä¸‹å»ï¼Œä½†æ˜¯å‡å¦‚å…¨éƒ¨çš„èŒƒå›´éƒ½æ²¡æœ‰æ‰¾åˆ°æ—¶ï¼Œå°±å›ä¼ nullã€‚ 
           
-1£©»ñÈ¡±äÁ¿Öµ          
-	${username}   <-ºóÌ¨·µ»ØµÄ²ÎÊıÃû³Æ          
-	È¡³öÄ³Ò»·¶Î§ÖĞÃû³ÆÎªusernameµÄ±äÁ¿¡£          
-	ÒòÎªÃ»ÓĞÖ¸¶¨ÄÄÒ»¸ö·¶Î§µÄusername£¬          
-	ËùÒÔËü»áÒÀĞò´ÓPage¡¢Request¡¢Session¡¢Application·¶Î§²éÕÒ¡£          
-	¼ÙÈçÍ¾ÖĞÕÒµ½username£¬¾ÍÖ±½Ó»Ø´«£¬          
-	²»ÔÙ¼ÌĞøÕÒÏÂÈ¥£¬µ«ÊÇ¼ÙÈçÈ«²¿µÄ·¶Î§¶¼Ã»ÓĞÕÒµ½Ê±£¬¾Í»Ø´«null¡£          
-          
-2£©[]Óë.ÔËËã·û          
-     EL Ìá¹©.ºÍ[]Á½ÖÖÔËËã·ûÀ´´æÈ¡Êı¾İ¡£          
-     µ±Òª´æÈ¡µÄÊôĞÔÃû³ÆÖĞ°üº¬Ò»Ğ©ÌØÊâ×Ö·û£¬          
-     Èç.»ò?µÈ²¢·Ç×ÖÄ¸»òÊı×ÖµÄ·ûºÅ£¬¾ÍÒ»¶¨ÒªÊ¹ÓÃ []¡£          
-   ÀıÈç£º          
-     ${user.My-Name}Ó¦µ±¸ÄÎª${user["My-Name"] }          
-     Èç¹ûÒª¶¯Ì¬È¡ÖµÊ±£¬¾Í¿ÉÒÔÓÃ[]À´×ö£¬¶ø.ÎŞ·¨×öµ½¶¯Ì¬È¡Öµ¡£ÀıÈç£º          
-     ${sessionScope.user[data]}ÖĞdata ÊÇÒ»¸ö±äÁ¿          
-          
-          
-3£©µÈ¼Û¹ØÏµ£º          
-	< %=request. getParameter(¡°username¡±)% > µÈ¼ÛÓÚ ${ param. username }          
-	<%=request.getAttribute(¡°userlist¡±) %> µÈ¼ÛÓÚ$ { requestScope.userlist }          
-	<%=user.getAddr( ) %> µÈ¼ÛÓÚ ${user.addr}          
+2. []ä¸.è¿ç®—ç¬¦          
+     EL æä¾›.å’Œ[]ä¸¤ç§è¿ç®—ç¬¦æ¥å­˜å–æ•°æ®ã€‚          
+     å½“è¦å­˜å–çš„å±æ€§åç§°ä¸­åŒ…å«ä¸€äº›ç‰¹æ®Šå­—ç¬¦ï¼Œ          
+     å¦‚.æˆ–?ç­‰å¹¶éå­—æ¯æˆ–æ•°å­—çš„ç¬¦å·ï¼Œå°±ä¸€å®šè¦ä½¿ç”¨ []ã€‚          
+   - ä¾‹å¦‚ï¼š          
+     ${user.My-Name}åº”å½“æ”¹ä¸º${user["My-Name"] }          
+     å¦‚æœè¦åŠ¨æ€å–å€¼æ—¶ï¼Œå°±å¯ä»¥ç”¨[]æ¥åšï¼Œè€Œ.æ— æ³•åšåˆ°åŠ¨æ€å–å€¼ã€‚  
+     ${sessionScope.user[data]}ä¸­data æ˜¯ä¸€ä¸ªå˜é‡          
           
           
-          
-          
-----------------------------------------------------------------------------------------------          
-#Tag          
+3. ç­‰ä»·å…³ç³»ï¼š  
+
+    	<%=request. getParameter(â€œusernameâ€)% > ç­‰ä»·äº ${ param. username }          
+    	<%=request.getAttribute(â€œuserlistâ€) %> ç­‰ä»·äº$ { requestScope.userlist }          
+    	<%=user.getAddr( ) %> ç­‰ä»·äº ${user.addr}          
+
+### Tag  åˆ›å»ºæ–°tag    
+1. jspå¼•ç”¨  
+  
+        <%@ taglib uri="http://www.justtide.com/mytags"prefix="my"%>    
     
-* jspÒıÓÃ    
-<%@ taglib uri="http://www.justtide.com/mytags" prefix="my"%>    
-    
-* mytag.tld    
-	Î»ÖÃ£º WEB-INF    
-				tld    
-					mytag.tld    
+2.  mytag.tld     
+	ä½ç½®ï¼š  
+        WEB-INF\tld\mytag.tld 
+      	
 	code:    
-		
+	```xml
 		<?xml version="1.0" encoding="UTF-8"?>    
 		<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"    
 		xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">    
-		<description><![CDATA[×Ô¶¨Òå±êÇ©]]]]></description>    
+		<description><![CDATA[è‡ªå®šä¹‰æ ‡ç­¾]]]]></description>    
 		<display-name>my Tags</display-name>    
 		<tlib-version>1.0</tlib-version>    
 		<short-name>s</short-name>    
@@ -104,27 +111,28 @@
 				<rtexprvalue>true</rtexprvalue>    
 			</attribute>    
 			<attribute>    
-				<description><![CDATA[Ä¬ÈÏÑ¡ÖĞÖµ]]></description>    
+				<description><![CDATA[é»˜è®¤é€‰ä¸­å€¼]]></description>    
 				<name>defaultValue</name>    
 				<required>false</required>    
 				<rtexprvalue>true</rtexprvalue>    
 			</attribute>    
 			<attribute>    
-				<description><![CDATA[ÊÇ·ñ°üº¬¿ÕÑ¡Ïî]]></description>    
+				<description><![CDATA[æ˜¯å¦åŒ…å«ç©ºé€‰é¡¹]]></description>    
 				<name>hasEmpty</name>    
 				<required>false</required>    
 				<rtexprvalue>true</rtexprvalue>    
 			</attribute>    
 			<attribute>    
-				<description><![CDATA[ÊÇ·ñ°üº¬¿ÕÑ¡Ïî]]></description>    
+				<description><![CDATA[æ˜¯å¦åŒ…å«ç©ºé€‰é¡¹]]></description>    
 				<name>readOnly</name>    
 				<required>false</required>    
 				<rtexprvalue>true</rtexprvalue>    
 			</attribute>    
 		</tag>    
 	</taglib>    
-	
-* java    
+```
+
+```java    
 	package com.mendian.tag;    
 	import java.io.IOException;    
 	import javax.servlet.jsp.JspException;    
@@ -256,38 +264,4 @@
 			this.disabled = disabled;    
 		}    
 	}    
-----------------------------------------------------------------------------------------------          
-#cookie          
-          
-* js ²Ù×÷cookie:          
-Ìí¼Ó£º          
-	document.cookie = "agentMerNo=" + $("#agentMerNo").val();          
-          
-»ñÈ¡£º          
-	      
-	$("#agentMerNo option[value='" + getCookie("agentMerNo") + "']").attr(          
-					"selected", "selected");          
-	function getCookieVal(offset) { //È¡µÃÏîÃû³ÆÎªoffsetµÄcookieÖµ           
-		var endstr = document.cookie.indexOf(";", offset);//»ñÈ¡×Ö·û´®³¤¶È          
-		if (endstr == -1)          
-			endstr = document.cookie.length;          
-		return unescape(document.cookie.substring(offset, endstr));          
-	}          
-          
-	function getCookie(name) { //È¡µÃÃû³ÆÎªnameµÄcookieÖµ           
-		var arg = name + "=";          
-		var alen = arg.length;          
-		var clen = document.cookie.length;          
-		var i = 0;          
-		while (i < clen) {          
-			var j = i + alen;          
-			if (document.cookie.substring(i, j) == arg)          
-				return getCookieVal(j);          
-			i = document.cookie.indexOf(" ", i) + 1;          
-			if (i == 0)          
-				break;          
-		}          
-		return "";          
-	}          
-          
-----------------------------------------------------------------------------------------------
+``` 

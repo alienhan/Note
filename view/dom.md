@@ -1,64 +1,56 @@
-#dom            
------------------------------------------------------------------------------------------------------------            
-*dom»ù´¡            
+---
+title: dom
+date:
+categories:
+- å‰ç«¯
+tags:
+- domåŸºç¡€
+---
+
+           
+### domåŸºç¡€            
             
-	1¶¨Òå£º            
-	Í¨¹ý JavaScript£¬            
-	Äú¿ÉÒÔÖØ¹¹Õû¸ö HTML ÎÄµµ¡£            
-	Äú¿ÉÒÔÌí¼Ó¡¢ÒÆ³ý¡¢¸Ä±ä»òÖØÅÅÒ³ÃæÉÏµÄÏîÄ¿¡£            
-	Òª¸Ä±äÒ³ÃæµÄÄ³¸ö¶«Î÷£¬            
-	JavaScript ¾ÍÐèÒª»ñµÃ¶Ô HTML ÎÄµµÖÐËùÓÐÔªËØ½øÐÐ·ÃÎÊµÄÈë¿Ú¡£            
-	Õâ¸öÈë¿Ú£¬            
-	Á¬Í¬¶Ô HTML ÔªËØ½øÐÐÌí¼Ó¡¢ÒÆ¶¯¡¢¸Ä±ä»òÒÆ³ýµÄ·½·¨ºÍÊôÐÔ            
-	¶¼ÊÇÍ¨¹ýÎÄµµ¶ÔÏóÄ£ÐÍÀ´»ñµÃµÄ£¨DOM£©            
-*·ÖÀà            
-	            
-	html dom            
-	HTML ÎÄµµÖÐµÄÃ¿¸ö³É·Ö¶¼ÊÇÒ»¸ö½Úµã¡£            
-	½Úµã            
-	¸ù¾Ý DOM£¬HTML ÎÄµµÖÐµÄÃ¿¸ö³É·Ö¶¼ÊÇÒ»¸ö½Úµã¡£            
-	DOM ÊÇÕâÑù¹æ¶¨µÄ£º            
-	Õû¸öÎÄµµÊÇÒ»¸öÎÄµµ½Úµã            
-	Ã¿¸ö HTML ±êÇ©ÊÇÒ»¸öÔªËØ½Úµã            
-	°üº¬ÔÚ HTML ÔªËØÖÐµÄÎÄ±¾ÊÇÎÄ±¾½Úµã            
-	Ã¿Ò»¸ö HTML ÊôÐÔÊÇÒ»¸öÊôÐÔ½Úµã            
-	×¢ÊÍÊôÓÚ×¢ÊÍ½Úµã            
+1. å®šä¹‰ï¼š            
+	é€šè¿‡ JavaScriptï¼Œ            
+	- å¯ä»¥é‡æž„æ•´ä¸ª HTML æ–‡æ¡£ã€‚            
+	- å¯ä»¥æ·»åŠ ã€ç§»é™¤ã€æ”¹å˜æˆ–é‡æŽ’é¡µé¢ä¸Šçš„é¡¹ç›®ã€‚            
+	
+  è¦æ”¹å˜é¡µé¢çš„æŸä¸ªä¸œè¥¿ï¼Œ            
+	JavaScript å°±éœ€è¦èŽ·å¾—å¯¹ HTML æ–‡æ¡£ä¸­æ‰€æœ‰å…ƒç´ è¿›è¡Œè®¿é—®çš„å…¥å£       
+	- å…¥å£            
+	- HTML å…ƒç´ è¿›è¡Œæ·»åŠ ã€ç§»åŠ¨ã€æ”¹å˜æˆ–ç§»é™¤çš„æ–¹æ³•å’Œå±žæ€§           
+  
+  é€šè¿‡æ–‡æ¡£å¯¹è±¡æ¨¡åž‹æ¥èŽ·å¾—çš„ï¼ˆDOMï¼‰      
+        
+2. åˆ†ç±»                        
+	- html dom            
+	HTML æ–‡æ¡£ä¸­çš„æ¯ä¸ªæˆåˆ†éƒ½æ˜¯ä¸€ä¸ªèŠ‚ç‚¹ã€‚  
             
-	html dom½Úµã·ÃÎÊ            
+	- èŠ‚ç‚¹            
+	 - æ ¹æ® DOMï¼ŒHTML æ–‡æ¡£ä¸­çš„æ¯ä¸ªæˆåˆ†éƒ½æ˜¯ä¸€ä¸ªèŠ‚ç‚¹ã€‚            
+	 - DOM æ˜¯è¿™æ ·è§„å®šçš„ï¼š            
+	 - æ•´ä¸ªæ–‡æ¡£æ˜¯ä¸€ä¸ªæ–‡æ¡£èŠ‚ç‚¹            
+	 - æ¯ä¸ª HTML æ ‡ç­¾æ˜¯ä¸€ä¸ªå…ƒç´ èŠ‚ç‚¹            
+	 - åŒ…å«åœ¨ HTML å…ƒç´ ä¸­çš„æ–‡æœ¬æ˜¯æ–‡æœ¬èŠ‚ç‚¹            
+	 - æ¯ä¸€ä¸ª HTML å±žæ€§æ˜¯ä¸€ä¸ªå±žæ€§èŠ‚ç‚¹            
+	 - æ³¨é‡Šå±žäºŽæ³¨é‡ŠèŠ‚ç‚¹            
             
-	getElementById() ºÍ getElementsByTagName()            
+	- html domèŠ‚ç‚¹è®¿é—®                      
+	 - getElementById()å’ŒgetElementsByTagName()å¯æŸ¥æ‰¾æ•´ä¸ª HTML æ–‡æ¡£ä¸­çš„ä»»ä½• HTML å…ƒç´ ã€‚                    
+	 - getElementById()  
+    å¯é€šè¿‡æŒ‡å®šçš„ ID æ¥è¿”å›žå…ƒç´ ï¼š            
+  	document.getElementById("ID");             
+  	æ³¨é‡Šï¼šgetElementById() æ— æ³•å·¥ä½œåœ¨ XML ä¸­ã€‚åœ¨ XML æ–‡æ¡£ä¸­ï¼Œ  æ‚¨å¿…é¡»é€šè¿‡æ‹¥æœ‰ç±»åž‹ id çš„å±žæ€§æ¥è¿›è¡Œæœç´¢ï¼Œè€Œæ­¤ç±»åž‹å¿…é¡»åœ¨ XML DTD ä¸­è¿›è¡Œå£°æ˜Žã€‚            
+   - getElementsByTagName()  
+    æ–¹æ³•ä¼šä½¿ç”¨æŒ‡å®šçš„æ ‡ç­¾åè¿”å›žæ‰€æœ‰çš„å…ƒç´ ï¼ˆä½œä¸ºä¸€ä¸ªèŠ‚ç‚¹åˆ—è¡¨ï¼‰ï¼Œè¿™äº›å…ƒç´ æ˜¯æ‚¨åœ¨ä½¿ç”¨æ­¤æ–¹æ³•æ—¶æ‰€å¤„çš„å…ƒç´ çš„åŽä»£            
+  	ã€‚            
+	- getElementsByTagName() å¯è¢«ç”¨äºŽä»»ä½•çš„ HTML å…ƒï¼š    
+  	- document.getElementsByTagName("æ ‡ç­¾åç§°");              
+  	- document.getElementById('ID').getElementsByTagName("æ ‡ç­¾åç§°");       
+  	
+            è¿”å›žæ‰€æœ‰<p>å…ƒç´ çš„ä¸€ä¸ªèŠ‚ç‚¹åˆ—è¡¨ï¼Œ            
+      	    ä¸”è¿™äº›<p>å…ƒç´ å¿…é¡»æ˜¯ id ä¸º "maindiv" çš„å…ƒç´ ï¼š  
+            document.getElementById('maindiv').getElementsByTagName("p");             
             
-	getElementById() ºÍ getElementsByTagName() ÕâÁ½ÖÖ·½·¨£¬            
-	¿É²éÕÒÕû¸ö HTML ÎÄµµÖÐµÄÈÎºÎ HTML ÔªËØ¡£            
-	ÕâÁ½ÖÖ·½·¨»áºöÂÔÎÄµµµÄ½á¹¹¡£            
-	¼ÙÈçÄúÏ£Íû²éÕÒÎÄµµÖÐËùÓÐµÄ <p> ÔªËØ£¬            
-	getElementsByTagName() »á°ÑËüÃÇÈ«²¿ÕÒµ½£¬            
-	²»¹Ü <p> ÔªËØ´¦ÓÚÎÄµµÖÐµÄÄÄ¸ö²ã´Î¡£Í¬Ê±£¬            
-	getElementById() ·½·¨Ò²»á·µ»ØÕýÈ·µÄÔªËØ£¬            
-	²»ÂÛËü±»Òþ²ØÔÚÎÄµµ½á¹¹ÖÐµÄÊ²Ã´Î»ÖÃ¡£            
-	ÕâÁ½ÖÖ·½·¨»áÏòÄúÌá¹©ÈÎºÎÄãËùÐèÒªµÄ HTML ÔªËØ£¬            
-	²»ÂÛËüÃÇÔÚÎÄµµÖÐËù´¦µÄÎ»ÖÃ£¡            
+### èŠ‚ç‚¹åˆ—è¡¨ï¼ˆnodeListï¼‰            
             
-	getElementById() ¿ÉÍ¨¹ýÖ¸¶¨µÄ ID À´·µ»ØÔªËØ£º            
-            
-	getElementById() Óï·¨            
-	document.getElementById("ID");             
-	×¢ÊÍ£ºgetElementById() ÎÞ·¨¹¤×÷ÔÚ XML ÖÐ¡£ÔÚ XML ÎÄµµÖÐ£¬            
-	Äú±ØÐëÍ¨¹ýÓµÓÐÀàÐÍ id µÄÊôÐÔÀ´½øÐÐËÑË÷£¬¶ø´ËÀàÐÍ±ØÐëÔÚ XML DTD ÖÐ½ø            
-	ÐÐÉùÃ÷¡£            
-	getElementsByTagName() ·½·¨»áÊ¹ÓÃÖ¸¶¨µÄ±êÇ©Ãû·µ»ØËùÓÐµÄÔªËØ£¨×÷ÎªÒ»¸ö½ÚµãÁÐ±í£©£¬            
-	ÕâÐ©ÔªËØÊÇÄúÔÚÊ¹ÓÃ´Ë·½·¨Ê±Ëù´¦µÄÔªËØµÄºó´ú            
-	¡£            
-	getElementsByTagName() ¿É±»ÓÃÓÚÈÎºÎµÄ HTML ÔªËØ£º            
-	getElementsByTagName() Óï·¨            
-	document.getElementsByTagName("±êÇ©Ãû³Æ");             
-	»òÕß£º            
-	document.getElementById('ID').getElementsByTagName("±êÇ©Ãû³Æ");             
-            
-	ÏÂÃæÕâ¸öÀý×Ó»á·µ»ØËùÓÐ <p> ÔªËØµÄÒ»¸ö½ÚµãÁÐ±í£¬            
-	ÇÒÕâÐ© <p> ÔªËØ±ØÐëÊÇ id Îª "maindiv" µÄÔªËØµÄºó´ú£º            
-	document.getElementById('maindiv').getElementsByTagName("p");             
-            
-*½ÚµãÁÐ±í£¨nodeList£©            
-            
--------------------------------------------------------------------------------------------------------------------            
