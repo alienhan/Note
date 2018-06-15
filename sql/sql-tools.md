@@ -1,5 +1,5 @@
 ---
-title: sql工具
+title: sql管理客户端工具
 date:
 categories:
 - sql工具

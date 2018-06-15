@@ -1,5 +1,5 @@
 ---
-title: sql 方法
+title: sql
 date:
 categories:
 - sql方法

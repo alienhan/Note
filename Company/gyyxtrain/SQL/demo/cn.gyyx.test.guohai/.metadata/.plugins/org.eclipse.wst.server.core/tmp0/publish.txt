@@ -1,4 +1,0 @@
-#Tomcat publish data
-#Tue Oct 14 17:18:00 CST 2014
-org.eclipse.jst.j2ee.server\:springmvc=D\:\\Java\\sts-bundle\\vfabric-tc-server-developer-2.9.5.SR1\\base-instance\\wtpwebapps\\springmvc
-org.eclipse.jst.jee.server\:ui=D\:\\Java\\sts-bundle\\vfabric-tc-server-developer-2.9.5.SR1\\base-instance\\wtpwebapps\\ui
