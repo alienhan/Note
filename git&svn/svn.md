@@ -2,7 +2,7 @@
 title: svn
 date:
 categories:
-- svn
+- 版本控制
 tags:
 - svn
 ---

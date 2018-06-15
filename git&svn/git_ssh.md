@@ -2,7 +2,7 @@
 title: Git
 date:
 categories:
-- Git
+- 版本控制
 tags:
 - Git
 ---
