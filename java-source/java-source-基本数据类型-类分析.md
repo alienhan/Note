@@ -1,6 +1,6 @@
 ---
 title: java 基础类型类分析
-date:
+date: 2015/10/9
 categories:
 - java源码分析
 tags:
