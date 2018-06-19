@@ -1,5 +1,5 @@
 ---
-title: mysql-索引 慢查询优化 锁 事物
+title: mysql原理分析/ 索引 慢查询优化 锁 事物
 date:
 categories:
 - mysql
