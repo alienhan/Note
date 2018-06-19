@@ -8,6 +8,8 @@ tags:
 - kafka producer
 - kafka consumer
 - kafka 消息持久性
+- kafka 保证消息不被重复消费
+- kafka 保证消费的可靠性传输
 ---
 
 ### 参考
@@ -23,7 +25,7 @@ http://orchome.com
 4. logSize：表示该partition已经写了多少条message  
 5. Lag：表示有多少条message没有被消费。  
 
-### producer 配置
+### producer 参数配置
 1. acks  
   数据 durability 的设置；  
   producer希望leader返回的用于确认请求完成的确认数量. 可选值   all, -1, 0 1. 默认值为1  
@@ -49,7 +51,7 @@ http://orchome.com
   3. queue.enqueue.timeout.ms：队列超时事件。0，如果队列满了就放弃；-ve，如果队列满了就会永远阻塞；+ve，如果队列满了会阻塞一段时间。
   4. batch.num.messages：生产者可以批量处理的消息数
 
-### Consumer
+### Consumer 参数配置
 1. auto.commit.enable = true  
   true时，Consumer会在消费消息后将offset同步到zookeeper，这样当Consumer失败后，新的consumer就能从zookeeper获取最新的offset
   如果设为true，consumer会定时向ZooKeeper发送已经获取到的消息的offset。当consumer进程挂掉时，已经提交的offset可以继续使用，让新的consumer继续工作。  
@@ -63,8 +65,13 @@ http://orchome.com
 5. refresh.leader.backoff.ms  
   在consumer发现失去某个partition的leader后，在leader选出来前的等待的backoff时间。
 
-### Consumer Kafka消息消费一致性(重复,丢失,提交失败)  
+### Consumer Kafka参数配置/两种提交方式/现行解决方案
 Kafka消费端的offset主要由consumer来控制, Kafka将每个consumer所监听的tocpic的partition的offset保存在__consumer_offsets主题中. consumer需要将处理完成的消息的offset提交到服务端, 主要有ConsumerCoordinator(协调者)完成的.  
+
+1. enable.auto.commit 默认为true  
+2. auto.commit.interval.ms 默认为5000 ms (5s)(间隔)  
+3. max.poll.records 默认为500  
+4. fetch.max.bytes 默认为52428800 bytes (50Mib). (取来) 
 
 **自动提交**:  
 每次从kafka拉取数据之前, 假如是异步提交offset, 会先调用已经完成的offset commit的callBack, 然后检查ConsumerCoordinator的连接状态. 如果设置了自动提交offset, 会继续上次从服务端获取的数据的offset异步提交到服务端. 这里需要注意的是会有几种情况出现:
@@ -80,25 +87,20 @@ Kafka消费端的offset主要由consumer来控制, Kafka将每个consumer所监�
       max.in.flight.requests.per.connection = 1  
        限制客户端在单个连接上能够发送的未响应请求的个数。设置此值是1表示kafka broker在响应请求之前client不能再向同一个broker发送请求  
        (保证单个partition有序)    
-
-  4. enable.auto.commit 默认为true  
-  5. auto.commit.interval.ms 默认为5000 ms (5s)(间隔)  
-  6. max.poll.records 默认为500  
-  7. fetch.max.bytes 默认为52428800 bytes (50Mib). (取来)  
-
-***解决方案. ***  
-1. 手动提交:  
+        
+**手动提交**  
   把enable.auto.commit设置为false,  
   并在每处理完一条数据后手动提交offset.  
   这里需要注意的是:  
       提交的offset是对当前消息的offset基础上进行加1.  
-```java
- consumer.commitSync(Collections.singletonMap(new TopicPartition(record.topic(), record.partition()), new OffsetAndMetadata(record.offset() + 1)));
- ```
-  - 手动提交失败问题:
-  - 
-2.  
-  新建线程处理消息  
+  ```java
+   consumer.commitSync(Collections.singletonMap(new TopicPartition(record.topic(), record.partition()), new OffsetAndMetadata(record.offset() + 1)));
+   ```
+**现行解决方案**
+  - 新建线程池接受消息
+  - 自动提交
+ 
+新建线程处理消息  
 
 ### kafka partition和consumer数目关系 
   kafka的设计是在一个partition上是不允许并发  
@@ -106,7 +108,40 @@ Kafka消费端的offset主要由consumer来控制, Kafka将每个consumer所监�
   kafka只保证在一个partition上数据是有序  
   增减consumer，broker，partition会导致rebalance，所以rebalance后consumer对应的partition会发生变化  
 
+### 保证消息不被重复消费
+分析:  
+  - 这个问题其实换一种问法就是，如何保证消息队列的幂等性  
 
+原因:  
+ - 消费者在消费消息时候，消费完毕后，会发送一个确认信息给消息队列，消息队列就知道该消息被消费了，就会将该消息从消息队列中删除。  
+ - 因为网络传输等等故障，确认信息没有传送到消息队列，导致消息队列不知道自己已经消费过该消息了，再次将该消息分发给其他的消费者。  
+    - 例如:手动提交失败
+
+业务场景
+ - 幂等性操作:
+   - mysql insert插入唯一主键
+   - redis set 
+ - 其他  
+  第三方介质,来做消费记录  
+  - 以redis为例，给消息分配一个全局id，只要消费过该消息，将<id,message>以K-V形式写入redis。那消费者开始消费前，先去redis中查询有没消费记录即可。  
+  - 类似分布式锁
+
+### 保证消费的可靠性传输
+    生产者弄丢数据、消息队列弄丢数据、消费者弄丢数据。
+
+1. 生产者弄丢数据  
+   在kafka生产中，基本都有一个leader和多个follwer。follwer会去同步leader的信息。因此，为了避免生产者丢数据，做如下两点配置
+    - 第一个配置要在producer端设置acks=all。这个配置保证了，follwer同步完成后，才认为消息发送成功。
+    - 在producer端设置retries=MAX，一旦写入失败，这无限重试
+2. 消息队列丢数据  
+  针对消息队列丢数据的情况，无外乎就是，数据还没同步，leader就挂了，这时zookpeer会将其他的follwer切换为leader,那数据就丢失了。针对这种情况，应该做两个配置。
+    - replication.factor参数，这个值必须大于1，即要求每个partition必须有至少2个副本
+    - min.insync.replicas参数，这个值必须大于1，这个是要求一个leader至少感知到有至少一个follower还跟自己保持联系
+3. 消费者丢数据  
+  自动提交了offset，然后你处理程序过程中挂了。kafka以为你处理好了.
+  - 改成手动提交
+
+---
 ### kafka副本问题
 1. 发消息过程  
   Producer在发布消息到某个Partition时，先通过ZooKeeper找到该Partition的Leader，然后无论该Topic的Replication Factor为多少（也即该Partition有多少个Replica），Producer只将该消息发送到该Partition的Leader。Leader会将该消息写入其本地Log。每个Follower都从Leader pull数据。这种方式上，Follower存储的数据顺序与Leader保持一致.  

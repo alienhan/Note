@@ -1,6 +1,6 @@
 ---
 title: hexo使用
-date:
+date: 2015/9/9
 comments: true
 categories:
 - tools
