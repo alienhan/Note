@@ -13,6 +13,7 @@ tags:
 ```
 
 ### java 读取classpath下的文件properties文件
+
 ```java
 /**
  * 保存全局属性值
