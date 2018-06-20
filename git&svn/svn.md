@@ -1,6 +1,6 @@
 ---
 title: svn
-date:
+date: 2016/5/5
 categories:
 - 版本控制
 tags:

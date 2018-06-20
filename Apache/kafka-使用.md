@@ -4,6 +4,7 @@ date:
 categories:
 - kafka
 tags:
+- kafka
 - kafka 使用中遇到的问题及解决方案
 - 新旧客户端的区别
 ---

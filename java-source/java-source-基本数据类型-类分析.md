@@ -92,6 +92,14 @@ Integer.highestOneBit(i)
 
 ---
 ### String 源码分析
+  - 一旦 String 对象在内存(堆)中被创建出来，就无法被修改。
+    - 特别要注意的是，String 类的所有方法都没有改变字符串本身的值，都是返回了一个新的对象。
+  - 当需要一个可修改的字符串，应该使用 StringBuffer 或者
+    StringBuilder。
+    - 否则会有大量时间浪费在垃圾回收上，因为每次试图修改都有新的String 对象被创建出来。
+  - 当需要创建一个字符串，你可以使用双引号的方式，如果你需要在堆中创建一个新的对象，你可以选择构造函数的方式。
+    - 双引号方式在栈的常量池中新建字符串
+    - 构造函数在堆中创建一个新的对象
 
 #### final 修饰符： 
 - 修饰类:当用final修饰一个类时，表明这个类不能被继承。也就是说，String类是不能被继承的，  
@@ -112,3 +120,4 @@ private static final ObjectStreamField[] serialPersistentFields =new ObjectStrea
 ```
 
 #### String对“+”的重载
+  "+"跟"+="是Java中仅有的两个重载操作符，除此之外，Java不支持其它的任何重载操作符  

@@ -4,9 +4,10 @@ date:
 categories:
 - kafka
 tags:
+- kafka
 - kafka 源码与原理
-- kafka producer
-- kafka consumer
+- kafka producer参数配置
+- kafka consumer参数配置
 - kafka 消息持久性
 - kafka 保证消息不被重复消费
 - kafka 保证消费的可靠性传输
