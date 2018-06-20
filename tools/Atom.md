@@ -4,7 +4,7 @@ date: 2015/9/9
 categories:
 - tools
 tags:
-- Atom使用
+- tools-Atom使用
 ---
 
 #### 预览: ctrl + shift + m  

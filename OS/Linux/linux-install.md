@@ -4,7 +4,7 @@ date:
 categories:
 - linux
 tags:
-- linux
+- linux分区/安装/命令/用户组
 ---
 
 1. 命令行

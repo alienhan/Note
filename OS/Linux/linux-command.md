@@ -4,7 +4,7 @@ date:
 categories:
 - linux
 tags:
-- linux命令
+- linux分区/安装/命令/用户组
 ---
 
 ### 文件操作
