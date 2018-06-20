@@ -1,6 +1,6 @@
 ---
 title: java操作文件
-date:
+date: 2015/8/9
 categories:
 - java基础
 tags:

@@ -1,6 +1,6 @@
 ---
 title: java log处理 slf4j
-date:
+date: 2015/10/10
 categories:
 - java基础
 tags:
