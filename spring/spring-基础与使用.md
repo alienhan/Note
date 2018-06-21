@@ -1,9 +1,10 @@
 ---
 title: Spring基础与使用案例与场景
-date:
+date: 2015/10/9
 categories:
 - spring
 tags:
+- spring
 - spring 基础与使用
 ---
 

@@ -121,3 +121,36 @@ private static final ObjectStreamField[] serialPersistentFields =new ObjectStrea
 
 #### String对“+”的重载
   "+"跟"+="是Java中仅有的两个重载操作符，除此之外，Java不支持其它的任何重载操作符  
+
+查看编译文件理解 + 的原理  
+```java
+public class TestString {
+   public static void main(String[] args) {
+       String abc = "abc";
+       String d = abc + "dd";
+   }
+}
+```
+
+对应编译.class文件
+```
+Code:
+     stack=2, locals=3, args_size=1
+        0: ldc           #2                  // String abc
+        2: astore_1
+        3: new           #3                  // class java/lang/StringBuilder
+        6: dup
+        7: invokespecial #4                  // Method java/lang/StringBuilder."<init>":()V
+       10: aload_1
+       11: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       14: ldc           #6                  // String dd
+       16: invokevirtual #5                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       19: invokevirtual #7                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       22: astore_2
+       23: return
+     LineNumberTable:
+       line 6: 0
+       line 7: 3
+       line 8: 23
+```
+看编译文件可以看出 + 其实 就是使用StringBuilder的append方法
