@@ -1,6 +1,6 @@
 ---
 title: jenkins
-date:
+date: 2016/7/7
 categories:
 - jenkins
 tags:

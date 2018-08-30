@@ -1,17 +1,22 @@
 ---
-title: Spring基础与使用案例与场景
+title: Spring原理与源码分析
 date:
 categories:
 - spring
 tags:
-- spring 基础与使用
----   
+- spring
+- spring原理与源码分析
+- spring 事物
+- spring aware
+- spring 工厂组成结构
+- spring 容器启动过程
+---
 
 ### BeanFactory
   - 构建ioc基本功能
 
 
-### Aware (感知)    bean操作ioc容器
+### Aware (感知,通知) bean操作ioc容器
 容器管理的Bean一般不需要了解容器的状态和直接使用容器，但是在某些情况下，是需要在Bean中直接对IOC容器进行操作的，  
   - 这时候，就需要在Bean中设定对容器的感知。  
   spring IOC容器也提供了该功能，它是通过特定的Aware接口来完成的。aware接口有以下这些：   
@@ -105,4 +110,42 @@ https://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/
     ```
        
     - getSingleton是调用
+    
 #### Spring-bean的循环依赖以及解决方式
+
+
+### spring FactoryBean 分析
+FactoryBean接口是Spring IOC容器的实例化逻辑的可插拔点。如果有复杂的bean初始化，相对于冗长的xml方式，期望通过java编程的方式来表达，就可以通过创建自定义的FactoryBean来实现并将FactoryBean插入到IOC容器中。
+```java
+public interface FactoryBean<T> {
+
+   //返回工厂创建的bean对象实例，可以是单例的也可以是多例
+   T getObject() throws Exception;
+
+   // 返回创建对象的类型
+   Class<?> getObjectType();
+
+     // 创建的对象是否单例
+   boolean isSingleton();
+ }
+```
+
+判断bean是否是FactoryBean
+  - 对象是否实现了FactoryBean接口
+  - 在BeanFactory容器基础接口中特别定义了FactoryBean的前缀
+      ```String FACTORY_BEAN_PREFIX = "&";```
+
+### spring aop实现分析
+
+**两种实现方式:**  
+  - JDK动态代理  
+    - 被代理的目标对象实现了至少一个接口,则会使用JDK动态代理,所有该目标类型实现的接口都将被代理
+    - 实现:
+     - 其代理对象必须是某个接口的实现,它是通过运行期间创建一个接口的实现类来完成对目标对象的代理
+  - CGLIB代理  
+   - 目标对象没有实现任何接口,则创建一个CGLIB代理
+   - 可强制使用
+     - 无法通知final方法
+     - 引入cglib jar包
+   - 实现:
+     - 运行期间生成的代理对象是目标类的扩展子类,底层依靠ASM操作字节码实现的.性能比JDK强.

@@ -1,6 +1,6 @@
 ---
 title: hadoop
-date:
+date: 2017/5/5
 categories:
 - hadoop
 tags:

@@ -1,6 +1,6 @@
 ---
 title: java 基础知识
-date:
+date: 2015/9/3
 categories:
 - java基础
 tags:

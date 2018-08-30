@@ -1,9 +1,10 @@
 ---
 title: Spring Boot基础与使用案例与场景
-date:
+date: 2017/9/21
 categories:
 - spring
 tags:
+- spring
 - Spring Boot基础与使用
 ---
 

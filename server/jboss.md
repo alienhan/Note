@@ -1,8 +1,8 @@
 ---
-title: jboss
-date:
+title: 中间件 jboss
+date: 2015/9/10
 categories:
-- jboss
+- 中间件
 tags:
 - jboss
 ---

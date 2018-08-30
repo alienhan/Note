@@ -1,6 +1,6 @@
 ---
 title: java XML 处理
-date:
+date: 2015/8/10
 categories:
 - java基础
 tags:
