@@ -1,6 +1,6 @@
 ---
 title: java配置\安装
-date:
+date: 2015/8/8
 categories:
 - java基础
 tags:

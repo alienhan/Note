@@ -2,7 +2,7 @@
 title: mockito 基础使用
 date:
 categories:
-- mockito
+- test
 tags:
 - mockito基础使用
 ---

@@ -4,7 +4,7 @@ date:
 categories:
 - kafka
 tags:
-- kafka 基础
+- kafka
 ---
 
 

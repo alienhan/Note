@@ -5,7 +5,7 @@ comments: true
 categories:
 - tools
 tags:
-- hexo使用
+- tools-hexo使用
 ---
 
 

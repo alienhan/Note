@@ -5,7 +5,6 @@ categories:
 - servlet
 tags:
 - servlet
-- servlet监听
 ---
 
 ### java servlet监听

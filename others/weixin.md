@@ -31,4 +31,3 @@ tags:
 	4.数据库连接池配置:
 		jdbc.url=jdbc\:mysql\://localhost\:3306/ams?autoReconnect\=true&amp;failOverReadOnly\=false
 		#jdbc.url=jdbc\:mysql\://localhost\:3306/ams?useUnicode\=true&amp;characterEncoding\=utf-8&amp;autoReconnect\=true&amp;failOverReadOnly\=false
-			

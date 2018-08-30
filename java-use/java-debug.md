@@ -1,6 +1,6 @@
 ---
 title: java debug操作
-date:
+date: 2015/8/8
 categories:
 - java基础
 tags:

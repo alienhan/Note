@@ -1,11 +1,12 @@
 ---
 title: Spring遇到的问题及解决
-date:
+date: 2016/5/6
 categories:
 - spring
 tags:
+- spring
 - Spring遇到的问题及解决
----   
+---
 
 ### progress loading spring xsd
     最常见的导致这一问题的原因其实与使用了一个名为“assembly”的maven打包插件有关。  
