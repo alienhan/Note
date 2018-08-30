@@ -1,14 +1,13 @@
 ---
 title: jvm 加载/执行/GC算法/GC收集器/jvm调试命令/内存分配
-date:
+date: 2016/2/7
 categories:
 - jvm
 tags:
-- jvm 加载
-- jvm 执行
-- jvm GC
-- jvm 内存分配
-- jvm 命令
+- jvm 类加载
+- jvm 执行及内存分配
+- jvm GC目的,GC时机,GC算法,垃圾收集器种类,分代收集算法
+- jvm 调优命令
 ---
 
 ### 加载

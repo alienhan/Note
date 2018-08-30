@@ -1,11 +1,10 @@
 ---
 title: sublime使用
-date:
+date: 2015/9/9
 categories:
 - tools
 tags:
 - sublime使用
-- sublime
 ---
 
 ### 安装插件 package control

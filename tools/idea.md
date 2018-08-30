@@ -1,11 +1,10 @@
 ---
 title: idea使用
-date:
+date: 2015/9/9
 categories:
 - tools
 tags:
-- idea使用
-- idea
+- tools-idea使用
 ---
 
 ctrl + alt + l 格式化  

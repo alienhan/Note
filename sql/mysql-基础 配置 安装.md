@@ -27,20 +27,21 @@ tags:
 
 	4. 登入之后进行密码修改:  
 		- mysql 5.7以前的做法:(新版本没有password字段)
-		```
-		mysql> use mysql;
-		mysql> update user set password=password("新密码") where user="root";```
 		
+			```
+			mysql> use mysql;
+			mysql> update user set password=password("新密码") 
+			where user="root";
+			```
 		- mysql 5.7 password字段被替换成authentication_string
 		
 		```
 		mysql> update `User` SET   authentication_string=PASSWORD("root") where USER='root';
 		mysql> flush privileges;
 		mysql> quit;```
-
-
-ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
-如果遇到第一次安装mysql的时候密码不为空,问题解决如下:
+ 
+### 第一次安装mysql的时候密码不为空,问题解决如下:
+			ERROR 1045 (28000): Access denied for user'root'@'localhost' (using password: YES)
 1. 编辑mysql配置文件my.ini在[mysqld]这个条目下加入skip-grant-tables
 2. 保存退出后重启mysql
 3. 点击“开始”->“运行”(快捷键Win+R)。

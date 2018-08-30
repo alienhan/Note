@@ -1,6 +1,6 @@
 ---
 title: js 插件  
-date:
+date: 2015/10/10
 categories:
 - 前端
 tags:

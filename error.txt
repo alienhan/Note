@@ -1,209 +1,209 @@
 error
-´íÎóËùÊô¼¼Êõ
-´íÎóÔ­Òò
-´íÎó½â¾ö
+é”™è¯¯æ‰€å±æŠ€æœ¯
+é”™è¯¯åŸå› 
+é”™è¯¯è§£å†³
 ------------------------------------------------------------------------------------------------
 1.hibernate  
 Caused by: java.lang.ClassNotFoundException:  
 javax.persistence.EntityListene  
-ÓÃµÄÊÇHibernate3.6.0.final,  
-³öÏÖÕâ¸öÎÊÌâµÄ¿ÉÄÜÔ­ÒòÊÇÃ»ÓĞµ¼Èë  
-hibernate-jpa-2.0-api-1.0.0.Final.jarÕâ¸ö°ü  
+ç”¨çš„æ˜¯Hibernate3.6.0.final,  
+å‡ºç°è¿™ä¸ªé—®é¢˜çš„å¯èƒ½åŸå› æ˜¯æ²¡æœ‰å¯¼å…¥  
+hibernate-jpa-2.0-api-1.0.0.Final.jarè¿™ä¸ªåŒ…  
 
 ------------------------------------------------------------------------------------------------
 2.eclipse    
-.±¨²»ÖªÃûµÄ´íÎó  
+.æŠ¥ä¸çŸ¥åçš„é”™è¯¯  
 Servlet.service() for servlet [jsp] in context with path  
 [/dew] threw exception [javax.servlet.Servl  
-½â¾ö£ºproject ->clean ->Çå¿Õµ±Ç°·şÎñÆ÷ÖĞµÄÏîÄ¿»º´æ¡£´ÓÆğtomcat  
+è§£å†³ï¼šproject ->clean ->æ¸…ç©ºå½“å‰æœåŠ¡å™¨ä¸­çš„é¡¹ç›®ç¼“å­˜ã€‚ä»èµ·tomcat  
 
 ------------------------------------------------------------------------------------------------
 3.java API    
 java.lang.NumberFormatException: For input string: ""   
-µ±ÄãÇ¿ÖÆ×ª»»Ò»¸öStringÎªIntegerÊ±,    
-¶øÕâ¸öStringÎª""Ê±µÄÒì³£,¼´ÄãµÄString²»ÄÜ×ªÎªIntegerµÄÒì³£    
+å½“ä½ å¼ºåˆ¶è½¬æ¢ä¸€ä¸ªStringä¸ºIntegeræ—¶,    
+è€Œè¿™ä¸ªStringä¸º""æ—¶çš„å¼‚å¸¸,å³ä½ çš„Stringä¸èƒ½è½¬ä¸ºIntegerçš„å¼‚å¸¸    
 
 ------------------------------------------------------------------------------------------------
-4.struts£¬springMVC  ÖĞÎÄÂÒÂëÎÊÌâ    
+4.strutsï¼ŒspringMVC  ä¸­æ–‡ä¹±ç é—®é¢˜    
 
-url´«Öµµ½ActionµÄÂÒÂë½â¾ö·½·¨£º
-	jspÒ³Ãæ URL´«ÖĞÎÄ²ÎÊıµ½ActionÀïÃæ³öÏÖÂÒÂë£¬ 
-ÓÃ¹ıÂËÆ÷ºÍ¿ØÖÆÆ÷¶¼½â¾ö²»ÁË£¬ÓÃÁËÎÒÁ½¸ö¶àĞ¡Ê±½â¾öÕâ¸öĞ¡ÎÊÌâ£¡---------    
+urlä¼ å€¼åˆ°Actionçš„ä¹±ç è§£å†³æ–¹æ³•ï¼š
+	jspé¡µé¢ URLä¼ ä¸­æ–‡å‚æ•°åˆ°Actioné‡Œé¢å‡ºç°ä¹±ç ï¼Œ 
+ç”¨è¿‡æ»¤å™¨å’Œæ§åˆ¶å™¨éƒ½è§£å†³ä¸äº†ï¼Œç”¨äº†æˆ‘ä¸¤ä¸ªå¤šå°æ—¶è§£å†³è¿™ä¸ªå°é—®é¢˜ï¼---------    
 
-Ô­Òò£º  
-Ä¬ÈÏÇé¿öÏÂ£¬tomcatÊ¹ÓÃµÄµÄ±àÂë·½Ê½£ºiso-8859-1  
+åŸå› ï¼š  
+é»˜è®¤æƒ…å†µä¸‹ï¼Œtomcatä½¿ç”¨çš„çš„ç¼–ç æ–¹å¼ï¼šiso-8859-1  
 
-½â¾ö·½·¨ÓĞÒÔÏÂ¼¸ÖÖ£º
-µÚÒ»ÖÖ£ºÔÚActionÖĞÓÃ new String(str.getBytes("ISO-8859-1"), "UTF-8")£¬½øĞĞ×ªÂë£¬ÒòÎª´«µİµÄÊ±ºò£¬ÖĞÎÄÄ¬ÈËµÄÊÇISO-8859-1  
+è§£å†³æ–¹æ³•æœ‰ä»¥ä¸‹å‡ ç§ï¼š
+ç¬¬ä¸€ç§ï¼šåœ¨Actionä¸­ç”¨ new String(str.getBytes("ISO-8859-1"), "UTF-8")ï¼Œè¿›è¡Œè½¬ç ï¼Œå› ä¸ºä¼ é€’çš„æ—¶å€™ï¼Œä¸­æ–‡é»˜äººçš„æ˜¯ISO-8859-1  
 					 new String(str.getBytes("GBK"), "ISO-8859-1")  
 
-µÚ¶şÖÖ£º¿ÉÍ¨¹ıÅäÖÃTOMCATÀ´½â¾ö´ËÎÊÌâ£¬¾ßÌå½â¾ö·½·¨ÈçÏÂ£ºÔÚtomcatµÄserver.xmlÀï£¬ÕÒµ½<Connector port="8080"   
+ç¬¬äºŒç§ï¼šå¯é€šè¿‡é…ç½®TOMCATæ¥è§£å†³æ­¤é—®é¢˜ï¼Œå…·ä½“è§£å†³æ–¹æ³•å¦‚ä¸‹ï¼šåœ¨tomcatçš„server.xmlé‡Œï¼Œæ‰¾åˆ°<Connector port="8080"   
               maxThreads="150" minSpareThreads="25" maxSpareThreads="75"   
               enableLookups="false" redirectPort="8443" acceptCount="100"   
               debug="0" connectionTimeout="20000"   
               disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk">   
-ÆäÖĞÊÇĞŞ¸Ä disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk" Æä·½·¨ÊÇ·ÀÖ¹ÔÚurlÖĞ³öÏÖÂÒÂë   
-È»ºóÔÚÃ¿¸öJspÒ³ÃæÌí¼ÓÈçÏÂ´úÂë  
-<%@ page pageEncoding=¡±gb2312¡å%>  
-<%@ page contentType=¡±text/html;charset=gb2312¡å%>  
-<%request.setCharacterEncoding(¡±gb2312¡å);%>  
+å…¶ä¸­æ˜¯ä¿®æ”¹ disableUploadTimeout="true" useBodyEncodingForURI="true" URIEncoding="gbk" å…¶æ–¹æ³•æ˜¯é˜²æ­¢åœ¨urlä¸­å‡ºç°ä¹±ç    
+ç„¶ååœ¨æ¯ä¸ªJspé¡µé¢æ·»åŠ å¦‚ä¸‹ä»£ç   
+<%@ page pageEncoding=â€gb2312â€³%>  
+<%@ page contentType=â€text/html;charset=gb2312â€³%>  
+<%request.setCharacterEncoding(â€gb2312â€³);%>  
 
-µÚÈıÖÖ£ºÖ±½ÓÔÚACTIONÖĞÀûÓÃÒÔÏÂ·½·¨½â¾ö£ºrequest.setCharacterEncoding("gb2312");  
+ç¬¬ä¸‰ç§ï¼šç›´æ¥åœ¨ACTIONä¸­åˆ©ç”¨ä»¥ä¸‹æ–¹æ³•è§£å†³ï¼šrequest.setCharacterEncoding("gb2312");  
         response.setCharacterEncoding("gb2312");  
 
-action,controller ·µ»ØÒ³ÃæµÄÖµÂÒÂë£º  
-	Ç°Ì¨´«¹ıÀ´µÄ²ÎÊı  
+action,controller è¿”å›é¡µé¢çš„å€¼ä¹±ç ï¼š  
+	å‰å°ä¼ è¿‡æ¥çš„å‚æ•°  
 	str = new String(str.getBytes("ISO-8859-1"),"utf-8");   
-	·µ»ØÇ°Ì¨µÄ²ÎÊı--ÏÂÔØÎÄ¼şÊ±  
+	è¿”å›å‰å°çš„å‚æ•°--ä¸‹è½½æ–‡ä»¶æ—¶  
 	String str2 = new String(str.getBytes("GBK"), "ISO-8859-1");  
 
-getBytes·½·¨£º  
-	StringµÄgetBytes()·½·¨ÊÇµÃµ½Ò»¸ö²Ù×÷ÏµÍ³Ä¬ÈÏµÄ±àÂë¸ñÊ½µÄ×Ö½ÚÊı×é¡£  
-Õâ¸ö±íÊ¾ÔÚ²»Í¨OSÏÂ£¬·µ»ØµÄ¶«Î÷²»Ò»Ñù£¡   
-	String.getBytes(String decode)·½·¨»á¸ù¾İÖ¸¶¨µÄdecode±àÂë·µ»ØÄ³×Ö·û´®ÔÚ¸Ã±àÂëÏÂµÄbyteÊı×é±íÊ¾£¬Èç  
-byte[] b_gbk = "ÖĞ".getBytes("GBK");   
-byte[] b_utf8 = "ÖĞ".getBytes("UTF-8");  
-byte[] b_iso88591 = "ÖĞ".getBytes("ISO8859-1");  
-½«·Ö±ğ·µ»Ø¡°ÖĞ¡±Õâ¸öºº×ÖÔÚGBK¡¢UTF-8ºÍISO8859-1±àÂëÏÂµÄbyteÊı×é±íÊ¾£¬  
-´ËÊ±b_gbkµÄ³¤¶ÈÎª2£¬b_utf8µÄ³¤¶ÈÎª3£¬b_iso88591µÄ³¤¶ÈÎª1¡£   
+getBytesæ–¹æ³•ï¼š  
+	Stringçš„getBytes()æ–¹æ³•æ˜¯å¾—åˆ°ä¸€ä¸ªæ“ä½œç³»ç»Ÿé»˜è®¤çš„ç¼–ç æ ¼å¼çš„å­—èŠ‚æ•°ç»„ã€‚  
+è¿™ä¸ªè¡¨ç¤ºåœ¨ä¸é€šOSä¸‹ï¼Œè¿”å›çš„ä¸œè¥¿ä¸ä¸€æ ·ï¼   
+	String.getBytes(String decode)æ–¹æ³•ä¼šæ ¹æ®æŒ‡å®šçš„decodeç¼–ç è¿”å›æŸå­—ç¬¦ä¸²åœ¨è¯¥ç¼–ç ä¸‹çš„byteæ•°ç»„è¡¨ç¤ºï¼Œå¦‚  
+byte[] b_gbk = "ä¸­".getBytes("GBK");   
+byte[] b_utf8 = "ä¸­".getBytes("UTF-8");  
+byte[] b_iso88591 = "ä¸­".getBytes("ISO8859-1");  
+å°†åˆ†åˆ«è¿”å›â€œä¸­â€è¿™ä¸ªæ±‰å­—åœ¨GBKã€UTF-8å’ŒISO8859-1ç¼–ç ä¸‹çš„byteæ•°ç»„è¡¨ç¤ºï¼Œ  
+æ­¤æ—¶b_gbkçš„é•¿åº¦ä¸º2ï¼Œb_utf8çš„é•¿åº¦ä¸º3ï¼Œb_iso88591çš„é•¿åº¦ä¸º1ã€‚   
 
-	¶øÓëgetBytesÏà¶ÔµÄ£¬¿ÉÒÔÍ¨¹ınew String(byte[], decode)µÄ·½Ê½À´»¹Ô­Õâ¸ö¡°ÖĞ¡±×ÖÊ±£¬  
-Õâ¸önew String(byte[], decode)Êµ¼ÊÊÇÊ¹ÓÃdecodeÖ¸¶¨µÄ±àÂëÀ´½«byte[]½âÎö³É×Ö·û´®¡£  
+	è€Œä¸getBytesç›¸å¯¹çš„ï¼Œå¯ä»¥é€šè¿‡new String(byte[], decode)çš„æ–¹å¼æ¥è¿˜åŸè¿™ä¸ªâ€œä¸­â€å­—æ—¶ï¼Œ  
+è¿™ä¸ªnew String(byte[], decode)å®é™…æ˜¯ä½¿ç”¨decodeæŒ‡å®šçš„ç¼–ç æ¥å°†byte[]è§£ææˆå­—ç¬¦ä¸²ã€‚  
 	String s_gbk = new String(b_gbk,"GBK");  
 	String s_utf8 = new String(b_utf8,"UTF-8");  
 	String s_iso88591 = new String(b_iso88591,"ISO8859-1");  
 
-Í¨¹ı´òÓ¡s_gbk¡¢s_utf8ºÍs_iso88591£¬»á·¢ÏÖ£¬s_gbkºÍs_utf8¶¼ÊÇ¡°ÖĞ¡±£¬¶øÖ»ÓĞs_iso88591ÊÇÒ»¸ö²»ÈÏÊ¶µÄ×Ö·û£¬  
-ÎªÊ²Ã´Ê¹ÓÃISO8859-1±àÂëÔÙ×éºÏÖ®ºó£¬ÎŞ·¨»¹Ô­¡°ÖĞ¡±×ÖÄØ£¬ÆäÊµÔ­ÒòºÜ¼òµ¥£¬  
-ÒòÎªISO8859-1±àÂëµÄ±àÂë±íÖĞ£¬¸ù±¾¾ÍÃ»ÓĞ°üº¬ºº×Ö×Ö·û£¬  
-µ±È»Ò²¾ÍÎŞ·¨Í¨¹ı"ÖĞ".getBytes("ISO8859-1");À´µÃµ½ÕıÈ·µÄ¡°ÖĞ¡±×ÖÔÚISO8859-1ÖĞµÄ±àÂëÖµÁË£¬  
-ËùÒÔÔÙÍ¨¹ınew String()À´»¹Ô­¾ÍÎŞ´ÓÌ¸ÆğÁË¡£  
-Òò´Ë£¬Í¨¹ıString.getBytes(String decode)·½·¨À´µÃµ½byte[]Ê±£¬  
-Ò»¶¨ÒªÈ·¶¨decodeµÄ±àÂë±íÖĞÈ·Êµ´æÔÚString±íÊ¾µÄÂëÖµ£¬ÕâÑùµÃµ½µÄbyte[]Êı×é²ÅÄÜÕıÈ·±»»¹Ô­¡£  
+é€šè¿‡æ‰“å°s_gbkã€s_utf8å’Œs_iso88591ï¼Œä¼šå‘ç°ï¼Œs_gbkå’Œs_utf8éƒ½æ˜¯â€œä¸­â€ï¼Œè€Œåªæœ‰s_iso88591æ˜¯ä¸€ä¸ªä¸è®¤è¯†çš„å­—ç¬¦ï¼Œ  
+ä¸ºä»€ä¹ˆä½¿ç”¨ISO8859-1ç¼–ç å†ç»„åˆä¹‹åï¼Œæ— æ³•è¿˜åŸâ€œä¸­â€å­—å‘¢ï¼Œå…¶å®åŸå› å¾ˆç®€å•ï¼Œ  
+å› ä¸ºISO8859-1ç¼–ç çš„ç¼–ç è¡¨ä¸­ï¼Œæ ¹æœ¬å°±æ²¡æœ‰åŒ…å«æ±‰å­—å­—ç¬¦ï¼Œ  
+å½“ç„¶ä¹Ÿå°±æ— æ³•é€šè¿‡"ä¸­".getBytes("ISO8859-1");æ¥å¾—åˆ°æ­£ç¡®çš„â€œä¸­â€å­—åœ¨ISO8859-1ä¸­çš„ç¼–ç å€¼äº†ï¼Œ  
+æ‰€ä»¥å†é€šè¿‡new String()æ¥è¿˜åŸå°±æ— ä»è°ˆèµ·äº†ã€‚  
+å› æ­¤ï¼Œé€šè¿‡String.getBytes(String decode)æ–¹æ³•æ¥å¾—åˆ°byte[]æ—¶ï¼Œ  
+ä¸€å®šè¦ç¡®å®šdecodeçš„ç¼–ç è¡¨ä¸­ç¡®å®å­˜åœ¨Stringè¡¨ç¤ºçš„ç å€¼ï¼Œè¿™æ ·å¾—åˆ°çš„byte[]æ•°ç»„æ‰èƒ½æ­£ç¡®è¢«è¿˜åŸã€‚  
  
 ------------------------
-ÎªÊ²Ã´Òª×ª»»±àÂë£º 
-ÓĞÊ±ºò£¬ÎªÁËÈÃÖĞÎÄ×Ö·ûÊÊÓ¦Ä³Ğ©ÌØÊâÒªÇó£¨Èçhttp headerÍ·ÒªÇóÆäÄÚÈİ±ØĞëÎªiso8859-1±àÂë£©£¬  
-¿ÉÄÜ»áÍ¨¹ı½«ÖĞÎÄ×Ö·û°´ÕÕ×Ö½Ú·½Ê½À´±àÂëµÄÇé¿ö£¬Èç  
-String s_iso88591 = new String("ÖĞ".getBytes("UTF-8"),"ISO8859-1")£¬ 
-ÕâÑùµÃµ½µÄs_iso8859-1×Ö·û´®Êµ¼ÊÊÇÈı¸öÔÚ ISO8859-1ÖĞµÄ×Ö·û£¬ÔÚ½«ÕâĞ©×Ö·û´«µİµ½Ä¿µÄµØºó£¬  
-Ä¿µÄµØ³ÌĞòÔÙÍ¨¹ıÏà·´µÄ·½Ê½   
+ä¸ºä»€ä¹ˆè¦è½¬æ¢ç¼–ç ï¼š 
+æœ‰æ—¶å€™ï¼Œä¸ºäº†è®©ä¸­æ–‡å­—ç¬¦é€‚åº”æŸäº›ç‰¹æ®Šè¦æ±‚ï¼ˆå¦‚http headerå¤´è¦æ±‚å…¶å†…å®¹å¿…é¡»ä¸ºiso8859-1ç¼–ç ï¼‰ï¼Œ  
+å¯èƒ½ä¼šé€šè¿‡å°†ä¸­æ–‡å­—ç¬¦æŒ‰ç…§å­—èŠ‚æ–¹å¼æ¥ç¼–ç çš„æƒ…å†µï¼Œå¦‚  
+String s_iso88591 = new String("ä¸­".getBytes("UTF-8"),"ISO8859-1")ï¼Œ 
+è¿™æ ·å¾—åˆ°çš„s_iso8859-1å­—ç¬¦ä¸²å®é™…æ˜¯ä¸‰ä¸ªåœ¨ ISO8859-1ä¸­çš„å­—ç¬¦ï¼Œåœ¨å°†è¿™äº›å­—ç¬¦ä¼ é€’åˆ°ç›®çš„åœ°åï¼Œ  
+ç›®çš„åœ°ç¨‹åºå†é€šè¿‡ç›¸åçš„æ–¹å¼   
 String s_utf8 = new String(s_iso88591.getBytes("ISO8859-1"),"UTF-8")   
-À´µÃµ½ÕıÈ·µÄÖĞÎÄºº×Ö¡°ÖĞ¡±¡£ÕâÑù¾Í¼È±£Ö¤ÁË×ñÊØĞ­Òé¹æ¶¨¡¢Ò²Ö§³ÖÖĞÎÄ¡£   
+æ¥å¾—åˆ°æ­£ç¡®çš„ä¸­æ–‡æ±‰å­—â€œä¸­â€ã€‚è¿™æ ·å°±æ—¢ä¿è¯äº†éµå®ˆåè®®è§„å®šã€ä¹Ÿæ”¯æŒä¸­æ–‡ã€‚   
  
-servlet¹æ·¶£º 
-(1) HttpServletRequest.setCharacterEncoding()·½·¨ ½ö½öÖ»ÊÊÓÃÓÚÉèÖÃpostÌá½»µÄrequest bodyµÄ±àÂë¶ø²»ÊÇÉèÖÃget·½·¨Ìá½»µÄ   queryStringµÄ±àÂë¡£¸Ã·½·¨¸æËßÓ¦ÓÃ·şÎñÆ÷Ó¦¸Ã²ÉÓÃÊ²Ã´±àÂë½âÎöpost´«¹ıÀ´µÄÄÚÈİ¡£ºÜ¶àÎÄÕÂ²¢Ã»ÓĞËµÃ÷ÕâÒ»µã¡£  
-(2) HttpServletRequest.getPathInfo()·µ»ØµÄ½á¹ûÊÇÓÉServlet·şÎñÆ÷½âÂë(decode)¹ıµÄ¡£ 
-(3) HttpServletRequest.getRequestURI()·µ»ØµÄ×Ö·û´®Ã»ÓĞ±»Servlet·şÎñÆ÷decoded¹ı¡£ 
-(4) POSTÌá½»µÄÊı¾İÊÇ×÷Îªrequest bodyµÄÒ»²¿·Ö¡£ 
-(5) ÍøÒ³µÄHttpÍ·ÖĞContentType("text/html; charset=GBK")µÄ×÷ÓÃ£º 
-    (a) ¸æËßä¯ÀÀÆ÷ÍøÒ³ÖĞÊı¾İÊÇÊ²Ã´±àÂë£» 
-    (b) ±íµ¥Ìá½»Ê±£¬Í¨³£ä¯ÀÀÆ÷»á¸ù¾İContentTypeÖ¸¶¨µÄcharset¶Ô±íµ¥ÖĞµÄÊı¾İ±àÂë£¬È»ºó·¢ËÍ¸ø·şÎñÆ÷µÄ¡£ 
-ÕâÀïĞèÒª×¢ÒâµÄÊÇ£ºÕâÀïËùËµµÄContentTypeÊÇÖ¸httpÍ·µÄContentType£¬¶ø²»ÊÇÔÚÍøÒ³ÖĞmetaÖĞµÄContentType¡£ 
+servletè§„èŒƒï¼š 
+(1) HttpServletRequest.setCharacterEncoding()æ–¹æ³• ä»…ä»…åªé€‚ç”¨äºè®¾ç½®postæäº¤çš„request bodyçš„ç¼–ç è€Œä¸æ˜¯è®¾ç½®getæ–¹æ³•æäº¤çš„   queryStringçš„ç¼–ç ã€‚è¯¥æ–¹æ³•å‘Šè¯‰åº”ç”¨æœåŠ¡å™¨åº”è¯¥é‡‡ç”¨ä»€ä¹ˆç¼–ç è§£æpostä¼ è¿‡æ¥çš„å†…å®¹ã€‚å¾ˆå¤šæ–‡ç« å¹¶æ²¡æœ‰è¯´æ˜è¿™ä¸€ç‚¹ã€‚  
+(2) HttpServletRequest.getPathInfo()è¿”å›çš„ç»“æœæ˜¯ç”±ServletæœåŠ¡å™¨è§£ç (decode)è¿‡çš„ã€‚ 
+(3) HttpServletRequest.getRequestURI()è¿”å›çš„å­—ç¬¦ä¸²æ²¡æœ‰è¢«ServletæœåŠ¡å™¨decodedè¿‡ã€‚ 
+(4) POSTæäº¤çš„æ•°æ®æ˜¯ä½œä¸ºrequest bodyçš„ä¸€éƒ¨åˆ†ã€‚ 
+(5) ç½‘é¡µçš„Httpå¤´ä¸­ContentType("text/html; charset=GBK")çš„ä½œç”¨ï¼š 
+    (a) å‘Šè¯‰æµè§ˆå™¨ç½‘é¡µä¸­æ•°æ®æ˜¯ä»€ä¹ˆç¼–ç ï¼› 
+    (b) è¡¨å•æäº¤æ—¶ï¼Œé€šå¸¸æµè§ˆå™¨ä¼šæ ¹æ®ContentTypeæŒ‡å®šçš„charsetå¯¹è¡¨å•ä¸­çš„æ•°æ®ç¼–ç ï¼Œç„¶åå‘é€ç»™æœåŠ¡å™¨çš„ã€‚ 
+è¿™é‡Œéœ€è¦æ³¨æ„çš„æ˜¯ï¼šè¿™é‡Œæ‰€è¯´çš„ContentTypeæ˜¯æŒ‡httpå¤´çš„ContentTypeï¼Œè€Œä¸æ˜¯åœ¨ç½‘é¡µä¸­metaä¸­çš„ContentTypeã€‚ 
 
 -------------------------------------------------------------------------------------------------------------
 5 ctrl + c ??tomcat  
 
 -------------------------------------------------------------------------------------------------------------
 6.required="true"  
-  stuts ±êÇ©¡£½÷É÷Ê¹ÓÃ
+  stuts æ ‡ç­¾ã€‚è°¨æ…ä½¿ç”¨
 
 -------------------------------------------------------------------------------------------------------------
-7.<A href="javascript:void(0)">µã»÷</a>µã»÷Á´½Óºó²»»á»Øµ½ÍøÒ³¶¥²¿  
+7.<A href="javascript:void(0)">ç‚¹å‡»</a>ç‚¹å‡»é“¾æ¥åä¸ä¼šå›åˆ°ç½‘é¡µé¡¶éƒ¨  
 
 -------------------------------------------------------------------------------------------------------------
 No row with the given identifier exists  
-ÓĞÁ½ÕÅ±í,table1ºÍtable2.
-²úÉú´ËÎÊÌâµÄÔ­Òò¾ÍÊÇtable1
-Àï×öÁË¹ØÁª<one-to-one>»òÕß<many-to-one unique="true">
-(ÌØÊâµÄ¶à¶ÔÒ»Ó³Éä,Êµ¼Ê¾ÍÊÇÒ»¶ÔÒ»)
-À´¹ØÁªtable2.µ±hibernate²éÕÒµÄÊ±ºò,
-table2ÀïµÄÊı¾İÃ»ÓĞÓëtable1ÏàÆ¥ÅäµÄ,
-ÕâÑù¾Í»á±¨No row with the given identifier existsÕâ¸ö´í.
-(Ò»¾ä»°,¾ÍÊÇÊı¾İµÄÎÊÌâ!)
+æœ‰ä¸¤å¼ è¡¨,table1å’Œtable2.
+äº§ç”Ÿæ­¤é—®é¢˜çš„åŸå› å°±æ˜¯table1
+é‡Œåšäº†å…³è”<one-to-one>æˆ–è€…<many-to-one unique="true">
+(ç‰¹æ®Šçš„å¤šå¯¹ä¸€æ˜ å°„,å®é™…å°±æ˜¯ä¸€å¯¹ä¸€)
+æ¥å…³è”table2.å½“hibernateæŸ¥æ‰¾çš„æ—¶å€™,
+table2é‡Œçš„æ•°æ®æ²¡æœ‰ä¸table1ç›¸åŒ¹é…çš„,
+è¿™æ ·å°±ä¼šæŠ¥No row with the given identifier existsè¿™ä¸ªé”™.
+(ä¸€å¥è¯,å°±æ˜¯æ•°æ®çš„é—®é¢˜!)
 
 -------------------------------------------------------------------------------------------------------------
-9.SQL Server 2005¡°±¸·İ¼¯ÖĞµÄÊı¾İ¿â±¸·İÓëÏÖÓĞµÄÊı¾İ¿â²»Í¬¡±½â¾ö·½·¨  
+9.SQL Server 2005â€œå¤‡ä»½é›†ä¸­çš„æ•°æ®åº“å¤‡ä»½ä¸ç°æœ‰çš„æ•°æ®åº“ä¸åŒâ€è§£å†³æ–¹æ³•  
 http://www.jb51.net/article/19233.htm
 
 -------------------------------------------------------------------------------------------------------------
 10.java.lang.NumberFormatException: For input string: ""  
-ÀàĞÍ×ª»»µÄÎÊÌâ
+ç±»å‹è½¬æ¢çš„é—®é¢˜
 -------------------------------------------------------------------------------------------------------------
-11. xgb »º´æ  
+11. xgb ç¼“å­˜  
 ClientAbortException: java.net.SocketException:
 Connection reset by peer: socket write error
-Ô­ÒòÈçÏÂ£º
-1¡¢Õâ¸öÎÊÌâÒ»°ãÊÇ¿Í»§¶ËÔÚÁ¬½Ó»¹Ã»ÓĞÍêÈ«½¨Á¢µÄÊ±ºò¾ÍÈ¡ÏûÁ¬½Ó£¬
-±ÈÈçÓÃ»§°´ÁËä¯ÀÀÆ÷ÉÏÃæµÄ¡°Í£Ö¹¡±°´Å¥£¬Ò»°ãÀ´ËµÃ»ÓĞÊ²Ã´ÎÊÌâ¡£
-µ«ÊÇÈç¹ûÆµ·±³öÏÖ£¬¾Í±íÊ¾ºÜ¶à¿Í»§¶ËÁ¬½Óµ½Apache·şÎñÆ÷µÄÏìÓ¦Ê±¼äÌ«³¤ÁË£¬
-¿ÉÄÜÊÇÍøÂçµÄÎÊÌâ»òÕß·şÎñÆ÷ĞÔÄÜÎÊÌâ ¿ÉÄÜÄãµÄÍøÂçÁ¬½Ó´æÔÚÒ»Ğ©ÎÊÌâ£¬
-ÄãµÄÊı¾İ´«ÊäµÄÊ±ºò£¬¿ÉÄÜÓÉÓÚÊ±¼äµÈ´ıµÄÌ«¾Ã£¬
-µ«ÊÇserver¶ÎÉèÖÃµÄÁ¬½Ó¼ìÑéÊ±¼äÏŞÖÆÒ»¶¨£¬
-ÄÇÃ´¾Í¿ÉÄÜ³öÏÖÕâÖÖÇé¿öµÄ£¡  
+åŸå› å¦‚ä¸‹ï¼š
+1ã€è¿™ä¸ªé—®é¢˜ä¸€èˆ¬æ˜¯å®¢æˆ·ç«¯åœ¨è¿æ¥è¿˜æ²¡æœ‰å®Œå…¨å»ºç«‹çš„æ—¶å€™å°±å–æ¶ˆè¿æ¥ï¼Œ
+æ¯”å¦‚ç”¨æˆ·æŒ‰äº†æµè§ˆå™¨ä¸Šé¢çš„â€œåœæ­¢â€æŒ‰é’®ï¼Œä¸€èˆ¬æ¥è¯´æ²¡æœ‰ä»€ä¹ˆé—®é¢˜ã€‚
+ä½†æ˜¯å¦‚æœé¢‘ç¹å‡ºç°ï¼Œå°±è¡¨ç¤ºå¾ˆå¤šå®¢æˆ·ç«¯è¿æ¥åˆ°ApacheæœåŠ¡å™¨çš„å“åº”æ—¶é—´å¤ªé•¿äº†ï¼Œ
+å¯èƒ½æ˜¯ç½‘ç»œçš„é—®é¢˜æˆ–è€…æœåŠ¡å™¨æ€§èƒ½é—®é¢˜ å¯èƒ½ä½ çš„ç½‘ç»œè¿æ¥å­˜åœ¨ä¸€äº›é—®é¢˜ï¼Œ
+ä½ çš„æ•°æ®ä¼ è¾“çš„æ—¶å€™ï¼Œå¯èƒ½ç”±äºæ—¶é—´ç­‰å¾…çš„å¤ªä¹…ï¼Œ
+ä½†æ˜¯serveræ®µè®¾ç½®çš„è¿æ¥æ£€éªŒæ—¶é—´é™åˆ¶ä¸€å®šï¼Œ
+é‚£ä¹ˆå°±å¯èƒ½å‡ºç°è¿™ç§æƒ…å†µçš„ï¼  
 
 ClientAbortException: java.net.SocketException:
 Connection reset by peer: socket write error
-µÄÔ­ÒòÊÇÓÉÓÚ´¦ÀíhttpÁ¬½ÓÊ±£¬ÕıÔÚÊä³öÄÚÈİÊ±£¬
-ÓÃ»§¹Ø±ÕÁËIE£¬»á³öÏÖÒ»¸ö"ClientAbortException"£¬
-ÊôÓÚI/O´¦ÀíÖĞ³öÏÖµÄÒ»¸öÒì³££¬Ó¦ÓÃ·şÎñÆ÷Ó¦¸Ã»á²¶×½¡£
-3¡¢Ó¦¸ÃÊÇÏß³Ì±»Õ¼ÓÃµÄÌ«¶àÁË ÎŞ·¨¿ØÖÆÁË 
-ÎÒÏë¿ÉÄÜ»áÊÇ£º.Êı¾İ¿â¿âÁ¬½Ó´ïµ½¼«ÏŞ
-£¬.Ó¦ÓÃ·şÎñÆ÷ ×î´óÏß³Ì²¢·¢Êı ´ïµ½¼«ÏŞ£¬.ÄÚ´æºÄ¾¡
+çš„åŸå› æ˜¯ç”±äºå¤„ç†httpè¿æ¥æ—¶ï¼Œæ­£åœ¨è¾“å‡ºå†…å®¹æ—¶ï¼Œ
+ç”¨æˆ·å…³é—­äº†IEï¼Œä¼šå‡ºç°ä¸€ä¸ª"ClientAbortException"ï¼Œ
+å±äºI/Oå¤„ç†ä¸­å‡ºç°çš„ä¸€ä¸ªå¼‚å¸¸ï¼Œåº”ç”¨æœåŠ¡å™¨åº”è¯¥ä¼šæ•æ‰ã€‚
+3ã€åº”è¯¥æ˜¯çº¿ç¨‹è¢«å ç”¨çš„å¤ªå¤šäº† æ— æ³•æ§åˆ¶äº† 
+æˆ‘æƒ³å¯èƒ½ä¼šæ˜¯ï¼š.æ•°æ®åº“åº“è¿æ¥è¾¾åˆ°æé™
+ï¼Œ.åº”ç”¨æœåŠ¡å™¨ æœ€å¤§çº¿ç¨‹å¹¶å‘æ•° è¾¾åˆ°æé™ï¼Œ.å†…å­˜è€—å°½
 
 -------------------------------------------------------------------------------------------------------------
 13.string  
-½±³Í²éÑ¯Ê±´íÎó
-   stringÇ¿ÖÆ×ª»»int Ê±£¬null," " ²»ÄÜ±»×ª»»
+å¥–æƒ©æŸ¥è¯¢æ—¶é”™è¯¯
+   stringå¼ºåˆ¶è½¬æ¢int æ—¶ï¼Œnull," " ä¸èƒ½è¢«è½¬æ¢
 -------------------------------------------------------------------------------------------------------------
-14.»º´æ  
+14.ç¼“å­˜  
 socket write error
-Õâ¸öÒì³£µÄÔ­ÒòÊÇ£¬ÄãµÄÒ³ÃæÓĞÒ»Ğ©¶¯Ì¬Éú³ÉµÄ¶«Î÷£¬¶øÇÒÏà¶Ô½Ï´ó¡£
-ÄãµÄ·şÎñÆ÷Ïò¿Í»§¶Ë·¢ËÍÊı¾İ£¬½á¹û¸Õ·¢Ò»°ë£¬¿Í»§¶Ë¹Ø±ÕÁËÁ´½Ó£¬¾ÍÔì³ÉÁËÕâ¸ö´íÎó£¬
+è¿™ä¸ªå¼‚å¸¸çš„åŸå› æ˜¯ï¼Œä½ çš„é¡µé¢æœ‰ä¸€äº›åŠ¨æ€ç”Ÿæˆçš„ä¸œè¥¿ï¼Œè€Œä¸”ç›¸å¯¹è¾ƒå¤§ã€‚
+ä½ çš„æœåŠ¡å™¨å‘å®¢æˆ·ç«¯å‘é€æ•°æ®ï¼Œç»“æœåˆšå‘ä¸€åŠï¼Œå®¢æˆ·ç«¯å…³é—­äº†é“¾æ¥ï¼Œå°±é€ æˆäº†è¿™ä¸ªé”™è¯¯ï¼Œ
 
-Ò»°ãÊÇÀàËÆÑéÖ¤ÂëÕâÑùµÄµØ·½¡£ ×ÜÖ®Õâ¸öÒì³£ÊÇºÏÀíµÄ£¬ÖÁÓÚÊÇ·ñÒıÆğtomcat¹Òµô£¬ÎÒ²»ÈÏÎªÊÇÕâ¸öÔ­Òò¡£
+ä¸€èˆ¬æ˜¯ç±»ä¼¼éªŒè¯ç è¿™æ ·çš„åœ°æ–¹ã€‚ æ€»ä¹‹è¿™ä¸ªå¼‚å¸¸æ˜¯åˆç†çš„ï¼Œè‡³äºæ˜¯å¦å¼•èµ·tomcatæŒ‚æ‰ï¼Œæˆ‘ä¸è®¤ä¸ºæ˜¯è¿™ä¸ªåŸå› ã€‚
 
-³ı·ÇÄãµÄÕâ²¿·Ö³ÌĞòÓĞ´íÎó£¡
+é™¤éä½ çš„è¿™éƒ¨åˆ†ç¨‹åºæœ‰é”™è¯¯ï¼
 
 -------------------------------------------------------------------------------------------------------------
-15.»º´æ  
+15.ç¼“å­˜  
 Java heap space
-tomcat»º´æ²»×ã
+tomcatç¼“å­˜ä¸è¶³
 
 -------------------------------------------------------------------------------------------------------------
 16.serlet  
 String filePath = request.getSession().getServletContext().getRealPath("/");
-request.getSession().getServletContext() »ñÈ¡µÄÊÇServletÈİÆ÷¶ÔÏó£¬
-Ïàµ±ÓÚtomcatÈİÆ÷ÁË¡£getRealPath("/") »ñÈ¡Êµ¼ÊÂ·¾¶£¬¡°/¡±Ö¸´úÏîÄ¿¸ùÄ¿Â¼
-£¬ËùÒÔ´úÂë·µ»ØµÄÊÇÏîÄ¿ÔÚÈİÆ÷ÖĞµÄÊµ¼Ê·¢²¼ÔËĞĞµÄ¸ùÂ·¾¶Èç
-£ºI:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\
+request.getSession().getServletContext() è·å–çš„æ˜¯Servletå®¹å™¨å¯¹è±¡ï¼Œ
+ç›¸å½“äºtomcatå®¹å™¨äº†ã€‚getRealPath("/") è·å–å®é™…è·¯å¾„ï¼Œâ€œ/â€æŒ‡ä»£é¡¹ç›®æ ¹ç›®å½•
+ï¼Œæ‰€ä»¥ä»£ç è¿”å›çš„æ˜¯é¡¹ç›®åœ¨å®¹å™¨ä¸­çš„å®é™…å‘å¸ƒè¿è¡Œçš„æ ¹è·¯å¾„å¦‚
+ï¼šI:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp1\
 wtpwebapps\UMPWeb_20131230\
 
 -------------------------------------------------------------------------------------------------------------
-17.eclipse ÉèÖÃÄ¬ÈÏ±àÂëÎªUtf-8  
-ĞèÒªÉèÖÃµÄ¼¸´¦µØ·½Îª£º
+17.eclipse è®¾ç½®é»˜è®¤ç¼–ç ä¸ºUtf-8  
+éœ€è¦è®¾ç½®çš„å‡ å¤„åœ°æ–¹ä¸ºï¼š
 
- Window->Preferences->General ->Content Type->Text->JSP ×îÏÂÃæÉèÖÃÎªUTF-8
+ Window->Preferences->General ->Content Type->Text->JSP æœ€ä¸‹é¢è®¾ç½®ä¸ºUTF-8
 
- Window->Preferences->General->Workspace Ãæ°åText file encoding Ñ¡ÔñUTF-8
- Window->Preferences->Web->JSP FilesÃæ°åÑ¡Ôñ ISO 10646/Unicode(UTF-8)
+ Window->Preferences->General->Workspace é¢æ¿Text file encoding é€‰æ‹©UTF-8
+ Window->Preferences->Web->JSP Filesé¢æ¿é€‰æ‹© ISO 10646/Unicode(UTF-8)
 
 -------------------------------------------------------------------------------------------------------------
 18.eclipse  
-	ÏîÄ¿ÅÔÓĞ!
-    ÒÔÇ°ÒıÓÃµÄ°ü£¬ÒòÎªÂ·¾¶µÄµÈÎÊÌâ
-    ÕÒ²»µ½ÁË
-    buildpath¾Í¿ÉÒÔ
+	é¡¹ç›®æ—æœ‰!
+    ä»¥å‰å¼•ç”¨çš„åŒ…ï¼Œå› ä¸ºè·¯å¾„çš„ç­‰é—®é¢˜
+    æ‰¾ä¸åˆ°äº†
+    buildpathå°±å¯ä»¥
 
 -------------------------------------------------------------------------------------------------------------
 19.Tomcat  
-Tomcat±¨´í£ºDocument base ¡­¡­does not exist or is not a readable directory
-É¾³ıeclipseÖĞµÄtomcat¾ÍºÃÁË
+TomcatæŠ¥é”™ï¼šDocument base â€¦â€¦does not exist or is not a readable directory
+åˆ é™¤eclipseä¸­çš„tomcatå°±å¥½äº†
 
 -------------------------------------------------------------------------------------------------------------
 20.log4j  
 log4j:ERROR LogMananger.repositorySelector was null likely due to error in class reloading, usin (2011-05-10 19:54:32)
-±êÇ©£º ÔÓÌ¸	·ÖÀà£º javascript_SSH
+æ ‡ç­¾ï¼š æ‚è°ˆ	åˆ†ç±»ï¼š javascript_SSH
 Today I got this error message from Tomcat 6.0.24:
 log4j:ERROR LogMananger.repositorySelector was null likely due to error
 in class reloading, using NOPLoggerRepository.
@@ -219,44 +219,44 @@ org.apache.jasper.JasperException: Unable to compile class for JSP:
 An error occurred at line: 23 in the generated java file
 The method getJspApplicationContext(ServletContext) is undefined for the type JspFactory
 
-ÏîÄ¿ÖĞÓĞÏñjsp-api.jar servlet-api.jar¸útomcat6µÄlibÖĞÍ¬ÑùµÄ°ü£¬
-µ«°æ±¾±Ètomcat6µÄ°æ±¾ÒªµÍ£¬ÔÚÔËĞĞµÄÊ±ºò£¬ÒòÎª»áÓÅÏÈ¼ÓÔØÏîÄ¿ÖĞµÄ°ü£¬
-ËùÒÔ ²úÉúÁË´íÎó£¬°ÑÏîÄ¿ÖĞºÍtomcatÏàÍ¬µÄ°üÉ¾³ı(±ØĞëÉ¾³ı£¬Èç¹ûÌæ»»»¹»á²úÉúÆäËûµÄ´íÎó)£¬
-ÎÊÌâ¾Í¿ÉÒÔ½â¾öÁË¡£
+é¡¹ç›®ä¸­æœ‰åƒjsp-api.jar servlet-api.jarè·Ÿtomcat6çš„libä¸­åŒæ ·çš„åŒ…ï¼Œ
+ä½†ç‰ˆæœ¬æ¯”tomcat6çš„ç‰ˆæœ¬è¦ä½ï¼Œåœ¨è¿è¡Œçš„æ—¶å€™ï¼Œå› ä¸ºä¼šä¼˜å…ˆåŠ è½½é¡¹ç›®ä¸­çš„åŒ…ï¼Œ
+æ‰€ä»¥ äº§ç”Ÿäº†é”™è¯¯ï¼ŒæŠŠé¡¹ç›®ä¸­å’Œtomcatç›¸åŒçš„åŒ…åˆ é™¤(å¿…é¡»åˆ é™¤ï¼Œå¦‚æœæ›¿æ¢è¿˜ä¼šäº§ç”Ÿå…¶ä»–çš„é”™è¯¯)ï¼Œ
+é—®é¢˜å°±å¯ä»¥è§£å†³äº†ã€‚
 
 -------------------------------------------------------------------------------------------------------------
-22.¹æ·¶--wonders  
+22.è§„èŒƒ--wonders  
 xhzs
-·½·¨ÃüÃû¹æ·¶£º
-	1.javaÍÕ·åÃüÃû·¨£¬Ê××ÖÄ¸ÒÔĞ¡Ğ´¿ªÍ·£¬Ã¿¸öµ¥´ÊÊ××ÖÄ¸´óĞ´£¨µÚÒ»¸öµ¥´Ê³ıÍâ£©
-	2.·½·¨±íÊ¾Ò»ÖÖĞĞÎª£¬Ëü´ú±íÒ»ÖÖ¶¯×÷£¬×îºÃÊÇÒ»¸ö¶¯´Ê»òÕß¶¯´Ê´Ê×é»òÕßµÚÒ»¸öµ¥´ÊÎªÒ»¸ö¶¯´Ê¡£
-		Ò³ÃæÌø×ªÃüÃû¹æÔò£ºto+XXX
-		Ò³Ãæ²éÑ¯ÃüÃû¹æÔò£ºquery+XXX£¬find+XXX£¬get+XXX£¬load+XXX£¬search+XXX
-		Ò³Ãæ¸üĞÂÃüÃû¹æÔò£ºupdate+XXX, modify+XXX
-		Ò³Ãæ±£´æÃüÃû¹æÔò£ºsave+XXX
-		Ò³ÃæÉ¾³ıÃüÃû¹æÔò£ºremove+XXX£¬delete+XXX
+æ–¹æ³•å‘½åè§„èŒƒï¼š
+	1.javaé©¼å³°å‘½åæ³•ï¼Œé¦–å­—æ¯ä»¥å°å†™å¼€å¤´ï¼Œæ¯ä¸ªå•è¯é¦–å­—æ¯å¤§å†™ï¼ˆç¬¬ä¸€ä¸ªå•è¯é™¤å¤–ï¼‰
+	2.æ–¹æ³•è¡¨ç¤ºä¸€ç§è¡Œä¸ºï¼Œå®ƒä»£è¡¨ä¸€ç§åŠ¨ä½œï¼Œæœ€å¥½æ˜¯ä¸€ä¸ªåŠ¨è¯æˆ–è€…åŠ¨è¯è¯ç»„æˆ–è€…ç¬¬ä¸€ä¸ªå•è¯ä¸ºä¸€ä¸ªåŠ¨è¯ã€‚
+		é¡µé¢è·³è½¬å‘½åè§„åˆ™ï¼što+XXX
+		é¡µé¢æŸ¥è¯¢å‘½åè§„åˆ™ï¼šquery+XXXï¼Œfind+XXXï¼Œget+XXXï¼Œload+XXXï¼Œsearch+XXX
+		é¡µé¢æ›´æ–°å‘½åè§„åˆ™ï¼šupdate+XXX, modify+XXX
+		é¡µé¢ä¿å­˜å‘½åè§„åˆ™ï¼šsave+XXX
+		é¡µé¢åˆ é™¤å‘½åè§„åˆ™ï¼šremove+XXXï¼Œdelete+XXX
 
 -------------------------------------------------------------------------------------------------------------
-23.spring fileupload ÉÏ´« ÎÄ¼şÉÏ´« ¶àÎÄ¼şÉÏ´«  
+23.spring fileupload ä¸Šä¼  æ–‡ä»¶ä¸Šä¼  å¤šæ–‡ä»¶ä¸Šä¼   
 xhzs
-user jar£º
-	Ê¹ÓÃcommons-fileupload.jarÉÏ´«
-code£º
-	html£º
+user jarï¼š
+	ä½¿ç”¨commons-fileupload.jarä¸Šä¼ 
+codeï¼š
+	htmlï¼š
 	<form id="formInfo" method="post" action="" enctype="multipart/form-data">
 		<input id="realFile" type="file" name="realFile" class="inp_w45" />
 	</form>
 
-	java£º
+	javaï¼š
 	boolean isFileUpload = ServletFileUpload.isMultipartContent(request);
 	if (isFileUpload) {
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-		MultipartFile file = multipartRequest.getFile("realFile");//readFileÊÇÇ°Ì¨inputµÄnameÖµ
-		if (file.getSize() == 0) { // ÉÏ´«ÎÄ¼ş´óĞ¡Îª0,²¢ÇÒÊÇÉÏ´«ÎÄ¼şºóµã»÷²éÑ¯½øÀ´
-		} else if (file.getSize() != 0) { // ÉÏ´«ÎÄ¼ş´óĞ¡²»Îª0,²¢ÇÒÊÇÉÏ´«ÎÄ¼şºóµã»÷²éÑ¯½øÀ´
+		MultipartFile file = multipartRequest.getFile("realFile");//readFileæ˜¯å‰å°inputçš„nameå€¼
+		if (file.getSize() == 0) { // ä¸Šä¼ æ–‡ä»¶å¤§å°ä¸º0,å¹¶ä¸”æ˜¯ä¸Šä¼ æ–‡ä»¶åç‚¹å‡»æŸ¥è¯¢è¿›æ¥
+		} else if (file.getSize() != 0) { // ä¸Šä¼ æ–‡ä»¶å¤§å°ä¸ä¸º0,å¹¶ä¸”æ˜¯ä¸Šä¼ æ–‡ä»¶åç‚¹å‡»æŸ¥è¯¢è¿›æ¥
 			InputStream in = file.getInputStream();
-			String fileName = file.getOriginalFilename();//OriginalÔ­±¾µÄ
-			//ÅĞ±ğÉÏ´«ÎÄ¼şÊÇ²»ÊÇexcelÎÄ¼ş
+			String fileName = file.getOriginalFilename();//OriginalåŸæœ¬çš„
+			//åˆ¤åˆ«ä¸Šä¼ æ–‡ä»¶æ˜¯ä¸æ˜¯excelæ–‡ä»¶
 			if (fileName.endsWith("xls")) {
 				fileType1 = "xls";
 			} else if (fileName.endsWith("xlsx")) {
@@ -265,18 +265,18 @@ code£º
 		}
 	}
 ----------------------------------------------------------------------------------------------------------------
-24excel ¶ÁÈ¡excel Ğ´Èëexcel ²Ù×÷excel
+24excel è¯»å–excel å†™å…¥excel æ“ä½œexcel
 	/**
-	 * ¶ÁÈ¡excelÎÄ¼şÊı¾İ
+	 * è¯»å–excelæ–‡ä»¶æ•°æ®
 	 * 
-	 * @param isÊäÈë×Ö½ÚÁ÷
-	 * @param isXlsOrXlsxÎÄ¼şÀàĞÍ
+	 * @param isè¾“å…¥å­—èŠ‚æµ
+	 * @param isXlsOrXlsxæ–‡ä»¶ç±»å‹
 	 * @return
 	 * @throws IOException
 	 */
 	private void readExcel(InputStream is,
 				String isXlsOrXlsx) throws IOException {
-		/** ¸ù¾İ°æ±¾Ñ¡Ôñ´´½¨WorkbookµÄ·½Ê½ */
+		/** æ ¹æ®ç‰ˆæœ¬é€‰æ‹©åˆ›å»ºWorkbookçš„æ–¹å¼ */
 		Workbook wb = null;
 
 		if ("xls".equals(isXlsOrXlsx)) {
@@ -289,61 +289,61 @@ code£º
 			if (sheet == null) {
 				continue;
 			}
-			/** µÃµ½ExcelµÄĞĞÊı */
+			/** å¾—åˆ°Excelçš„è¡Œæ•° */
 			int totalRows = sheet.getPhysicalNumberOfRows();
-			// Ñ­»·ĞĞRow
+			// å¾ªç¯è¡ŒRow
 			for (int rowNum = 0; rowNum < totalRows; rowNum++) {
 				Row row = sheet.getRow(rowNum);
 				if (row != null) {
 					if (row.getCell(0) != null) {
 						row.getCell(0).setCellType(Cell.CELL_TYPE_STRING);
-						String value = row.getCell(0).getStringCellValue(); // ¶ÁÈ¡µÚÒ»ÁĞµ¥Ôª¸ñµÄÖµ
+						String value = row.getCell(0).getStringCellValue(); // è¯»å–ç¬¬ä¸€åˆ—å•å…ƒæ ¼çš„å€¼
 						if (StringUtils.isNotEmpty(value)) {
-							//Ğ´Èëµ½pojo
+							//å†™å…¥åˆ°pojo
 						}
 					}
 				}
-				//listÌí¼Ó¶à¸öpojo
+				//listæ·»åŠ å¤šä¸ªpojo
 			}
 		}
 	}
 --------------------------------------------------------------------------------------------------------
-25 hibernate annotationÅäÖÃÅÅĞò    hibernateÅÅĞò  hibernateË³Ğò   
+25 hibernate annotationé…ç½®æ’åº    hibernateæ’åº  hibernateé¡ºåº   
 
 @OneToMany(cascade = { CascadeType.PERSIST ,CascadeType.REMOVE}, fetch = FetchType.EAGER, mappedBy = "meetingInfo")
 @Cascade(org.hibernate.annotations.CascadeType.ALL)
-@OrderBy("uploadTime asc")//¸ù¾İ¹ØÁªÀàµÄÉÏ´«Ê±¼äÅÅĞò
+@OrderBy("uploadTime asc")//æ ¹æ®å…³è”ç±»çš„ä¸Šä¼ æ—¶é—´æ’åº
 public Set<MeetingAttach> getMeetingAttachs() {
 	return meetingAttachs;
 }
 --------------------------------------------------------------------------------------------------------
-26 jquery valicate jqueryÌá½»ÑéÖ¤ jqueryÑéÖ¤ ±íµ¥ÑéÖ¤²å¼şjquery validation  xhzs   
+26 jquery valicate jqueryæäº¤éªŒè¯ jqueryéªŒè¯ è¡¨å•éªŒè¯æ’ä»¶jquery validation  xhzs   
 
-	<!--ÒıÈë jquery validate Ïà¹Øjs -->
+	<!--å¼•å…¥ jquery validate ç›¸å…³js -->
 	<script src="${assets_path}/assets/js/jquery.validate.min.js"></script>
 	<script src="${assets_path}/assets/js/messages_zh.min.js"></script>
 
-	Ä¬ÈÏĞ£Ñé¹æÔò
-	ĞòºÅ	¹æÔò	        ÃèÊö
-	1	required:true	    ±ØĞëÊäÈëµÄ×Ö¶Î¡£
-	2	remote:"check.php"	Ê¹ÓÃ ajax ·½·¨µ÷ÓÃ check.php ÑéÖ¤ÊäÈëÖµ¡£
-	3	email:true	        ±ØĞëÊäÈëÕıÈ·¸ñÊ½µÄµç×ÓÓÊ¼ş¡£
-	4	url:true			±ØĞëÊäÈëÕıÈ·¸ñÊ½µÄÍøÖ·¡£
-	5	date:true			±ØĞëÊäÈëÕıÈ·¸ñÊ½µÄÈÕÆÚ¡£ÈÕÆÚĞ£Ñé ie6 ³ö´í£¬É÷ÓÃ¡£
-	6	dateISO:true		±ØĞëÊäÈëÕıÈ·¸ñÊ½µÄÈÕÆÚ£¨ISO£©£¬ÀıÈç£º2009-06-23£¬1998/01/22¡£Ö»ÑéÖ¤¸ñÊ½£¬²»ÑéÖ¤ÓĞĞ§ĞÔ¡£
-	7	number:true			±ØĞëÊäÈëºÏ·¨µÄÊı×Ö£¨¸ºÊı£¬Ğ¡Êı£©¡£
-	8	digits:true			±ØĞëÊäÈëÕûÊı¡£
-	9	creditcard:			±ØĞëÊäÈëºÏ·¨µÄĞÅÓÃ¿¨ºÅ¡£
-	10	equalTo:"#field"	ÊäÈëÖµ±ØĞëºÍ #field ÏàÍ¬¡£
-	11	accept:				ÊäÈëÓµÓĞºÏ·¨ºó×ºÃûµÄ×Ö·û´®£¨ÉÏ´«ÎÄ¼şµÄºó×º£©¡£
-	12	maxlength:5			ÊäÈë³¤¶È×î¶àÊÇ 5 µÄ×Ö·û´®£¨ºº×ÖËãÒ»¸ö×Ö·û£©¡£
-	13	minlength:10		ÊäÈë³¤¶È×îĞ¡ÊÇ 10 µÄ×Ö·û´®£¨ºº×ÖËãÒ»¸ö×Ö·û£©¡£
-	14	rangelength:[5,10]	ÊäÈë³¤¶È±ØĞë½éÓÚ 5 ºÍ 10 Ö®¼äµÄ×Ö·û´®£¨ºº×ÖËãÒ»¸ö×Ö·û£©¡£
-	15	range:[5,10]		ÊäÈëÖµ±ØĞë½éÓÚ 5 ºÍ 10 Ö®¼ä¡£
-	16	max:5				ÊäÈëÖµ²»ÄÜ´óÓÚ 5¡£
-	17	min:10				ÊäÈëÖµ²»ÄÜĞ¡ÓÚ 10¡£
+	é»˜è®¤æ ¡éªŒè§„åˆ™
+	åºå·	è§„åˆ™	        æè¿°
+	1	required:true	    å¿…é¡»è¾“å…¥çš„å­—æ®µã€‚
+	2	remote:"check.php"	ä½¿ç”¨ ajax æ–¹æ³•è°ƒç”¨ check.php éªŒè¯è¾“å…¥å€¼ã€‚
+	3	email:true	        å¿…é¡»è¾“å…¥æ­£ç¡®æ ¼å¼çš„ç”µå­é‚®ä»¶ã€‚
+	4	url:true			å¿…é¡»è¾“å…¥æ­£ç¡®æ ¼å¼çš„ç½‘å€ã€‚
+	5	date:true			å¿…é¡»è¾“å…¥æ­£ç¡®æ ¼å¼çš„æ—¥æœŸã€‚æ—¥æœŸæ ¡éªŒ ie6 å‡ºé”™ï¼Œæ…ç”¨ã€‚
+	6	dateISO:true		å¿…é¡»è¾“å…¥æ­£ç¡®æ ¼å¼çš„æ—¥æœŸï¼ˆISOï¼‰ï¼Œä¾‹å¦‚ï¼š2009-06-23ï¼Œ1998/01/22ã€‚åªéªŒè¯æ ¼å¼ï¼Œä¸éªŒè¯æœ‰æ•ˆæ€§ã€‚
+	7	number:true			å¿…é¡»è¾“å…¥åˆæ³•çš„æ•°å­—ï¼ˆè´Ÿæ•°ï¼Œå°æ•°ï¼‰ã€‚
+	8	digits:true			å¿…é¡»è¾“å…¥æ•´æ•°ã€‚
+	9	creditcard:			å¿…é¡»è¾“å…¥åˆæ³•çš„ä¿¡ç”¨å¡å·ã€‚
+	10	equalTo:"#field"	è¾“å…¥å€¼å¿…é¡»å’Œ #field ç›¸åŒã€‚
+	11	accept:				è¾“å…¥æ‹¥æœ‰åˆæ³•åç¼€åçš„å­—ç¬¦ä¸²ï¼ˆä¸Šä¼ æ–‡ä»¶çš„åç¼€ï¼‰ã€‚
+	12	maxlength:5			è¾“å…¥é•¿åº¦æœ€å¤šæ˜¯ 5 çš„å­—ç¬¦ä¸²ï¼ˆæ±‰å­—ç®—ä¸€ä¸ªå­—ç¬¦ï¼‰ã€‚
+	13	minlength:10		è¾“å…¥é•¿åº¦æœ€å°æ˜¯ 10 çš„å­—ç¬¦ä¸²ï¼ˆæ±‰å­—ç®—ä¸€ä¸ªå­—ç¬¦ï¼‰ã€‚
+	14	rangelength:[5,10]	è¾“å…¥é•¿åº¦å¿…é¡»ä»‹äº 5 å’Œ 10 ä¹‹é—´çš„å­—ç¬¦ä¸²ï¼ˆæ±‰å­—ç®—ä¸€ä¸ªå­—ç¬¦ï¼‰ã€‚
+	15	range:[5,10]		è¾“å…¥å€¼å¿…é¡»ä»‹äº 5 å’Œ 10 ä¹‹é—´ã€‚
+	16	max:5				è¾“å…¥å€¼ä¸èƒ½å¤§äº 5ã€‚
+	17	min:10				è¾“å…¥å€¼ä¸èƒ½å°äº 10ã€‚
 
-	jquery.validate.min.jsÀï×Ô´øµÄmessages¾ÍÊÇ´íÎó¹æÔòÌáÊ¾ 
+	jquery.validate.min.jsé‡Œè‡ªå¸¦çš„messageså°±æ˜¯é”™è¯¯è§„åˆ™æç¤º 
 	messages: {
 		required: "This field is required.",
 		remote: "Please fix this field.",
@@ -351,7 +351,7 @@ public Set<MeetingAttach> getMeetingAttachs() {
 		url: "Please enter a valid URL.",
 		date: "Please enter a valid date.",
 		dateISO: "Please enter a valid date (ISO).",
-		dateDE: "Bitte geben Sie ein g¨¹ltiges Datum ein.",
+		dateDE: "Bitte geben Sie ein gÃ¼ltiges Datum ein.",
 		number: "Please enter a valid number.",
 		numberDE: "Bitte geben Sie eine Nummer ein.",
 		digits: "Please enter only digits",
@@ -366,20 +366,20 @@ public Set<MeetingAttach> getMeetingAttachs() {
 		min: $.validator.format("Please enter a value greater than or equal to {0}.")
 	},
 
-	//Ğ£Ñé
+	//æ ¡éªŒ
 	$('#addMeetingInfo').validate({
 		rules : {
 			'meetingName':{required:true,maxlength:100},
 			'meetingType':{required:true}
 		},messages : {
-			'meetingName':{required:"ÇëÊäÈë»áÒéÃû³Æ£¡",maxlength:"»áÒéÃû³Æ²»ÄÜ³¬¹ı33×Ö£¡"},
-			'meetingType':{required:"ÇëÑ¡Ôñ»áÒéÀàĞÍ"}
+			'meetingName':{required:"è¯·è¾“å…¥ä¼šè®®åç§°ï¼",maxlength:"ä¼šè®®åç§°ä¸èƒ½è¶…è¿‡33å­—ï¼"},
+			'meetingType':{required:"è¯·é€‰æ‹©ä¼šè®®ç±»å‹"}
 		},
 		submitHandler:function() {
 			var success = true;
 			if(success) {
 				var isNecessary = "${dicAttachTypeList[0].isNecessary}";
-				//»ñÈ¡
+				//è·å–
 				if(isNecessary == 1){
 					
 				}else{
@@ -397,7 +397,7 @@ public Set<MeetingAttach> getMeetingAttachs() {
 	$(document).ready(function validateFrom (argument) {
 		 $("#form").validate({
 			  rules:{
-				   name:{		//input name Öµ
+				   name:{		//input name å€¼
 						required:true,
 						minlength:2,
 						maxlength:10
@@ -410,12 +410,12 @@ public Set<MeetingAttach> getMeetingAttachs() {
 			  },
 			  messages:{
 				   name:{
-						required:"±ØĞëÌîĞ´ÓÃ»§Ãû",
-						minlength:"ÓÃ»§Ãû×îĞ¡Îª2Î»",
-						maxlength:"ÓÃ»§Ãû×î´óÎª10Î»"
+						required:"å¿…é¡»å¡«å†™ç”¨æˆ·å",
+						minlength:"ç”¨æˆ·åæœ€å°ä¸º2ä½",
+						maxlength:"ç”¨æˆ·åæœ€å¤§ä¸º10ä½"
 				   },
 				   IDNumber:{
-						required:"Éí·İÖ¤²»ÄÜÎª¿Õ",
+						required:"èº«ä»½è¯ä¸èƒ½ä¸ºç©º",
 						minlength:15,
 						maxlength:18
 				   }
@@ -423,58 +423,58 @@ public Set<MeetingAttach> getMeetingAttachs() {
 		 });
 	});
 
-	validate()·½·¨ÅäÖÃÏî£º
-	submitHandler(form) Í¨¹ıÑéÖ¤ºóÔËĞĞµÄº¯Êı£¬¿ÉÒÔ¼ÓÉÏ±íµ¥Ìá½»µÄ·½·¨
-	invalidHandler ÎŞĞ§±íµ¥Ìá½»ºóÔËĞĞµÄº¯Êı
-	ignore ¶ÔÄ³Ğ©ÔªËØ²»½øĞĞÑéÖ¤
-	rules ¶¨Òå¼ìÑé¹æÔò
-	messages ¶¨ÒåÌáÊ¾ĞÅÏ¢
-	groups ¶ÔÒ»×éÔªËØµÄÑéÖ¤£¬ÓÃÒ»¸ö´íÎóÌáÊ¾£¬ÓÃerrorPlacement¿ØÖÆ°Ñ´íÎóĞÅÏ¢·ÅÔÚÄÄÀï
-	onsubmit Ìá½»Ê±ÊÇ·ñ½øĞĞÑéÖ¤£¬Ä¬ÈÏÊÇtrue£¬Ìá½»µÄÊ±ºò½øĞĞÑéÖ¤
-	onfocusout ÊÇ·ñÔÚ»ñÈ¡½¹µãÊ±ÑéÖ¤
-	onkeyup ÊÇ·ñÔÚÇÃ»÷¼üÅÌÊ±ÑéÖ¤
-	onclick ÊÇ·ñÔÚÊó±êµã»÷Ê±ÑéÖ¤£¬Ò»°ãÓÃÓÚcheckbox
-	focusInvalid Ìá½»±íµ¥ºó£¬Î´Í¨¹ıÑéÖ¤µÄ±íµ¥ÊÇ·ñ»ñµÃ½¹µã
-	focusCleanup µ±Î´Í¨¹ıÑéÖ¤µÄÔªËØ»ñÈ¡½¹µãÊ±£¬ÊÇ·ñÒÆ³ı´íÎóÌáÊ¾
-	errorClass Ö¸¶¨´íÎóÌáÊ¾µÄcssÀàÃû£¬¿ÉÒÔ×Ô¶¨Òå´íÎóÌáÊ¾ÑùÊ½
-	validClass Ö¸¶¨ÑéÖ¤Í¨¹ıÊ¹ÓÃµÄcssµÄÀàÃû
-	errorElement Ê¹ÓÃÊ²Ã´±êÇ©±ê¼Ç´íÎó
-	wrapper Ê¹ÓÃÊ²Ã´±êÇ©°ÑÉÏ±ßµÄerrorElement°üÆğÀ´
-	errorLabelContainer °Ñ´íÎóĞÅÏ¢Í³Ò»·ÅÔÚÒ»¸öÈİÆ÷ÀïÃæ
-	errorContainer ÏÔÊ¾»òÕßÒş²ØÑéÖ¤ĞÅÏ¢£¬¿ÉÒÔ×Ô¶¯ÊµÏÖÓĞ´íÎóĞÅÏ¢³öÏÖÊ±°ÑÈİÆ÷ÊôĞÔ±äÎªÏÔÊ¾£¬ÎŞ´íÎóÊ±Òş²Ø
-	showErrors(errorMap,errorList) ÏÔÊ¾×Ü¹²ÓĞ¶àÉÙ¸öÎ´Í¨¹ıÑéÖ¤µÄÔªËØ
-	errorPlacement ¶¨Òå´íÎóĞÅÏ¢·ÅÔÚÄÄÀï
-	success: ÒªÑéÖ¤µÄÔªËØÍ¨¹ıÑéÖ¤ºóµÄ¶¯×÷
-	highlight(element,errorClass,validClass) ¿ÉÒÔ¸øÎ´Í¨¹ıÑéÖ¤µÄÔªËØ¼ÓĞ§¹û
-	unhighlight È¥³ıÎ´Í¨¹ıÑéÖ¤µÄÔªËØµÄĞ§¹û£¬Ò»°ãºÍhighlightÍ¬Ê±Ê¹ÓÃ
+	validate()æ–¹æ³•é…ç½®é¡¹ï¼š
+	submitHandler(form) é€šè¿‡éªŒè¯åè¿è¡Œçš„å‡½æ•°ï¼Œå¯ä»¥åŠ ä¸Šè¡¨å•æäº¤çš„æ–¹æ³•
+	invalidHandler æ— æ•ˆè¡¨å•æäº¤åè¿è¡Œçš„å‡½æ•°
+	ignore å¯¹æŸäº›å…ƒç´ ä¸è¿›è¡ŒéªŒè¯
+	rules å®šä¹‰æ£€éªŒè§„åˆ™
+	messages å®šä¹‰æç¤ºä¿¡æ¯
+	groups å¯¹ä¸€ç»„å…ƒç´ çš„éªŒè¯ï¼Œç”¨ä¸€ä¸ªé”™è¯¯æç¤ºï¼Œç”¨errorPlacementæ§åˆ¶æŠŠé”™è¯¯ä¿¡æ¯æ”¾åœ¨å“ªé‡Œ
+	onsubmit æäº¤æ—¶æ˜¯å¦è¿›è¡ŒéªŒè¯ï¼Œé»˜è®¤æ˜¯trueï¼Œæäº¤çš„æ—¶å€™è¿›è¡ŒéªŒè¯
+	onfocusout æ˜¯å¦åœ¨è·å–ç„¦ç‚¹æ—¶éªŒè¯
+	onkeyup æ˜¯å¦åœ¨æ•²å‡»é”®ç›˜æ—¶éªŒè¯
+	onclick æ˜¯å¦åœ¨é¼ æ ‡ç‚¹å‡»æ—¶éªŒè¯ï¼Œä¸€èˆ¬ç”¨äºcheckbox
+	focusInvalid æäº¤è¡¨å•åï¼Œæœªé€šè¿‡éªŒè¯çš„è¡¨å•æ˜¯å¦è·å¾—ç„¦ç‚¹
+	focusCleanup å½“æœªé€šè¿‡éªŒè¯çš„å…ƒç´ è·å–ç„¦ç‚¹æ—¶ï¼Œæ˜¯å¦ç§»é™¤é”™è¯¯æç¤º
+	errorClass æŒ‡å®šé”™è¯¯æç¤ºçš„cssç±»åï¼Œå¯ä»¥è‡ªå®šä¹‰é”™è¯¯æç¤ºæ ·å¼
+	validClass æŒ‡å®šéªŒè¯é€šè¿‡ä½¿ç”¨çš„cssçš„ç±»å
+	errorElement ä½¿ç”¨ä»€ä¹ˆæ ‡ç­¾æ ‡è®°é”™è¯¯
+	wrapper ä½¿ç”¨ä»€ä¹ˆæ ‡ç­¾æŠŠä¸Šè¾¹çš„errorElementåŒ…èµ·æ¥
+	errorLabelContainer æŠŠé”™è¯¯ä¿¡æ¯ç»Ÿä¸€æ”¾åœ¨ä¸€ä¸ªå®¹å™¨é‡Œé¢
+	errorContainer æ˜¾ç¤ºæˆ–è€…éšè—éªŒè¯ä¿¡æ¯ï¼Œå¯ä»¥è‡ªåŠ¨å®ç°æœ‰é”™è¯¯ä¿¡æ¯å‡ºç°æ—¶æŠŠå®¹å™¨å±æ€§å˜ä¸ºæ˜¾ç¤ºï¼Œæ— é”™è¯¯æ—¶éšè—
+	showErrors(errorMap,errorList) æ˜¾ç¤ºæ€»å…±æœ‰å¤šå°‘ä¸ªæœªé€šè¿‡éªŒè¯çš„å…ƒç´ 
+	errorPlacement å®šä¹‰é”™è¯¯ä¿¡æ¯æ”¾åœ¨å“ªé‡Œ
+	success: è¦éªŒè¯çš„å…ƒç´ é€šè¿‡éªŒè¯åçš„åŠ¨ä½œ
+	highlight(element,errorClass,validClass) å¯ä»¥ç»™æœªé€šè¿‡éªŒè¯çš„å…ƒç´ åŠ æ•ˆæœ
+	unhighlight å»é™¤æœªé€šè¿‡éªŒè¯çš„å…ƒç´ çš„æ•ˆæœï¼Œä¸€èˆ¬å’ŒhighlightåŒæ—¶ä½¿ç”¨
 
-	Ñ¡ÔñÆ÷À©Õ¹
-	:blank Ñ¡ÔñËùÓĞÖµÎª¿ÕµÄÔªËØ
-	:filled Ñ¡ÔñËùÓĞÖµ²»Îª¿ÕµÄÔªËØ
-	:unchecked Ñ¡ÔñËùÓĞÃ»ÓĞ±»Ñ¡ÖĞµÄÔªËØ
+	é€‰æ‹©å™¨æ‰©å±•
+	:blank é€‰æ‹©æ‰€æœ‰å€¼ä¸ºç©ºçš„å…ƒç´ 
+	:filled é€‰æ‹©æ‰€æœ‰å€¼ä¸ä¸ºç©ºçš„å…ƒç´ 
+	:unchecked é€‰æ‹©æ‰€æœ‰æ²¡æœ‰è¢«é€‰ä¸­çš„å…ƒç´ 
 
-	×Ô¶¨ÒåÑéÖ¤·½·¨:
+	è‡ªå®šä¹‰éªŒè¯æ–¹æ³•:
 	jQuery.validator.addMethod(name,method,[message])
-	name ·½·¨Ãû³Æ
-	method: function(value,element,params) ·½·¨Âß¼­
-	messages:ÌáÊ¾ÏûÏ¢
+	name æ–¹æ³•åç§°
+	method: function(value,element,params) æ–¹æ³•é€»è¾‘
+	messages:æç¤ºæ¶ˆæ¯
 
 .....................................
-jquery valicate ÕıÔò±í´ïÊ½ Æ¥Åä  Ìí¼ÓĞÂµÄ×Ô¼ºµÄº¯Êı£¬Ìí¼Ó×Ô¼ºµÄº¯Êı    
+jquery valicate æ­£åˆ™è¡¨è¾¾å¼ åŒ¹é…  æ·»åŠ æ–°çš„è‡ªå·±çš„å‡½æ•°ï¼Œæ·»åŠ è‡ªå·±çš„å‡½æ•°    
 	$(document).ready(function(){
-		//ÁªÏµµç»°(ÊÖ»ú/µç»°½Ô¿É)ÑéÖ¤   
+		//è”ç³»ç”µè¯(æ‰‹æœº/ç”µè¯çš†å¯)éªŒè¯   
 		$.validator.addMethod("isPhone", function(value,element) {   
 			var length = value.length;    
 			var mobile = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/;   
 			var tel = /^\d{3,4}-?\d{7,9}$/;   
 			return this.optional(element) || (tel.test(value) || mobile.test(value));
-		}, "ÇëÕıÈ·ÌîĞ´ÄúµÄÁªÏµµç»°");   
+		}, "è¯·æ­£ç¡®å¡«å†™æ‚¨çš„è”ç³»ç”µè¯");   
 		$('#formStatus').validate({
 			rules:{
 				'contactTel':{isPhone:true}
 			},
 			messages:{
-				'contactTel':{isPhone:"ÇëÊäÈëÒ»¸öÓĞĞ§µÄÁªÏµµç»°"}
+				'contactTel':{isPhone:"è¯·è¾“å…¥ä¸€ä¸ªæœ‰æ•ˆçš„è”ç³»ç”µè¯"}
 			},
 			submitHandler:function(){
 				_ajax_submit($('#formStatus'),return2Todo);
@@ -488,11 +488,11 @@ jquery valicate ÕıÔò±í´ïÊ½ Æ¥Åä  Ìí¼ÓĞÂµÄ×Ô¼ºµÄº¯Êı£¬Ìí¼Ó×Ô¼ºµÄº¯Êı
 
 
 --------------------------------------------------------------------------------------------------------
-27 jquery ajax ajax ajaxÌá½»    
-	//ajaxÌá½»ºóÌì
+27 jquery ajax ajax ajaxæäº¤    
+	//ajaxæäº¤åå¤©
 	var meetingYear = $("#meetingYear").val();
 	var meetingType = $("#meetingType").val();
-	//Êı×éÄ£Ê½
+	//æ•°ç»„æ¨¡å¼
 	var data = {
 		meetingYear:meetingYear,
 		meetingType:meetingType
@@ -509,11 +509,11 @@ jquery valicate ÕıÔò±í´ïÊ½ Æ¥Åä  Ìí¼ÓĞÂµÄ×Ô¼ºµÄº¯Êı£¬Ìí¼Ó×Ô¼ºµÄº¯Êı
 		},
 		error : function(data, textStatus) {
 			var obj = eval("("+data+")");
-			alert("»áÒéÄê·İ²»ÕıÈ·");
+			alert("ä¼šè®®å¹´ä»½ä¸æ­£ç¡®");
 		}
 	}); 
 --------------------------------------------------------------------------------------------------------
-28 jquery ui dialog dialog¶Ô»°¿ò   
+28 jquery ui dialog dialogå¯¹è¯æ¡†   
 
 
 
@@ -523,42 +523,42 @@ jquery valicate ÕıÔò±í´ïÊ½ Æ¥Åä  Ìí¼ÓĞÂµÄ×Ô¼ºµÄº¯Êı£¬Ìí¼Ó×Ô¼ºµÄº¯Êı
 
 
 --------------------------------------------------------------------------------------------------------
-29 svnËø¶¨ ´úÂëÌá½»Ëø¶¨ ´úÂë²»ÄÜ¸üĞÂ
+29 svné”å®š ä»£ç æäº¤é”å®š ä»£ç ä¸èƒ½æ›´æ–°
 org.apache.subversion.javahl.ClientException: Attempted to lock an already-locked dir
 svn: Working copy 'D:\workspace2\xhzs-sabic' locked.
 svn: 'D:\workspace2\xhzs-sabic' is already locked.
 
-ÓÒ»÷ÏîÄ¿Ãû-> Team -> Refresh/cleanUp
+å³å‡»é¡¹ç›®å-> Team -> Refresh/cleanUp
 
 
 --------------------------------------------------------------------------------------------------------
-30 sql ×ªÒåµ¥ÒıºÅ
+30 sql è½¬ä¹‰å•å¼•å·
 code:
-	insert into dic_load_config values('dic_unit_tag','ÆóÒµ±íÊ¾×Öµä','1','DIC_ITEM','CODE','NAME','WHERE DIC_ID=''73''','','')
+	insert into dic_load_config values('dic_unit_tag','ä¼ä¸šè¡¨ç¤ºå­—å…¸','1','DIC_ITEM','CODE','NAME','WHERE DIC_ID=''73''','','')
 
 
 --------------------------------------------------------------------------------------------------------
-31 jsp:include ´«Öµ   jsp:param   
-´«Öµ£º
+31 jsp:include ä¼ å€¼   jsp:param   
+ä¼ å€¼ï¼š
 	<jsp:include flush="true" page="../unitdailymanager/openDetailUnitDeclare.jsp" >
 		<jsp:param value="unit_tag" name="unit_tag"/>
 	</jsp:include>
-	½ÓÊÜÖµ£º
+	æ¥å—å€¼ï¼š
 	<%
 		String unit_tag=request.getParameter("unit_tag"); 
 	%>
 
 --------------------------------------------------------------------------------------------------------
-32 java error map map.entry ±éÀúmap
-	  ĞŞ¸Ä£¬ĞŞÕı£»¸Ä±ä
+32 java error map map.entry éå†map
+	  ä¿®æ”¹ï¼Œä¿®æ­£ï¼›æ”¹å˜
 java.util.ConcurrentModificationException
-ÔÚÊ¹ÓÃiterator.hasNext()²Ù×÷µü´úÆ÷µÄÊ±ºò£¬Èç¹û´ËÊ±µü´úµÄ¶ÔÏó·¢Éú¸Ä±ä£¬±ÈÈç²åÈëÁËĞÂÊı¾İ£¬»òÕßÓĞÊı¾İ±»É¾³ı¡£
+åœ¨ä½¿ç”¨iterator.hasNext()æ“ä½œè¿­ä»£å™¨çš„æ—¶å€™ï¼Œå¦‚æœæ­¤æ—¶è¿­ä»£çš„å¯¹è±¡å‘ç”Ÿæ”¹å˜ï¼Œæ¯”å¦‚æ’å…¥äº†æ–°æ•°æ®ï¼Œæˆ–è€…æœ‰æ•°æ®è¢«åˆ é™¤ã€‚
 
-ÔòÊ¹ÓÃ»á±¨ÒÔÏÂÒì³££º
+åˆ™ä½¿ç”¨ä¼šæŠ¥ä»¥ä¸‹å¼‚å¸¸ï¼š
 java.util.ConcurrentModificationException
         at java.util.HashMap$HashIterator.nextEntry(HashMap.java:793)
         at java.util.HashMap$KeyIterator.next(HashMap.java:828)
-//±éÀúmap
+//éå†map
 	public static Map<String, String> DicToSingle(String deptId, String dic) {
 		Map<String, String> map = DicLoadUtil.getInstance().getDic(dic);
 		if (!map.isEmpty()) {
@@ -576,12 +576,12 @@ java.util.ConcurrentModificationException
 		}
 		return map;
 	} 
-java Map¼°Map.EntryÏê½â
-MapÌá¹©ÁËÒ»Ğ©³£ÓÃ·½·¨£¬ÈçkeySet()¡¢entrySet()µÈ·½·¨¡£
-keySet()·½·¨·µ»ØÖµÊÇMapÖĞkeyÖµµÄ¼¯ºÏ£»
-entrySet()µÄ·µ»ØÖµÒ²ÊÇ·µ»ØÒ»¸öSet¼¯ºÏ£¬´Ë¼¯ºÏµÄÀàĞÍÎªMap.Entry¡£
-Map.EntryÊÇMapÉùÃ÷µÄÒ»¸öÄÚ²¿½Ó¿Ú£¬´Ë½Ó¿ÚÎª·ºĞÍ£¬¶¨ÒåÎªEntry<K,V>¡£
-Ëü±íÊ¾MapÖĞµÄÒ»¸öÊµÌå£¨Ò»¸ökey-value¶Ô£©¡£½Ó¿ÚÖĞÓĞgetKey(),getValue·½·¨¡£
+java MapåŠMap.Entryè¯¦è§£
+Mapæä¾›äº†ä¸€äº›å¸¸ç”¨æ–¹æ³•ï¼Œå¦‚keySet()ã€entrySet()ç­‰æ–¹æ³•ã€‚
+keySet()æ–¹æ³•è¿”å›å€¼æ˜¯Mapä¸­keyå€¼çš„é›†åˆï¼›
+entrySet()çš„è¿”å›å€¼ä¹Ÿæ˜¯è¿”å›ä¸€ä¸ªSeté›†åˆï¼Œæ­¤é›†åˆçš„ç±»å‹ä¸ºMap.Entryã€‚
+Map.Entryæ˜¯Mapå£°æ˜çš„ä¸€ä¸ªå†…éƒ¨æ¥å£ï¼Œæ­¤æ¥å£ä¸ºæ³›å‹ï¼Œå®šä¹‰ä¸ºEntry<K,V>ã€‚
+å®ƒè¡¨ç¤ºMapä¸­çš„ä¸€ä¸ªå®ä½“ï¼ˆä¸€ä¸ªkey-valueå¯¹ï¼‰ã€‚æ¥å£ä¸­æœ‰getKey(),getValueæ–¹æ³•ã€‚
 
 	Map<String, String> map = ...
 	for (Map.Entry<String, String> entry : map.entrySet())
@@ -590,15 +590,15 @@ Map.EntryÊÇMapÉùÃ÷µÄÒ»¸öÄÚ²¿½Ó¿Ú£¬´Ë½Ó¿ÚÎª·ºĞÍ£¬¶¨ÒåÎªEntry<K,V>¡£
 	}
 
 --------------------------------------------------------------------------------------------------------
-33 jqery ÉèÖÃ <form:select> <input type="select"> Ä¬ÈÏÖµ  selectÄ¬ÈÏÖµ ÉèÖÃselect selected
+33 jqery è®¾ç½® <form:select> <input type="select"> é»˜è®¤å€¼  selecté»˜è®¤å€¼ è®¾ç½®select selected
 	$(function(){
 		 $("#unitTag option[value='01']").attr("selected", true); 
 	});
 
 
 --------------------------------------------------------------------------------------------------------
-34 form±íµ¥
-	Êı¾İÌá½»²»µ½ºóÌ¨  Á½¸öform±íµ¥ÖØµş
+34 formè¡¨å•
+	æ•°æ®æäº¤ä¸åˆ°åå°  ä¸¤ä¸ªformè¡¨å•é‡å 
 
 --------------------------------------------------------------------------------------------------------
 35 tomcat myeclipse 
@@ -612,25 +612,25 @@ Could not instantiate bean class [com.mendian.action.appStore.CashierAction]: Co
 Unresolved compilation problems: 
 
 do:
-myeclise servers ´ÓĞÂµ¼ÈëÏîÄ¿
-Ò»°ã¶¼ÊÇÎ´¼ÓÔØ£¬Î´±àÒëµÄÎÊÌâ
+myeclise servers ä»æ–°å¯¼å…¥é¡¹ç›®
+ä¸€èˆ¬éƒ½æ˜¯æœªåŠ è½½ï¼Œæœªç¼–è¯‘çš„é—®é¢˜
 
 
 ------------------------------------------------------------------------------------------------------------------
 36 Caused by: java.lang.ClassNotFoundException:javax.persistence.EntityListene
-Ê¹ÓÃHibernate3.6.0.final³öÏÖÎÊÌâ
-Ô­ÒòÊÇÃ»ÓĞµ¼Èë
-hibernate-jpa-2.0-api-1.0.0.Final.jarÕâ¸ö°ü
+ä½¿ç”¨Hibernate3.6.0.finalå‡ºç°é—®é¢˜
+åŸå› æ˜¯æ²¡æœ‰å¯¼å…¥
+hibernate-jpa-2.0-api-1.0.0.Final.jarè¿™ä¸ªåŒ…
 
 
 -----------------------------------------------------------------------------------------------------------------
 37 org.springframework.beans.factory.BeanCreationException: 
    Error creating bean with name 'entityManagerFactory' defined in class path resource [beans.xml]
 
-²»ÊÇÈ±ÉÙÁË°ü£¬·´¶ø¿ÉÄÜÊÇ¶àÁËjpa°ü£¬¼«ÓĞ¿ÉÄÜÊÇÏîÄ¿ÀïÃæÒıÁËÒ»¸öjpa°ü£¬hibernateÓÖ×Ô´øÁËÒ»¸ö£¬ÇÒ°æ±¾²»Ò»Ñù¡£
-É¾³ıhibernate-jpa-2.0-api-1.0.0.Final.jar
-hibernate3.6final£¬ÒÑ¾­°ÑAnnotationÀà¿â¼¯³Éµ½ÁËhibernate3.6¡£µ±ÎÒÃÇÏëÊ¹ÓÃAnnotationÊ±£¬
-ÏÂÔØhibernate3.6final£¬²»ÔÙĞèÒªÏÂÔØhibernate-annotations-3.4.0.GA.zipÁË¡£
+ä¸æ˜¯ç¼ºå°‘äº†åŒ…ï¼Œåè€Œå¯èƒ½æ˜¯å¤šäº†jpaåŒ…ï¼Œææœ‰å¯èƒ½æ˜¯é¡¹ç›®é‡Œé¢å¼•äº†ä¸€ä¸ªjpaåŒ…ï¼Œhibernateåˆè‡ªå¸¦äº†ä¸€ä¸ªï¼Œä¸”ç‰ˆæœ¬ä¸ä¸€æ ·ã€‚
+åˆ é™¤hibernate-jpa-2.0-api-1.0.0.Final.jar
+hibernate3.6finalï¼Œå·²ç»æŠŠAnnotationç±»åº“é›†æˆåˆ°äº†hibernate3.6ã€‚å½“æˆ‘ä»¬æƒ³ä½¿ç”¨Annotationæ—¶ï¼Œ
+ä¸‹è½½hibernate3.6finalï¼Œä¸å†éœ€è¦ä¸‹è½½hibernate-annotations-3.4.0.GA.zipäº†ã€‚
 
 ------------------------------------------------------------------------------------------------------------------
-astah uml ¹¤¾ß
+astah uml å·¥å…·

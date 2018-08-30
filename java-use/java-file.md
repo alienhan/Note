@@ -1,6 +1,6 @@
 ---
 title: java操作文件
-date:
+date: 2015/8/9
 categories:
 - java基础
 tags:
@@ -13,6 +13,7 @@ tags:
 ```
 
 ### java 读取classpath下的文件properties文件
+
 ```java
 /**
  * 保存全局属性值

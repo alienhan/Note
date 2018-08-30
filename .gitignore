@@ -1,2 +1,14 @@
-/blog/
-/blog
+/blog/.delpoy_git/
+/blog/node_modules/
+/blog/public/
+/blog/themes/
+/blog/.gitignore
+/blog/source/_posts/
+##
+/blog/.DS_Store
+/blog/Thumbs.db
+/blog/db.json
+/blog/*.log
+/blog/node_modules/
+/blog/public/
+/blog/.deploy*/

@@ -2,7 +2,7 @@
 title: sonar
 date:
 categories:
-- sonar
+- test
 tags:
 - sonar
 ---

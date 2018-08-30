@@ -1,8 +1,8 @@
 ---
 title: Git
-date:
+date: 2016/3/3
 categories:
-- Git
+- 版本控制
 tags:
 - Git
 ---
