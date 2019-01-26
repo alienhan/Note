@@ -29,7 +29,7 @@ tags:
         在bean中可以得到应用上下文的事件发布器，从而可以在Bean中发布应用上下文的事件。  
       - ResourceLoaderAware:  
         在Bean中可以得到ResourceLoader，从而在bean中使用ResourceLoader加载外部对应的Resource资源。   
-         
+
 在设置Bean的属性之后，调用初始化回调方法之前，Spring会调用aware接口中的setter方法。
 
 
@@ -38,7 +38,7 @@ https://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/
 
 1. 本地事务和全局事务
     - 全局事务让你可以和多个事务资源工作在一起，比如，关系型数据库，消息队列
-    
+
     - 本地事务则是与某个指定的事务资源联系在一起，比如，与JDBC连接相关的事务。本地事务相对于全局事务更容易使用，但不能跨多个事务资源。管理JDBC连接所写的事务代码不能够在全局事务中使用。
 
 2. settings /事物对应配置
@@ -55,15 +55,15 @@ https://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/
         5. never
             以非事务方式运行，如果当前存在事务，则抛出异常。
         6. mandatory  
-            如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。 
+            如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。
         7. nested  
             如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该取值等价于required
-        
+
         当前有事物  
             - 加入  
             - 挂起,新建  
             - 抛异常  
-            
+
         当前没有事物  
             - 新建  
             - 非事物运行  
@@ -97,7 +97,7 @@ https://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/
 
 4. Bean依赖注入
     - 时间:发生在应用第一次调用AbstractBeanFactory中的getBean-->doGetBean向容器索取bean的时候
-    
+
     - AbstractBeanFactory中的doGetBean具体实现
     DefaultSingletonBeanRegistry含有bean的三级缓存
     ```java
@@ -108,9 +108,9 @@ https://www.ibm.com/developerworks/cn/education/opensource/os-cn-spring-trans/
     /** Cache of early singleton objects: bean name --> bean instance */
     private final Map<String, Object> earlySingletonObjects = new HashMap<String, Object>(16);
     ```
-       
+
     - getSingleton是调用
-    
+
 #### Spring-bean的循环依赖以及解决方式
 
 
@@ -133,7 +133,7 @@ public interface FactoryBean<T> {
 判断bean是否是FactoryBean
   - 对象是否实现了FactoryBean接口
   - 在BeanFactory容器基础接口中特别定义了FactoryBean的前缀
-      ```String FACTORY_BEAN_PREFIX = "&";```
+      `String FACTORY_BEAN_PREFIX = "&";`
 
 ### spring aop实现分析
 
