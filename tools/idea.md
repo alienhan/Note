@@ -18,6 +18,7 @@ alt + F7 查询方法被调用位置
 alt + enter 自动导入包  
 F11 行前打 √  
 Structure  Alt + 7 显示当前类的所有方法  
+ctrl + alt +f7 使用这个方法的方法
 
 
 

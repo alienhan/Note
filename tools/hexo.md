@@ -13,8 +13,8 @@ tags:
 1. 安装node.js
         npm -v 验证安装是否成功
 2. 安装hexo
-        npm install -g hexo-cli 
-        
+        npm install -g hexo-cli
+
 ### 关联git
 1. 新建git Repositories  
 tonghuajianghan.github.io 必须为这种形式,和git的名字相同  
@@ -30,10 +30,13 @@ tonghuajianghan.github.io 必须为这种形式,和git的名字相同
   ```
 repo 必须为ssl地址,https连接不上
 
-### 设置主体 
+3. 安装Git部署插件  
+        npm install hexo-deployer-git --save
+
+### 设置主体
 https://theme-next.iissnan.com/getting-started.html
- 
- 
+
+
 ### 运行
 1. hexo init blog 新建(只需执行一次)
 2. hexo clean
