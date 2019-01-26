@@ -9,13 +9,13 @@ tags:
 ---
 
 ## redis 问题  
-    缓存淘汰策略  
-    分布式事物锁  
-    事务  
-    redis错误处理,网络断了,出问题应该怎么处理  
-    redis性能监控  
-    redis 缓存击穿,失效,热点key  
-    
+    - 缓存淘汰策略  
+    - 分布式事物锁  
+    - 事务  
+    - redis错误处理,网络断了,出问题应该怎么处理  
+    - redis性能监控  
+    - redis 缓存击穿,失效,热点key  
+
 ## 事务
 http://redisbook.readthedocs.io/en/latest/feature/transaction.html  
 
@@ -53,7 +53,7 @@ Redis 通过 MULTI 、 DISCARD 、 EXEC 和 WATCH 四个命令来实现事务功
 SCAN:  
     SCAN是基于游标的迭代器。 这意味着在每次调用命令时，服务器返回一个更新的游标，用户需要在下一次调用中用作游标参数。  
     当游标设置为0时，迭代开始，并且当服务器返回的游标为0时终止迭代。  
-    
+
 ## redis延迟时间排查  
 定义:  
     延迟指的是客户端从发送命令到接收命令回复这段时间的最大值  
